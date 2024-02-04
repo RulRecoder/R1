@@ -315,6 +315,7 @@ def login():
 	os.system('clear')
 	loading()
 	os.system('clear')
+	banner()
 	pepek()
 	os.system('clear')
 	banner()
@@ -1349,6 +1350,9 @@ def cek_apk(session,cookie):
 		for i in range(len(game)):
 			print("   %s%s. %s%s"%(K,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),N))
 #----------------------[ LICENSE ]---------------------#
+import requests
+from datetime import datetime
+
 def is_license_valid(license_info):
     # Split license_info into components
     license_key, start_time_str, end_time_str = license_info.split('|')
@@ -1387,8 +1391,8 @@ def pepek():
         os.system("clear")
         banner()
         prints(nel(f'              {P2}[red]Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
-        print(' [%s1%s] Login Ke Tools'%(H,N))
-        print(' [%s2%s] Hubungi Admin'%(H,N))
+        print(' [%s1%s]{u} Login Ke Tools'%(H,N))
+        print(' [%s2%s]{u} Hubungi Admin'%(H,N))
         pil = input(' %s[%s?%s] Choice : '%(N,K,N))
         if pil =="":
             jalan(f" {N}[{M}×{N}] Sorry, it is wrong...!");time.sleep(1);pepek()
@@ -1398,12 +1402,12 @@ def pepek():
         elif pil in["1","01"]:
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.02);main()
 def main():
-    license_key = input("Masukkan lisensi: ")
+    license_key = input("{u}Masukkan lisensi{n}: ")
 
     if check_license(license_key):
-        print("Lisensi valid. Selamat menggunakan program.")
+        print("{h}Lisensi valid. Selamat menggunakan program.")
     else:
-        print("Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.02);pepek()
+        print("{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.02);pepek()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
