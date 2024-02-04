@@ -1390,13 +1390,28 @@ def pepek():
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);main()
 def main():
     banner()
+    	try:
+		licen = open('.saved_license.txt','r').read()
+		except KeyError:
+			run()
+		except requests.exceptions.ConnectionError:
+			li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
+			lo = mark(li, style='red')
+			sol().print(lo, style='cyan')
+			exit()
+	except IOError:
+		run()
+def run():
+    banner()
     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
     time.sleep(0.05)
 
     if check_license(license_key):
-        print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
-    else:
-        print(f"{M}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);main()
+    licen=open(".saved_license.txt", "w").write(cookie)
+		print(f"[{h}•{x}]{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05);login()
+	except Exception as e:
+		os.system("rm -f .saved_license.txt")
+        print(f"[{h}•{x}]{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
