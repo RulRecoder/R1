@@ -154,6 +154,19 @@ dic2 = {'01': 'Januari', '02': 'Februari', '03': 'Maret', '04': 'April', '05': '
 tgl = datetime.datetime.now().day
 bln = dic[str(datetime.datetime.now().month)]
 thn = datetime.datetime.now().year
+okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
+cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
+def tanggal():
+    print(f'-'+str(tgl)'-'+str(bln)'-'+str(thn)')
+    print(f'-'+str(now)'-'+str(hours)')
+# Memanggil fungsi
+jam = tanggal()
+
+# Menentukan lebar layar secara dinamis
+lebar_layar = 80
+
+# Menghitung jumlah spasi di awal untuk menengahkan pesan
+spasi_awal = (lebar_layar - len(jam)) // 2
 #--------------------[ WAKTU ]--------------#
 import datetime
 def waktu():
@@ -200,19 +213,20 @@ def loading():
 # ------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
     prints(panel(f"""[bold red]               
-        ____             _        _____ _     
-        | __ ) _ __ _   _| |_ ___  |  ___| |__  
-        |  _ \| '__| | | | __/ _ \ | |_  | '_ \   
-        | |_) | |  | |_| | ||  __/ |  _| | |_) |    
-        |____/|_|   \__,_|\__\___| |_|   |_.__/                      
+██████╗ ██████╗  ██████╗ ███████╗
+██╔══██╗██╔══██╗██╔═████╗╚════██║
+██████╔╝██████╔╝██║██╔██║    ██╔╝
+██╔══██╗██╔══██╗████╔╝██║   ██╔╝ 
+██║  ██║██║  ██║╚██████╔╝   ██║  
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚═╝                                      
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                      {P2}[bold blue]Info Author{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
-     print(f"✶[bold green] Author: {u}Khoirul-Xd")
+     print(f"✶[bold green] Author: [purple]Khoirul-Xd")
      print(f"✶[bold green] Status: {m}Premium")
-     print(f"✶[bold green] WhatsApp: {b}081283547452")
-     print(f"✶[bold green] GitHub: {b}https://github.com/khoirulez")
+     print(f"✶[bold green] WhatsApp: [blue]081283547452")
+     print(f"✶[bold green] GitHub: [blue]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 def info_user():
     try:
@@ -226,11 +240,12 @@ def info_user():
         zona_waktu = data.get('timezone')
         
         prints(nel(f'                      {P2}[bold blue]Info User{P2}',width=70,padding=(0,7),style=f"{color_panel}"))
-        print(f"✶[bold purple] Alamat IP: {b}{alamat_ip}")
-        print(f"✶[bold purple] Region: {b}{region}")
-        print(f"✶[bold purple] Lokasi: {b}{lokasi}")
-        print(f"✶[bold purple] Kota: {b}{kota}")
-        print(f"✶[bold purple] Zona Waktu: {b}{zona_waktu}")
+        print(f"✶[bold purple] Expired: [blue]{end_time}")
+        print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
+        print(f"✶[bold purple] Region: [blue]{region}")
+        print(f"✶[bold purple] Lokasi: [blue]{lokasi}")
+        print(f"✶[bold purple] Kota: [blue]{kota}")
+        print(f"✶[bold purple] Zona Waktu: [blue]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -261,7 +276,10 @@ def login_lagi334():
 		
 		asu = random.choice([m,k,h,b,u])
 		os.system('clear')
-		Kue=input(f'  [{h}•{x}]Masukin Cookie  :{h}{asu} ')
+		loading()
+		os.system("clear")
+		banner()
+		Kue=input(f'  [{h}•{x}]{u}Masukin Cookie{x}  :{h}{asu} ')
 		open(".cok.txt", "w").write(Kue)
 		with requests.Session() as rsn:
 			try:
@@ -290,7 +308,7 @@ def login_lagi334():
 			except:
 				print('Failled Get Token')
 
-		print(f'  {x}[{h}•{x}]{h}{h} Berhasil, Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
+		print(f'  {x}[{h}•{x}][green] Berhasil, Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
@@ -320,6 +338,7 @@ def login():
 	os.system('clear')
 	banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
+	print(nel(" "* spasi_awal + jam))
 	author()
 	info_user()
 	prints(nel(f'                   {P2}[bold blue]Menu Tools Crack{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
@@ -343,7 +362,7 @@ def login():
 	elif ___Sllowly_ID____ in ['0']:
 		os.system('rm -rf .token.txt')
 		os.system('rm -rf .Kue.txt')
-		print('>> {h} Sukses Logout+Hapus Kukis ')
+		print('>> [hijau] Sukses Logout+Hapus Kukis ')
 		exit()
 	else:
 		print('>> {m} Pilih Yang Bener Asu ')
@@ -560,7 +579,7 @@ def result():
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
-	prints(nel(f'               {P2}{B}Massal Crack{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'               {P2}[blue]Massal Crack{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
@@ -609,7 +628,7 @@ def massal():
 	    except requests.exceptions.ConnectionError:
 	        exit()
 	try:
-	      print("{U}Total DUMP{N}  : "+str(len(id))) 
+	      print("[purple]Total DUMP{N}  : "+str(len(id))) 
 	      setting()
 	except requests.exceptions.ConnectionError:
 	    exit()
@@ -617,7 +636,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	prints(nel(f'                   {P2}{B}login ID Crack{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'                   {P2}[blue]login ID Crack{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
 	cetak(f"{P2}[{color_text}01{P2}]. Facebook ID {M2}Old\n{P2}[{color_text}02{P2}]. Facebook ID {K2}New\n{P2}[{color_text}03{P2}]. Facebook ID {H2}Random{P2}",title=f"{H2}{len(id)}{P2}{U} ID TELAH DIKUMPULKAN",width=70,padding=(0,7),style=f"{color_panel}")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
@@ -639,7 +658,7 @@ def setting():
 	else:
 		prints(f'         {P2}[red]Input Tidak Diketahui{P2}',width=70,padding=(0,7),style=f"{color_panel}")
 		exit()
-	prints(nel(f'               {P2}{B}login Method{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'               {P2}[blue]login Method{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
 	prints(f'{P2}[{color_text}01{P2}]. Method free.facebook.com [[green] Validate [white]]\n[{color_text}02{P2}]. Method m.facebook.com [[green] Async [white]]\n[{color_text}03{P2}]. Method graph.facebook.com [[green] B-Api [white]]',width=70,padding=(0,7),style=f"{color_panel}")
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
@@ -661,7 +680,7 @@ def setting():
 		taplikasi.append('ya')
 	else:
 		taplikasi.append('no')
-	prints(nel(f'              {P2}{B}Manual Password?{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'              {P2}[blue]Manual Password?{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
 		pwpluss.append('ya')
@@ -1389,10 +1408,12 @@ def pepek():
         open("mylisensi.txt", "r").read()
     except FileNotFoundError:
         os.system("clear")
+        loading()
+        os.system("clear")
         banner()
         prints(nel(f'              {P2}[red]Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
-        print(' [%s1%s]{u} Login Ke Tools'%(H,N))
-        print(' [%s2%s]{u} Hubungi Admin'%(H,N))
+        print(' [%s1%s][purple] Login Ke Tools'%(H,N))
+        print(' [%s2%s][purple] Hubungi Admin'%(H,N))
         pil = input(' %s[%s?%s] Choice : '%(N,K,N))
         if pil =="":
             jalan(f" {N}[{M}×{N}] Sorry, it is wrong...!");time.sleep(1);pepek()
@@ -1402,7 +1423,10 @@ def pepek():
         elif pil in["1","01"]:
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.02);main()
 def main():
-    license_key = input("{u}Masukkan lisensi{n}: ")
+    loading()
+    os.system("clear")
+    banner()
+    license_key = input("[purple]Masukkan lisensi{n}: ")
 
     if check_license(license_key):
         print("{h}Lisensi valid. Selamat menggunakan program.")
