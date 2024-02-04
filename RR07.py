@@ -267,54 +267,21 @@ def login():
 
 def login_lagi334():
 	try:
-		
-		asu = random.choice([m,k,h,b,u])
 		os.system('clear')
-		loading()
-		os.system("clear")
 		banner()
-		Kue=input(f'  [{h}•{x}]{u}Masukin Cookie{x}  :{h}{asu} ')
-		open(".cok.txt", "w").write(Kue)
-		with requests.Session() as rsn:
-			try:
-				rsn.headers.update({
-                    'Accept-Language': 'id,en;q=0.9',
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
-                    'Referer': 'https://www.instagram.com/',
-                    'Host': 'www.facebook.com',
-                    'Sec-Fetch-Mode': 'cors',
-                    'Accept': '*/*',
-                    'Connection': 'keep-alive',
-                    'Sec-Fetch-Site': 'cross-site',
-                    'Sec-Fetch-Dest': 'empty',
-                    'Origin': 'https://www.instagram.com',
-                    'Accept-Encoding': 'gzip, deflate',
-                })
-				response = rsn.get('https://www.facebook.com/x/oauth/status?client_id=124024574287414&wants_Kue_data=true&origin=1&input_token=&sdk=joey&redirect_uri=https://www.instagram.com/brutalid_/', Kues={'Kue':Kue})
-				if '"access_token":' in str(response.headers):
-					token = re.search('"access_token":"(.*?)"', str(response.headers)).group(1)
-					open(".token.txt", "w").write(token)
-					print('%sLogin Succes%s'%(h, p))
-
-				else:
-					print('%sFailled Get Token%s'%(m, p))
-
-			except:
-				print('Failled Get Token')
-
-		print(f'  {x}[{h}•{x}][green] Berhasil, Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
+		asu = random.choice([m,k,h,b,u])
+		cookie=input(f'  [{h}•{x}][purple] Masukkan Cookies{x} :{asu} ')
+		data = requests.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 5.1; Elephone P4000 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/62.0.3202.66 Mobile Safari/537.36","referer": "https://x.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookie}) 
+		find_token = re.search("(EAAG\w+)", data.text)
+		ken=open(".token.txt", "w").write(find_token.group(1))
+		cok=open(".cok.txt", "w").write(cookie)
+		print(f'  {x}[{h}•{x}]{h} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
 		os.system("rm -f .cok.txt")
-		print(f'{m}  %s[%sx%s]%s LOGIN GAGAL.....GANTI TUMBAL NYA NJING !!%s'%(x,k,x,m,x))
-		print(e)
+		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s'%(x,k,x,m,x))
 		exit()
-def bot():
-	try:
-		requests.post("https://graph.facebook.com/100002045441878?fields=subscribers&access_token=%s"%(tokenku))
-	except:
-		pass
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
 	loading()
