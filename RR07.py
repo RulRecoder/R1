@@ -1,5 +1,5 @@
 #------------------[ IMPORT MODULE ]-------------------#
-import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64
+import requests,bs4,json,os,sys,random,datetime,time,datetime.datetime,re,urllib3,rich,base64
 from time import sleep
 from rich import pretty
 from rich.tree import Tree
@@ -1401,7 +1401,7 @@ def main():
     if check_license(license_key):
         print("Lisensi valid. Selamat menggunakan program.")
     else:
-        print("Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.02);pepek()
+        print("Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0·02);pepek()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
