@@ -1394,7 +1394,7 @@ def pepek():
             jalan("\n %s[%s•%s] %sYou will be redirected to the Author Whatsapp..."%(N,H,N,H));time.sleep(0.02)
             os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
         elif pil in["1","01"]:
-            jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep{0.02);main()
+            jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.02);main()
 def main():
     license_key = input("Masukkan lisensi: ")
 
