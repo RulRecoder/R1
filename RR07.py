@@ -157,16 +157,16 @@ thn = datetime.datetime.now().year
 okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 def tanggal():
-    print(+str(tgl)+'-'+str(bln)+'-'+str(thn))
-    print(+str(now)+'-'+str(hours))
+    print(+: 'str'(tgl)+'-'+str(bln)+'-'+str(thn))
+    print(+: 'str'(now)+'-'+str(hours))
 # Memanggil fungsi
-jam = tanggal()
+tanggal = tanggal()
 
 # Menentukan lebar layar secara dinamis
 lebar_layar = 80
 
 # Menghitung jumlah spasi di awal untuk menengahkan pesan
-spasi_awal = (lebar_layar - len(jam)) // 2
+spasi_awal = (lebar_layar - len(tanggal)) // 2
 #--------------------[ WAKTU ]--------------#
 import datetime
 def waktu():
