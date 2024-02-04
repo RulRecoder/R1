@@ -594,7 +594,7 @@ def massal():
 	           'fields': "friends"
 	           }	           
 	       )
-	       url = requests.get('https://graph.facebook.com/v13.0/%s?fields=friends.limit(5001)&access_token=%s"%(user,token),cookies=cookie).json()
+	       url = requests.get('https://graph.facebook.com/{}'.format(user),params=params,headers=head,Kues={'Kues':cok}).json()
 	       for xr in url['friends']['data']:
 	           try:
 	               woy = (xr['id']+'|'+xr['name'])
