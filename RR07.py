@@ -1396,16 +1396,7 @@ def main():
             if saved_license and is_license_valid(saved_license):
                 return True
     except FileNotFoundError:
-        pass
-		except KeyError:
-			run()
-		except requests.exceptions.ConnectionError:
-			li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
-			lo = mark(li, style='red')
-			sol().print(lo, style='cyan')
-			exit()
-	except IOError:
-		run()
+        run()
 def run():
     banner()
     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
