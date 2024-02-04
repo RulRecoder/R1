@@ -1390,7 +1390,7 @@ def pepek():
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);main()
 def main():
     banner()
-    	try:
+    try:
 		licen = open('.saved_license.txt','r').read()
 		except KeyError:
 			run()
