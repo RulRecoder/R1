@@ -1401,7 +1401,7 @@ def main():
     if check_license(license_key):
         print("Lisensi valid. Selamat menggunakan program.")
     else:
-        print("Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0·02);pepek()
+        print("Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.02);pepek()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
