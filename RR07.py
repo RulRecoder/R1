@@ -1,5 +1,5 @@
 #------------------[ IMPORT MODULE ]-------------------#
-import requests,bs4,json,os,sys,random,datetime,time,datetime.datetime,re,urllib3,rich,base64
+import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64
 from time import sleep
 from rich import pretty
 from rich.tree import Tree
@@ -154,8 +154,6 @@ bln = dic[(str(datetime.datetime.now().month))]
 thn = datetime.datetime.now().year
 okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
-import datetime
-
 def waktu():
     now = datetime.datetime.now()
     hours = now.hour
@@ -288,7 +286,7 @@ def login_lagi334():
 			except:
 				print('Failled Get Token')
 
-		print(f'  {x}[{h}•{x}]{h}{h} Berhasil Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
+		print(f'  {x}[{h}•{x}]{h}{h} Berhasil, Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
