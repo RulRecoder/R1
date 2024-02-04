@@ -270,7 +270,7 @@ def login_lagi334():
 		os.system('clear')
 		banner()
 		asu = random.choice([m,k,h,b,u])
-		cookie=input(f'  [{h}•{x}][purple] Masukkan Cookies{x} :{asu} ')
+		cookie=input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{asu} ')
 		data = requests.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 5.1; Elephone P4000 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/62.0.3202.66 Mobile Safari/537.36","referer": "https://x.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookie}) 
 		find_token = re.search("(EAAG\w+)", data.text)
 		ken=open(".token.txt", "w").write(find_token.group(1))
@@ -1327,6 +1327,8 @@ def cek_apk(session,cookie):
 import requests
 from datetime import datetime
 
+LICENSE_FILE_PATH = "saved_license.txt"
+
 def is_license_valid(license_info):
     # Split license_info into components
     license_key, start_time_str, end_time_str = license_info.split('|')
@@ -1342,15 +1344,26 @@ def is_license_valid(license_info):
     return start_time <= current_time <= end_time
 
 def check_license(license_key):
-    # Ganti dengan URL repositori GitHub yang berisi lisensi
-    github_repo_url = "https://raw.githubusercontent.com/Khoirulez/RR07/main/mylisensi.txt"
+    # Jika lisensi sudah tersimpan, gunakan langsung tanpa memerlukan input
+    try:
+        with open(LICENSE_FILE_PATH, 'r') as file:
+            saved_license = file.read()
+            if saved_license and is_license_valid(saved_license):
+                return True
+    except FileNotFoundError:
+        pass
 
+    # Jika lisensi tidak tersimpan atau tidak valid, lakukan verifikasi ulang
+    github_repo_url = "https://raw.githubusercontent.com/khoirulez/RR07/main/mylisensi.txt"
     try:
         response = requests.get(github_repo_url)
         licenses = response.text.split('\n')
 
         for license_info in licenses:
             if license_info.startswith(license_key) and is_license_valid(license_info):
+                # Simpan lisensi yang valid ke penyimpanan lokal
+                with open(LICENSE_FILE_PATH, 'w') as file:
+                    file.write(license_info)
                 return True
 
         return False
@@ -1359,7 +1372,6 @@ def check_license(license_key):
         print(f"Error: {e}")
         return False
 def pepek():
-        os.system("clear")
         loading()
         os.system("clear")
         banner()
@@ -1373,17 +1385,14 @@ def pepek():
             jalan("\n %s[%s•%s] %sYou will be redirected to the Author Whatsapp..."%(N,H,N,H));time.sleep(0.02)
             os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
         elif pil in["1","01"]:
-            jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.02);main()
+            jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);main()
 def main():
-    loading()
-    os.system("clear")
-    banner()
-    license_key = input("{U}Masukkan lisensi{x}: ")
+    license_key = input(f"{U}Masukkan lisensi{x}:{B} ")
 
     if check_license(license_key):
-        print("{H}Lisensi valid. Selamat menggunakan program.")
+        print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
     else:
-        print("{M}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.02);pepek()
+        print(f"{M}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);main()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
