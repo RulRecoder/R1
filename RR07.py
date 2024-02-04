@@ -229,6 +229,8 @@ def info_user():
         zona_waktu = data.get('timezone')
         
         prints(nel(f'                      {P2}[bold blue]Info User{P2}',width=70,padding=(0,7),style=f"{color_panel}"))
+        print(f"✶[bold purple] Your Name: [blue]{sy2}")
+        print(f"✶[bold purple] Your Idz: [blue]{sy3}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
@@ -249,9 +251,10 @@ def login():
 			sy2 = json.loads(sy.text)['name']
 			sy3 = json.loads(sy.text)['id']
 			login(sy2,sy3)
-		except KeyError:
+		except IOError:
 		    print('[×] Login Ulang Njing ')
 		    time.sleep(5)
+		except KeyError:
 			login_lagi334()
 		except requests.exceptions.ConnectionError:
 			li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
