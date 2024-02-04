@@ -1391,7 +1391,12 @@ def pepek():
 def main():
     banner()
     try:
-		licen = open('.saved_license.txt','r').read()
+        with open(LICENSE_FILE_PATH, 'r') as file:
+            saved_license = file.read()
+            if saved_license and is_license_valid(saved_license):
+                return True
+    except FileNotFoundError:
+        pass
 		except KeyError:
 			run()
 		except requests.exceptions.ConnectionError:
