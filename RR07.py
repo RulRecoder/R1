@@ -275,7 +275,7 @@ def login_lagi334():
 		find_token = re.search("(EAAG\w+)", data.text)
 		ken=open(".token.txt", "w").write(find_token.group(1))
 		cok=open(".cok.txt", "w").write(cookie)
-		print(f'  {x}[{h}•{x}]{h} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
+		print(f'  {x}[{h}•{x}]{H} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
@@ -287,10 +287,12 @@ def login_menu():
 	loading()
 	os.system('clear')
 	banner()
-	pepek()
+	login()
 	os.system('clear')
 	banner()
-	login()
+	pepek()
+	os.system('clear')
+	loading()
 	os.system('clear')
 	banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
@@ -1387,7 +1389,9 @@ def pepek():
         elif pil in["1","01"]:
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);main()
 def main():
-    license_key = input(f"{U}Masukkan lisensi{x}:{B} ")
+    banner()
+    license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
+    time.sleep(0.05)
 
     if check_license(license_key):
         print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
