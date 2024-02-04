@@ -157,8 +157,8 @@ thn = datetime.datetime.now().year
 okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 def tanggal():
-    print('-'+str(tgl)'-'+str(bln)'-'+str(thn))
-    print('-'+str(now)'-'+str(hours))
+    print(+str(tgl)+'-'+str(bln)+'-'+str(thn))
+    print(+str(now)+'-'+str(hours))
 # Memanggil fungsi
 jam = tanggal()
 
