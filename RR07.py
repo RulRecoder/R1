@@ -156,17 +156,6 @@ bln = dic[str(datetime.datetime.now().month)]
 thn = datetime.datetime.now().year
 okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
-def tanggal():
-    print(+ 'str'(tgl)+'-'+str(bln)+'-'+str(thn))
-    print(+ 'str'(now)+'-'+str(hours))
-# Memanggil fungsi
-tanggal = tanggal()
-
-# Menentukan lebar layar secara dinamis
-lebar_layar = 80
-
-# Menghitung jumlah spasi di awal untuk menengahkan pesan
-spasi_awal = (lebar_layar - len(tanggal)) // 2
 #--------------------[ WAKTU ]--------------#
 import datetime
 def waktu():
@@ -338,7 +327,6 @@ def login():
 	os.system('clear')
 	banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
-	print(nel(" "* spasi_awal + jam))
 	author()
 	info_user()
 	prints(nel(f'                   {P2}[bold blue]Menu Tools Crack{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
