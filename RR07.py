@@ -148,12 +148,13 @@ p = '\x1b[0;34m' # BIRU +
 asu = random.choice([m,k,h,u,b])
 #--------------------[ CONVERTER-BULAN ]--------------#
 dic = {'1':'January','2':'February','3':'March','4':'April','5':'May','6':'June','7':'July','8':'August','9':'September','10':'October','11':'November','12':'December'}
-dic2 = {'01':'January','02':'February','03':'March','04':'April','05':'May','06':'June','07':'July','08':'August','09':'September','10':'October','11':'November','12':'Devember'}
+dic2 = {'01':'January','02':'February','03':'March','04':'April','05':'May','06':'June','07':'July','08':'August','09':'September','10':'October','11':'November','12':'Desember'}
 tgl = datetime.datetime.now().day
 bln = dic[(str(datetime.datetime.now().month))]
 thn = datetime.datetime.now().year
 okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
+#--------------------[ WAKTU ]--------------#
 def waktu():
     now = datetime.datetime.now()
     hours = now.hour
@@ -204,12 +205,14 @@ def banner():
         | |_) | |  | |_| | ||  __/ |  _| | |_) |    
         |____/|_|   \__,_|\__\___| |_|   |_.__/                      
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
+#--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                      {P2}[bold blue]Info Author{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
      print(f"✶[bold green] Author: {u}Khoirul-Xd")
      print(f"✶[bold green] Status: {m}Premium")
      print(f"✶[bold green] WhatsApp: {b}081283547452")
      print(f"✶[bold green] GitHub: {b}https://github.com/khoirulez")
+#--------------------[ USER ]--------------#
 def info_user():
     try:
         response = requests.get('https://ipinfo.io')
