@@ -202,18 +202,18 @@ def loading():
 # ------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
     prints(panel(f"""[bold red]               
-██████╗ ██████╗  ██████╗ ███████╗
-██╔══██╗██╔══██╗██╔═████╗╚════██║
-██████╔╝██████╔╝██║██╔██║    ██╔╝
-██╔══██╗██╔══██╗████╔╝██║   ██╔╝ 
-██║  ██║██║  ██║╚██████╔╝   ██║  
-╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚═╝                                      
+           ██████╗ ██████╗  ██████╗ ███████╗
+           ██╔══██╗██╔══██╗██╔═████╗╚════██║
+           ██████╔╝██████╔╝██║██╔██║    ██╔╝
+           ██╔══██╗██╔══██╗████╔╝██║   ██╔╝ 
+           ██║  ██║██║  ██║╚██████╔╝   ██║  
+            ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚═╝                                      
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                      {P2}[bold blue]Info Author{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
      print(f"✶[bold green] Author: [purple]Khoirul-Xd")
-     print(f"✶[bold green] Status: {m}Premium")
+     print(f"✶[bold green] Status: [red]Premium")
      print(f"✶[bold green] WhatsApp: [blue]081283547452")
      print(f"✶[bold green] GitHub: [blue]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
@@ -250,6 +250,8 @@ def login():
 			sy3 = json.loads(sy.text)['id']
 			login(sy2,sy3)
 		except KeyError:
+		    print('[×] Login Ulang Njing ')
+		    time.sleep(5)
 			login_lagi334()
 		except requests.exceptions.ConnectionError:
 			li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
@@ -311,19 +313,14 @@ def bot():
 	except:
 		pass
 #------------------[ BAGIAN LOGIN ]----------------#
-def login():
-	try:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
-	except IOError:
-		print('[×] Login Ulang Njing ')
-		time.sleep(5)
-		login_lagi334()
-	os.system('clear')
+def login_menu():
 	loading()
 	os.system('clear')
 	banner()
 	pepek()
+	os.system('clear')
+	banner()
+	login()
 	os.system('clear')
 	banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
@@ -1392,9 +1389,6 @@ def check_license(license_key):
         print(f"Error: {e}")
         return False
 def pepek():
-    try:
-        open("mylisensi.txt", "r").read()
-    except FileNotFoundError:
         os.system("clear")
         loading()
         os.system("clear")
@@ -1414,12 +1408,12 @@ def main():
     loading()
     os.system("clear")
     banner()
-    license_key = input("[purple]Masukkan lisensi{n}: ")
+    license_key = input("{U}Masukkan lisensi{x}: ")
 
     if check_license(license_key):
-        print("{h}Lisensi valid. Selamat menggunakan program.")
+        print("{H}Lisensi valid. Selamat menggunakan program.")
     else:
-        print("{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.02);pepek()
+        print("{M}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.02);pepek()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
