@@ -287,9 +287,6 @@ def login_menu():
 	loading()
 	os.system('clear')
 	banner()
-	login()
-	os.system('clear')
-	banner()
 	pepek()
 	os.system('clear')
 	loading()
@@ -1403,7 +1400,7 @@ def run():
     time.sleep(0.05)
 
     if check_license(license_key):
-    licen=open(".saved_license.txt", "w").write(cookie)
+        licen=open(".saved_license.txt", "w").write(cookie)
 		print(f"[{h}•{x}]{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05);login()
 	except Exception as e:
 		os.system("rm -f .saved_license.txt")
