@@ -1392,7 +1392,7 @@ def run1():
                 return True
     except FileNotFoundError:
         run()
-def run()
+def run():
     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
     licen=open(".saved_license.txt", "w").write(lisensi_info)
     time.sleep(0.05)
