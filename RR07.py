@@ -273,48 +273,62 @@ def tahun(fx):
 	else:tahunz=''
 	return tahunz
 #--------------------[ BAGIAN-MASUK ]--------------#
+import os
 import requests
 import json
-import os
 import random
+import re
+import time
 
 def login():
-	try:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
-		tokenku.append(token)
-		try:
-			sy = requests.get(''https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token),
-                                         cookies=cookie)
-			sy2 = json.loads(sy.text)['name']
-			sy3 = json.loads(sy.text)['id']
-			login(sy2,sy3)
-		except KeyError:
-			login_lagi334()
-		except requests.exceptions.ConnectionError:
-			li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
-			lo = mark(li, style='red')
-			sol().print(lo, style='cyan')
-			exit()
-	except IOError:
-		login_lagi334()
+    try:
+        token = open('.token.txt', 'r').read()
+        cookie = open('.cok.txt', 'r').read()
+        tokenku = []
+        tokenku.append(token)
+        try:
+            response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
+            sy2 = json.loads(response.text)['name']
+            sy3 = json.loads(response.text)['id']
+            login(sy2, sy3)
+        except KeyError:
+            login_lagi334()
+        except requests.exceptions.ConnectionError:
+            li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
+            lo = mark(li, style='red')  # Assuming mark is a function you have defined
+            sol().print(lo, style='cyan')  # Assuming sol() is a function you have defined
+            exit()
+    except IOError:
+        login_lagi334()
+
 def login_lagi334():
-	try:
-		os.system('clear')
-		banner()
-		asu = random.choice([m,k,h,b,u])
-		cookie=input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{asu} ')
-		data = requests.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 5.1; Elephone P4000 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/62.0.3202.66 Mobile Safari/537.36","referer": "https://x.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookie}) 
-		find_token = re.search("(EAAG\w+)", data.text)
-		ken=open(".token.txt", "w").write(find_token.group(1))
-		cok=open(".cok.txt", "w").write(cookie)
-		print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
-		exit()
-	except Exception as e:
-		os.system("rm -f .token.txt")
-		os.system("rm -f .cok.txt")
-		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s'%(x,k,x,m,x))
-		exit()
+    try:
+        os.system('clear')
+        banner()
+        asu = random.choice(["m", "k", "h", "b", "u"])
+        cookie = input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{asu} ')
+        data = requests.get("https://business.facebook.com/business_locations", headers={
+            "user-agent": "Mozilla/5.0 (Linux; Android 5.1; Elephone P4000 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/62.0.3202.66 Mobile Safari/537.36",
+            "referer": "https://x.facebook.com/",
+            "host": "business.facebook.com",
+            "origin": "https://business.facebook.com",
+            "upgrade-insecure-requests": "1",
+            "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+            "cache-control": "max-age=0",
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+            "content-type": "text/html; charset=utf-8"
+        }, cookies={"cookie": cookie})
+        find_token = re.search("(EAAG\w+)", data.text)
+        ken = open(".token.txt", "w").write(find_token.group(1))
+        cok = open(".cok.txt", "w").write(cookie)
+        print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ')
+        time.sleep(1)
+        exit()
+    except Exception as e:
+        os.system("rm -f .token.txt")
+        os.system("rm -f .cok.txt")
+        print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s' % (x, k, x, m, x))
+        exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
 	loading()
