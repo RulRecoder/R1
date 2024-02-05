@@ -1373,7 +1373,6 @@ def check_license(license_key):
 def pepek():
         loading()
         os.system("clear")
-        banner()
         prints(nel(f'              {P2}[red]Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
         print(' [%s1%s][purple] Login Ke Tools'%(H,N))
         print(' [%s2%s][purple] Hubungi Admin'%(H,N))
@@ -1395,13 +1394,15 @@ def main():
     except FileNotFoundError:
         run()
 def run():
-    banner()
     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
     time.sleep(0.05)
 
     if check_license(license_key):
         licen=open(".saved_license.txt", "w").write(cookie)
-		print(f"[{h}•{x}]{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05);login()
+		print(f"[{h}•{x}]{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
+		loading()
+		os.system("clear")
+		login()
 	except Exception as e:
 		os.system("rm -f .saved_license.txt")
         print(f"[{h}•{x}]{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
