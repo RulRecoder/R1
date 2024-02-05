@@ -1371,20 +1371,18 @@ def check_license(license_key):
         print(f"Error: {e}")
         return False
 def pepek():
-        banner()
         prints(nel(f'              {P2}[red]Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
-        print(' [%s1%s][purple] Login Ke Tools'%(H,N))
-        print(' [%s2%s][purple] Hubungi Admin'%(H,N))
-        pil = input(' %s[%s?%s] Choice : '%(N,K,N))
+        print(' ['1'][purple] Login Ke Tools'(H,N))
+        print(' ['2'][purple] Hubungi Admin'(H,N))
+        pil = input(' ['?'] Choice : '(N,K,N))
         if pil =="":
             jalan(f" {N}[{M}×{N}] Sorry, it is wrong...!");time.sleep(1);pepek()
         elif pil in["2","02"]:
-            jalan("\n %s[%s•%s] %sYou will be redirected to the Author Whatsapp..."%(N,H,N,H));time.sleep(0.02)
+            jalan("\n [•] %sYou will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.02)
             os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
         elif pil in["1","01"]:
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
 def run1():
-    banner()
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
@@ -1393,8 +1391,9 @@ def run1():
     except FileNotFoundError:
         run()
 def run():
+    banner()
     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
-    licen=open(".saved_license.txt", "w").write(license_info)
+    licen=open(".saved_license.txt", "w").write(license_key)
     time.sleep(0.05)
 
     if check_license(license_key):
