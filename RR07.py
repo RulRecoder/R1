@@ -276,8 +276,8 @@ def tahun(fx):
 def login():
     banner()
     try:
-		token  = open('token.txt','r').read()
-		cookie = {'cookie':open('cookie.txt','r').read()}
+	   token  = open('token.txt','r').read()
+	   cookie = {'cookie':open('cookie.txt','r').read()}
 		try:
 			token  = open('token.txt','r').read()
 			cookie = {'cookie':open('cookie.txt','r').read()}
@@ -325,7 +325,7 @@ def login_lagi334():
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
-		os.system("rm -f .cok.txt")
+		os.system("rm -f .cookie.txt")
 		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s'%(x,k,x,m,x))
 		exit()
 #------------------[ BAGIAN LOGIN ]----------------#
