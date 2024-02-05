@@ -1398,7 +1398,7 @@ def run():
      time.sleep(0.05)
 
      if check_license(license_key):
-		print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
+		print(f"{h}Lisensi valid. Selamat menggunakan program.")
 		loading()
 		os.system("clear")
 		login()
