@@ -1398,13 +1398,13 @@ def run():
      time.sleep(0.05)
 
      if check_license(license_key):
-		print(f"{h}Lisensi valid. Selamat menggunakan program.")
+		print(f" Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
 		loading()
 		os.system("clear")
 		login()
 	 except Exception as e:
 		os.system("rm -f .saved_license.txt")
-        print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
+        print(f" Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
