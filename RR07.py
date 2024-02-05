@@ -1394,7 +1394,7 @@ def run1():
         run()
 def run():
     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
-    licen=open(".saved_license.txt", "w").write(lisensi_info)
+    licen=open(".saved_license.txt", "w").write(license_info)
     time.sleep(0.05)
 
     if check_license(license_key):
