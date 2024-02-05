@@ -247,15 +247,15 @@ def login():
 	    cok = open('.cok.txt','r').read()
 	    tokenku.append(token)
     except (IOError,KeyError,FileNotFoundError):
-		 print('[×]{M} Cookies Kadaluarsa ')
-		 time.sleep(5)
-		 login_lagi334()
-	   try:
+		print('[×]{M} Cookies Kadaluarsa ')
+		time.sleep(5)
+		login_lagi334()
+	    try:
 		   info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
 		   sy2 = info_datafb["name"]
 		   sy3 = info_datafb["id"]
 		   login(sy2,sy3)
-	   except requests.exceptions.ConnectionError:
+	    except requests.exceptions.ConnectionError:
 		   exit(f"\n{P} [:]{M} Tidak ada koneksi{P}")
 	except KeyError:
 		try:os.remove(".cok.txt");os.remove(".token.txt")
