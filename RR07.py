@@ -1395,10 +1395,10 @@ def main():
         run()
 def run():
     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
+    licen=open(".saved_license.txt", "w").write(lisensi)
     time.sleep(0.05)
 
     if check_license(license_key):
-        licen=open(".saved_license.txt", "w").write(cookie)
 		print(f"[{h}•{x}]{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
 		loading()
 		os.system("clear")
