@@ -1375,7 +1375,7 @@ def pepek():
         print(' [1][purple] Login Ke Tools'(H,N))
         print(' [2][purple] Hubungi Admin'(H,N))
         pil = input(f'✶ ━━⫸ {H} Choice{N} : '(N,K,N))
-        elif pil in['2','02']:
+        if pil in['2','02']:
             jalan("\n [•] %sYou will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.02)
             os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
         elif pil in['1','01']:
