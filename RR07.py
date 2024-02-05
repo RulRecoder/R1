@@ -1399,7 +1399,7 @@ def run():
 
     if check_license(license_key):
 	    print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
-		loading()
+	    loading()
 	    os.system("clear")
 	    login()
 	except Exception as e:
