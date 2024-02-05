@@ -321,6 +321,10 @@ def login_lagi334():
 def login_menu():
 	loading()
 	os.system('clear')
+	pepek()
+	os.system('clear')
+	loading()
+	os.system('clear')
 	login()
 	banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
@@ -1403,7 +1407,6 @@ def check_license(license_key):
         print(f"Error: {e}")
         return False
 def pepek():
-    os.system("clear")
     loading()
     os.system("clear")
     banner()
@@ -1415,33 +1418,24 @@ def pepek():
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.03)
         os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(3);pepek()
     elif pil in['1','01']:
-        jalan(f" {H}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
-def run1():
-    try:
-        with open(LICENSE_FILE_PATH, 'r') as file:
-            saved_license = file.read()
-            if saved_license and is_license_valid(saved_license):
-                return True
-                loading()
-                os.system("clear")
-                login()
-    except FileNotFoundError:
-        run()
+        jalan(f" {H}Pastikan sudah memiliki licensinya");time.sleep(0.03);run()
 def run():
     banner()
-    license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
-    licen=open(".saved_license.txt", "w").write(license_key)
-    time.sleep(0.05)
+    try:
+       check_license(license_key);time.sleep(0.03):login()
+    except IOError:
+       license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
+       licen=open(".saved_license.txt", "w").write(license_key)
+       time.sleep(0.03)
 
-    if check_license(license_key):
-       print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
-       os.system("clear")
-       loading()
-       os.system("clear")
-       login()
-    else:
-       os.system("rm -f .saved_license.txt")
-       print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
+       if check_license(license_key):
+          print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
+          loading()
+          os.system("clear")
+          login()
+       else:
+          os.system("rm -f .saved_license.txt")
+          print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
