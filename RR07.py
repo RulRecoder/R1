@@ -1371,8 +1371,6 @@ def check_license(license_key):
         print(f"Error: {e}")
         return False
 def pepek():
-        loading()
-        os.system("clear")
         banner()
         prints(nel(f'              {P2}[red]Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
         print(' [%s1%s][purple] Login Ke Tools'%(H,N))
@@ -1384,8 +1382,8 @@ def pepek():
             jalan("\n %s[%s•%s] %sYou will be redirected to the Author Whatsapp..."%(N,H,N,H));time.sleep(0.02)
             os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
         elif pil in["1","01"]:
-            jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);run()
-def run():
+            jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
+def run1():
     banner()
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
@@ -1393,18 +1391,20 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 return True
     except FileNotFoundError:
-        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
-        licen=open(".saved_license.txt", "w").write(lisensi_info)
-        time.sleep(0.05)
+        run()
+def run()
+    license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
+    licen=open(".saved_license.txt", "w").write(lisensi_info)
+    time.sleep(0.05)
 
-        if check_license(license_key):
-	 	    print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
-		    loading()
-		    os.system("clear")
-	        login()
-	    except Exception as e:
-		    os.system("rm -f .saved_license.txt")
-            print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
+    if check_license(license_key):
+	    print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
+		loading()
+	    os.system("clear")
+	    login()
+	except Exception as e:
+		os.system("rm -f .saved_license.txt")
+        print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
