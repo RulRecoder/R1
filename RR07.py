@@ -330,7 +330,7 @@ def login_lagi334():
 		find_token = re.search("(EAAG\w+)", data.text)
 		ken=open(".token.txt", "w").write(find_token.group(1))
 		cok=open(".cookie.txt", "w").write(cookie)
-		print(f'  {x}[{h}•{x}]{H} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
+		print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
 		exit()
 	except Exception as e:
 		os.system("rm -f .token.txt")
@@ -342,6 +342,7 @@ def login_menu():
 	loading()
 	os.system('clear')
 	pepek()
+	loading()
 	os.system('clear')
 	banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
@@ -1424,14 +1425,17 @@ def check_license(license_key):
         print(f"Error: {e}")
         return False
 def pepek():
+    os.system("clear")
+    loading()
+    os.system("clear")
     banner()
-    prints(nel(f'              {P2}[red]Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
-    print(' [1][purple] Login Ke Tools'(H,N))
-    print(' [2][purple] Hubungi Admin'(H,N))
+    prints(nel(f'              {P2}{M}Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
+    print(' [1]{U} Login Ke Tools'(H,N))
+    print(' [2]{U} Hubungi Admin'(H,N))
     pil = input(f'✶ ━━⫸ {H} Choice{N} : '(N,K,N))
     if pil in['2','02']:
-        jalan("\n [•] {H}You will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.02)
-        os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
+        jalan("\n [•] {H}You will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.03)
+        os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(3);pepek()
     elif pil in['1','01']:
         jalan(f" {H}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
 def run1():
@@ -1439,6 +1443,7 @@ def run1():
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
             if saved_license and is_license_valid(saved_license):
+            login()
                 return True
     except FileNotFoundError:
         run()
@@ -1449,7 +1454,7 @@ def run():
     time.sleep(0.05)
 
     if check_license(license_key):
-       print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
+       print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
        os.system("clear")
        loading()
        os.system("clear")
