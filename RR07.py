@@ -1380,6 +1380,7 @@ def pepek():
             os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
         elif pil in['1','01']:
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
+            exit()
 	    else:
 		    print('>> {m} Pilih Yang Bener Asu ')
 		    back()
