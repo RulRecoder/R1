@@ -1393,9 +1393,9 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 return True
     except FileNotFoundError:
-    license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
-    licen=open(".saved_license.txt", "w").write(lisensi_info)
-    time.sleep(0.05)
+        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
+        licen=open(".saved_license.txt", "w").write(lisensi_info)
+        time.sleep(0.05)
 
     if check_license(license_key):
 	 	print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
