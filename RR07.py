@@ -1375,18 +1375,14 @@ def pepek():
         print(' [1][purple] Login Ke Tools'(H,N))
         print(' [2][purple] Hubungi Admin'(H,N))
         pil = input(f'✶ ━━⫸ {H} Choice{N} : '(N,K,N))
-        elif pil in["2","02"]:
+        elif pil in['2','02']:
             jalan("\n [•] %sYou will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.02)
             os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
-        elif pil in["1","01"]:
+        elif pil in['1','01']:
             jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
-	else:
-		print('>> {m} Pilih Yang Bener Asu ')
-		back()
-def error():
-	print(f'{k}>> {m}Maaf Fitur Ini Masih Di Perbaiki {x}')
-	time.sleep(4)
-	back()
+	    else:
+		    print('>> {m} Pilih Yang Bener Asu ')
+		    back()
 def run1():
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
