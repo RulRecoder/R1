@@ -242,28 +242,24 @@ def info_user():
         print(f"Error: {e}")
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login():
-	try:
+    try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
-		tokenku.append(token)
-		try:
-			sy = requests.get('https://graph.facebook.com/me?fields=id,name&access_token='+tokenku[0], Kues={'Kue':cok})
-			sy2 = json.loads(sy.text)['name']
-			sy3 = json.loads(sy.text)['id']
-			login(sy2,sy3)
-		except IOError:
-		    print('[×] Login Ulang Njing ')
-		    time.sleep(5)
-		except KeyError:
-			login_lagi334()
-		except requests.exceptions.ConnectionError:
-			li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
-			lo = mark(li, style='red')
-			sol().print(lo, style='cyan')
-			exit()
-	except IOError:
+	except (IOError,KeyError,FileNotFoundError):
+		print('[×] Cookies Kadaluarsa ')
+		time.sleep(5)
+		login()
+	try:
+		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+		sy2 = info_datafb["name"]
+		sy3 = info_datafb["id"]
+		login(sy2,sy3)
+	except requests.exceptions.ConnectionError:
+		exit(f"\n{P} [:] Tidak ada koneksi{P}")
+	except KeyError:
+		try:os.remove(".cok.txt");os.remove(".token.txt")
+		except:pass
 		login_lagi334()
-
 
 def login_lagi334():
 	try:
@@ -286,10 +282,7 @@ def login_lagi334():
 def login_menu():
 	loading()
 	os.system('clear')
-	banner()
 	pepek()
-	os.system('clear')
-	loading()
 	os.system('clear')
 	banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
@@ -1371,15 +1364,16 @@ def check_license(license_key):
         print(f"Error: {e}")
         return False
 def pepek():
+    banner()
     prints(nel(f'              {P2}[red]Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
     print(' [1][purple] Login Ke Tools'(H,N))
     print(' [2][purple] Hubungi Admin'(H,N))
     pil = input(f'✶ ━━⫸ {H} Choice{N} : '(N,K,N))
     if pil in['2','02']:
-        jalan("\n [•] %sYou will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.02)
+        jalan("\n [•] {H}You will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.02)
         os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(2);pepek()
     elif pil in['1','01']:
-        jalan(f" {h}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
+        jalan(f" {H}Pastikan sudah memiliki licensinya");time.sleep(0.03);run1()
 def run1():
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
@@ -1395,7 +1389,8 @@ def run():
     time.sleep(0.05)
 
     if check_license(license_key):
-       print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
+       print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
+       os.system("clear")
        loading()
        os.system("clear")
        login()
