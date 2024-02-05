@@ -277,8 +277,8 @@ def login():
     banner()
     try:
        token = open('.token.txt','r').read()
-	      cok = open('.cok.txt','r').read()
-	      tokenku.append(token)
+	   cok = open('.cok.txt','r').read()
+	   tokenku.append(token)
        except (IOError,KeyError,FileNotFoundError):
 	      print('[×]{M} Cookies Kadaluarsa ')
 	      time.sleep(5)
