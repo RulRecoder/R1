@@ -1402,7 +1402,7 @@ def run():
        loading()
        os.system("clear")
        login()
-    except Exception as e:
+    else:
        os.system("rm -f .saved_license.txt")
        print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
 
