@@ -281,7 +281,7 @@ def login_lagi334():
 		os.system("rm -f .token.txt")
 		os.system("rm -f .cok.txt")
 		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s'%(x,k,x,m,x))
-		exit()
+        exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
 	loading()
@@ -1393,18 +1393,18 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 return True
     except FileNotFoundError:
-     license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
-     licen=open(".saved_license.txt", "w").write(lisensi)
-     time.sleep(0.05)
+    license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
+    licen=open(".saved_license.txt", "w").write(lisensi_info)
+    time.sleep(0.05)
 
-     if check_license(license_key):
-	 	 print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
-		 loading()
-		 os.system("clear")
-		 login()
-	 except Exception as e:
-		 os.system("rm -f .saved_license.txt")
-         print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
+    if check_license(license_key):
+	 	print(f"{h}Lisensi valid. Selamat menggunakan program.");time.sleep(0.03)
+		loading()
+		os.system("clear")
+	    login()
+	except Exception as e:
+		os.system("rm -f .saved_license.txt")
+        print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
