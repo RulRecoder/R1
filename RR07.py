@@ -257,10 +257,10 @@ def login():
 		   login(sy2,sy3)
 	   except requests.exceptions.ConnectionError:
 		   exit(f"\n{P} [:] Tidak ada koneksi{P}")
-	   except KeyError:
-		   try:os.remove(".cok.txt");os.remove(".token.txt")
-		   except:pass
-		   login_lagi334()
+	except KeyError:
+		try:os.remove(".cok.txt");os.remove(".token.txt")
+		except:pass
+		login_lagi334()
 
 def login_lagi334():
 	try:
