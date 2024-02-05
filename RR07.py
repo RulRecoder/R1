@@ -281,7 +281,7 @@ def login_lagi334():
 		os.system("rm -f .token.txt")
 		os.system("rm -f .cok.txt")
 		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s'%(x,k,x,m,x))
-        exit()
+		exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
 	loading()
