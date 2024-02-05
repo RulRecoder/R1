@@ -274,15 +274,16 @@ def tahun(fx):
 	return tahunz
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login():
+    banner()
     try:
-       try:
-	      token = open('.token.txt','r').read()
+       token = open('.token.txt','r').read()
 	      cok = open('.cok.txt','r').read()
 	      tokenku.append(token)
        except (IOError,KeyError,FileNotFoundError):
 	      print('[×]{M} Cookies Kadaluarsa ')
 	      time.sleep(5)
 	      login_lagi334()
+       try:
 	      info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
 	      sy2 = info_datafb["name"]
 		  sy3 = info_datafb["id"]
