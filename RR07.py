@@ -356,10 +356,10 @@ def login_menu():
     if ___Sllowly_ID____ in ['1']:
         massal()
     elif ___Sllowly_ID____ in ['2']:
-	prints(nel(f'               {P}{H}Publik Crack{P}')) 
-	idt = input('✶ ━━⫸ {H} ID Target{N} : ')
-	dump(idt,"",{"Kue":cok},token)
-	setting()
+	    prints(nel(f'               {P}{H}Publik Crack{P}')) 
+	    idt = input('✶ ━━⫸ {H} ID Target{N} : ')
+	    dump(idt,"",{"Kue":cok},token)
+	    setting()
     elif ___Sllowly_ID____ in ['3']:
 	mail2()
     elif ___Sllowly_ID____ in ['4']:
