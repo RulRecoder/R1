@@ -212,6 +212,7 @@ def author():
      print(f"✶[bold green] GitHub: [yellow]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 def info_user():
+     _, _, end_time_str = license_info.split('|')
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
@@ -221,7 +222,6 @@ def info_user():
         lokasi = data.get('loc')
         kota = data.get('city')
         zona_waktu = data.get('timezone')
-         _, _, end_time_str = license_info.split('|')
         end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
         return end_time
 
