@@ -1460,8 +1460,8 @@ if __name__=='__main__':
 	except:pass
 	try:os.system('clear')
 	except:pass
-	run()
-	login()
+	pepek()
+	
 
 
 
