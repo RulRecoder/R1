@@ -1448,6 +1448,8 @@ def run():
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
+            expiration_date = get_expiration_date(saved_license)
+            print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {expiration_date.strftime('%Y-%m-%d %H:%M')}")
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
@@ -1465,17 +1467,8 @@ def run():
        else:
           os.system("rm -f .saved_license.txt")
           print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.")
-          try:
-            with open(LICENSE_FILE_PATH, 'r') as file:
-                saved_license = file.read()
-                expiration_date = get_expiration_date(saved_license)
-                print(f"Lisensi kadaluwarsa pada tanggal: {expiration_date.strftime('%Y-%m-%d %H:%M')}")
-        except FileNotFoundError:
-            pass
-        finally:
-            print("Masukan Lisensi baru.")
-            time.sleep(0.03)
-            run()
+          time.sleep(0.03)
+          run()
           
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
