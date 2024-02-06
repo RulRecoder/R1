@@ -225,7 +225,7 @@ def info_user():
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold green] Your Name: [blue]{kota}")
         print(f"✶[bold green] Your Idz: [blue]{kota}")
-        print(f"✶[bold green] Expired: [blue]{is_license_valid()}")
+        print(f"✶[bold green] Expired: [blue]{is_license_valid(license_info)}")
         print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold green] Region: [blue]{region}")
         print(f"✶[bold green] Lokasi: [blue]{lokasi}")
@@ -363,9 +363,9 @@ def login_menu():
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""          {B2}01 [bold purple]Crack Massal    {B2}04 [bold purple]Cek Ressult
-          {B2}02 [bold purple]Crack Publik    {B2}05 [bold purple]Crack File
-          {B2}03 [bold purple]Clone ID Email  {B2}00 [bold purple]Exit Program""")
+    prints(f"""               {B2}01 [bold purple]Crack Massal    {B2}04 [bold purple]Cek Ressult
+               {B2}02 [bold purple]Crack Publik    {B2}05 [bold purple]Crack File
+               {B2}03 [bold purple]Clone ID Email  {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
