@@ -216,14 +216,9 @@ def info_user():
         kota = data.get('city')
         zona_waktu = data.get('timezone')
         
-        response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
-        
-        nama = json.loads(response.text)['name']
-        idz = json.loads(response.text)['id']
-        
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold purple] Your Name: [blue]{nama}")
-        print(f"✶[bold purple] Your Idz: [blue]{idz}")
+        print(f"✶[bold purple] Your Name: [blue]{error}")
+        print(f"✶[bold purple] Your Idz: [blue]{error}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
@@ -1445,9 +1440,7 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 print(f"[green]Lisensi valid. Selamat menggunakan program.")
-                time.sleep(0.03)
-                loading()
-                clear()
+                time.sleep(0.05)
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
@@ -1455,9 +1448,8 @@ def run():
        time.sleep(0.03)
 
        if check_license(license_key):
-          print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
-          loading()
-          os.system("clear")
+          print(f"{H}Lisensi valid. Selamat menggunakan program.")
+          time.sleep(0.05)
           login_menu()
        else:
           os.system("rm -f .saved_license.txt")
