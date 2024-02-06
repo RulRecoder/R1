@@ -209,6 +209,9 @@ def info_user():
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
+        response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
+            nama = json.loads(response.text)['name']
+            idz = json.loads(response.text)['id']
 
         alamat_ip = data.get('ip')
         region = data.get('region')
@@ -217,8 +220,8 @@ def info_user():
         zona_waktu = data.get('timezone')
         
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold purple] Your Name: [blue]{sy2}")
-        print(f"✶[bold purple] Your Idz: [blue]{sy3}")
+        print(f"✶[bold purple] Your Name: [blue]{nama}")
+        print(f"✶[bold purple] Your Idz: [blue]{idz}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
@@ -266,7 +269,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                            {P}{M}Login Licensi{P}'))
+    prints(nel(f'                            {P}{U}Login Licensi{P}'))
     print(' [1][purple] Login Ke Tools')
     print(' [2][purple] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -344,14 +347,17 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
+    loading()
+    clear()
+    login()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""  [01] {P}[bold purple]Crack Massal{P}    [04] {P}[bold purple]Cek Ressult{P}
-      [02] {P}[bold purple]Crack Publik{P}    [05] {P}[bold purple]Crack File{P}
-      [03] {P}[bold purple]Clone ID Email{P}  [00] {P}[bold purple]Exit Program{P}""")
+    prints(f"""  [01] [bold purple]Crack Massal{x}    [04] {P}[bold purple]Cek Ressult{x}
+      [02] [bold purple]Crack Publik{x}    [05] {P}[bold purple]Crack File{x}
+      [03] [bold purple]Clone ID Email{x}  [00] {P}[bold purple]Exit Program{x}""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
@@ -1431,7 +1437,8 @@ def run():
             saved_license = file.read()
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
-                print(f"{H}Lisensi valid. Selamat menggunakan program.")
+                print(f"[green]Lisensi valid. Selamat menggunakan program.")
+                clear()
                 time.sleep(0.05)
                 loading()
                 clear()
