@@ -223,14 +223,14 @@ def info_user():
         zona_waktu = data.get('timezone')
         
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold purple] Your Name: [blue]{error}")
-        print(f"✶[bold purple] Your Idz: [blue]{error}")
-        print(f"✶[bold purple] Expired: [blue]{license_info}")
-        print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
-        print(f"✶[bold purple] Region: [blue]{region}")
-        print(f"✶[bold purple] Lokasi: [blue]{lokasi}")
-        print(f"✶[bold purple] Kota: [blue]{kota}")
-        print(f"✶[bold purple] Zona Waktu: [blue]{zona_waktu}")
+        print(f"✶[bold green] Your Name: [blue]{error()}")
+        print(f"✶[bold green] Your Idz: [blue]{error()}")
+        print(f"✶[bold green] Expired: [blue]{is_license_valid()}")
+        print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
+        print(f"✶[bold green] Region: [blue]{region}")
+        print(f"✶[bold green] Lokasi: [blue]{lokasi}")
+        print(f"✶[bold green] Kota: [blue]{kota}")
+        print(f"✶[bold green] Zona Waktu: [blue]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -300,11 +300,11 @@ import time
 def login():
     try:
         token = open('.token.txt', 'r').read()
-        cookie = open('.cok.txt', 'r').read()
+        cok = open('.cok.txt', 'r').read()
         tokenku = []
         tokenku.append(token)
         try:
-            response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
+            response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), Kues={'Kue':cok})
             sy2 = json.loads(response.text)['name']
             sy3 = json.loads(response.text)['id']
             login(sy2, sy3)
@@ -363,9 +363,9 @@ def login_menu():
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""      [{B2}01{P}] [bold purple]Crack Massal    [{B2}04{P}] [bold purple]Cek Ressult
-      [{B2}02{P}] [bold purple]Crack Publik    [{B2}05{P}] [bold purple]Crack File
-      [{B2}03{P}] [bold purple]Clone ID Email  [{B2}00{P}] [bold purple]Exit Program""")
+    prints(f"""      [{B2}01] [bold purple]Crack Massal    [{B2}04] [bold purple]Cek Ressult
+      [{B2}02] [bold purple]Crack Publik    [{B2}05] [bold purple]Crack File
+      [{B2}03] [bold purple]Clone ID Email  [{B2}00] [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
@@ -383,7 +383,7 @@ def login_menu():
     elif ___Sllowly_ID____ in ['0']:
 	    os.system('rm -rf .token.txt')
 	    os.system('rm -rf .Kue.txt')
-	    print('>> [hijau] Sukses Logout+Hapus Kukis ')
+	    print('>> [green] Sukses Logout+Hapus Kukis ')
 	    exit()
     else:
 	    print('>> {m} Pilih Yang Bener Asu ')
@@ -600,7 +600,7 @@ def result():
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
-	prints(nel(f'               {P}[blue]Massal Crack{P}')) 
+	prints(nel(f'                    {P}[blue]Massal Crack{P}')) 
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
@@ -637,7 +637,7 @@ def massal():
 	           'fields': "friends"
 	           }	           
 	       )
-	       url = requests.get('https://graph.facebook.com/{}'.format(user),params=params,headers=head,Kues={'Kues':cok}).json()
+	       url = requests.get('https://graph.facebook.com/{}'.format(user),params=params,headers=head,kues={'kue': cok}).json()
 	       for xr in url['friends']['data']:
 	           try:
 	               woy = (xr['id']+'|'+xr['name'])
