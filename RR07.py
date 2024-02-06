@@ -182,10 +182,10 @@ def jalan(z):
 def loading():
     animation = ["[\x1b[1;91m■\x1b[0m□□□□□□□□□]","[\x1b[1;92m■■\x1b[0m□□□□□□□□]", "[\x1b[1;93m■■■\x1b[0m□□□□□□□]", "[\x1b[1;94m■■■■\x1b[0m□□□□□□]", "[\x1b[1;95m■■■■■\x1b[0m□□□□□]", "[\x1b[1;96m■■■■■■\x1b[0m□□□□]", "[\x1b[1;97m■■■■■■■\x1b[0m□□□]", "[\x1b[1;98m■■■■■■■■\x1b[0m□□]", "[\x1b[1;99m■■■■■■■■■\x1b[0m□]", "[\x1b[1;910m■■■■■■■■■■\x1b[0m]"]
     for i in range(50):
-        time.sleep(0.05)
+        time.sleep(0.03)
         sys.stdout.write(f"\r>> {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.03)
 
 # ------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
@@ -266,7 +266,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                          {P}{M}Login Licensi{P}')) 
+    prints(nel(f'                          {P}{M}Login Licensi{P}'                         )) 
     print(' [1][purple] Login Ke Tools')
     print(' [2][purple] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -277,7 +277,7 @@ def pepek():
         time.sleep(3)
         pepek()
     elif pil in['1','01']:
-        jalan(f" [green]Pastikan sudah memiliki licensinya")
+        jalan(f"{H}Pastikan sudah memiliki licensinya")
         time.sleep(0.03)
         os.system("clear")
         run()
@@ -1433,7 +1433,7 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 loading()
-                os.system("clear")
+                clear()
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
