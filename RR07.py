@@ -1431,7 +1431,6 @@ def run():
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
             if saved_license and is_license_valid(saved_license):
-                return True
                 time.sleep(0.03)
                 loading()
                 os.system("clear")
