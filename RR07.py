@@ -209,9 +209,6 @@ def info_user():
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
-        response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
-        nama = json.loads(response.text)['name']
-        idz = json.loads(response.text)['id']
 
         alamat_ip = data.get('ip')
         region = data.get('region')
@@ -219,9 +216,13 @@ def info_user():
         kota = data.get('city')
         zona_waktu = data.get('timezone')
         
+        response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
+        sy2 = json.loads(response.text)['name']
+        sy3 = json.loads(response.text)['id']
+        
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold purple] Your Name: [blue]{nama}")
-        print(f"✶[bold purple] Your Idz: [blue]{idz}")
+        print(f"✶[bold purple] Your Name: [blue]{sy2}")
+        print(f"✶[bold purple] Your Idz: [blue]{sy3}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
