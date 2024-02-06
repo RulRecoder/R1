@@ -206,8 +206,8 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f"✶[bold green] Author: [purple]Khoirul-Xd")
-     print(f"✶[bold green] Status: [red]Premium")
+     print(f"✶[bold green] Author: [blue]Khoirul-Xd")
+     print(f"✶[bold green] Status: [blue]Premium bpk lo")
      print(f"✶[bold green] WhatsApp: [blue]081283547452")
      print(f"✶[bold green] GitHub: [blue]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
@@ -225,7 +225,7 @@ def info_user():
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold green] Your Name: [blue]{kota}")
         print(f"✶[bold green] Your Idz: [blue]{kota}")
-        print(f"✶[bold green] Expired: [blue]{license_info}")
+        print(f"✶[bold green] Expired: [blue]{license_info.split('|')}")
         print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold green] Region: [blue]{region}")
         print(f"✶[bold green] Lokasi: [blue]{lokasi}")
@@ -657,8 +657,8 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	prints(nel(f'                   {P}[blue]login ID Crack{P}')) 
-	cetak(f"[{B2}01]. Facebook ID {M2}Old\n[{B2t}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
+	prints(nel(f'                        {P}[blue]login ID Crack{P}')) 
+	cetak(f"[{B2}01]. Facebook ID {M2}Old\n[{B2}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
@@ -679,7 +679,7 @@ def setting():
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		exit()
-	prints(nel(f'               {P}[blue]login Method{P}')) 
+	prints(nel(f'                    {P}[blue]login Method{P}')) 
 	prints(f'[{B2}01]. Method free.facebook.com [[green] Validate [white]]\n[{B2}02]. Method m.facebook.com [[green] Async [white]]\n[{B2}03]. Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
