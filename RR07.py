@@ -1440,9 +1440,10 @@ def run():
                 time.sleep(0.03)
                 print(f"[green]Lisensi valid. Selamat menggunakan program.")
                 clear()
-                time.sleep(0.05)
+                time.sleep(0.03)
                 loading()
                 clear()
+                banner()
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
