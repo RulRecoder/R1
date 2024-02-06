@@ -301,7 +301,7 @@ def login():
             response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
             sy2 = json.loads(response.text)['name']
             sy3 = json.loads(response.text)['id']
-            login(sy2, sy3)
+            login(sy2,sy3)
         except KeyError:
             login_lagi334()
         except requests.exceptions.ConnectionError:
@@ -344,10 +344,10 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
+    banner()
     loading()
     clear()
     login()
-    banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
