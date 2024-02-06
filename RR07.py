@@ -133,6 +133,14 @@ u = '\033[95m' # UNGU
 kk = '\033[33m' # KUNING -
 b = '\33[1;96m' # BIRU -
 p = '\x1b[0;34m' # BIRU +
+try:
+	file_color = open("data/theme_color","r").read()
+	color_text = file_color.split("|")[0]
+	color_panel = file_color.split("|")[1]
+except:
+	color_text = "[#00C8FF]"
+	colorbapa = random.choice([H2,K2,M2,B2,P2]) 
+	color_panel = "#FFFFFF"
 asu = random.choice([m,k,h,u,b])
 import datetime
 
