@@ -221,11 +221,12 @@ def info_user():
         lokasi = data.get('loc')
         kota = data.get('city')
         zona_waktu = data.get('timezone')
+        expiration_date = get_expiration_date(saved_license)
         
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold green] Your Name: [blue]{kota}")
         print(f"✶[bold green] Your Idz: [blue]{kota}")
-        print(f"✶[bold green] Expired: [blue]{license_info.split('|')}")
+        print(f"✶[bold green] Expired: [blue]{expiration_date}")
         print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold green] Region: [blue]{region}")
         print(f"✶[bold green] Lokasi: [blue]{lokasi}")
@@ -658,7 +659,7 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                        {P}[blue]login ID Crack{P}')) 
-	cetak(f"[{B2}01]. Facebook ID {M2}Old\n[{B2}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
+	prints(f"[{B2}01]. Facebook ID {M2}Old\n[{B2}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
@@ -1438,6 +1439,10 @@ def check_license(license_key):
     except requests.RequestException as e:
         print(f"Error: {e}")
         return False
+def get_expiration_date(license_info):
+    _, _, end_time_str = license_info.split('|')
+    end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
+    return end_time
 def run():
     banner()
     try:
@@ -1445,7 +1450,7 @@ def run():
             saved_license = file.read()
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
-                print(f"[green]Lisensi valid. Selamat menggunakan program.")
+                print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
                 time.sleep(2)
                 login_menu()
     except (IOError,FileNotFoundError):
@@ -1454,12 +1459,24 @@ def run():
        time.sleep(0.03)
 
        if check_license(license_key):
-          print(f"{H}Lisensi valid. Selamat menggunakan program.")
+          print(f"{bold green}Lisensi valid. Selamat menggunakan program.")
           time.sleep(3)
           login_menu()
        else:
           os.system("rm -f .saved_license.txt")
-          print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
+          print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.")
+          try:
+            with open(LICENSE_FILE_PATH, 'r') as file:
+                saved_license = file.read()
+                expiration_date = get_expiration_date(saved_license)
+                print(f"Lisensi kadaluwarsa pada tanggal: {expiration_date.strftime('%Y-%m-%d %H:%M')}")
+        except FileNotFoundError:
+            pass
+        finally:
+            print("Masukan Lisensi baru.")
+            time.sleep(0.03)
+            run()
+          
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
