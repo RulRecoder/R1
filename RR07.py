@@ -216,13 +216,9 @@ def info_user():
         kota = data.get('city')
         zona_waktu = data.get('timezone')
         
-        response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
-        sy2 = json.loads(response.text)['name']
-        sy3 = json.loads(response.text)['id']
-        
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold purple] Your Name: [blue]{sy2}")
-        print(f"✶[bold purple] Your Idz: [blue]{sy3}")
+        print(f"✶[bold purple] Your Name: [blue]{error}")
+        print(f"✶[bold purple] Your Idz: [blue]{error}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
@@ -1441,8 +1437,6 @@ def run():
                 print(f"[green]Lisensi valid. Selamat menggunakan program.")
                 clear()
                 time.sleep(0.03)
-                loading()
-                clear()
                 banner()
                 login_menu()
     except (IOError,FileNotFoundError):
