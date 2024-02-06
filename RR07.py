@@ -361,19 +361,19 @@ def login_menu():
 	    dump(idt,"",{"Kue":cok},token)
 	    setting()
     elif ___Sllowly_ID____ in ['3']:
-	mail2()
+	    mail2()
     elif ___Sllowly_ID____ in ['4']:
-	result()
+	    result()
     elif ___Sllowly_ID____ in ['5']:
-	file()
+	    file()
     elif ___Sllowly_ID____ in ['0']:
-	os.system('rm -rf .token.txt')
-	os.system('rm -rf .Kue.txt')
-	print('>> [hijau] Sukses Logout+Hapus Kukis ')
-	exit()
+	    os.system('rm -rf .token.txt')
+	    os.system('rm -rf .Kue.txt')
+	    print('>> [hijau] Sukses Logout+Hapus Kukis ')
+	    exit()
     else:
-	print('>> {m} Pilih Yang Bener Asu ')
-	back()
+	    print('>> {m} Pilih Yang Bener Asu ')
+	    back()
 def error():
 	print(f'{k}>> {m}Maaf Fitur Ini Masih Di Perbaiki {x}')
 	time.sleep(4)
