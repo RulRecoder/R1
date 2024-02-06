@@ -213,9 +213,6 @@ def author():
 #--------------------[ USER ]--------------#
 def info_user():
     try:
-         _, _, end_time_str = license_info.split('|')
-        end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
-        return end_time
         response = requests.get('https://ipinfo.io')
         data = response.json()
 
@@ -224,6 +221,9 @@ def info_user():
         lokasi = data.get('loc')
         kota = data.get('city')
         zona_waktu = data.get('timezone')
+         _, _, end_time_str = license_info.split('|')
+        end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
+        return end_time
 
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold green] Your Name: [yellow]{kota}")
