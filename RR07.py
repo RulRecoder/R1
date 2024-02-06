@@ -215,7 +215,6 @@ from datetime import datetime
 from rich import print as rprint  # Jika Anda menggunakan modul rich untuk formatting
 
 def info_user():
-    _, _, end_time_str = license_info.split('|')
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
