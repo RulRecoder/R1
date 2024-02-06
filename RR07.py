@@ -217,12 +217,13 @@ def info_user():
         zona_waktu = data.get('timezone')
         
         response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
+        
         nama = json.loads(response.text)['name']
         idz = json.loads(response.text)['id']
         
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold purple] Your Name: [blue]{nama}")
-        print(f"✶[bold purple] Your Idz: [blue]{nama}")
+        print(f"✶[bold purple] Your Idz: [blue]{idz}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
@@ -356,16 +357,14 @@ def login_menu():
        time.sleep(3)
        login_lagi334()
     os.system("clear")
-    loading()
-    clear()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""  [01] [bold purple]Crack Massal{x}    [04] {P}[bold purple]Cek Ressult{x}
-      [02] [bold purple]Crack Publik{x}    [05] {P}[bold purple]Crack File{x}
-      [03] [bold purple]Clone ID Email{x}  [00] {P}[bold purple]Exit Program{x}""")
+    prints(f"""  [01] [bold purple]Crack Massal{N}    [04] {P}[bold purple]Cek Ressult{N}
+      [02] [bold purple]Crack Publik{N}    [05] {P}[bold purple]Crack File{N}
+      [03] [bold purple]Clone ID Email{N}  [00] {P}[bold purple]Exit Program{N}""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
