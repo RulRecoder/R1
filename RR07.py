@@ -208,14 +208,13 @@ def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
      print(f"✶[bold green] Author: [yellow]Khoirul-Xd")
      print(f"✶[bold green] Status: [yellow]Premium bpk lo")
-     print(f"✶[bold green] WhatsApp: [yellow]081283547452")
      print(f"✶[bold green] GitHub: [yellow]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
 from rich import print as rprint  # Jika Anda menggunakan modul rich untuk formatting
 
-def info_user(license_info):
+def info_user():
     _, _, end_time_str = license_info.split('|')
     try:
         response = requests.get('https://ipinfo.io')
