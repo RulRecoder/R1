@@ -260,6 +260,20 @@ def tahun(fx):
 		tahunz = '2006-2007'
 	else:tahunz=''
 	return tahunz
+#--------------------[ BAGIAN-MASUK V1 ]--------------#
+def pepek():
+    loading()
+    os.system("clear")
+    banner()
+    prints(nel(f'              {P2}{M}Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
+    print(' [1]{U} Login Ke Tools')
+    print(' [2]{U} Hubungi Admin')
+    pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
+    if pil in['2','02']:
+        jalan("\n [•] {H}You will be redirected to the Author Whatsapp...");time.sleep(0.03)
+        os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(3);pepek()
+    elif pil in['1','01']:
+        jalan(f" {H}Pastikan sudah memiliki licensinya");time.sleep(0.03);run()
 #--------------------[ BAGIAN-MASUK ]--------------#
 import os
 import requests
@@ -319,10 +333,6 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
-	loading()
-	os.system('clear')
-	pepek()
-	os.system('clear')
 	loading()
 	os.system('clear')
 	login()
@@ -1406,19 +1416,6 @@ def check_license(license_key):
     except requests.RequestException as e:
         print(f"Error: {e}")
         return False
-def pepek():
-    loading()
-    os.system("clear")
-    banner()
-    prints(nel(f'              {P2}{M}Login Licensi{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
-    print(' [1]{U} Login Ke Tools'(H,N))
-    print(' [2]{U} Hubungi Admin'(H,N))
-    pil = input(f'✶ ━━⫸ {H} Choice{N} : '(N,K,N))
-    if pil in['2','02']:
-        jalan("\n [•] {H}You will be redirected to the Author Whatsapp..."(N,H,N,H));time.sleep(0.03)
-        os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini');time.sleep(3);pepek()
-    elif pil in['1','01']:
-        jalan(f" {H}Pastikan sudah memiliki licensinya");time.sleep(0.03);run()
 def run():
     banner()
     try:
@@ -1432,7 +1429,7 @@ def run():
           print(f"{H}Lisensi valid. Selamat menggunakan program.");time.sleep(0.05)
           loading()
           os.system("clear")
-          login()
+          login_menu()
        else:
           os.system("rm -f .saved_license.txt")
           print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.");time.sleep(0.03);run()
