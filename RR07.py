@@ -354,26 +354,26 @@ def login_menu():
     [03]{P} [bold green]Clone ID Email  [00]{P} [bold green]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
-		massal()
-	elif ___Sllowly_ID____ in ['2']:
-		prints(nel(f'               {P}{H}Publik Crack{P}')) 
-		idt = input('✶ ━━⫸ {H} ID Target{N} : ')
-		dump(idt,"",{"Kue":cok},token)
-		setting()
-	elif ___Sllowly_ID____ in ['3']:
-		mail2()
-	elif ___Sllowly_ID____ in ['4']:
-		result()
-	elif ___Sllowly_ID____ in ['5']:
-		file()
-	elif ___Sllowly_ID____ in ['0']:
-		os.system('rm -rf .token.txt')
-		os.system('rm -rf .Kue.txt')
-		print('>> [hijau] Sukses Logout+Hapus Kukis ')
-		exit()
-	else:
-		print('>> {m} Pilih Yang Bener Asu ')
-		back()
+        massal()
+    elif ___Sllowly_ID____ in ['2']:
+	prints(nel(f'               {P}{H}Publik Crack{P}')) 
+	idt = input('✶ ━━⫸ {H} ID Target{N} : ')
+	dump(idt,"",{"Kue":cok},token)
+	setting()
+    elif ___Sllowly_ID____ in ['3']:
+	mail2()
+    elif ___Sllowly_ID____ in ['4']:
+	result()
+    elif ___Sllowly_ID____ in ['5']:
+	file()
+    elif ___Sllowly_ID____ in ['0']:
+	os.system('rm -rf .token.txt')
+	os.system('rm -rf .Kue.txt')
+	print('>> [hijau] Sukses Logout+Hapus Kukis ')
+	exit()
+    else:
+	print('>> {m} Pilih Yang Bener Asu ')
+	back()
 def error():
 	print(f'{k}>> {m}Maaf Fitur Ini Masih Di Perbaiki {x}')
 	time.sleep(4)
