@@ -216,9 +216,13 @@ def info_user():
         kota = data.get('city')
         zona_waktu = data.get('timezone')
         
+        response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
+        nama = json.loads(response.text)['name']
+        idz = json.loads(response.text)['id']
+        
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold purple] Your Name: [blue]{error}")
-        print(f"✶[bold purple] Your Idz: [blue]{error}")
+        print(f"✶[bold purple] Your Name: [blue]{nama}")
+        print(f"✶[bold purple] Your Idz: [blue]{nama}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
@@ -263,8 +267,8 @@ def tahun(fx):
 #--------------------[ BAGIAN-MASUK V1 ]--------------#
 def pepek():
     try:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
+        token = open('.token.txt', 'r').read()
+        cookie = open('.cok.txt', 'r').read()
 	except IOError:
 		print('[×]{H} Cookies expired, login ulang kontol!!!')
 		time.sleep(5)
