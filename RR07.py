@@ -199,7 +199,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     prints(nel(f'                           {P}[bold blue]Info Author{P}')) 
+     prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
      print(f"✶[bold green] Author: [purple]Khoirul-Xd")
      print(f"✶[bold green] Status: [red]Premium")
      print(f"✶[bold green] WhatsApp: [blue]081283547452")
@@ -216,7 +216,7 @@ def info_user():
         kota = data.get('city')
         zona_waktu = data.get('timezone')
         
-        prints(nel(f'                           {P}[bold blue]Info User{P}'))
+        prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold purple] Your Name: [blue]{sy2}")
         print(f"✶[bold purple] Your Idz: [blue]{sy3}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
@@ -266,7 +266,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                               {P}{M}Login Licensi{P}'))
+    prints(nel(f'                            {P}{M}Login Licensi{P}'))
     print(' [1][purple] Login Ke Tools')
     print(' [2][purple] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -349,9 +349,9 @@ def login_menu():
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""{P}[01]{P} [bold green]Crack Massal    04{P} [bold green]Cek Ressult
-    [02]{P} [bold green]Crack Publik    [05]{P} [bold green]Crack File
-    [03]{P} [bold green]Clone ID Email  [00]{P} [bold green]Exit Program""")
+    prints(f"""  [01] {P}[bold purple]Crack Massal{P}    [04] {P}[bold purple]Cek Ressult{P}
+      [02] {P}[bold purple]Crack Publik{P}    [05] {P}[bold purple]Crack File{P}
+      [03] {P}[bold purple]Clone ID Email{P}  [00] {P}[bold purple]Exit Program{P}""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
@@ -1431,6 +1431,8 @@ def run():
             saved_license = file.read()
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
+                print(f"{H}Lisensi valid. Selamat menggunakan program.")
+                time.sleep(0.05)
                 loading()
                 clear()
                 login_menu()
