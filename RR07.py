@@ -266,9 +266,9 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'              {P}{M}Login Licensi{P}')) 
-    print(' [1]{U} Login Ke Tools')
-    print(' [2]{U} Hubungi Admin')
+    prints(nel(f'                          {P}{M}Login Licensi{P}')) 
+    print(' [1][purple] Login Ke Tools')
+    print(' [2][purple] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
@@ -279,6 +279,7 @@ def pepek():
     elif pil in['1','01']:
         jalan(f" {H}Pastikan sudah memiliki licensinya")
         time.sleep(0.03)
+        os.system("clear")
         run()
     else:
         print(f' {M} Pilih Yang Bener Asu ');time.sleep(0.03);pepek()
@@ -1427,7 +1428,7 @@ def check_license(license_key):
 def run():
     banner()
     try:
-       check_license(license_key)
+       check_license()
        time.sleep(0.03)
        loading()
        os.system("clear")
