@@ -223,8 +223,8 @@ def info_user():
         zona_waktu = data.get('timezone')
         
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold green] Your Name: [blue]{error()}")
-        print(f"✶[bold green] Your Idz: [blue]{error()}")
+        print(f"✶[bold green] Your Name: [blue]{kota}")
+        print(f"✶[bold green] Your Idz: [blue]{kota}")
         print(f"✶[bold green] Expired: [blue]{is_license_valid()}")
         print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold green] Region: [blue]{region}")
@@ -284,7 +284,7 @@ def pepek():
         pepek()
     elif pil in['1','01']:
         jalan(f"{H}Pastikan sudah memiliki licensinya")
-        time.sleep(0.03)
+        time.sleep(2)
         os.system("clear")
         run()
     else:
@@ -363,9 +363,9 @@ def login_menu():
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""      [{B2}01] [bold purple]Crack Massal    [{B2}04] [bold purple]Cek Ressult
-      [{B2}02] [bold purple]Crack Publik    [{B2}05] [bold purple]Crack File
-      [{B2}03] [bold purple]Clone ID Email  [{B2}00] [bold purple]Exit Program""")
+    prints(f"""          {B2}01 [bold purple]Crack Massal    {B2}04 [bold purple]Cek Ressult
+          {B2}02 [bold purple]Crack Publik    {B2}05 [bold purple]Crack File
+          {B2}03 [bold purple]Clone ID Email  {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
@@ -1446,7 +1446,7 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 print(f"[green]Lisensi valid. Selamat menggunakan program.")
-                time.sleep(5)
+                time.sleep(2)
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
@@ -1455,7 +1455,7 @@ def run():
 
        if check_license(license_key):
           print(f"{H}Lisensi valid. Selamat menggunakan program.")
-          time.sleep(5)
+          time.sleep(3)
           login_menu()
        else:
           os.system("rm -f .saved_license.txt")
