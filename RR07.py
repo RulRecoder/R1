@@ -346,10 +346,10 @@ def login_lagi334():
 def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-	author()
-	info_user()
-	prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-	prints(f"""{P}[01]{P} [bold green]Crack Massal    04{P} [bold green]Cek Ressult
+    author()
+    info_user()
+    prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
+    prints(f"""{P}[01]{P} [bold green]Crack Massal    04{P} [bold green]Cek Ressult
 [02]{P} [bold green]Crack Publik    [05]{P} [bold green]Crack File
 [03]{P} [bold green]Clone ID Email  [00]{P} [bold green]Exit Program""")
 	___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
