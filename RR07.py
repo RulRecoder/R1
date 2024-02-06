@@ -281,8 +281,8 @@ def pepek():
         time.sleep(0.03)
         run()
     else:
-		print('>> {M} Pilih Yang Bener Asu ')
-		back()
+        print(f' {M} Pilih Yang Bener Asu ')
+		pepek()
 #--------------------[ BAGIAN-MASUK ]--------------#
 import os
 import requests
