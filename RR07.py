@@ -350,10 +350,10 @@ def login_menu():
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
     prints(f"""{P}[01]{P} [bold green]Crack Massal    04{P} [bold green]Cek Ressult
-[02]{P} [bold green]Crack Publik    [05]{P} [bold green]Crack File
-[03]{P} [bold green]Clone ID Email  [00]{P} [bold green]Exit Program""")
-	___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
-	if ___Sllowly_ID____ in ['1']:
+    [02]{P} [bold green]Crack Publik    [05]{P} [bold green]Crack File
+    [03]{P} [bold green]Clone ID Email  [00]{P} [bold green]Exit Program""")
+    ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
+    if ___Sllowly_ID____ in ['1']:
 		massal()
 	elif ___Sllowly_ID____ in ['2']:
 		prints(nel(f'               {P}{H}Publik Crack{P}')) 
