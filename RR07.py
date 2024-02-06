@@ -215,25 +215,25 @@ def info_user():
     _, _, end_time_str = license_info.split('|')
     try:
 	response = requests.get('https://ipinfo.io')
-        data = response.json()
-
-        alamat_ip = data.get('ip')
-        region = data.get('region')
-        lokasi = data.get('loc')
-        kota = data.get('city')
-        zona_waktu = data.get('timezone')
-        end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
-        return end_time
-
-        prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold green] Your Name: [yellow]{kota}")
-        print(f"✶[bold green] Your Idz: [yellow]{kota}")
-        print(f"✶[bold green] Expired: [yellow]{end_time}")
-        print(f"✶[bold green] Your IP: [yellow]{alamat_ip}")
-        print(f"✶[bold green] Region: [yellow]{region}")
-        print(f"✶[bold green] Lokasi: [yellow]{lokasi}")
-        print(f"✶[bold green] Kota: [yellow]{kota}")
-        print(f"✶[bold green] Zona Waktu: [yellow]{zona_waktu}")
+	data = response.json()
+	    
+	alamat_ip = data.get('ip')
+	region = data.get('region')
+	lokasi = data.get('loc')
+	kota = data.get('city')
+	zona_waktu = data.get('timezone')
+	end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
+	return end_time
+	
+	prints(nel(f'                            {P}[bold blue]Info User{P}'))
+	print(f"✶[bold green] Your Name: [yellow]{kota}")
+	print(f"✶[bold green] Your Idz: [yellow]{kota}")
+	print(f"✶[bold green] Expired: [yellow]{end_time}")
+	print(f"✶[bold green] Your IP: [yellow]{alamat_ip}")
+	print(f"✶[bold green] Region: [yellow]{region}")
+	print(f"✶[bold green] Lokasi: [yellow]{lokasi}")
+	print(f"✶[bold green] Kota: [yellow]{kota}")
+	print(f"✶[bold green] Zona Waktu: [yellow]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
