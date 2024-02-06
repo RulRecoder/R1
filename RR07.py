@@ -359,7 +359,6 @@ def login_menu():
     loading()
     clear()
     banner()
-    login()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
@@ -1447,9 +1446,9 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 print(f"[green]Lisensi valid. Selamat menggunakan program.")
-                clear()
                 time.sleep(0.03)
-                banner()
+                loading()
+                clear()
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
