@@ -210,8 +210,8 @@ def info_user():
         response = requests.get('https://ipinfo.io')
         data = response.json()
         response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
-            nama = json.loads(response.text)['name']
-            idz = json.loads(response.text)['id']
+        nama = json.loads(response.text)['name']
+        idz = json.loads(response.text)['id']
 
         alamat_ip = data.get('ip')
         region = data.get('region')
