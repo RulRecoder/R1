@@ -266,14 +266,6 @@ def tahun(fx):
 	return tahunz
 #--------------------[ BAGIAN-MASUK V1 ]--------------#
 def pepek():
-    try:
-        token = open('.token.txt', 'r').read()
-        cookie = open('.cok.txt', 'r').read()
-	except IOError:
-		print('[×]{H} Cookies expired, login ulang kontol!!!')
-		time.sleep(5)
-		login_lagi334()
-	os.system("clear")
     loading()
     os.system("clear")
     banner()
@@ -356,6 +348,14 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
+    try:
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
+	except IOError:
+		print('[×] Cookies Expired, login ulang kontol!!!')
+		time.sleep(5)
+		login_lagi334()
+	os.system("clear")
     loading()
     clear()
     banner()
