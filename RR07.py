@@ -133,6 +133,12 @@ u = '\033[95m' # UNGU
 kk = '\033[33m' # KUNING -
 b = '\33[1;96m' # BIRU -
 p = '\x1b[0;34m' # BIRU +
+#WARNA PRINT IMPORT RICH#
+M2 = "[#FF0000]" # MERAH
+H2 = "[#00FF00]" # HIJAU
+K2 = "[#FFFF00]" # KUNING
+B2 = "[#00C8FF]" # BIRU
+P2 = "[#FFFFFF]" # PUTIH
 asu = random.choice([m,k,h,u,b])
 import datetime
 
@@ -174,6 +180,8 @@ def clear():
     os.system('clear')
 def back():
     login()
+def expired():
+     is_license_valid(license_info)
 def jalan(z):
     for e in z + '\n':
         sys.stdout.write(e)
@@ -219,7 +227,7 @@ def info_user():
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold purple] Your Name: [blue]{error}")
         print(f"✶[bold purple] Your Idz: [blue]{error}")
-        print(f"✶[bold purple] Expired: [blue]{end_time}")
+        print(f"✶[bold purple] Expired: [blue]{expired}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
         print(f"✶[bold purple] Lokasi: [blue]{lokasi}")
@@ -357,9 +365,9 @@ def login_menu():
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""  [01] [bold purple]Crack Massal{N}    [04] {P}[bold purple]Cek Ressult{N}
-      [02] [bold purple]Crack Publik{N}    [05] {P}[bold purple]Crack File{N}
-      [03] [bold purple]Clone ID Email{N}  [00] {P}[bold purple]Exit Program{N}""")
+    prints(f"""      [{B2}01{P}] [bold purple]Crack Massal    [{B2}04{P}] [bold purple]Cek Ressult
+      [{B2}02{P}] [bold purple]Crack Publik    [{B2}05{P}] [bold purple]Crack File
+      [{B2}03{P}] [bold purple]Clone ID Email  [{B2}00{P}] [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
@@ -1390,6 +1398,8 @@ from datetime import datetime
 
 LICENSE_FILE_PATH = "saved_license.txt"
 
+expired =  is_license_valid(license_info)
+
 def is_license_valid(license_info):
     # Split license_info into components
     license_key, start_time_str, end_time_str = license_info.split('|')
@@ -1440,7 +1450,7 @@ def run():
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 print(f"[green]Lisensi valid. Selamat menggunakan program.")
-                time.sleep(0.05)
+                time.sleep(5)
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
@@ -1449,7 +1459,7 @@ def run():
 
        if check_license(license_key):
           print(f"{H}Lisensi valid. Selamat menggunakan program.")
-          time.sleep(0.05)
+          time.sleep(5)
           login_menu()
        else:
           os.system("rm -f .saved_license.txt")
