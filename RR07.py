@@ -262,6 +262,14 @@ def tahun(fx):
 	return tahunz
 #--------------------[ BAGIAN-MASUK V1 ]--------------#
 def pepek():
+    try:
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
+	except IOError:
+		print('[×]{H} Cookies expired, login ulang kontol!!!')
+		time.sleep(5)
+		login_lagi334()
+	os.system("clear")
     loading()
     os.system("clear")
     banner()
@@ -301,7 +309,7 @@ def login():
             response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), cookies={'cookie': cookie})
             sy2 = json.loads(response.text)['name']
             sy3 = json.loads(response.text)['id']
-            login(sy2,sy3)
+            login(sy2, sy3)
         except KeyError:
             login_lagi334()
         except requests.exceptions.ConnectionError:
@@ -344,9 +352,9 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
-    banner()
     loading()
     clear()
+    banner()
     login()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
