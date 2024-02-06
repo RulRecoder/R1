@@ -206,10 +206,10 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f"✶[bold green] Author: [blue]Khoirul-Xd")
-     print(f"✶[bold green] Status: [blue]Premium bpk lo")
-     print(f"✶[bold green] WhatsApp: [blue]081283547452")
-     print(f"✶[bold green] GitHub: [blue]https://github.com/khoirulez")
+     print(f"✶[bold green] Author: [yellow]Khoirul-Xd")
+     print(f"✶[bold green] Status: [yellow]Premium bpk lo")
+     print(f"✶[bold green] WhatsApp: [yellow]081283547452")
+     print(f"✶[bold green] GitHub: [yellow]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 def info_user():
     try:
@@ -221,16 +221,17 @@ def info_user():
         lokasi = data.get('loc')
         kota = data.get('city')
         zona_waktu = data.get('timezone')
+        exp = expiration_date.strftime('%Y-%m-%d %H:%M')
         
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
-        print(f"✶[bold green] Your Name: [blue]{kota}")
-        print(f"✶[bold green] Your Idz: [blue]{kota}")
-        print(f"✶[bold green] Expired: [blue]{expiration_date.strftime('%Y-%m-%d %H:%M')}")
-        print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
-        print(f"✶[bold green] Region: [blue]{region}")
-        print(f"✶[bold green] Lokasi: [blue]{lokasi}")
-        print(f"✶[bold green] Kota: [blue]{kota}")
-        print(f"✶[bold green] Zona Waktu: [blue]{zona_waktu}")
+        print(f"✶[bold green] Your Name: [yellow]{kota}")
+        print(f"✶[bold green] Your Idz: [yellow]{kota}")
+        print(f"✶[bold green] Expired: [yellow]{exp}")
+        print(f"✶[bold green] Your IP: [yellow]{alamat_ip}")
+        print(f"✶[bold green] Region: [yellow]{region}")
+        print(f"✶[bold green] Lokasi: [yellow]{lokasi}")
+        print(f"✶[bold green] Kota: [yellow]{kota}")
+        print(f"✶[bold green] Zona Waktu: [yellow]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
