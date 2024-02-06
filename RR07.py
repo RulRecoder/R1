@@ -277,7 +277,7 @@ def pepek():
         time.sleep(3)
         pepek()
     elif pil in['1','01']:
-        jalan(f" {H}Pastikan sudah memiliki licensinya")
+        jalan(f" [green]Pastikan sudah memiliki licensinya")
         time.sleep(0.03)
         os.system("clear")
         run()
@@ -1428,12 +1428,15 @@ def check_license(license_key):
 def run():
     banner()
     try:
-       check_license()
-       time.sleep(0.03)
-       loading()
-       os.system("clear")
-       login_menu()
-    except IOError:
+        with open(LICENSE_FILE_PATH, 'r') as file:
+            saved_license = file.read()
+            if saved_license and is_license_valid(saved_license):
+                return True
+                time.sleep(0.03)
+                loading()
+                os.system("clear")
+                login_menu()
+    except (IOError;FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
        licen=open(".saved_license.txt", "w").write(license_key)
        time.sleep(0.03)
