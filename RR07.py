@@ -1459,7 +1459,7 @@ def run():
        time.sleep(0.03)
 
        if check_license(license_key):
-          print(f"{bold green}Lisensi valid. Selamat menggunakan program.")
+          print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
           time.sleep(3)
           login_menu()
        else:
