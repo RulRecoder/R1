@@ -225,7 +225,7 @@ def info_user():
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold green] Your Name: [blue]{kota}")
         print(f"✶[bold green] Your Idz: [blue]{kota}")
-        print(f"✶[bold green] Expired: [blue]{is_license_valid}")
+        print(f"✶[bold green] Expired: [blue]{license_info}")
         print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold green] Region: [blue]{region}")
         print(f"✶[bold green] Lokasi: [blue]{lokasi}")
@@ -658,7 +658,7 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                   {P}[blue]login ID Crack{P}')) 
-	cetak(f"{P}[{color_text}01{P}]. Facebook ID {M2}Old\n{P}[{color_text}02{P}]. Facebook ID {K2}New\n{P}[{color_text}03{P}]. Facebook ID {H2}Random{P}",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
+	cetak(f"[{B2}01]. Facebook ID {M2}Old\n[{B2t}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
@@ -680,7 +680,7 @@ def setting():
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		exit()
 	prints(nel(f'               {P}[blue]login Method{P}')) 
-	prints(f'{P}[{color_text}01{P}]. Method free.facebook.com [[green] Validate [white]]\n[{color_text}02{P}]. Method m.facebook.com [[green] Async [white]]\n[{color_text}03{P}]. Method graph.facebook.com [[green] B-Api [white]]')
+	prints(f'[{B2}01]. Method free.facebook.com [[green] Validate [white]]\n[{B2}02]. Method m.facebook.com [[green] Async [white]]\n[{B2}03]. Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
