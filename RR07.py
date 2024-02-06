@@ -352,9 +352,9 @@ def login_menu():
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
     except IOError:
-		print('[×] Cookies Expired, login ulang kontol!!!')
-		time.sleep(5)
-		login_lagi334()
+       print('[×] Cookies Expired, login ulang kontol!!!')
+       time.sleep(3)
+       login_lagi334()
 	os.system("clear")
     loading()
     clear()
