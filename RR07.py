@@ -180,8 +180,6 @@ def clear():
     os.system('clear')
 def back():
     login()
-def expired():
-     is_license_valid(license_info)
 def jalan(z):
     for e in z + '\n':
         sys.stdout.write(e)
@@ -227,7 +225,7 @@ def info_user():
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold purple] Your Name: [blue]{error}")
         print(f"✶[bold purple] Your Idz: [blue]{error}")
-        print(f"✶[bold purple] Expired: [blue]{expired}")
+        print(f"✶[bold purple] Expired: [blue]{license_info}")
         print(f"✶[bold purple] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold purple] Region: [blue]{region}")
         print(f"✶[bold purple] Lokasi: [blue]{lokasi}")
@@ -1397,8 +1395,6 @@ import requests
 from datetime import datetime
 
 LICENSE_FILE_PATH = "saved_license.txt"
-
-expired =  is_license_valid(license_info)
 
 def is_license_valid(license_info):
     # Split license_info into components
