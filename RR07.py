@@ -133,14 +133,6 @@ u = '\033[95m' # UNGU
 kk = '\033[33m' # KUNING -
 b = '\33[1;96m' # BIRU -
 p = '\x1b[0;34m' # BIRU +
-try:
-	file_color = open("data/theme_color","r").read()
-	color_text = file_color.split("|")[0]
-	color_panel = file_color.split("|")[1]
-except:
-	color_text = "[#00C8FF]"
-	colorbapa = random.choice([H2,K2,M2,B2,P2]) 
-	color_panel = "#FFFFFF"
 asu = random.choice([m,k,h,u,b])
 import datetime
 
@@ -207,7 +199,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     prints(nel(f'                      {P}[bold blue]Info Author{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
+     prints(nel(f'                      {P}[bold blue]Info Author{P}')) 
      print(f"✶[bold green] Author: [purple]Khoirul-Xd")
      print(f"✶[bold green] Status: [red]Premium")
      print(f"✶[bold green] WhatsApp: [blue]081283547452")
@@ -224,7 +216,7 @@ def info_user():
         kota = data.get('city')
         zona_waktu = data.get('timezone')
         
-        prints(nel(f'                      {P}[bold blue]Info User{P}',width=70,padding=(0,7),style=f"{color_panel}"))
+        prints(nel(f'                      {P}[bold blue]Info User{P}'))
         print(f"✶[bold purple] Your Name: [blue]{sy2}")
         print(f"✶[bold purple] Your Idz: [blue]{sy3}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
@@ -274,7 +266,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'              {P}{M}Login Licensi{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
+    prints(nel(f'              {P}{M}Login Licensi{P}')) 
     print(' [1]{U} Login Ke Tools')
     print(' [2]{U} Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -356,15 +348,15 @@ def login_menu():
 	print(nel(" "* spasi_awal + pesan_selamat))
 	author()
 	info_user()
-	prints(nel(f'                   {P}[bold blue]Menu Tools Crack{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'                   {P}[bold blue]Menu Tools Crack{P}')) 
 	prints(f"""{P}{color_text}01{P} [bold green]Crack Massal    {color_text}04{P} [bold green]Cek Ressult
 {color_text}02{P} [bold green]Crack Publik    {color_text}05{P} [bold green]Crack File
-{color_text}03{P} [bold green]Clone ID Email  {color_text}00{P} [bold green]Exit Program""",width=70,padding=(0,7),style=f"{color_panel}")
+{color_text}03{P} [bold green]Clone ID Email  {color_text}00{P} [bold green]Exit Program""")
 	___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if ___Sllowly_ID____ in ['1']:
 		massal()
 	elif ___Sllowly_ID____ in ['2']:
-		prints(nel(f'               {P}{H}Publik Crack{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
+		prints(nel(f'               {P}{H}Publik Crack{P}')) 
 		idt = input('✶ ━━⫸ {H} ID Target{N} : ')
 		dump(idt,"",{"Kue":cok},token)
 		setting()
@@ -594,7 +586,7 @@ def result():
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
-	prints(nel(f'               {P}[blue]Massal Crack{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'               {P}[blue]Massal Crack{P}')) 
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
@@ -651,8 +643,8 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	prints(nel(f'                   {P}[blue]login ID Crack{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
-	cetak(f"{P}[{color_text}01{P}]. Facebook ID {M2}Old\n{P}[{color_text}02{P}]. Facebook ID {K2}New\n{P}[{color_text}03{P}]. Facebook ID {H2}Random{P}",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN",width=70,padding=(0,7),style=f"{color_panel}")
+	prints(nel(f'                   {P}[blue]login ID Crack{P}')) 
+	cetak(f"{P}[{color_text}01{P}]. Facebook ID {M2}Old\n{P}[{color_text}02{P}]. Facebook ID {K2}New\n{P}[{color_text}03{P}]. Facebook ID {H2}Random{P}",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
@@ -671,10 +663,10 @@ def setting():
 			xx = random.randint(0,len(id2))
 			id2.insert(xx,bacot)
 	else:
-		prints(f'         {P}[red]Input Tidak Diketahui{P}',width=70,padding=(0,7),style=f"{color_panel}")
+		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		exit()
-	prints(nel(f'               {P}[blue]login Method{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
-	prints(f'{P}[{color_text}01{P}]. Method free.facebook.com [[green] Validate [white]]\n[{color_text}02{P}]. Method m.facebook.com [[green] Async [white]]\n[{color_text}03{P}]. Method graph.facebook.com [[green] B-Api [white]]',width=70,padding=(0,7),style=f"{color_panel}")
+	prints(nel(f'               {P}[blue]login Method{P}')) 
+	prints(f'{P}[{color_text}01{P}]. Method free.facebook.com [[green] Validate [white]]\n[{color_text}02{P}]. Method m.facebook.com [[green] Async [white]]\n[{color_text}03{P}]. Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
@@ -695,7 +687,7 @@ def setting():
 		taplikasi.append('ya')
 	else:
 		taplikasi.append('no')
-	prints(nel(f'              {P}[blue]Manual Password?{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'              {P}[blue]Manual Password?{P}')) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
 		pwpluss.append('ya')
@@ -713,7 +705,7 @@ def passwrd():
 	loading()
 	clear()
 	banner()
-	prints(nel(f'       {P}{M2}!{P}{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !{P}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'       {P}{M2}!{P}{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !{P}')) 
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
