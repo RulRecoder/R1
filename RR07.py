@@ -221,7 +221,6 @@ def info_user():
         lokasi = data.get('loc')
         kota = data.get('city')
         zona_waktu = data.get('timezone')
-        expiration_date = get_expiration_date(saved_license)
         
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold green] Your Name: [blue]{kota}")
@@ -1449,11 +1448,11 @@ def run():
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
             expiration_date = get_expiration_date(saved_license)
-            print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {expiration_date.strftime('%Y-%m-%d %H:%M')}")
+            print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
-                time.sleep(2)
+                time.sleep(3)
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
