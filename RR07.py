@@ -349,8 +349,8 @@ def login_lagi334():
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
     try:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
+       token = open('.token.txt','r').read()
+       cok = open('.cok.txt','r').read()
 	except IOError:
 		print('[×] Cookies Expired, login ulang kontol!!!')
 		time.sleep(5)
