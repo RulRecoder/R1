@@ -199,7 +199,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     prints(nel(f'                      {P}[bold blue]Info Author{P}')) 
+     prints(nel(f'                           {P}[bold blue]Info Author{P}')) 
      print(f"✶[bold green] Author: [purple]Khoirul-Xd")
      print(f"✶[bold green] Status: [red]Premium")
      print(f"✶[bold green] WhatsApp: [blue]081283547452")
@@ -216,7 +216,7 @@ def info_user():
         kota = data.get('city')
         zona_waktu = data.get('timezone')
         
-        prints(nel(f'                      {P}[bold blue]Info User{P}'))
+        prints(nel(f'                           {P}[bold blue]Info User{P}'))
         print(f"✶[bold purple] Your Name: [blue]{sy2}")
         print(f"✶[bold purple] Your Idz: [blue]{sy3}")
         print(f"✶[bold purple] Expired: [blue]{end_time}")
@@ -266,7 +266,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                          {P}{M}Login Licensi{P}'))
+    prints(nel(f'                               {P}{M}Login Licensi{P}'))
     print(' [1][purple] Login Ke Tools')
     print(' [2][purple] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -344,13 +344,14 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
+    banner()
 	print(nel(" "* spasi_awal + pesan_selamat))
 	author()
 	info_user()
-	prints(nel(f'                   {P}[bold blue]Menu Tools Crack{P}')) 
-	prints(f"""{P}{color_text}01{P} [bold green]Crack Massal    {color_text}04{P} [bold green]Cek Ressult
-{color_text}02{P} [bold green]Crack Publik    {color_text}05{P} [bold green]Crack File
-{color_text}03{P} [bold green]Clone ID Email  {color_text}00{P} [bold green]Exit Program""")
+	prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
+	prints(f"""{P}[01]{P} [bold green]Crack Massal    04{P} [bold green]Cek Ressult
+[02]{P} [bold green]Crack Publik    [05]{P} [bold green]Crack File
+[03]{P} [bold green]Clone ID Email  [00]{P} [bold green]Exit Program""")
 	___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if ___Sllowly_ID____ in ['1']:
 		massal()
