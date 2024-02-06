@@ -1419,7 +1419,11 @@ def check_license(license_key):
 def run():
     banner()
     try:
-       check_license(license_key);time.sleep(0.03):login()
+       check_license(license_key)
+       time.sleep(0.03)
+       loading()
+       os.system("clear")
+       login_menu()
     except IOError:
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
        licen=open(".saved_license.txt", "w").write(license_key)
