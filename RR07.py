@@ -225,7 +225,7 @@ def info_user():
         prints(nel(f'                            {P}[bold blue]Info User{P}'))
         print(f"✶[bold green] Your Name: [blue]{kota}")
         print(f"✶[bold green] Your Idz: [blue]{kota}")
-        print(f"✶[bold green] Expired: [blue]{expiration_date}")
+        print(f"✶[bold green] Expired: [blue]{expiration_date.strftime('%Y-%m-%d %H:%M')}")
         print(f"✶[bold green] Your IP: [blue]{alamat_ip}")
         print(f"✶[bold green] Region: [blue]{region}")
         print(f"✶[bold green] Lokasi: [blue]{lokasi}")
@@ -284,7 +284,7 @@ def pepek():
         pepek()
     elif pil in['1','01']:
         jalan(f"{H}Pastikan sudah memiliki licensinya")
-        time.sleep(2)
+        time.sleep(1)
         os.system("clear")
         run()
     else:
@@ -1448,7 +1448,7 @@ def run():
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
             expiration_date = get_expiration_date(saved_license)
-            print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
+            print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
                 print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
