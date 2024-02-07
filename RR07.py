@@ -227,8 +227,8 @@ def info_user(my_name,my_id):
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f"✶ [bold yellow] Your Name:"{h}+str(my_name))
-        rprint(f"✶ [bold yellow] Your Idz:"{h}+str(my_id))
+        rprint(f"✶ [bold yellow] Your Name:"[{h}+str(my_name)])
+        rprint(f"✶ [bold yellow] Your Idz:"[{h}+str(my_id)])
         rprint(f"✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"✶ [bold yellow] Region:[bold green]{region}")
         rprint(f"✶ [bold yellow] Lokasi:[bold green]{lokasi}")
