@@ -364,7 +364,7 @@ def login_menu():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    print(f".            [bold green]License Expired Pada : {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}")
+    print(f".            [bold green]License Expired Pada : {B2}{get_expiration_date.strftime('%Y-%m-%d %H:%M')}")
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
