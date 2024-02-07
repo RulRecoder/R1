@@ -226,9 +226,9 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(f'                            [bold blue]Info User')
-        rprint(f"✶ [bold yellow] Your Name: [bold green]{'name'}")
-        rprint(f"✶ [bold yellow] Your Idz:[bold green]{idt}")
+        rprint(nel(f'                            [bold blue]Info User'))
+        rprint(f"✶ [bold yellow] Your Name:" ,[bold green] facebook_info['user_id'])
+        rprint(f"✶ [bold yellow] Your Idz:",[bold green] facebook_info['user_name'])
         rprint(f"✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"✶ [bold yellow] Region:[bold green]{region}")
         rprint(f"✶ [bold yellow] Lokasi:[bold green]{lokasi}")
@@ -237,6 +237,31 @@ def info_user():
 
     except Exception as e:
         print(f"Error: {e}")
+#--------------------[ BAGIAN-NAMA ]--------------#
+import requests
+import json
+
+def get_facebook_info(cookie):
+    url = 'https://www.facebook.com/profile.php'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
+        'Cookie': cookie
+    }
+
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        # Extracting user ID and name from HTML response
+        user_id = response.text.split('"USER_ID":"')[1].split('"')[0]
+        user_name = response.text.split('"USER_NAME":"')[1].split('"')[0]
+        return {'user_id': user_id, 'user_name': user_name}
+    else:
+        print("Failed to fetch data")
+
+# Replace 'your_cookie_here' with the actual Facebook cookie
+cookie = open('.cok.txt', 'r').read()
+
+if __name__ == "__main__":
+    facebook_info = get_facebook_info(cookie)
 
 #--------------------[ BAGIAN-TAHUN ]--------------#
 thnb = 'tahun(fx)'
@@ -276,9 +301,9 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                           {P}{U}Login Licensi{P}'))
-    print(' [1][purple] Login Ke Tools')
-    print(' [2][purple] Hubungi Admin')
+    prints(nel(f'                           {P}{p}Login Licensi{P}'))
+    print('  [1][bold yellow] Login Ke Tools')
+    print('  [2][bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
@@ -288,7 +313,7 @@ def pepek():
         pepek()
     elif pil in['1','01']:
         jalan(f"{H}Pastikan sudah memiliki licensinya")
-        time.sleep(1)
+        time.sleep(0.5)
         os.system("clear")
         run()
     else:
