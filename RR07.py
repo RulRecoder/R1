@@ -214,7 +214,7 @@ import requests
 from datetime import datetime
 from rich import print as rprint  # Jika Anda menggunakan modul rich untuk formatting
 
-def info_user():
+def info_user(my_name,my_id):
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
@@ -227,8 +227,8 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f"✶ [bold yellow] Your Name:" ,{h}{facebook_info['user_id']})
-        rprint(f"✶ [bold yellow] Your Idz:",{h}{facebook_info['user_name']})
+        rprint(f"✶ [bold yellow] Your Name:"{h)+str(my_name))
+        rprint(f"✶ [bold yellow] Your Idz:"{h}+str(my_id))
         rprint(f"✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"✶ [bold yellow] Region:[bold green]{region}")
         rprint(f"✶ [bold yellow] Lokasi:[bold green]{lokasi}")
@@ -336,7 +336,7 @@ def login():
             response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), Kues={'Kue':cok})
             sy2 = json.loads(response.text)['name']
             sy3 = json.loads(response.text)['id']
-            login(sy2, sy3)
+            info_user(sy2, sy3)
         except KeyError:
             login_lagi334()
         except requests.exceptions.ConnectionError:
