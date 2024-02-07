@@ -206,9 +206,9 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f"✶[bold green] Author: [yellow]Khoirul-Xd")
-     print(f"✶[bold green] Status: [yellow]Premium bpk lo")
-     print(f"✶[bold green] GitHub: [yellow]https://github.com/khoirulez")
+     print(f"✶ [bold yellow] Author:[bold green]Khoirul-Xd")
+     print(f"✶ [bold yellow] Status:[bold green]Premium bpk lo")
+     print(f"✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -227,13 +227,13 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(f'                            [bold blue]Info User')
-        rprint(f"✶[bold green] Your Name: [yellow]{'name'}")
-        rprint(f"✶[bold green] Your Idz: [yellow]{idt}")
-        rprint(f"✶[bold green] Your IP: [yellow]{alamat_ip}")
-        rprint(f"✶[bold green] Region: [yellow]{region}")
-        rprint(f"✶[bold green] Lokasi: [yellow]{lokasi}")
-        rprint(f"✶[bold green] Kota: [yellow]{kota}")
-        rprint(f"✶[bold green] Zona Waktu: [yellow]{zona_waktu}")
+        rprint(f"✶ [bold yellow] Your Name: [bold green]{'name'}")
+        rprint(f"✶ [bold yellow] Your Idz:[bold green]{idt}")
+        rprint(f"✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
+        rprint(f"✶ [bold yellow] Region:[bold green]{region}")
+        rprint(f"✶ [bold yellow] Lokasi:[bold green]{lokasi}")
+        rprint(f"✶ [bold yellow] Kota:[bold green]{kota}")
+        rprint(f"✶ [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -364,7 +364,6 @@ def login_menu():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    print(f".            [bold green]License Expired Pada : {B2}{get_expiration_date.strftime('%Y-%m-%d %H:%M')}")
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
