@@ -276,7 +276,8 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                            {P}{U}Login Licensi{P}'))
+    prints(nel(f'                           {P}{U}Login Licensi{P}
+    '))
     print(' [1][purple] Login Ke Tools')
     print(' [2][purple] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -364,11 +365,11 @@ def login_menu():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    expiration_date = get_expiration_date(saved_license)
-    print(f".            [bold green] Expired Pada : {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}")
+    print(f".            [bold green]License Expired Pada : {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}")
     author()
     info_user()
-    prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
+    prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}
+    ')) 
     prints(f"""                 {B2}01 [bold purple]Crack Massal    {B2}04 [bold purple]Cek Ressult
                  {B2}02 [bold purple]Crack Publik    {B2}05 [bold purple]Crack File
                  {B2}03 [bold purple]Clone ID Email  {B2}00 [bold purple]Exit Program""")
@@ -606,7 +607,8 @@ def result():
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
-	prints(nel(f'                    {P}[blue]Massal Crack{P}')) 
+	prints(nel(f'                    {P}[blue]Massal Crack{P}
+	')) 
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
@@ -663,7 +665,8 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	prints(nel(f'                        {P}[blue]login ID Crack{P}')) 
+	prints(nel(f'                        {P}[blue]login ID Crack{P}
+	')) 
 	print(f"[{B2}01]. Facebook ID {M2}Old\n[{B2}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
@@ -685,7 +688,8 @@ def setting():
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		exit()
-	prints(nel(f'                    {P}[blue]login Method{P}')) 
+	prints(nel(f'                    {P}[blue]login Method{P}
+	')) 
 	prints(f'[{B2}01]. Method free.facebook.com [[green] Validate [white]]\n[{B2}02]. Method m.facebook.com [[green] Async [white]]\n[{B2}03]. Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
