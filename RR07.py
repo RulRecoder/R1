@@ -179,7 +179,7 @@ spasi_awal = (lebar_layar - len(pesan_selamat)) // 2
 def clear():
     os.system('clear')
 def back():
-    login()
+    login_menu()
 def jalan(z):
     for e in z + '\n':
         sys.stdout.write(e)
@@ -227,7 +227,7 @@ def info_user(my_name,my_id):
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f"✶ [bold yellow] Your Name:"{h)+str(my_name))
+        rprint(f"✶ [bold yellow] Your Name:"{h}+str(my_name))
         rprint(f"✶ [bold yellow] Your Idz:"{h}+str(my_id))
         rprint(f"✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"✶ [bold yellow] Region:[bold green]{region}")
@@ -237,31 +237,6 @@ def info_user(my_name,my_id):
 
     except Exception as e:
         print(f"Error: {e}")
-#--------------------[ BAGIAN-NAMA ]--------------#
-import requests
-import json
-
-def get_facebook_info(cookie):
-    url = 'https://www.facebook.com/profile.php'
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-        'Cookie': cookie
-    }
-
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        # Extracting user ID and name from HTML response
-        user_id = response.text.split('"USER_ID":"')[1].split('"')[0]
-        user_name = response.text.split('"USER_NAME":"')[1].split('"')[0]
-        return {'user_id': user_id, 'user_name': user_name}
-    else:
-        print("Failed to fetch data")
-
-# Replace 'your_cookie_here' with the actual Facebook cookie
-cookie = open('.cok.txt', 'r').read()
-
-if __name__ == "__main__":
-    facebook_info = get_facebook_info(cookie)
 
 #--------------------[ BAGIAN-TAHUN ]--------------#
 thnb = 'tahun(fx)'
@@ -382,8 +357,9 @@ def login_menu():
     try:
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
+       print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL!!!!{x} ')
     except IOError:
-       print('[×] Cookies Expired, login ulang kontol!!!')
+       print('[×]{m} Cookies Expired, login ulang kontol!!!')
        time.sleep(3)
        login_lagi334()
     os.system("clear")
@@ -787,6 +763,18 @@ def passwrd():
 				pool.submit(crackmbasic,idf,pwv)
 	print(f'[[blue]•] OK : {h}%s '%(ok))
 	print(f'[[blue]•] CP : {k}%s '%(cp))
+	kembali()
+	
+def kembali():
+	prints(f'{B2}Ketik "back" Untuk kembali kemenu crack')
+	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
+	if hc in ['back','Back','BACK']:
+		login_menu()
+		time.sleep(2)
+	else:
+		print(' [red]ketik Yang Bener kontol ')
+		kembali()
+
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
