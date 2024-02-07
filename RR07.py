@@ -63,7 +63,7 @@ try:
 	prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
 	open('.prox.txt','w').write(prox)
 except Exception as e:
-	print('[[\x1b[1;92m•\x1b[1;97m] [\x1b[1;96mAsep Yusup')
+	print('[[\x1b[1;92m•\x1b[1;97m] [\x1b[1;96mKontolodon')
 prox=open('.prox.txt','r').read().splitlines()
 
 for xd in range(10000):
@@ -224,13 +224,11 @@ def info_user():
         lokasi = data.get('loc')
         kota = data.get('city')
         zona_waktu = data.get('timezone')
-        end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(f'                            [bold blue]Info User')
-        rprint(f"✶[bold green] Your Name: [yellow]{kota}")
-        rprint(f"✶[bold green] Your Idz: [yellow]{kota}")
-        rprint(f"✶[bold green] Expired: [yellow]{end_time}")
+        rprint(f"✶[bold green] Your Name: [yellow]{'name'}")
+        rprint(f"✶[bold green] Your Idz: [yellow]{idt}")
         rprint(f"✶[bold green] Your IP: [yellow]{alamat_ip}")
         rprint(f"✶[bold green] Region: [yellow]{region}")
         rprint(f"✶[bold green] Lokasi: [yellow]{lokasi}")
@@ -366,6 +364,7 @@ def login_menu():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
+    print(nel(" "get_expiration_date(license_info))
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
@@ -664,7 +663,7 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                        {P}[blue]login ID Crack{P}')) 
-	prints(f"[{B2}01]. Facebook ID {M2}Old\n[{B2}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
+	print(f"[{B2}01]. Facebook ID {M2}Old\n[{B2}02]. Facebook ID {K2}New\n[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
