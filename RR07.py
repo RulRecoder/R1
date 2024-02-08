@@ -360,8 +360,6 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
-    banner()
-    print(nel(" "* spasi_awal + pesan_selamat))
     try:
        loading()
        clear()
@@ -369,6 +367,7 @@ def login_menu():
        cok = open('.cok.txt','r').read()
        print(f'  [•][bold green] LOGIN BERHASIL!!!! ')
        time.sleep(2)
+       loading()
        clear()
     except IOError:
        print(' {h} Cookies Expired, login ulang kontol!!!')
@@ -376,8 +375,6 @@ def login_menu():
        loading()
        clear()
        login_lagi334()
-    loading()
-    clear()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
@@ -1475,10 +1472,10 @@ def get_expiration_date(license_info):
     end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
     return end_time
 def run():
-    loading()
-    clear()
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
+            loading()
+            clear()
             saved_license = file.read()
             expiration_date = get_expiration_date(saved_license)
             print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
@@ -1495,6 +1492,9 @@ def run():
        time.sleep(0.03)
 
        if check_license(license_key):
+          loading()
+          clear()
+          print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
           print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
           time.sleep(3)
           loading()
