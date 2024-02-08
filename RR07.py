@@ -206,9 +206,9 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f"  {h}╰─▶{p} ✶{x} [bold yellow] Author:[bold green]Khoirul-Xd")
-     print(f"  {h}╰─▶{p} ✶{x} [bold yellow] Status:[bold green]Premium bpk lo")
-     print(f"  {h}╰─▶{p} ✶{x} [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+     print(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Author:[bold green]Khoirul-Xd")
+     print(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Status:[bold green]Premium bpk lo")
+     print(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -227,13 +227,13 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f" {h}╰─▶{p} ✶{x} [bold yellow] Your Name:",{h}+str(sy2))
-        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Your Idz:",{h}+str(sy3))
-        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Your IP:[bold green]{alamat_ip}")
-        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Region:[bold green]{region}")
-        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Lokasi:[bold green]{lokasi}")
-        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Kota:[bold green]{kota}")
-        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
+        rprint(f" (H2}╰─▶{B2} ✶{N} [bold yellow] Your Name:[bold green]{kota}")
+        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Your Idz:[bold green]{kota}")
+        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Your IP:[bold green]{alamat_ip}")
+        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Region:[bold green]{region}")
+        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Lokasi:[bold green]{lokasi}")
+        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Kota:[bold green]{kota}")
+        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -277,8 +277,8 @@ def pepek():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     prints(nel(f'                           {P}{p}Login Licensi{P}'))
-    print(' {h}╰─▶{p} ✶{x}  [1][bold yellow] Login Ke Tools')
-    print(' {h}╰─▶{p} ✶{x}  [2][bold yellow] Hubungi Admin')
+    print(' {H2}╰─▶{B2} ✶{N}  [1][bold yellow] Login Ke Tools')
+    print(' {H2}╰─▶{B2} ✶{N}  [2][bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
