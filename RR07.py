@@ -720,7 +720,7 @@ def setting():
 	if _jembot_ in ['']:
 		print(' Pilih Yang Bener Kontol ')
 		back()
-	elif _jembot_ in ['y','Y']:
+	elif _jembot_ in ['y','ya','Ya','Y']:
 		taplikasi.append('ya')
 	else:
 		taplikasi.append('no')
@@ -735,13 +735,26 @@ def setting():
 			pwnya.append(xpw)
 	else:
 		pwpluss.append('no')
+	print('')
+	_jembot_ = input('✶ ━━⫸ [green]Saya Janji Akan Pilih Prabowo [red]( Y/t ){x} ')
+	if _jembot_ in ['t','T']:
+		print(' [red]Harus Pilih Klo Ga Pilih Jangan Pke Scnya ')
+		back()
+	elif _jembot_ in ['y','ya','Ya','Y']:
+		taplikasi.append('ya')
+	else:
+		taplikasi.append('no')
+	prints(f'{B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
+	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
+	if hc in ['bismillah','Bismillah','BISMILLAH']:
+		passwrd()
+		time.sleep(2)
+	else:
+		print(' [red]ketik Yang Bener kontol ')
+		kembali()
 	passwrd()
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
-	clear()
-	loading()
-	clear()
-	banner()
 	prints(nel(f'             {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !')) 
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
