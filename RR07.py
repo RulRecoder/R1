@@ -678,7 +678,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{asu}{len(id)}{P2}{M2} ID TELAH DIKUMPULKAN"))
+	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -728,7 +728,7 @@ def setting():
 		pwpluss.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Aplikasi Terkait?')) 
-	_jembot_ = input('✶ ━━⫸{H} Tambahkan Aplikasi Terkait {M}( Y/t ) ')
+	_jembot_ = input('✶ ━━⫸ Tambahkan Aplikasi Terkait ( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
 		back()
@@ -738,7 +738,7 @@ def setting():
 		taplikasi.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Pilih Prabowo?')) 
-	tai = input('✶ ━━⫸{H}  Saya Janji Akan Pilih Prabowo {M}( Y/t ) ')
+	tai = input('✶ ━━⫸  Saya Janji Akan Pilih Prabowo ( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
 		back()
@@ -747,14 +747,7 @@ def setting():
 	else:
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
-	prints(nel(f'        {B2}Ketik "{H2}bismillah{H2}" Untuk Memulai Crack, Semoga ijo ya  '))
-	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
-	if hc in ['bismillah','Bismillah','BISMILLAH']:
-		passwrd()
-		time.sleep(2)
-	else:
-		print(' [red]ketik Yang Bener kontol ')
-		kembali()
+	passwrd()
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
 	loading()
@@ -807,11 +800,11 @@ def passwrd():
 	print('>> Ketik "crack" untuk crack lagi ')
 	woi = input('>> ketik : ')
 	if woi in ['crack','Crack','CRACK']:
-		print(f'\t{x}>>{k} Jangan lupa pilih prabowo{x} << ')
+		print(f'\t>> Jangan lupa pilih prabowo << ')
 		time.sleep(2)
-		kembali()
+		back()
 	else:
-		print(f'\t{x}>>{k} Jangan lupa pilih prabowo{x} << ')
+		print(f'\t>> Jangan lupa pilih prabowo << ')
 		time.sleep(2)
 		exit()
 #--------------------[ METODE VALIDATE ]-----------------#
