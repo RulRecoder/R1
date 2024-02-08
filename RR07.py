@@ -205,7 +205,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     print(nel(f'\t\t                            [bold blue]Info Author',title=f"\r", style=f"bold purple"))
+     print(nel(f'\t\t                            [bold blue]Info Author'))
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
@@ -226,7 +226,7 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(nel(f'\t\t                            [bold blue]Info User', title=f"\r", style=f"bold purple"))
+        rprint(nel(f'\t\t                            [bold blue]Info User'))
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{lk}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{ld}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
@@ -276,7 +276,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
-    print(nel(f'\t\t                           [bold blue]Login Licensi', title=f"\r", style=f"bold purple"))
+    print(nel(f'\t\t                           [bold blue]Login Licensi'))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -472,8 +472,8 @@ def dump3():
 	put = input(f" Target id public :"+H+" ")
 	try:
 		token = open('token.txt','r').read()
-		cookie = open('cookie.txt','r').read()
-		coki = {"cookie":cookie}
+		cookie = open('cok.txt','r').read()
+		coki = {"cookie":cok}
 		coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
 		el = json.loads(coa.text)
 		try:lk = el["name"]
@@ -495,7 +495,7 @@ def dump3():
 			#exit()
 		#global ttl__
 		token = open('token.txt','r').read()
-		cookie = open('cookie.txt','r').read()
+		cookie = open('cok.txt','r').read()
 		coki = {"cookie":cookie}
 		cyna = requests.get('https://graph.facebook.com/%s?fields=friends.limit(99999)&access_token=%s'%(put,token),cookies=coki).json()
 		for fuck in cyna['friends']['data']:
@@ -508,7 +508,7 @@ def dump3():
 		#print(f" nama target :%s %s"(H,lk))
 		x=f"{P2}Nama target : {H2}{lk}\n{P2}total friends : {H2}{len(id)}\n{P2}total followers : {H2}{len(id3)}"
 		rprint(panel(x,style=f"bold purple"))
-		settingers()
+		setting()
 	except requests.exceptions.ConnectionError:
 		jalan(" koneksi internet bermasalah ")
 		exit()
@@ -577,7 +577,7 @@ def massal2():
                 "https://graph.facebook.com/{}".format(user),
                 params=params,
                 headers=head,
-                cookies={"cookies": cok},
+                cookies={"cok": cok},
             ).json()
             for xr in url["friends"]["data"]:
                 try:
@@ -593,7 +593,7 @@ def massal2():
         except requests.exceptions.ConnectionError:
             exit()
     try:
-        print("{U}Total Id Terkumpul{N} : " + str(len(id)))
+        print("{U2}Total Id Terkumpul{x} : " + str(len(id)))
         setting()
     except requests.exceptions.ConnectionError:
         exit()
@@ -800,7 +800,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN"))
+	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN", style=f"bold purple"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
