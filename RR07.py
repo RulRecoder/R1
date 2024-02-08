@@ -188,10 +188,10 @@ def jalan(z):
 def loading():
     animation = ["[\x1b[1;91m■\x1b[0m□□□□□□□□□]","[\x1b[1;92m■■\x1b[0m□□□□□□□□]", "[\x1b[1;93m■■■\x1b[0m□□□□□□□]", "[\x1b[1;94m■■■■\x1b[0m□□□□□□]", "[\x1b[1;95m■■■■■\x1b[0m□□□□□]", "[\x1b[1;96m■■■■■■\x1b[0m□□□□]", "[\x1b[1;97m■■■■■■■\x1b[0m□□□]", "[\x1b[1;98m■■■■■■■■\x1b[0m□□]", "[\x1b[1;99m■■■■■■■■■\x1b[0m□]", "[\x1b[1;910m■■■■■■■■■■\x1b[0m]"]
     for i in range(50):
-        time.sleep(0.01)
+        time.sleep(0.02)
         sys.stdout.write(f"\r>> {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.02)
 
 # ------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
@@ -205,7 +205,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     print(nel(f'\t\t[bold blue]Info Author',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
+     print(nel(f'\t\t   [bold blue]Info Author',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
@@ -226,7 +226,7 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(nel(f'\t\t[bold blue]Info User',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
+        rprint(nel(f'\t\t   [bold blue]Info User',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{lk}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{ld}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
@@ -276,7 +276,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
-    print(nel(f'\t\t[bold blue]Login Licensi', title=f"\r", style=f"bold purple"))
+    print(nel(f'\t\t     [bold blue]Login Licensi', title=f"\r", style=f"bold purple"))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -305,7 +305,7 @@ import time
 
 def login():
     banner()
-    print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
+    print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     try:
         token = open('.token.txt', 'r').read()
         cok = open('.cok.txt', 'r').read()
@@ -328,7 +328,7 @@ def login():
 
 def login_lagi334():
     banner()
-    print(nel(" "* spasi_awal + pesan_selamat))
+    print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     try:
         os.system('clear')
         banner()
@@ -361,12 +361,12 @@ def login_lagi334():
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
     banner()
-    print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
+    print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     try:
        loading()
        clear()
        banner()
-       print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
+       print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
        print(f'  [•][bold green] LOGIN BERHASIL!!!! ')
@@ -380,10 +380,10 @@ def login_menu():
        clear()
        login_lagi334()
     banner()
-    print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
+    print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
     info_user()
-    print(nel(f'\t\t[bold blue]Menu Tools Crack',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
+    print(nel(f'\t\t[bold blue]Menu Tools Crack',width=90, padding=(0, 8), style=f"bold purple"))
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
              {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
@@ -391,8 +391,8 @@ def login_menu():
     if ___Sllowly_ID____ in ['1']:
         massal()
     elif ___Sllowly_ID____ in ['2']:
-        print(nel(f'\t\t[bold blue]Publik Crack',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
-        dump2()
+        print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
+        dump3()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
     elif ___Sllowly_ID____ in ['4']:
