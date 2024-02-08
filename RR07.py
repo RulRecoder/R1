@@ -206,9 +206,9 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Author:[bold green]Khoirul-Xd")
-     print(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Status:[bold green]Premium bpk lo")
-     print(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
+     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
+     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -227,13 +227,13 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f" {H2}╰─▶{B2} ✶{N} [bold yellow] Your Name:[bold green]{kota}")
-        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Your Idz:[bold green]{kota}")
-        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Your IP:[bold green]{alamat_ip}")
-        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Region:[bold green]{region}")
-        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Lokasi:[bold green]{lokasi}")
-        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Kota:[bold green]{kota}")
-        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{kota}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{kota}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Kota:[bold green]{kota}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -277,8 +277,8 @@ def pepek():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     prints(nel(f'                           {P}{p}Login Licensi{P}'))
-    print(' {H2}╰─▶{B2} ✶{N}  [1][bold yellow] Login Ke Tools')
-    print(' {H2}╰─▶{B2} ✶{N}  [2][bold yellow] Hubungi Admin')
+    print(' [bold green]╰─▶[bold blue] ✶  [1][bold yellow] Login Ke Tools')
+    print(' [bold green]╰─▶[bold blue] ✶  [2][bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
@@ -377,14 +377,16 @@ def login_menu():
        clear()
        login_lagi334()
     os.system("clear")
+    loading()
+    clear()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""                 {H2}╰─▶{B2} ✶{N}[{B2}01{N}] [bold purple]Crack Massal    {H2}╰─▶{B2} ✶{N}[{B2}04{N}] [bold purple]Cek Ressult
-                 {H2}╰─▶{B2} ✶{N}[{B2}02{N}] [bold purple]Crack Publik    {H2}╰─▶{B2} ✶{N}[{B2}05{N}] [bold purple]Crack File
-                 {H2}╰─▶{B2} ✶{N}[{B2}03{N}] [bold purple]Clone ID Email  {H2}╰─▶{B2} ✶{N}[{B2}00{N}] [bold purple]Exit Program""")
+    prints(f"""                 {H2}╰─▶{B2} ✶[{M2}01] [bold purple]Crack Massal    {H2}╰─▶{B2} ✶[{M2}04] [bold purple]Cek Ressult
+                 {H2}╰─▶{B2} ✶[{M2}02] [bold purple]Crack Publik    {H2}╰─▶{B2} ✶[{M2}05] [bold purple]Crack File
+                 {H2}╰─▶{B2} ✶[{M2}03] [bold purple]Clone ID Email  {H2}╰─▶{B2} ✶[{M2}00] [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
