@@ -189,7 +189,7 @@ def loading():
     animation = ["[\x1b[1;91m■\x1b[0m□□□□□□□□□]","[\x1b[1;92m■■\x1b[0m□□□□□□□□]", "[\x1b[1;93m■■■\x1b[0m□□□□□□□]", "[\x1b[1;94m■■■■\x1b[0m□□□□□□]", "[\x1b[1;95m■■■■■\x1b[0m□□□□□]", "[\x1b[1;96m■■■■■■\x1b[0m□□□□]", "[\x1b[1;97m■■■■■■■\x1b[0m□□□]", "[\x1b[1;98m■■■■■■■■\x1b[0m□□]", "[\x1b[1;99m■■■■■■■■■\x1b[0m□]", "[\x1b[1;910m■■■■■■■■■■\x1b[0m]"]
     for i in range(50):
         time.sleep(0.03)
-        sys.stdout.write(f"\✶ ━━⫸ {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
+        sys.stdout.write(f"\r>> {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
         sys.stdout.flush()
         time.sleep(0.03)
 
@@ -276,9 +276,9 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                           {B2}Login Licensi'))
-    print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
-    print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
+    prints(nel(f'                           [bold blue]Login Licensi'))
+    print(' [bold green]╰─▶{B2} 1[bold yellow] Login Ke Tools')
+    print(' [bold green]╰─▶{B2} 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H2}You will be redirected to the Author Whatsapp...")
@@ -367,14 +367,14 @@ def login_menu():
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
        print(f'  [{H2}•]{H2} LOGIN BERHASIL!!!! ')
-       time.sleep(1)
+       time.sleep(2)
+       clear()
     except IOError:
        print(' {M2} Cookies Expired, login ulang kontol!!!')
        time.sleep(2)
        loading()
        clear()
        login_lagi334()
-    print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
