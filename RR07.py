@@ -361,6 +361,8 @@ def login_lagi334():
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
     try:
+       banner()
+       print(nel(" "* spasi_awal + pesan_selamat))
        loading()
        clear()
        banner()
@@ -456,13 +458,13 @@ def mail2():
 	global ok , cc
 	nama = input(f'{P}[{H}?{P}] {U}nama target{N} : ')
 	if ',' in str(nama):
-		print(f' {H}╰─▶{B} ✶{N}[red] masukan nama, jangan kosong ')
+		print(f' {h}╰─▶{b} ✶{N}[red] masukan nama, jangan kosong ')
 		time.sleep(3);exit()
 	doma = input(f'{P}[{H}?{P}] {U} domain (ex:@gmail.com){N} : ')
 	if '@' not in str(doma) or '.com' not in str(doma):
-		print(f' {H}╰─▶{B} ✶{N}[red]  masukkan domain dengan benar ')
+		print(f' {h}╰─▶{b} ✶{N}[red]  masukkan domain dengan benar ')
 		time.sleep(3);exit()
-	jumlah = input(f'{P}[{H}?{P} ]{H}╰─▶{B} ✶{N} {U}total dump (max:10000){N} : ')
+	jumlah = input(f'{P}[{H}?{P} ]{h}╰─▶{b} ✶{N} {U}total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
@@ -471,7 +473,7 @@ def mail2():
 		if DD in id:pass
 		else:id.append(DD+'|'+nama)
 		if len(dump)==999999:passwrd()
-		sys.stdout.write(f"\r{P}[{H}±{P}]{H}╰─▶{B} ✶{N} {U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
+		sys.stdout.write(f"\r{P}[{H}±{P}]{h}╰─▶{n} ✶{N} {U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
@@ -677,7 +679,7 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                        [blue]login ID Crack')) 
-	print(nel(f"╰─▶[{B2}01]. Facebook ID {M2}Old\n╰─▶[{B2}02]. Facebook ID {K2}New\n╰─▶[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN"))
+	cetak(nel(f"╰─▶[{B2}01]. Facebook ID {M2}Old\n╰─▶[{B2}02]. Facebook ID {K2}New\n╰─▶[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN"))
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
