@@ -188,22 +188,21 @@ def jalan(z):
 def loading():
     animation = ["[\x1b[1;91m■\x1b[0m□□□□□□□□□]","[\x1b[1;92m■■\x1b[0m□□□□□□□□]", "[\x1b[1;93m■■■\x1b[0m□□□□□□□]", "[\x1b[1;94m■■■■\x1b[0m□□□□□□]", "[\x1b[1;95m■■■■■\x1b[0m□□□□□]", "[\x1b[1;96m■■■■■■\x1b[0m□□□□]", "[\x1b[1;97m■■■■■■■\x1b[0m□□□]", "[\x1b[1;98m■■■■■■■■\x1b[0m□□]", "[\x1b[1;99m■■■■■■■■■\x1b[0m□]", "[\x1b[1;910m■■■■■■■■■■\x1b[0m]"]
     for i in range(50):
-        time.sleep(0.03)
+        time.sleep(0.1)
         sys.stdout.write(f"\r>> {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
         sys.stdout.flush()
-        time.sleep(0.03)
+        time.sleep(0.1)
 
 # ------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
-    rprint(panel(x,style=f"bold purple"))
-    x=f"""[bold red]               
+    print(nel(f"""[bold red]               
            ██████╗ ██████╗  ██████╗ ███████╗
            ██╔══██╗██╔══██╗██╔═████╗╚════██║
            ██████╔╝██████╔╝██║██╔██║    ██╔╝
            ██╔══██╗██╔══██╗████╔╝██║   ██╔╝ 
            ██║  ██║██║  ██║╚██████╔╝   ██║  
             ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚═╝                                      
-             """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
+             """,width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 #--------------------[ AUTHOR ]--------------#
 def author():
      rprint(panel(x,style=f"bold purple"))
@@ -520,7 +519,7 @@ def dump3():
 		exit()
 	except (KeyError,IOError):
 		jalan(" gagal dump id... mungkin privat friends/gada friends nya") 
-		exit()
+		login_menu()
 #-----------------[ CRACK EMAIL ]-----------------#
 def mail2():
 	dump=[]
