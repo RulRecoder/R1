@@ -376,9 +376,9 @@ def login_menu():
        loading()
        clear()
        login_lagi334()
+    os.system('clear')
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    loading()
     author()
     info_user()
     prints(nel(f'                        [bold blue]Menu Tools Crack')) 
@@ -1476,8 +1476,7 @@ def get_expiration_date(license_info):
 def run():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    loading()
-    clear()
+    loading();clear()
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
