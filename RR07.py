@@ -195,7 +195,7 @@ def loading():
 
 # ------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
-    print(nel(f"""[bold red]               
+    print(nel(f"""{asu}               
            ██████╗ ██████╗  ██████╗ ███████╗
            ██╔══██╗██╔══██╗██╔═████╗╚════██║
            ██████╔╝██████╔╝██║██╔██║    ██╔╝
@@ -205,8 +205,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     rprint(panel(x,style=f"bold purple"))
-     x=f'\t\t                            [bold blue]Info Author'
+     print(nel(f'\t\t                            [bold blue]Info Author',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
@@ -227,8 +226,7 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(panel(x,style=f"bold purple"))
-        x=f'\t\t                            [bold blue]Info User'
+        rprint(nel(f'\t\t                            [bold blue]Info User',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{lk}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{ld}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
@@ -277,9 +275,8 @@ def pepek():
     loading()
     os.system("clear")
     banner()
-    rprint(panel(x,style=f"bold purple"))
     print(nel(" "* spasi_awal + pesan_selamat))
-    x=f'\t\t                           [bold blue]Login Licensi'
+    print(nel(f'\t\t                           [bold blue]Login Licensi',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -386,8 +383,7 @@ def login_menu():
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
-    rprint(panel(x,style=f"bold purple"))
-    x=f'\t\t                        [bold blue]Menu Tools Crack'
+    print(nel(f'\t\t                        [bold blue]Menu Tools Crack',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
              {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
