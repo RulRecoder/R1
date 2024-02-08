@@ -214,7 +214,7 @@ import requests
 from datetime import datetime
 from rich import print as rprint  # Jika Anda menggunakan modul rich untuk formatting
 
-def info_user(my_name,my_id):
+def info_user():
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
@@ -227,8 +227,8 @@ def info_user(my_name,my_id):
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f" ╰─▶ ✶ [bold yellow] Your Name:"[{h}+str(my_name)])
-        rprint(f" ╰─▶ ✶ [bold yellow] Your Idz:"[{h}+str(my_id)])
+        rprint(f" ╰─▶ ✶ [bold yellow] Your Name:"{h}+str(sy2))
+        rprint(f" ╰─▶ ✶ [bold yellow] Your Idz:"{h}+str(sy3))
         rprint(f" ╰─▶ ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f" ╰─▶ ✶ [bold yellow] Region:[bold green]{region}")
         rprint(f" ╰─▶ ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
@@ -304,6 +304,8 @@ import re
 import time
 
 def login():
+    banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
     try:
         token = open('.token.txt', 'r').read()
         cok = open('.cok.txt', 'r').read()
@@ -325,6 +327,8 @@ def login():
         login_lagi334()
 
 def login_lagi334():
+    banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
     try:
         os.system('clear')
         banner()
@@ -356,12 +360,15 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
+    banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
+    loading()
+    clear()
     try:
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       loading()
-       clear()
        print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL!!!!{x} ')
+       time.sleep(1)
        clear()
     except IOError:
        print('[×]{m} Cookies Expired, login ulang kontol!!!')
