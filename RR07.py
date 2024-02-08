@@ -459,12 +459,12 @@ def mail2():
 	nama = input(f'{P}[{H}?{P}] {U}nama target{N} : ')
 	if ',' in str(nama):
 		print(f' ╰─▶ ✶[red] masukan nama, jangan kosong ')
-		time.sleep(3);mail2()
-	doma = input(f'{P}[{H}?{P}] {U} domain (ex:@gmail.com){N} : ')
+		time.sleep(3);str(nama)
+	doma = input(f'{P}[{H}?{P}]{U} domain (ex:@gmail.com){N} : ')
 	if '@' not in str(doma) or '.com' not in str(doma):
-		print(f' [green]╰─▶[blue] ✶{N}[red]  masukkan domain dengan benar ')
-		time.sleep(3);mail2()
-	jumlah = input(f'{P}[{H}?{P} ]╰─▶ ✶ {U}total dump (max:10000){N} : ')
+		print(f' ╰─▶ ✶[red]  masukkan domain dengan benar ')
+		time.sleep(3);str(doma)
+	jumlah = input(f'{P}[{H}?{P} ]╰─▶ ✶{U} total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
@@ -473,7 +473,7 @@ def mail2():
 		if DD in id:pass
 		else:id.append(DD+'|'+nama)
 		if len(dump)==999999:passwrd()
-		sys.stdout.write(f"\r{P}[{H}±{P}]╰─▶ ✶ {U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
+		sys.stdout.write(f"\r{P}[{H}±{P}]╰─▶ ✶{U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
