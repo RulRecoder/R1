@@ -395,8 +395,7 @@ def login_menu():
     if ___Sllowly_ID____ in ['1']:
         massal2()
     elif ___Sllowly_ID____ in ['2']:
-        rprint(panel(x,style=f"bold purple"))
-	    x=f'\t\t                         [bold blue]Publik Crack'
+        print(nel(f'\t\t                         [bold blue]Publik Crack',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 	    dump3()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
