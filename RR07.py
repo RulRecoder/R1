@@ -277,18 +277,20 @@ def pepek():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     prints(nel(f'                           {P}{p}Login Licensi{P}'))
-    print('╰─▶✶  [1][bold yellow] Login Ke Tools')
-    print('╰─▶✶  [2][bold yellow] Hubungi Admin')
+    print('╰─▶ ✶  [1][bold yellow] Login Ke Tools')
+    print('╰─▶ ✶  [2][bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
+        time.sleep(0.03)
+        loading()
         time.sleep(0.03)
         os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini')
         time.sleep(3)
         pepek()
     elif pil in['1','01']:
         jalan(f"{H}Pastikan sudah memiliki licensinya")
-        time.sleep(0.5)
+        loading()
         os.system("clear")
         run()
     else:
@@ -357,10 +359,15 @@ def login_menu():
     try:
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
+       loading()
+       clear()
        print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL!!!!{x} ')
+       clear()
     except IOError:
        print('[×]{m} Cookies Expired, login ulang kontol!!!')
        time.sleep(3)
+       loading()
+       clear()
        login_lagi334()
     os.system("clear")
     banner()
@@ -1461,6 +1468,7 @@ def get_expiration_date(license_info):
     return end_time
 def run():
     banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
