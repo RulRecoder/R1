@@ -679,9 +679,9 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                        [blue]login ID Crack')) 
-	print(f"╰─▶{B2}01{U} Facebook ID {M2}Old{x}\n
-	╰─▶{B2}02{U} Facebook ID {K2}New{x}\n
-	╰─▶{B2}03{U} Facebook ID {H2}Random{x}")
+	print(f"╰─▶{B2}01{U} Facebook ID {M2}Old{x}\n")
+	print(f"╰─▶{B2}02{U} Facebook ID {K2}New{x}\n")
+	print(f"╰─▶{B2}03{U} Facebook ID {H2}Random{x}")
 	hu = input(f'✶ ━━⫸{H} Input{N} :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
@@ -701,11 +701,11 @@ def setting():
 			id2.insert(xx,bacot)
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
-		exit()
+		login_menu()
 	prints(nel(f'                        [blue]login Method')) 
-	prints(f'╰─▶{B2}01{U} Method free.facebook.com [[green] Validate [white]]\n
-	╰─▶{B2}02{U} Method m.facebook.com [[green] Async [white]]\n
-	╰─▶{B2}03{U} Method graph.facebook.com [[green] B-Api [white]]')
+	prints(f'╰─▶{B2}01{U} Method free.facebook.com [[green] Validate [white]]\n')
+	prints(f'╰─▶{B2}02{U} Method m.facebook.com [[green] Async [white]]\n')
+	prints(f'╰─▶{B2}03{U} Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
