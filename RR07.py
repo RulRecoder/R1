@@ -360,14 +360,13 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
-    banner()
-    print(nel(" "* spasi_awal + pesan_selamat))
-    loading()
-    clear()
     try:
+       banner()
+       print(nel(" "* spasi_awal + pesan_selamat))
+       loading()
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       print(f'  [•]{h} LOGIN BERHASIL!!!! ')
+       print(f'  [•][bold green] LOGIN BERHASIL!!!! ')
        time.sleep(2)
        clear()
     except IOError:
@@ -377,6 +376,8 @@ def login_menu():
        clear()
        login_lagi334()
     os.system('clear')
+    loading()
+    clear()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
@@ -1476,7 +1477,7 @@ def get_expiration_date(license_info):
 def run():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    loading();clear()
+    loading()
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
