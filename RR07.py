@@ -715,14 +715,6 @@ def setting():
 		method.append('metod3')
 	else:
 		method.append('metod1')
-	_jembot_ = input('✶ ━━⫸ Tambahkan Aplikasi Terkait ( Y/t ) ')
-	if _jembot_ in ['']:
-		print(' [red]Pilih Yang Bener Kontol ')
-		back()
-	elif _jembot_ in ['y','ya','Ya','Y']:
-		taplikasi.append('ya')
-	else:
-		taplikasi.append('no')
 	prints(nel(f'                        [bold blue]Manual Password?')) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
@@ -734,6 +726,18 @@ def setting():
 			pwnya.append(xpw)
 	else:
 		pwpluss.append('no')
+	print("")
+	prints(nel(f'                        [bold blue]Aplikasi Terkait?')) 
+	_jembot_ = input('✶ ━━⫸ Tambahkan Aplikasi Terkait ( Y/t ) ')
+	if _jembot_ in ['']:
+		print(' [red]Pilih Yang Bener Kontol ')
+		back()
+	elif _jembot_ in ['y','ya','Ya','Y']:
+		taplikasi.append('ya')
+	else:
+		taplikasi.append('no')
+	print("")
+	prints(nel(f'                        [bold blue]Pilih Prabowo?')) 
 	tai = input('✶ ━━⫸  Saya Janji Akan Pilih Prabowo ( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
@@ -743,7 +747,7 @@ def setting():
 	else:
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
-	prints(f'.  ╰─▶ {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
+	prints(f'.  ╰─▶ {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ya  ')
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['bismillah','Bismillah','BISMILLAH']:
 		passwrd()
@@ -796,22 +800,8 @@ def passwrd():
 				pool.submit(crack,username,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
-	print('')
-	cetak(nel('\t[cyan][green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
-	print(f'[{b}•{x}]{h} OK : {h}%s '%(ok))
-	print(f'{x}[{b}•{x}]{k} CP : {k}%s{x} '%(cp))
-	print('')
-	print(f'{B2}Ketik "back" Untuk kembali kemenu crack')
-	pc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
-	if pc in ['back','Back','BACK']:
-	    print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
-	    login_menu()
-	    time.sleep(2)
-	else:
-		print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
-		time.sleep(2)
-		exit()
-
+	print(f'[•]{H} OK : {H}%s '%(okc))
+	print(f'[•]{K} CP : {K}%s{x} '%(cpc))
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
