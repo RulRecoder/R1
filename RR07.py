@@ -206,7 +206,9 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      print(nel(f'\t\t                            [bold blue]Info Author',title=f"\r", style=f"bold purple"))
-     print(nel(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd\n {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo\n {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez"title=f"\r{asu}Info User", style=f"bold purple"))
+     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
+     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
+     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -224,8 +226,8 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(nel(f'\t\t                            [bold blue]Info User',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{name}")
+        rprint(nel(f'\t\t                            [bold blue]Info User', title=f"\r", style=f"bold purple"))
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{lk}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{ld}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
@@ -273,8 +275,8 @@ def pepek():
     loading()
     os.system("clear")
     banner()
-    print(nel(" "* spasi_awal + pesan_selama,title=f"\r", style=f"bold purple"))
-    print(nel(f'\t\t                           [bold blue]Login Licensi',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
+    print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
+    print(nel(f'\t\t                           [bold blue]Login Licensi', title=f"\r", style=f"bold purple"))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
