@@ -205,7 +205,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     print(nel(f'\t\t                            [bold blue]Info Author',title=f"\r"style=f"bold purple"))
+     print(nel(f'\t\t                            [bold blue]Info Author',title=f"\r", style=f"bold purple"))
      print(nel(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd\n {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo\n {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez"title=f"\r{asu}Info User", style=f"bold purple"))
 #--------------------[ USER ]--------------#
 import requests
@@ -273,7 +273,7 @@ def pepek():
     loading()
     os.system("clear")
     banner()
-    print(nel(" "* spasi_awal + pesan_selama,ttitle=f"\r", style=f"bold purple"))
+    print(nel(" "* spasi_awal + pesan_selama,title=f"\r", style=f"bold purple"))
     print(nel(f'\t\t                           [bold blue]Login Licensi',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
