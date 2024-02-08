@@ -736,23 +736,24 @@ def setting():
 	else:
 		pwpluss.append('no')
 	print('')
-	_jembot_ = input('✶ ━━⫸ {h}Saya Janji Akan Pilih Prabowo {m}( Y/t ) ')
-	if _jembot_ in ['t','T']:
-		 print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
-		 str(_jembot_)
-	elif _jembot_ in ['y','ya','Ya','Y']:
-	     str(hc)
-    else:
-		 print(' [red]Ga usah pke sc nya kontol klo ga pilih Prabowo ')
-		 kembali()
+	tai = input('✶ ━━⫸ {h}Saya Janji Akan Pilih Prabowo {m}( Y/t ) ')
+	if tai in ['t','T']:
+		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
+		back()
+	elif tai in ['y','ya','Ya','Y']:
+		str(hc)
+	else:
+		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
+		str(tai)
 	prints(f'{B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['bismillah','Bismillah','BISMILLAH']:
-		 passwrd()
-		 time.sleep(1)
-    else:
-		 print(' [red]ketik Yang Bener kontol ')
-		 str(hc)
+		passwrd()
+		time.sleep(2)
+	else:
+		print(' [red]ketik Yang Bener kontol ')
+		kembali()
+	passwrd()
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
 	prints(nel(f'             {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !')) 
