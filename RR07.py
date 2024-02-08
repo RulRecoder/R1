@@ -678,7 +678,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{asu}{len(id)}{P2}{p} ID TELAH DIKUMPULKAN"))
+	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{asu}{len(id)}{P2}{M2} ID TELAH DIKUMPULKAN"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -728,7 +728,7 @@ def setting():
 		pwpluss.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Aplikasi Terkait?')) 
-	_jembot_ = input('✶ ━━⫸[green] Tambahkan Aplikasi Terkait [red]( Y/t ) ')
+	_jembot_ = input('✶ ━━⫸{H} Tambahkan Aplikasi Terkait {M}( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
 		back()
@@ -738,7 +738,7 @@ def setting():
 		taplikasi.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Pilih Prabowo?')) 
-	tai = input('✶ ━━⫸[green]  Saya Janji Akan Pilih Prabowo [red]( Y/t ) ')
+	tai = input('✶ ━━⫸{H}  Saya Janji Akan Pilih Prabowo {M}( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
 		back()
@@ -747,7 +747,7 @@ def setting():
 	else:
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
-	prints(nel(f'        {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ya  '))
+	prints(nel(f'        {B2}Ketik "{H2}bismillah{H2}" Untuk Memulai Crack, Semoga ijo ya  '))
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['bismillah','Bismillah','BISMILLAH']:
 		passwrd()
@@ -755,7 +755,6 @@ def setting():
 	else:
 		print(' [red]ketik Yang Bener kontol ')
 		kembali()
-	passwrd()
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
 	loading()
@@ -800,6 +799,21 @@ def passwrd():
 				pool.submit(crack2,idf,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
+	print('')
+	cetak(nel('\t[cyan][green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
+	print(f'[•]{H2} OK : {H2}%s '%(ok))
+	print(f'[•]{K2} CP : {K2}%s '%(cp))
+	print('')
+	print('>> Ketik "crack" untuk crack lagi ')
+	woi = input('>> ketik : ')
+	if woi in ['crack','Crack','CRACK']:
+		print(f'\t{x}>>{k} Jangan lupa pilih prabowo{x} << ')
+		time.sleep(2)
+		kembali()
+	else:
+		print(f'\t{x}>>{k} Jangan lupa pilih prabowo{x} << ')
+		time.sleep(2)
+		exit()
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
