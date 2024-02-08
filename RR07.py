@@ -466,9 +466,9 @@ def dump2():
 def dump3():
 	print("")
 	x=f"\t\t{P2}Target harus public & banyak friends nya"
-	vprint(panel(x,style=f"bold purple"))
+	rprint(panel(x,style=f"bold purple"))
 	x=f"\t\t{P2}ketik {H2}Me{P2} untuk crack dari pertemanan"
-	vprint(panel(x,style=f"bold purple"))
+	rprint(panel(x,style=f"bold purple"))
 	put = input(garis+" Target id public :"+H+" ")
 	try:
 		token = open('token.txt','r').read()
@@ -476,9 +476,7 @@ def dump3():
 		coki = {"cookie":cookie}
 		coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
 		el = json.loads(coa.text)
-		try:
-		   lk = el["name"]
-		   ld = el["id"]
+		try:lk = el["name"]
 		except (KeyError,IOError):
 			lk = M+"-"+P
 		#nama = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki).json()
@@ -509,7 +507,7 @@ def dump3():
 			except:continue
 		#print(maling_pangsit+" nama target :%s %s"(H,lk))
 		x=f"{P2}Nama target : {H2}{lk}\n{P2}total friends : {H2}{len(id)}\n{P2}total followers : {H2}{len(id3)}"
-		vprint(panel(x,style=f"bold purple"))
+		rprint(panel(x,style=f"bold purple"))
 		settingers()
 	except requests.exceptions.ConnectionError:
 		jalan(garis+" koneksi internet bermasalah ")
@@ -555,7 +553,7 @@ def massal2():
     except IOError:
         exit()
     try:
-        kumpulkan = int(input(f">> {H}Mau Berapa Id?{N} : "))
+        kumpulkan = int(input(f">> {U}Mau Berapa Id?{N} : "))
     except ValueError:
         exit()
     if kumpulkan < 1 or kumpulkan > 1000:
@@ -564,7 +562,7 @@ def massal2():
     bilangan = 0
     for KOTG49H in range(kumpulkan):
         bilangan += 1
-        Masukan = input(f">> {H}Masukkan Id Yang Ke {N}" + str(bilangan) + f" : ")
+        Masukan = input(f">> {U}Masukkan Id Yang Ke {N}" + str(bilangan) + f" : ")
         uid.append(Masukan)
     for user in uid:
         try:
@@ -595,7 +593,7 @@ def massal2():
         except requests.exceptions.ConnectionError:
             exit()
     try:
-        print(" : " + str(len(id)))
+        print("{U}Total Id Terkumpul{N} : " + str(len(id)))
         setting()
     except requests.exceptions.ConnectionError:
         exit()
