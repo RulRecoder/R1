@@ -206,9 +206,9 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f" ╰─▶ ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
-     print(f" ╰─▶ ✶ [bold yellow] Status:[bold green]Premium bpk lo")
-     print(f" ╰─▶ ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+     print(f"  {h}╰─▶{p} ✶{x} [bold yellow] Author:[bold green]Khoirul-Xd")
+     print(f"  {h}╰─▶{p} ✶{x} [bold yellow] Status:[bold green]Premium bpk lo")
+     print(f"  {h}╰─▶{p} ✶{x} [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -227,13 +227,13 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f" ╰─▶ ✶ [bold yellow] Your Name:"{h}+str(sy2))
-        rprint(f" ╰─▶ ✶ [bold yellow] Your Idz:"{h}+str(sy3))
-        rprint(f" ╰─▶ ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
-        rprint(f" ╰─▶ ✶ [bold yellow] Region:[bold green]{region}")
-        rprint(f" ╰─▶ ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
-        rprint(f" ╰─▶ ✶ [bold yellow] Kota:[bold green]{kota}")
-        rprint(f" ╰─▶ ✶ [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
+        rprint(f" {h}╰─▶{p} ✶{x} [bold yellow] Your Name:",{h}+str(sy2))
+        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Your Idz:",{h}+str(sy3))
+        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Your IP:[bold green]{alamat_ip}")
+        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Region:[bold green]{region}")
+        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Lokasi:[bold green]{lokasi}")
+        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Kota:[bold green]{kota}")
+        rprint(f"  {h}╰─▶{p} ✶{x} [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -277,8 +277,8 @@ def pepek():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     prints(nel(f'                           {P}{p}Login Licensi{P}'))
-    print('╰─▶ ✶  [1][bold yellow] Login Ke Tools')
-    print('╰─▶ ✶  [2][bold yellow] Hubungi Admin')
+    print(' {h}╰─▶{p} ✶{x}  [1][bold yellow] Login Ke Tools')
+    print(' {h}╰─▶{p} ✶{x}  [2][bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
@@ -563,7 +563,7 @@ def result():
 			nocp=0
 			for cpku in range(len(lin)):
 				cpkuni=lin[nocp].split('|')
-				print(f'{x}╰─▶ {K}{cpkuni[0]}{P}│{K}{cpkuni[1]}')
+				print(f'{x} {h}╰─▶{x}{K}{cpkuni[0]}{P}│{K}{cpkuni[1]}')
 				nocp +=1
 			
 			input(f'{x}[{m} Klik Enter{x} ]')
@@ -608,7 +608,7 @@ def result():
 			nocp=0
 			for cpku in range(len(lin)):
 				cpkuni=lin[nocp].split('|')
-				print(f'{x}╰─▶ {h}{cpkuni[0]}{P}│{H}{cpkuni[1]}{P}│{h}{cpkuni[2]}{x}')
+				print(f'{x} {h}╰─▶{x}{h}{cpkuni[0]}{P}│{H}{cpkuni[1]}{P}│{h}{cpkuni[2]}{x}')
 				nocp +=1		
 			input(f'{x}[{m} Klik Enter{x} ]')
 			back()
