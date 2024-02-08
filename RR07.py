@@ -802,13 +802,13 @@ def passwrd():
 	print(f'{x}[{b}•{x}]{k} CP : {k}%s{x} '%(cp))
 	print('')
 	print(f'{B2}Ketik "back" Untuk kembali kemenu crack')
-	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
-	if hc in ['back','Back','BACK']:
+	pc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
+	if pc in ['back','Back','BACK']:
 		login_menu()
 		time.sleep(2)
-	else:
+	elif
 		print(' [red]ketik Yang Bener kontol ')
-		kembali()
+		str(pc)
 	else:
 		print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
 		time.sleep(2)
