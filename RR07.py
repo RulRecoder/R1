@@ -291,7 +291,7 @@ def pepek():
     elif pil in['1','01']:
         jalan(f"{H}Pastikan sudah memiliki licensinya")
         loading()
-        os.system("clear")
+        clear()
         run()
     else:
         print(f'{M2}  Pilih Yang Bener Asu ');time.sleep(0.03);pepek()
