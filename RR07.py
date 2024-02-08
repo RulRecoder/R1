@@ -189,7 +189,7 @@ def loading():
     animation = ["[\x1b[1;91m■\x1b[0m□□□□□□□□□]","[\x1b[1;92m■■\x1b[0m□□□□□□□□]", "[\x1b[1;93m■■■\x1b[0m□□□□□□□]", "[\x1b[1;94m■■■■\x1b[0m□□□□□□]", "[\x1b[1;95m■■■■■\x1b[0m□□□□□]", "[\x1b[1;96m■■■■■■\x1b[0m□□□□]", "[\x1b[1;97m■■■■■■■\x1b[0m□□□]", "[\x1b[1;98m■■■■■■■■\x1b[0m□□]", "[\x1b[1;99m■■■■■■■■■\x1b[0m□]", "[\x1b[1;910m■■■■■■■■■■\x1b[0m]"]
     for i in range(50):
         time.sleep(0.03)
-        sys.stdout.write(f"\r>> {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
+        sys.stdout.write(f"\✶ ━━⫸ {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
         sys.stdout.flush()
         time.sleep(0.03)
 
@@ -205,7 +205,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     prints(nel(f'                              [bold blue]Info Author')) 
+     prints(nel(f'                            [bold blue]Info Author')) 
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
@@ -276,7 +276,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                             {B2}Login Licensi'))
+    prints(nel(f'                           {B2}Login Licensi'))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -360,26 +360,20 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
+    banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
+    loading()
     try:
-       banner()
-       print(nel(" "* spasi_awal + pesan_selamat))
-       loading()
-       clear()
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       print(f'  {x}[{H2}•{x}]{H2} LOGIN BERHASIL!!!! ')
+       print(f'  [{H2}•]{H2} LOGIN BERHASIL!!!! ')
        time.sleep(1)
-       clear()
     except IOError:
-       print('[×]{m} Cookies Expired, login ulang kontol!!!')
+       print(' {M2} Cookies Expired, login ulang kontol!!!')
        time.sleep(2)
        loading()
        clear()
        login_lagi334()
-    os.system("clear")
-    loading()
-    clear()
-    banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
