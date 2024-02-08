@@ -361,8 +361,6 @@ def login_lagi334():
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
     try:
-       banner()
-       print(nel(" "* spasi_awal + pesan_selamat))
        loading()
        clear()
        banner()
@@ -1500,6 +1498,8 @@ def run():
        time.sleep(0.03)
 
        if check_license(license_key):
+          banner()
+          print(nel(" "* spasi_awal + pesan_selamat))
           loading()
           clear()
           banner()
