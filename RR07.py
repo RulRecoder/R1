@@ -702,7 +702,7 @@ def setting():
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		login_menu()
-	prints(nel(f'                         [blue]login Method')) 
+	prints(nel(f'                         [bold blue]login Method')) 
 	prints(f'{H2}╰─▶ {B2}01 [bold purple]Method free.facebook.com [green] Validate [white]\n')
 	prints(f'{H2}╰─▶ {B2}02 [bold purple]Method m.facebook.com [green] Async [white]\n')
 	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]')
@@ -728,7 +728,7 @@ def setting():
 		pwpluss.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Aplikasi Terkait?')) 
-	_jembot_ = input('✶ ━━⫸ Tambahkan Aplikasi Terkait ( Y/t ) ')
+	_jembot_ = input('✶ ━━⫸{H} Tambahkan Aplikasi Terkait {M}( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
 		back()
@@ -738,7 +738,7 @@ def setting():
 		taplikasi.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Pilih Prabowo?')) 
-	tai = input('✶ ━━⫸  Saya Janji Akan Pilih Prabowo ( Y/t ) ')
+	tai = input('✶ ━━⫸{H}  Saya Janji Akan Pilih Prabowo {M}( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
 		back()
@@ -747,7 +747,7 @@ def setting():
 	else:
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
-	prints(f'.  ╰─▶ {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ya  ')
+	prints(nel(f'     {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ya  '))
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['bismillah','Bismillah','BISMILLAH']:
 		passwrd()
@@ -800,8 +800,6 @@ def passwrd():
 				pool.submit(crack,username,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
-	print(f'[•]{H} OK : {H}%s '%(okc))
-	print(f'[•]{K} CP : {K}%s{x} '%(cpc))
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
