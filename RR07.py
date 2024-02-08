@@ -206,9 +206,9 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Author:[bold green]Khoirul-Xd")
-     print(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Status:[bold green]Premium bpk lo")
-     print(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+     print(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Author:[bold green]Khoirul-Xd")
+     print(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Status:[bold green]Premium bpk lo")
+     print(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -227,13 +227,13 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f" (H2}╰─▶{B2} ✶{N} [bold yellow] Your Name:[bold green]{kota}")
-        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Your Idz:[bold green]{kota}")
-        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Your IP:[bold green]{alamat_ip}")
-        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Region:[bold green]{region}")
-        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Lokasi:[bold green]{lokasi}")
-        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Kota:[bold green]{kota}")
-        rprint(f"  (H2}╰─▶{B2} ✶{N} [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
+        rprint(f" {H2}╰─▶{B2} ✶{N} [bold yellow] Your Name:[bold green]{kota}")
+        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Your Idz:[bold green]{kota}")
+        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Your IP:[bold green]{alamat_ip}")
+        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Region:[bold green]{region}")
+        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Lokasi:[bold green]{lokasi}")
+        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Kota:[bold green]{kota}")
+        rprint(f"  {H2}╰─▶{B2} ✶{N} [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -382,9 +382,9 @@ def login_menu():
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""                 ╰─▶✶{B2}01 [bold purple]Crack Massal    ╰─▶✶{B2}04 [bold purple]Cek Ressult
-                 ╰─▶✶{B2}02 [bold purple]Crack Publik    ╰─▶✶{B2}05 [bold purple]Crack File
-                 ╰─▶✶{B2}03 [bold purple]Clone ID Email  ╰─▶✶{B2}00 [bold purple]Exit Program""")
+    prints(f"""                 {H2}╰─▶{B2} ✶{N}[{B2}01{N}] [bold purple]Crack Massal    {H2}╰─▶{B2} ✶{N}[{B2}04{N}] [bold purple]Cek Ressult
+                 {H2}╰─▶{B2} ✶{N}[{B2}02{N}] [bold purple]Crack Publik    {H2}╰─▶{B2} ✶{N}[{B2}05{N}] [bold purple]Crack File
+                 {H2}╰─▶{B2} ✶{N}[{B2}03{N}] [bold purple]Clone ID Email  {H2}╰─▶{B2} ✶{N}[{B2}00{N)] [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
@@ -456,13 +456,13 @@ def mail2():
 	global ok , cc
 	nama = input(f'{P}[{H}?{P}] {U}nama target{N} : ')
 	if ',' in str(nama):
-		print(f' ╰─▶✶[red] masukan nama, jangan kosong ')
+		print(f' {H2}╰─▶{B2} ✶{N}[red] masukan nama, jangan kosong ')
 		time.sleep(3);exit()
 	doma = input(f'{P}[{H}?{P}] {U} domain (ex:@gmail.com){N} : ')
 	if '@' not in str(doma) or '.com' not in str(doma):
-		print(f' ╰─▶✶[red]  masukkan domain dengan benar ')
+		print(f' {H2}╰─▶{B2} ✶{N}[red]  masukkan domain dengan benar ')
 		time.sleep(3);exit()
-	jumlah = input(f'{P}[{H}?{P} ]╰─▶✶{U}total dump (max:10000){N} : ')
+	jumlah = input(f'{P}[{H}?{P} ]{H2}╰─▶{B2} ✶{N}{U}total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
@@ -471,7 +471,7 @@ def mail2():
 		if DD in id:pass
 		else:id.append(DD+'|'+nama)
 		if len(dump)==999999:passwrd()
-		sys.stdout.write(f"\r{P}[{H}±{P}]╰─▶✶ {U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
+		sys.stdout.write(f"\r{P}[{H}±{P}]{H2}╰─▶{B2} ✶{N} {U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
@@ -522,16 +522,16 @@ def result():
 	banner()
 	print(f'[01] [white]Hasil [green]OK [white]Anda ')
 	print(f'[02] [white]Hasil [yellow]CP [white]Anda ')
-	kz = input(f' ╰─▶✶{H} Pilih : ')
+	kz = input(f' {H2}╰─▶{B2} ✶{N}{H} Pilih : ')
 	if kz in ['02','2']:
 		
 		try:vin = os.listdir('CP')
 		except FileNotFoundError:
-			print(f' ╰─▶✶[red] file tidak di temukan ')
+			print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
 			time.sleep(3)
 			back()
 		if len(vin)==0:
-			print(f' ╰─▶✶[red] anda tidak memiliki hasil CP ')
+			print(f' {H2}╰─▶{B2} ✶{N}[red] anda tidak memiliki hasil CP ')
 			time.sleep(2)
 			back()
 		else:
@@ -549,15 +549,15 @@ def result():
 				else:
 					lol.update({str(cih):str(isi)})
 					print('['+str(cih)+'] '+isi+f' {K}'+str(len(hem))+f' {x}Account'+x)
-			geeh = input(f' ╰─▶✶{H} Pilih : ')
+			geeh = input(f' {H2}╰─▶{B2} ✶{N}{H} Pilih : ')
 			
 			try:geh = lol[geeh]
 			except KeyError:
-				print(f' ╰─▶✶[red] pilih yang benar...')
+				print(f' {H2}╰─▶{B2} ✶{N}[red] pilih yang benar...')
 				back()
 			try:lin = open('CP/'+geh,'r').read().splitlines()
 			except:
-				print(f' ╰─▶✶[red] file tidak di temukan ')
+				print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
 				time.sleep(2)
 				back()
 			nocp=0
@@ -572,11 +572,11 @@ def result():
 		
 		try:vin = os.listdir('OK')
 		except FileNotFoundError:
-			print(f' ╰─▶✶[red] file tidak di temukan ')
+			print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
 			time.sleep(2)
 			back()
 		if len(vin)==0:
-			print(f' ╰─▶✶[red] anda tidak mempunyai fileOK ')
+			print(f' {H2}╰─▶{B2} ✶{N}[red] anda tidak mempunyai fileOK ')
 			time.sleep(2)
 			back()
 		else:
@@ -594,15 +594,15 @@ def result():
 				else:
 					lol.update({str(cih):str(isi)})
 					print(f'[%s] %s {H} %s {x}Account'%(cih,isi,(len(hem))))
-			geeh = input(f' ╰─▶✶{H} Pilih : ')
+			geeh = input(f' {H2}╰─▶{B2} ✶{N}{H} Pilih : ')
 			
 			try:geh = lol[geeh]
 			except KeyError:
-				print(f' ╰─▶✶[red] pilih yang bener kontol ')
+				print(f' {H2}╰─▶{B2} ✶{N}[red] pilih yang bener kontol ')
 				back()
 			try:lin = open('OK/'+geh,'r').read().splitlines()
 			except:
-				print(f' ╰─▶✶[red] file tidak di temukan ')
+				print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
 				time.sleep(2)
 				back()
 			nocp=0
@@ -615,7 +615,7 @@ def result():
 	elif kz in ['3']:
 		back()
 	else:
-		print(f' ╰─▶✶[red] pilih yang bener kontol ')
+		print(f' {H2}╰─▶{B2} ✶{N}[red] pilih yang bener kontol ')
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
@@ -626,7 +626,7 @@ def massal():
 	except IOError:
 	    exit()
 	try:
-		kumpulkan = int(input(f'╰─▶✶{U}Mau Berapa ID ?{N} : '))
+		kumpulkan = int(input(f'{H2}╰─▶{B2} ✶{N}{U}Mau Berapa ID ?{N} : '))
 	except ValueError:
 	    exit()
 	if kumpulkan<1 or kumpulkan>1000:
@@ -635,7 +635,7 @@ def massal():
 	bilangan = 0
 	for KOTG49H in range(kumpulkan):
 		bilangan+=1
-		Masukan = input(f'╰─▶✶{U}ID Ke{N}  '+str(bilangan)+f' : ')
+		Masukan = input(f'{H2}╰─▶{B2} ✶{N}{U}ID Ke{N}  '+str(bilangan)+f' : ')
 		uid.append(Masukan)
 	for user in uid:
 	    try:
@@ -668,7 +668,7 @@ def massal():
 	    except requests.exceptions.ConnectionError:
 	        exit()
 	try:
-	      print("╰─▶✶[purple]Total DUMP{N}  : "+str(len(id))) 
+	      print("{H2}╰─▶{B2} ✶{N}[purple]Total DUMP{N}  : "+str(len(id))) 
 	      setting()
 	except requests.exceptions.ConnectionError:
 	    exit()
