@@ -363,10 +363,13 @@ def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     try:
+       banner()
+       print(nel(" "* spasi_awal + pesan_selamat))
        loading()
        clear()
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
+       
        print(f'  [•][bold green] LOGIN BERHASIL!!!! ')
        time.sleep(2)
        loading()
@@ -1472,10 +1475,10 @@ def get_expiration_date(license_info):
     end_time = datetime.strptime(end_time_str, '%Y-%m-%d %H:%M')
     return end_time
 def run():
-    banner()
-    print(nel(" "* spasi_awal + pesan_selamat))
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
+            banner()
+            print(nel(" "* spasi_awal + pesan_selamat))
             loading()
             clear()
             saved_license = file.read()
