@@ -188,10 +188,10 @@ def jalan(z):
 def loading():
     animation = ["[\x1b[1;91m■\x1b[0m□□□□□□□□□]","[\x1b[1;92m■■\x1b[0m□□□□□□□□]", "[\x1b[1;93m■■■\x1b[0m□□□□□□□]", "[\x1b[1;94m■■■■\x1b[0m□□□□□□]", "[\x1b[1;95m■■■■■\x1b[0m□□□□□]", "[\x1b[1;96m■■■■■■\x1b[0m□□□□]", "[\x1b[1;97m■■■■■■■\x1b[0m□□□]", "[\x1b[1;98m■■■■■■■■\x1b[0m□□]", "[\x1b[1;99m■■■■■■■■■\x1b[0m□]", "[\x1b[1;910m■■■■■■■■■■\x1b[0m]"]
     for i in range(50):
-        time.sleep(0.1)
+        time.sleep(0.01)
         sys.stdout.write(f"\r>> {H}Loading...{N} " + animation[i % len(animation)] +"\x1b[0m ")
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.01)
 
 # ------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
@@ -205,10 +205,8 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     print(nel(f'\t\t                            [bold blue]Info Author',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
-     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
-     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
-     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+     print(nel(f'\t\t                            [bold blue]Info Author',title=f"\r"style=f"bold purple"))
+     print(nel(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd\n {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo\n {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez"title=f"\r{asu}Info User", style=f"bold purple"))
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -227,7 +225,7 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'\t\t                            [bold blue]Info User',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{lk}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{name}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{ld}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
@@ -275,7 +273,7 @@ def pepek():
     loading()
     os.system("clear")
     banner()
-    print(nel(" "* spasi_awal + pesan_selamat))
+    print(nel(" "* spasi_awal + pesan_selama,ttitle=f"\r", style=f"bold purple"))
     print(nel(f'\t\t                           [bold blue]Login Licensi',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
