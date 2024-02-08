@@ -277,8 +277,8 @@ def pepek():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     prints(nel(f'                           [bold blue]Login Licensi'))
-    print(' [bold green]╰─▶{p} 1[bold yellow] Login Ke Tools')
-    print(' [bold green]╰─▶{p} 2[bold yellow] Hubungi Admin')
+    print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
+    print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H2}You will be redirected to the Author Whatsapp...")
@@ -363,10 +363,11 @@ def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     loading()
+    clear()
     try:
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       print(f'  [{H2}•]{h} LOGIN BERHASIL!!!! ')
+       print(f'  [•]{h} LOGIN BERHASIL!!!! ')
        time.sleep(2)
        clear()
     except IOError:
@@ -380,7 +381,7 @@ def login_menu():
     loading()
     author()
     info_user()
-    prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
+    prints(nel(f'                        [bold blue]Menu Tools Crack')) 
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
              {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
@@ -618,7 +619,7 @@ def result():
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
-	prints(nel(f'                    {P}[blue]Massal Crack{P}')) 
+	prints(nel(f'                    [blue]Massal Crack')) 
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
@@ -675,7 +676,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	prints(nel(f'                        {P}[blue]login ID Crack{P}')) 
+	prints(nel(f'                        [blue]login ID Crack')) 
 	print(f"╰─▶[{B2}01]. Facebook ID {M2}Old\n╰─▶[{B2}02]. Facebook ID {K2}New\n╰─▶[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
@@ -697,7 +698,7 @@ def setting():
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		exit()
-	prints(nel(f'                    {P}[blue]login Method{P}')) 
+	prints(nel(f'                    [blue]login Method')) 
 	prints(f'╰─▶[{B2}01]. Method free.facebook.com [[green] Validate [white]]\n╰─▶[{B2}02]. Method m.facebook.com [[green] Async [white]]\n╰─▶[{B2}03]. Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
@@ -719,7 +720,7 @@ def setting():
 		taplikasi.append('ya')
 	else:
 		taplikasi.append('no')
-	prints(nel(f'              {P}[blue]Manual Password?{P}')) 
+	prints(nel(f'              [blue]Manual Password?')) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
 		pwpluss.append('ya')
