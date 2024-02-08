@@ -756,9 +756,9 @@ def setting():
 	passwrd()
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
-    loading()
-    clear()
-    banner()
+	loading()
+	clear()
+	banner()
 	prints(nel(f'             {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !')) 
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
