@@ -456,13 +456,13 @@ def mail2():
 	global ok , cc
 	nama = input(f'{P}[{H}?{P}] {U}nama target{N} : ')
 	if ',' in str(nama):
-		print(f' {H2}╰─▶{B2} ✶{N}[red] masukan nama, jangan kosong ')
+		print(f' {H}╰─▶{B} ✶{N}[red] masukan nama, jangan kosong ')
 		time.sleep(3);exit()
 	doma = input(f'{P}[{H}?{P}] {U} domain (ex:@gmail.com){N} : ')
 	if '@' not in str(doma) or '.com' not in str(doma):
-		print(f' {H2}╰─▶{B2} ✶{N}[red]  masukkan domain dengan benar ')
+		print(f' {H}╰─▶{B} ✶{N}[red]  masukkan domain dengan benar ')
 		time.sleep(3);exit()
-	jumlah = input(f'{P}[{H}?{P} ]{H2}╰─▶{B2} ✶{N}{U}total dump (max:10000){N} : ')
+	jumlah = input(f'{P}[{H}?{P} ]{H}╰─▶{B} ✶{N} {U}total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
@@ -471,7 +471,7 @@ def mail2():
 		if DD in id:pass
 		else:id.append(DD+'|'+nama)
 		if len(dump)==999999:passwrd()
-		sys.stdout.write(f"\r{P}[{H}±{P}]{H2}╰─▶{B2} ✶{N} {U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
+		sys.stdout.write(f"\r{P}[{H}±{P}]{H}╰─▶{B} ✶{N} {U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
@@ -522,16 +522,16 @@ def result():
 	banner()
 	print(f'[01] [white]Hasil [green]OK [white]Anda ')
 	print(f'[02] [white]Hasil [yellow]CP [white]Anda ')
-	kz = input(f' {H2}╰─▶{B2} ✶{N}{H} Pilih : ')
+	kz = input(f' {H2}╰─▶{B2} ✶{N} {H} Pilih : ')
 	if kz in ['02','2']:
 		
 		try:vin = os.listdir('CP')
 		except FileNotFoundError:
-			print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
+			print(f' {H2}╰─▶{B2} ✶{N} [red] file tidak di temukan ')
 			time.sleep(3)
 			back()
 		if len(vin)==0:
-			print(f' {H2}╰─▶{B2} ✶{N}[red] anda tidak memiliki hasil CP ')
+			print(f' {H2}╰─▶{B2} ✶{N} [red] anda tidak memiliki hasil CP ')
 			time.sleep(2)
 			back()
 		else:
@@ -549,15 +549,15 @@ def result():
 				else:
 					lol.update({str(cih):str(isi)})
 					print('['+str(cih)+'] '+isi+f' {K}'+str(len(hem))+f' {x}Account'+x)
-			geeh = input(f' {H2}╰─▶{B2} ✶{N}{H} Pilih : ')
+			geeh = input(f' {H2}╰─▶{B2} ✶{N} {H} Pilih : ')
 			
 			try:geh = lol[geeh]
 			except KeyError:
-				print(f' {H2}╰─▶{B2} ✶{N}[red] pilih yang benar...')
+				print(f' {H2}╰─▶{B2} ✶{N} [red] pilih yang benar...')
 				back()
 			try:lin = open('CP/'+geh,'r').read().splitlines()
 			except:
-				print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
+				print(f' {H2}╰─▶{B2} ✶{N} [red] file tidak di temukan ')
 				time.sleep(2)
 				back()
 			nocp=0
@@ -572,11 +572,11 @@ def result():
 		
 		try:vin = os.listdir('OK')
 		except FileNotFoundError:
-			print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
+			print(f' {H2}╰─▶{B2} ✶{N} [red] file tidak di temukan ')
 			time.sleep(2)
 			back()
 		if len(vin)==0:
-			print(f' {H2}╰─▶{B2} ✶{N}[red] anda tidak mempunyai fileOK ')
+			print(f' {H2}╰─▶{B2} ✶{N} [red] anda tidak mempunyai fileOK ')
 			time.sleep(2)
 			back()
 		else:
@@ -594,15 +594,15 @@ def result():
 				else:
 					lol.update({str(cih):str(isi)})
 					print(f'[%s] %s {H} %s {x}Account'%(cih,isi,(len(hem))))
-			geeh = input(f' {H2}╰─▶{B2} ✶{N}{H} Pilih : ')
+			geeh = input(f' {H2}╰─▶{B2} ✶{N} {H} Pilih : ')
 			
 			try:geh = lol[geeh]
 			except KeyError:
-				print(f' {H2}╰─▶{B2} ✶{N}[red] pilih yang bener kontol ')
+				print(f' {H2}╰─▶{B2} ✶{N} [red] pilih yang bener kontol ')
 				back()
 			try:lin = open('OK/'+geh,'r').read().splitlines()
 			except:
-				print(f' {H2}╰─▶{B2} ✶{N}[red] file tidak di temukan ')
+				print(f' {H2}╰─▶{B2} ✶{N} [red] file tidak di temukan ')
 				time.sleep(2)
 				back()
 			nocp=0
@@ -615,7 +615,7 @@ def result():
 	elif kz in ['3']:
 		back()
 	else:
-		print(f' {H2}╰─▶{B2} ✶{N}[red] pilih yang bener kontol ')
+		print(f' {H2}╰─▶{B2} ✶{N} [red] pilih yang bener kontol ')
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
@@ -626,7 +626,7 @@ def massal():
 	except IOError:
 	    exit()
 	try:
-		kumpulkan = int(input(f'{H2}╰─▶{B2} ✶{N}{U}Mau Berapa ID ?{N} : '))
+		kumpulkan = int(input(f'{H}╰─▶{B} ✶{N} {U}Mau Berapa ID ?{N} : '))
 	except ValueError:
 	    exit()
 	if kumpulkan<1 or kumpulkan>1000:
@@ -635,7 +635,7 @@ def massal():
 	bilangan = 0
 	for KOTG49H in range(kumpulkan):
 		bilangan+=1
-		Masukan = input(f'{H2}╰─▶{B2} ✶{N}{U}ID Ke{N}  '+str(bilangan)+f' : ')
+		Masukan = input(f'{H}╰─▶{B} ✶{N} {U}ID Ke{N}  '+str(bilangan)+f' : ')
 		uid.append(Masukan)
 	for user in uid:
 	    try:
@@ -668,7 +668,7 @@ def massal():
 	    except requests.exceptions.ConnectionError:
 	        exit()
 	try:
-	      print("{H2}╰─▶{B2} ✶{N}[purple]Total DUMP{N}  : "+str(len(id))) 
+	      print("{H2}╰─▶{B2} ✶{N} [purple]Total DUMP{N}  : "+str(len(id))) 
 	      setting()
 	except requests.exceptions.ConnectionError:
 	    exit()
@@ -677,7 +677,7 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                        [blue]login ID Crack')) 
-	print(f"╰─▶[{B2}01]. Facebook ID {M2}Old\n╰─▶[{B2}02]. Facebook ID {K2}New\n╰─▶[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN")
+	print(nel(f"╰─▶[{B2}01]. Facebook ID {M2}Old\n╰─▶[{B2}02]. Facebook ID {K2}New\n╰─▶[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN"))
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
