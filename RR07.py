@@ -366,7 +366,7 @@ def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
-    info_user(my_name,my_id)
+    info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
     prints(f"""                 ╰─▶✶{B2}01 [bold purple]Crack Massal    ╰─▶✶{B2}04 [bold purple]Cek Ressult
                  ╰─▶✶{B2}02 [bold purple]Crack Publik    ╰─▶✶{B2}05 [bold purple]Crack File
