@@ -806,7 +806,7 @@ def passwrd():
 	if pc in ['back','Back','BACK']:
 	    print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
 	    login_menu()
-		time.sleep(2)
+	    time.sleep(2)
 	else:
 		print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
 		time.sleep(2)
