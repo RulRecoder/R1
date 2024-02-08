@@ -678,7 +678,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{H2}{len(id)}{P2} ID TELAH DIKUMPULKAN",width=70,padding=(0,7),style=f"{color_panel}"))
+	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{H2}{len(id)}{P2} ID TELAH DIKUMPULKAN"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
