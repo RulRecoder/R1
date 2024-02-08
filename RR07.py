@@ -206,9 +206,9 @@ def banner():
 #--------------------[ AUTHOR ]--------------#
 def author():
      prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
-     print(f"╰─▶✶ [bold yellow] Author:[bold green]Khoirul-Xd")
-     print(f"╰─▶✶ [bold yellow] Status:[bold green]Premium bpk lo")
-     print(f"╰─▶✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+     print(f" ╰─▶ ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
+     print(f" ╰─▶ ✶ [bold yellow] Status:[bold green]Premium bpk lo")
+     print(f" ╰─▶ ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -227,13 +227,13 @@ def info_user(my_name,my_id):
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
-        rprint(f"╰─▶✶ [bold yellow] Your Name:"+str(my_name))
-        rprint(f"╰─▶✶ [bold yellow] Your Idz:"+str(my_id))
-        rprint(f"╰─▶✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
-        rprint(f"╰─▶✶ [bold yellow] Region:[bold green]{region}")
-        rprint(f"╰─▶✶ [bold yellow] Lokasi:[bold green]{lokasi}")
-        rprint(f"╰─▶✶ [bold yellow] Kota:[bold green]{kota}")
-        rprint(f"╰─▶✶ [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
+        rprint(f" ╰─▶ ✶ [bold yellow] Your Name:"[{h}+str(my_name)])
+        rprint(f" ╰─▶ ✶ [bold yellow] Your Idz:"[{h}+str(my_id)])
+        rprint(f" ╰─▶ ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
+        rprint(f" ╰─▶ ✶ [bold yellow] Region:[bold green]{region}")
+        rprint(f" ╰─▶ ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
+        rprint(f" ╰─▶ ✶ [bold yellow] Kota:[bold green]{kota}")
+        rprint(f" ╰─▶ ✶ [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -366,7 +366,7 @@ def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     author()
-    info_user()
+    info_user(my_name,my_id)
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
     prints(f"""                 ╰─▶✶{B2}01 [bold purple]Crack Massal    ╰─▶✶{B2}04 [bold purple]Cek Ressult
                  ╰─▶✶{B2}02 [bold purple]Crack Publik    ╰─▶✶{B2}05 [bold purple]Crack File
@@ -1470,6 +1470,8 @@ def run():
                 time.sleep(0.03)
                 print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
                 time.sleep(3)
+                loading()
+                clear()
                 login_menu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
@@ -1479,6 +1481,8 @@ def run():
        if check_license(license_key):
           print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
           time.sleep(3)
+          loading()
+          clear()
           login_menu()
        else:
           os.system("rm -f .saved_license.txt")
