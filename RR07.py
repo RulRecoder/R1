@@ -464,7 +464,7 @@ def mail2():
 	if '@' not in str(doma) or '.com' not in str(doma):
 		print(f' ╰─▶[red]  masukkan domain dengan benar ')
 		time.sleep(3);str(doma)
-	jumlah = input(f'{P}[{H}?{P} ]╰─▶{U} total dump (max:10000){N} : ')
+	jumlah = input(f'{P}[{H}?{P}]╰─▶{U} total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
@@ -682,7 +682,7 @@ def setting():
 	print(f"╰─▶{B2}01{U} Facebook ID {M2}Old{x}\n
 	╰─▶{B2}02{U} Facebook ID {K2}New{x}\n
 	╰─▶{B2}03{U} Facebook ID {H2}Random{x}")
-	hu = input(f'✶ ━━⫸{H} Input :{H} ')
+	hu = input(f'✶ ━━⫸{H} Input{N} :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
 			id2.append(tua) 
@@ -702,8 +702,10 @@ def setting():
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		exit()
-	prints(nel(f'                    [blue]login Method')) 
-	prints(f'╰─▶[{B2}01]. Method free.facebook.com [[green] Validate [white]]\n╰─▶[{B2}02]. Method m.facebook.com [[green] Async [white]]\n╰─▶[{B2}03]. Method graph.facebook.com [[green] B-Api [white]]')
+	prints(nel(f'                        [blue]login Method')) 
+	prints(f'╰─▶{B2}01{U} Method free.facebook.com [[green] Validate [white]]\n
+	╰─▶{B2}02{U} Method m.facebook.com [[green] Async [white]]\n
+	╰─▶{B2}03{U} Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
@@ -716,7 +718,7 @@ def setting():
 	else:
 		method.append('metod1')
 	print('')
-	_jembot_ = input('✶ ━━⫸{U} Tambahkan Aplikasi Terkait{N} ( Y/t ) ')
+	_jembot_ = input('✶ ━━⫸ {H}Tambahkan Aplikasi Terkait {N}{M}( Y/t ) {N}')
 	if _jembot_ in ['']:
 		print(' Pilih Yang Bener Kontol ')
 		back()
@@ -724,7 +726,7 @@ def setting():
 		taplikasi.append('ya')
 	else:
 		taplikasi.append('no')
-	prints(nel(f'              [blue]Manual Password?')) 
+	prints(nel(f'                        [blue]Manual Password?')) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
 		pwpluss.append('ya')
