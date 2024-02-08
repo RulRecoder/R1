@@ -391,8 +391,8 @@ def login_menu():
     if ___Sllowly_ID____ in ['1']:
         massal()
     elif ___Sllowly_ID____ in ['2']:
-	    prints(nel(f'               {P}{H}Publik Crack{P}')) 
-	    idt = input('✶ ━━⫸ {H} ID Target{N} : ')
+	    prints(nel(f'                         [bold blue]Publik Crack')) 
+	    idt = input('✶ ━━⫸ {H2} ID Target{x} : ')
 	    dump(idt,"",{"Kue":cok},token)
 	    setting()
     elif ___Sllowly_ID____ in ['3']:
@@ -678,7 +678,8 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	prints(nel(f'                        [blue]login ID Crack')) 
+    prints(f'                  {H2}{len(id)}[bold blue] ID TELAH DIKUMPULKAN')
+	prints(nel(f'                        [bold blue]login ID Crack')) 
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -781,8 +782,8 @@ def passwrd():
 				pool.submit(metod3,idf,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
-	print(f'[[blue]•] OK : {h}%s '%(ok))
-	print(f'[[blue]•] CP : {k}%s '%(cp))
+	print(f'[[blue]•]{H2} OK : {H2}%s '%(ok))
+	print(f'[[blue]•]{K2} CP : {K2}%s '%(cp))
 	kembali()
 	
 def kembali():
