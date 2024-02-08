@@ -458,13 +458,13 @@ def mail2():
 	global ok , cc
 	nama = input(f'{P}[{H}?{P}] {U}nama target{N} : ')
 	if ',' in str(nama):
-		print(f' ╰─▶ ✶[red] masukan nama, jangan kosong ')
+		print(f' ╰─▶[red] masukan nama, jangan kosong ')
 		time.sleep(3);str(nama)
 	doma = input(f'{P}[{H}?{P}]{U} domain (ex:@gmail.com){N} : ')
 	if '@' not in str(doma) or '.com' not in str(doma):
-		print(f' ╰─▶ ✶[red]  masukkan domain dengan benar ')
+		print(f' ╰─▶[red]  masukkan domain dengan benar ')
 		time.sleep(3);str(doma)
-	jumlah = input(f'{P}[{H}?{P} ]╰─▶ ✶{U} total dump (max:10000){N} : ')
+	jumlah = input(f'{P}[{H}?{P} ]╰─▶{U} total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
@@ -473,7 +473,7 @@ def mail2():
 		if DD in id:pass
 		else:id.append(DD+'|'+nama)
 		if len(dump)==999999:passwrd()
-		sys.stdout.write(f"\r{P}[{H}±{P}]╰─▶ ✶{U} berhasil mengumpulkan {asu}{len(id)} {U}email...");sys.stdout.flush()
+		sys.stdout.write(f"\r{P}[{H}±{P}]╰─▶{U} berhasil mengumpulkan {asu}{len(id)} {U}email...{P}");sys.stdout.flush()
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
@@ -679,7 +679,9 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                        [blue]login ID Crack')) 
-	cetak(nel(f"╰─▶[{B2}01]. Facebook ID {M2}Old\n╰─▶[{B2}02]. Facebook ID {K2}New\n╰─▶[{B2}03]. Facebook ID {H2}Random",title=f"{H2}{len(id)}{P}{U} ID TELAH DIKUMPULKAN"))
+	print(f"╰─▶{B2}01{U} Facebook ID {M2}Old{x}\n
+	╰─▶{B2}02{U} Facebook ID {K2}New{x}\n
+	╰─▶{B2}03{U} Facebook ID {H2}Random{x}")
 	hu = input(f'✶ ━━⫸{H} Input :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
