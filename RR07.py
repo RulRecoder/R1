@@ -219,19 +219,23 @@ def info_user():
 	token = open('token.txt','r').read()
 	cookie = open('cok.txt','r').read()
 	coki = {"cookie":cookie}
-	coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
-	el = json.loads(coa.text)
-	lk = el["name"]
-	ld = el["id"]
-		
-	response = requests.get('https://ipinfo.io')
-        data = response.json()
-
-        alamat_ip = data.get('ip')
-        region = data.get('region')
-        lokasi = data.get('loc')
-        kota = data.get('city')
-        zona_waktu = data.get('timezone')
+	try:
+	    coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
+	    el = json.loads(coa.text)	
+	    response = requests.get('https://ipinfo.io')
+            data = response.json()
+	    lk = el["name"]
+	    ld = el["id"]
+            alamat_ip = data.get('ip')
+            region = data.get('region')
+            lokasi = data.get('loc')
+            kota = data.get('city')
+            zona_waktu = data.get('timezone')
+        except requests.exceptions.ConnectionError:
+            li = '# PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN'
+            lo = mark(li, style='red')  # Assuming mark is a function you have defined
+            sol().print(lo, style='cyan')  # Assuming sol() is a function you have defined
+            exit()
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'                            [bold blue]Info User'))
