@@ -458,13 +458,13 @@ def mail2():
 	global ok , cc
 	nama = input(f'{P}[{H}?{P}] {U}nama target{N} : ')
 	if ',' in str(nama):
-		print(f' ╰─▶[red] masukan nama, jangan kosong ')
+		print(f'  ╰─▶[red] masukan nama, jangan kosong ')
 		time.sleep(3);str(nama)
 	doma = input(f'{P}[{H}?{P}]{U} domain (ex:@gmail.com){N} : ')
 	if '@' not in str(doma) or '.com' not in str(doma):
-		print(f' ╰─▶[red]  masukkan domain dengan benar ')
+		print(f'  ╰─▶[red]  masukkan domain dengan benar ')
 		time.sleep(3);str(doma)
-	jumlah = input(f'{P}[{H}?{P}]╰─▶{U} total dump (max:10000){N} : ')
+	jumlah = input(f'{P}[{H}?{P}] ╰─▶{U} total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
@@ -473,7 +473,7 @@ def mail2():
 		if DD in id:pass
 		else:id.append(DD+'|'+nama)
 		if len(dump)==999999:passwrd()
-		sys.stdout.write(f"\r{P}[{H}±{P}]╰─▶{U} berhasil mengumpulkan {asu}{len(id)} {U}email...{P}");sys.stdout.flush()
+		sys.stdout.write(f"\r{P}[{H}±{P}] ╰─▶{U} berhasil mengumpulkan {asu}{len(id)} {U}email...{P}");sys.stdout.flush()
 		time.sleep(0.0000003)
 	print("\r")
 	setting()
@@ -679,9 +679,9 @@ def massal():
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	prints(nel(f'                        [blue]login ID Crack')) 
-	print(f"╰─▶{B2}01{U} Facebook ID {M2}Old{x}\n")
-	print(f"╰─▶{B2}02{U} Facebook ID {K2}New{x}\n")
-	print(f"╰─▶{B2}03{U} Facebook ID {H2}Random{x}")
+	print(f"{H2}╰─▶{B2}01 [bold purple]Facebook ID {M2}Old\n")
+	print(f"{H2}╰─▶{B2}02 [bold purple]Facebook ID {K2}New\n")
+	print(f"{H2}╰─▶{B2}03 [bold purple]Facebook ID {H2}Random\n")
 	hu = input(f'✶ ━━⫸{H} Input{N} :{H} ')
 	if hu in ['1','01']:
 		for tua in sorted(id):
@@ -703,9 +703,9 @@ def setting():
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		login_menu()
 	prints(nel(f'                        [blue]login Method')) 
-	prints(f'╰─▶{B2}01{U} Method free.facebook.com [[green] Validate [white]]\n')
-	prints(f'╰─▶{B2}02{U} Method m.facebook.com [[green] Async [white]]\n')
-	prints(f'╰─▶{B2}03{U} Method graph.facebook.com [[green] B-Api [white]]')
+	prints(f'{H2}╰─▶{B2}01 [bold purple]Method free.facebook.com [[green] Validate [white]]\n')
+	prints(f'{H2}╰─▶{B2}02 [bold purple]Method m.facebook.com [[green] Async [white]]\n')
+	prints(f'{H2}╰─▶{B2}03 [bold purple]Method graph.facebook.com [[green] B-Api [white]]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
@@ -718,7 +718,7 @@ def setting():
 	else:
 		method.append('metod1')
 	print('')
-	_jembot_ = input('✶ ━━⫸ {H}Tambahkan Aplikasi Terkait {N}{M}( Y/t ) {N}')
+	_jembot_ = input('✶ ━━⫸ {H2}Tambahkan Aplikasi Terkait {M2}( Y/t ) {N}')
 	if _jembot_ in ['']:
 		print(' Pilih Yang Bener Kontol ')
 		back()
