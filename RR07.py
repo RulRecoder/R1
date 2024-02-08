@@ -760,7 +760,7 @@ def passwrd():
     clear()
     banner()
     prints(nel(f'             {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !')) 
-	with tred(max_workers=30) as pool:
+    with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 			frs = nmf.split(' ')[0]
