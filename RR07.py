@@ -384,7 +384,7 @@ def login_menu():
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
     prints(f"""                 {H2}╰─▶{B2} ✶{N}[{B2}01{N}] [bold purple]Crack Massal    {H2}╰─▶{B2} ✶{N}[{B2}04{N}] [bold purple]Cek Ressult
                  {H2}╰─▶{B2} ✶{N}[{B2}02{N}] [bold purple]Crack Publik    {H2}╰─▶{B2} ✶{N}[{B2}05{N}] [bold purple]Crack File
-                 {H2}╰─▶{B2} ✶{N}[{B2}03{N}] [bold purple]Clone ID Email  {H2}╰─▶{B2} ✶{N}[{B2}00{N)] [bold purple]Exit Program""")
+                 {H2}╰─▶{B2} ✶{N}[{B2}03{N}] [bold purple]Clone ID Email  {H2}╰─▶{B2} ✶{N}[{B2}00{N}] [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
