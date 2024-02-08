@@ -360,17 +360,15 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
-    banner()
-    print(nel(" "* spasi_awal + pesan_selamat))
     try:
        banner()
        print(nel(" "* spasi_awal + pesan_selamat))
        loading()
        clear()
-       token = open('.token.txt','r').read()
-       cok = open('.cok.txt','r').read()
        banner()
        print(nel(" "* spasi_awal + pesan_selamat))
+       token = open('.token.txt','r').read()
+       cok = open('.cok.txt','r').read()
        print(f'  [•][bold green] LOGIN BERHASIL!!!! ')
        time.sleep(2)
        loading()
@@ -1484,10 +1482,10 @@ def run():
             print(nel(" "* spasi_awal + pesan_selamat))
             loading()
             clear()
-            saved_license = file.read()
-            expiration_date = get_expiration_date(saved_license)
             banner()
             print(nel(" "* spasi_awal + pesan_selamat))
+            saved_license = file.read()
+            expiration_date = get_expiration_date(saved_license)
             print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
