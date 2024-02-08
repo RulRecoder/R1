@@ -392,7 +392,7 @@ def login_menu():
         massal2()
     elif ___Sllowly_ID____ in ['2']:
 	    prints(nel(f'                         [bold blue]Publik Crack')) 
-	    dump2()
+	    dump3()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
     elif ___Sllowly_ID____ in ['4']:
@@ -921,7 +921,7 @@ def passwrd():
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
-	input(f'[{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
+	input(f'[{x}Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
 	back()
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
