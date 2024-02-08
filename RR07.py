@@ -276,9 +276,9 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                           {P}{p}Login Licensi{P}'))
-    print(' [bold green]╰─▶[bold blue] ✶  [1][bold yellow] Login Ke Tools')
-    print(' [bold green]╰─▶[bold blue] ✶  [2][bold yellow] Hubungi Admin')
+    prints(nel(f'                           {P}{B2}Login Licensi{P}'))
+    print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
+    print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
@@ -294,7 +294,7 @@ def pepek():
         os.system("clear")
         run()
     else:
-        print(f' {M} Pilih Yang Bener Asu ');time.sleep(0.03);pepek()
+        print(f'{M2}  Pilih Yang Bener Asu ');time.sleep(0.03);pepek()
 #--------------------[ BAGIAN-MASUK ]--------------#
 import os
 import requests
@@ -360,19 +360,19 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
-    banner()
-    print(nel(" "* spasi_awal + pesan_selamat))
-    loading()
-    clear()
     try:
+       banner()
+       print(nel(" "* spasi_awal + pesan_selamat))
+       loading()
+       clear()
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL!!!!{x} ')
+       print(f'  {x}[{H2}•{x}]{H2} LOGIN BERHASIL!!!! ')
        time.sleep(1)
        clear()
     except IOError:
        print('[×]{m} Cookies Expired, login ulang kontol!!!')
-       time.sleep(3)
+       time.sleep(2)
        loading()
        clear()
        login_lagi334()
