@@ -621,7 +621,7 @@ def result():
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
-	prints(nel(f'                    [blue]Massal Crack')) 
+	prints(nel(f'                         [bold blue]Massal Crack')) 
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
@@ -670,7 +670,7 @@ def massal():
 	    except requests.exceptions.ConnectionError:
 	        exit()
 	try:
-	      print("{H2}╰─▶{B2} ✶{N} [purple]Total DUMP{N}  : "+str(len(id))) 
+	      print("╰─▶ [bold purple]Total DUMP{N}  : "+str(len(id))) 
 	      setting()
 	except requests.exceptions.ConnectionError:
 	    exit()
@@ -716,15 +716,15 @@ def setting():
 	else:
 		method.append('metod1')
 	print('')
-	_jembot_ = input('✶ ━━⫸ [green]Tambahkan Aplikasi Terkait [red]( Y/t ){x} ')
+	_jembot_ = input('✶ ━━⫸ {h}Tambahkan Aplikasi Terkait {m}( Y/t ) ')
 	if _jembot_ in ['']:
-		print(' Pilih Yang Bener Kontol ')
+		print(' [red]Pilih Yang Bener Kontol ')
 		back()
 	elif _jembot_ in ['y','ya','Ya','Y']:
 		taplikasi.append('ya')
 	else:
 		taplikasi.append('no')
-	prints(nel(f'                        [blue]Manual Password?')) 
+	prints(nel(f'                        [bold blue]Manual Password?')) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
 		pwpluss.append('ya')
@@ -736,23 +736,23 @@ def setting():
 	else:
 		pwpluss.append('no')
 	print('')
-	_jembot_ = input('✶ ━━⫸ [green]Saya Janji Akan Pilih Prabowo [red]( Y/t ){x} ')
+	_jembot_ = input('✶ ━━⫸ {h}Saya Janji Akan Pilih Prabowo {m}( Y/t ) ')
 	if _jembot_ in ['t','T']:
-		print(' [red]Harus Pilih Klo Ga Pilih Jangan Pke Scnya ')
-		back()
+		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
+		str(_jembot_)
 	elif _jembot_ in ['y','ya','Ya','Y']:
-		taplikasi.append('ya')
-	else:
-		taplikasi.append('no')
-	prints(f'{B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
-	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
-	if hc in ['bismillah','Bismillah','BISMILLAH']:
-		passwrd()
-		time.sleep(2)
-	else:
-		print(' [red]ketik Yang Bener kontol ')
-		kembali()
-	passwrd()
+		prints(f'{B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ')
+	    hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
+	    if hc in ['bismillah','Bismillah','BISMILLAH']:
+		    passwrd()
+		    time.sleep(1)
+        else:
+		    print(' [red]ketik Yang Bener kontol ')
+		    str(hc)
+    else:
+		 print(' [red]Ga usah pke sc nya kontol klo ga pilih Prabowo ')
+		 kembali()
+	
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
 	prints(nel(f'             {M2}!{H} PROSES CRACK SEDANG BERLANGSUNG{M2} !')) 
