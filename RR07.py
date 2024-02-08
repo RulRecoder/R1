@@ -277,8 +277,8 @@ def pepek():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
     prints(nel(f'                           [bold blue]Login Licensi'))
-    print(' [bold green]╰─▶{B2} 1[bold yellow] Login Ke Tools')
-    print(' [bold green]╰─▶{B2} 2[bold yellow] Hubungi Admin')
+    print(' [bold green]╰─▶{p} 1[bold yellow] Login Ke Tools')
+    print(' [bold green]╰─▶{p} 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
         jalan("\n [•] {H2}You will be redirected to the Author Whatsapp...")
@@ -366,15 +366,18 @@ def login_menu():
     try:
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       print(f'  [{H2}•]{H2} LOGIN BERHASIL!!!! ')
+       print(f'  [{H2}•]{h} LOGIN BERHASIL!!!! ')
        time.sleep(2)
        clear()
     except IOError:
-       print(' {M2} Cookies Expired, login ulang kontol!!!')
+       print(' {h} Cookies Expired, login ulang kontol!!!')
        time.sleep(2)
        loading()
        clear()
        login_lagi334()
+    banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
+    loading()
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
@@ -1472,6 +1475,8 @@ def get_expiration_date(license_info):
 def run():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
+    loading()
+    clear()
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
             saved_license = file.read()
