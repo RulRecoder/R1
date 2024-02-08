@@ -216,7 +216,7 @@ from rich import print as rprint  # Jika Anda menggunakan modul rich untuk forma
 
 def info_user():
     try:
-	response = requests.get('https://ipinfo.io')
+        response = requests.get('https://ipinfo.io')
         data = response.json()
 
         alamat_ip = data.get('ip')
@@ -392,7 +392,7 @@ def login_menu():
         massal2()
     elif ___Sllowly_ID____ in ['2']:
 	    prints(nel(f'                         [bold blue]Publik Crack')) 
-	    dump3()
+	    dump2()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
     elif ___Sllowly_ID____ in ['4']:
@@ -476,8 +476,9 @@ def dump3():
 		coki = {"cookie":cookie}
 		coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
 		el = json.loads(coa.text)
-		try:lk = el["name"]
-		    ld = el["id"]
+		try:
+		   lk = el["name"]
+		   ld = el["id"]
 		except (KeyError,IOError):
 			lk = M+"-"+P
 		#nama = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki).json()
@@ -509,7 +510,7 @@ def dump3():
 		#print(maling_pangsit+" nama target :%s %s"(H,lk))
 		x=f"{P2}Nama target : {H2}{lk}\n{P2}total friends : {H2}{len(id)}\n{P2}total followers : {H2}{len(id3)}"
 		vprint(panel(x,style=f"bold purple"))
-		setting()
+		settingers()
 	except requests.exceptions.ConnectionError:
 		jalan(garis+" koneksi internet bermasalah ")
 		exit()
