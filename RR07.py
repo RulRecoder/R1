@@ -216,12 +216,12 @@ from rich import print as rprint  # Jika Anda menggunakan modul rich untuk forma
 
 def info_user():
     try:
-		coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
-		el = json.loads(coa.text)
-		lk = el["name"]
-		ld = el["id"]
+	coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
+	el = json.loads(coa.text)
+	lk = el["name"]
+	ld = el["id"]
 		
-		response = requests.get('https://ipinfo.io')
+	response = requests.get('https://ipinfo.io')
         data = response.json()
 
         alamat_ip = data.get('ip')
