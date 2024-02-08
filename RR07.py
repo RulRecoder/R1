@@ -369,7 +369,8 @@ def login_menu():
        clear()
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       
+       banner()
+       print(nel(" "* spasi_awal + pesan_selamat))
        print(f'  [•][bold green] LOGIN BERHASIL!!!! ')
        time.sleep(2)
        loading()
@@ -380,6 +381,8 @@ def login_menu():
        loading()
        clear()
        login_lagi334()
+    banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
     author()
     info_user()
     prints(nel(f'                        [bold blue]Menu Tools Crack')) 
@@ -1483,6 +1486,8 @@ def run():
             clear()
             saved_license = file.read()
             expiration_date = get_expiration_date(saved_license)
+            banner()
+            print(nel(" "* spasi_awal + pesan_selamat))
             print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
@@ -1499,6 +1504,8 @@ def run():
        if check_license(license_key):
           loading()
           clear()
+          banner()
+          print(nel(" "* spasi_awal + pesan_selamat))
           print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
           print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
           time.sleep(3)
