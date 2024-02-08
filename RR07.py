@@ -678,7 +678,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{H2}{len(id)}{P2}{M2} ID TELAH DIKUMPULKAN"))
+	cetak(nel(f"                        [bold blue]login ID Crack",title=f"{asu}{len(id)}{P2}{p} ID TELAH DIKUMPULKAN"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -728,7 +728,7 @@ def setting():
 		pwpluss.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Aplikasi Terkait?')) 
-	_jembot_ = input('✶ ━━⫸{H} Tambahkan Aplikasi Terkait {M}( Y/t ) ')
+	_jembot_ = input('✶ ━━⫸[green] Tambahkan Aplikasi Terkait [red]( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
 		back()
@@ -738,7 +738,7 @@ def setting():
 		taplikasi.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Pilih Prabowo?')) 
-	tai = input('✶ ━━⫸{H}  Saya Janji Akan Pilih Prabowo {M}( Y/t ) ')
+	tai = input('✶ ━━⫸[green]  Saya Janji Akan Pilih Prabowo [red]( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
 		back()
@@ -747,7 +747,7 @@ def setting():
 	else:
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
-	prints(nel(f'     {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ya  '))
+	prints(nel(f'        {B2}Ketik "bismillah" Untuk Memulai Crack, Semoga ijo ya  '))
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['bismillah','Bismillah','BISMILLAH']:
 		passwrd()
@@ -793,11 +793,11 @@ def passwrd():
 			if 'metod1' in method:
 				pool.submit(crack,idf,pwv)
 			elif 'metod2' in method:
-				pool.submit(crackfree,idf,pwv)
+				pool.submit(validate1,idf,pwv)
 			elif 'metod3' in method:
-				pool.submit(metod3,idf,pwv)
+				pool.submit(kontol,idf,pwv)
 			elif 'metod4' in method:
-				pool.submit(crack,username,pwv)
+				pool.submit(crack2,idf,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
 #--------------------[ METODE VALIDATE ]-----------------#
@@ -1412,7 +1412,7 @@ def crack(idf,pwv):
 			time.sleep(31)
 	loop+=1
 #--------------------[ METODE-MOBILE ]-----------------#
-def crack(username,pwv):
+def crack2(idf,pwv):
 	global loop,ok,cp
 	pers = loop*100/len(id2)
 	fff = '%'
