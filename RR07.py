@@ -360,9 +360,9 @@ def login_lagi334():
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
+    banner()
+    print(nel(" "* spasi_awal + pesan_selamat))
     try:
-       banner()
-       print(nel(" "* spasi_awal + pesan_selamat))
        loading()
        clear()
        banner()
@@ -458,13 +458,13 @@ def mail2():
 	global ok , cc
 	nama = input(f'{P}[{H}?{P}] {U}nama target{N} : ')
 	if ',' in str(nama):
-		print(f' {h}╰─▶{b} ✶{N}[red] masukan nama, jangan kosong ')
-		time.sleep(3);exit()
+		print(f' [green]╰─▶[blue] ✶{N}[red] masukan nama, jangan kosong ')
+		time.sleep(3);mail2()
 	doma = input(f'{P}[{H}?{P}] {U} domain (ex:@gmail.com){N} : ')
 	if '@' not in str(doma) or '.com' not in str(doma):
-		print(f' {h}╰─▶{b} ✶{N}[red]  masukkan domain dengan benar ')
-		time.sleep(3);exit()
-	jumlah = input(f'{P}[{H}?{P} ]{h}╰─▶{b} ✶{N} {U}total dump (max:10000){N} : ')
+		print(f' [green]╰─▶[blue] ✶{N}[red]  masukkan domain dengan benar ')
+		time.sleep(3);doma()
+	jumlah = input(f'{P}[{H}?{P} ][green]╰─▶[blue] ✶{N} {U}total dump (max:10000){N} : ')
 	for xyz in range(int(jumlah)):
 		AA = nama
 		BB = [f'{str(rc(tengah))}',f'{str(rr(0,31))}',f'{str(rc(belakang))}']
