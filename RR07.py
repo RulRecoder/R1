@@ -205,7 +205,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold white"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     prints(nel(f'                            {P}[bold blue]Info Author{P}')) 
+     prints(nel(f'                              [bold blue]Info Author')) 
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
@@ -276,12 +276,12 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat))
-    prints(nel(f'                           {P}{B2}Login Licensi{P}'))
+    prints(nel(f'                             {B2}Login Licensi'))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
     if pil in['2','02']:
-        jalan("\n [•] {H}You will be redirected to the Author Whatsapp...")
+        jalan("\n [•] {H2}You will be redirected to the Author Whatsapp...")
         time.sleep(0.03)
         loading()
         time.sleep(0.03)
@@ -348,7 +348,7 @@ def login_lagi334():
         find_token = re.search("(EAAG\w+)", data.text)
         ken = open(".token.txt", "w").write(find_token.group(1))
         cok = open(".cok.txt", "w").write(cookie)
-        print(f'  {x}[{H}•{x}]{H} LOGIN BERHASIL!!!!{x} ')
+        print(f'  [•]{H2} LOGIN BERHASIL!!!! ')
         time.sleep(0.02)
         loading()
         clear()
@@ -384,9 +384,9 @@ def login_menu():
     author()
     info_user()
     prints(nel(f'                        {P}[bold blue]Menu Tools Crack{P}')) 
-    prints(f"""              {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
-              {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
-              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
+    prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
+             {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
+             {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
         massal()
