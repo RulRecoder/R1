@@ -715,7 +715,7 @@ def setting():
 		method.append('metod3')
 	else:
 		method.append('metod1')
-	_jembot_ = input('✶ ━━⫸ {H}Tambahkan Aplikasi Terkait {M}( Y/t ) ')
+	_jembot_ = input('✶ ━━⫸ Tambahkan Aplikasi Terkait ( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
 		back()
@@ -734,7 +734,7 @@ def setting():
 			pwnya.append(xpw)
 	else:
 		pwpluss.append('no')
-	tai = input('✶ ━━⫸ {H}Saya Janji Akan Pilih Prabowo {M}( Y/t ) ')
+	tai = input('✶ ━━⫸  Saya Janji Akan Pilih Prabowo ( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
 		back()
@@ -801,17 +801,7 @@ def passwrd():
 	print(f'[{b}•{x}]{h} OK : {h}%s '%(ok))
 	print(f'{x}[{b}•{x}]{k} CP : {k}%s{x} '%(cp))
 	print('')
-	print('>> Lanjut Crack Kembali ( Y/t ) ? ')
-	woi = input('>> Input : ')
-	if woi in ['y','Y']:
-		kembali()
-	else:
-		print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
-		time.sleep(2)
-		exit()
-	
-def kembali():
-	prints(f'{B2}Ketik "back" Untuk kembali kemenu crack')
+	print(f'{B2}Ketik "back" Untuk kembali kemenu crack')
 	hc = input(f'✶ ━━⫸ {H} Ketik{N} : ')
 	if hc in ['back','Back','BACK']:
 		login_menu()
@@ -819,6 +809,10 @@ def kembali():
 	else:
 		print(' [red]ketik Yang Bener kontol ')
 		kembali()
+	else:
+		print(f'\t{x}>>{k} Jangan lupa pilih prabowo ya{x} << ')
+		time.sleep(2)
+		exit()
 
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
@@ -1383,7 +1377,7 @@ def kontol(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	print(f'\r[{M}RR07{N}] [%s%s]/[%s] {H}Live{N} : %s {K}Check {N} : %s %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
+	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1434,10 +1428,11 @@ def crack(idf,pwv):
 #--------------------[ METODE-MOBILE ]-----------------#
 def crack(username,pwv):
 	global loop,ok,cp
-	bi = random.choice(['\33[m'])
 	pers = loop*100/len(id2)
 	fff = '%'
-	print(f'\r[{M}RR07{N}] [%s%s]/[%s] {H}Live{N} : %s {K}Check {N} : %s %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
+	bo = random.choice([m,k,h,b,u,x])
+	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
+	sys.stdout.flush()
 	bro = random.choice(["com.google.android.captiveportallogin","com.chrome.beta","com.kiwibrowser.browser","org.gnu.icecat","com.cookiegames.smartcookie","com.facebook.lite","com.instagram.barcelona","com.instagram.boomerang","com.mx.browser","com.opera.browser"])
 	ua = random.choice(ugen)
 	get = geturlm()
