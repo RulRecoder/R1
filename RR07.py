@@ -235,8 +235,6 @@ def get_facebook_info(cookie):
     else:
         print("Failed to fetch data")
 
-# Read the Facebook cookie from file
-cookie = open('.cok.txt', 'r').read()
 #--------------------[ TUMBAL1 ]--------------#
 def menu():
 	try:
