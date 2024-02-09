@@ -218,10 +218,9 @@ def info_user(sy2, sy3):
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
-        
-		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
-		nama = info_datafb["name"]
-		id = info_datafb["id"]
+        info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+        nama = info_datafb["name"]
+        id = info_datafb["id"]
 
         alamat_ip = data.get('ip')
         region = data.get('region')
