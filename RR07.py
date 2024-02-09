@@ -234,9 +234,8 @@ def get_facebook_info(cookie):
 # Read the Facebook cookie from file
 cookie = open('.cok.txt', 'r').read()
 
-    facebook_info = get_facebook_info(cookie)
     if facebook_info:
-        print("\t\tInfo Tumbal")
+        print("\t\tInfo Tumbal", style=f"bold purple"))
         print(f"{H2}╰─▶{B2} ✶[bold yellow] Idz Tumbal: {facebook_info['user_id']}")
         print(f"{H2}╰─▶{B2} ✶[bold yellow] Nama Tumbal: {facebook_info['user_name']}")
 #--------------------[ USER ]--------------#
