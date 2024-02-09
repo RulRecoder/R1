@@ -968,7 +968,7 @@ def passwrd():
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
 	input(f'[{x}Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
-	back()
+	pepek()
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
