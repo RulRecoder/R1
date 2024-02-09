@@ -417,8 +417,8 @@ def login_menu():
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
         idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
-		dump4(idt,"",{"cookie":cok},token)
-		setting()
+        dump4(idt,"",{"cookie":cok},token)
+        setting()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
     elif ___Sllowly_ID____ in ['4']:
