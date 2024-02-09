@@ -1068,7 +1068,7 @@ def rr071(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}");clear()
+	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}\n"),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1127,7 +1127,7 @@ def rr072(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}\n"),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1170,7 +1170,7 @@ def rr072(idf,pwv):
 def rr073(idf,pwv):
 	global loop,ok,cp
 	ua = random.choice(ugen)
-	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}\n"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1225,7 +1225,7 @@ def rr073(idf,pwv):
 ###-----[ METODE VALIDATE ]-----###
 def rr074(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v4{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v4{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}\n"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1260,7 +1260,7 @@ def rr074(uid,pwv):
 ###-----[ METODE ASYNC ]-----###
 def rr075(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v5{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v5{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}\n"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1297,7 +1297,7 @@ def rr075(uid,pwv):
 ###-----[ METODE API ]-----###
 def rr076(uid,pwv):
 	global loop,ok,cp,a2f
-	sys.stdout.write(f"\r[{bo}RR07 v6{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v6{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}\n"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1340,7 +1340,7 @@ def rr076(uid,pwv):
 ###-----[ METODE MESSENGER ]-----###
 def rr077(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v7{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v7{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}\n"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	while True:
