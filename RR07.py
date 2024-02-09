@@ -1101,9 +1101,9 @@ def passwrd():
 def rr071(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	eo = random.choice([🥶,😠,🤮,😈,🥵,🚀,✈️])
+	eo = random.choice([😠,🤮,😈,🚀,✈️])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp} {U}proses crack sedang berlangsung{x} {eo}"),
+	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp} {asu}proses crack sedang berlangsung{x} {eo}"),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1161,9 +1161,9 @@ def rr071(idf,pwv):
 def rr072(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	eo = random.choice([🥶,😠,🤮,😈,🥵,🚀,✈️])
+	eo = random.choice(😠,🤮,😈,🚀,✈️])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp} {U}proses crack sedang berlangsung{x} {eo}"),
+	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp} {asu}proses crack sedang berlangsung{x} {eo}"),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1206,9 +1206,9 @@ def rr072(idf,pwv):
 def rr073(idf,pwv):
 	global loop,ok,cp
 	ua = random.choice(ugen)
-	eo = random.choice([🥶,😠,🤮,😈,🥵,🚀,✈️])
+	eo = random.choice([😠,🤮,😈,🚀,✈️])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp} {U}proses crack sedang berlangsung{x} {eo}"),
+	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp} {asu}proses crack sedang berlangsung{x} {eo}"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
