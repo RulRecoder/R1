@@ -1056,7 +1056,7 @@ def passwrddd():
 def passwrd():
 	clear()
 	banner()
-	prints(nel(f'       {P2}{M2}!{P2} PROSES CRACK SEDANG BERLANGSUNG{M2} !{P2}',width=70,padding=(0,7),style=f"{color_panel}")) 
+	prints(nel(f'       {P2}{M2}!{P2} PROSES CRACK SEDANG BERLANGSUNG{M2} !{P2}',style=f"bold purple")) 
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
