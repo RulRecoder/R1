@@ -238,7 +238,7 @@ def get_facebook_info(cookie):
 # Read the Facebook cookie from file
 cookie = open('.cok.txt', 'r').read()
 #--------------------[ TUMBAL ]--------------#
-def menu(sy2,sy3):
+def menu():
 	clear();banner()
 	try:
 		token = open('.token.txt','r').read()
