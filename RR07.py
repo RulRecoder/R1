@@ -236,8 +236,8 @@ if __name__ == "__main__":
     facebook_info = get_facebook_info(cookie)
     if facebook_info:
         print(nel(f'\t\t[bold blue]Info Tumbal', style=f"bold purple"))
-        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Idz Tumbal:", {H2}facebook_info['user_id'])
-        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Nama Tumbal:", {H2}facebook_info['user_name'])
+        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Idz Tumbal:", facebook_info['user_id'])
+        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Nama Tumbal:", facebook_info['user_name'])
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
