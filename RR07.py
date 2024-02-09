@@ -362,7 +362,7 @@ def login_lagi334():
         print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s' % (x, k, x, m, x))
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
-def login_menu(sy2, sy3):
+def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     try:
