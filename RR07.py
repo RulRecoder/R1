@@ -255,9 +255,10 @@ def menu():
 		except:pass
 		clear();login()
 		banner()
-	print(f"{h}ll===>>> User Tumbal : {m}{nama}")
-	print(f"{h}ll===>>> ID Tumbal : {m}{id}")
-	print(f"{h}ll===>>> Status Script : {m}Private")
+		print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
+	print(nel(f"\t\tInfo Tumbal",style=f"bold purple"))
+	print(f"{H2}╰─▶{B2} ✶[bold yellow] User Tumbal : {H2}{nama}")
+	print(f"{H2}╰─▶{B2} ✶[bold yellow] ID Tumbal : {B2}{id}")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -385,7 +386,7 @@ def login_lagi334():
         os.system('clear')
         banner()
         asu = random.choice(["m", "k", "h", "b", "u"])
-        cookie = input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{asu} ')
+        cookie = input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{H2} ')
         data = requests.get("https://business.facebook.com/business_locations", headers={
             "user-agent": "Mozilla/5.0 (Linux; Android 5.1; Elephone P4000 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/62.0.3202.66 Mobile Safari/537.36",
             "referer": "https://x.facebook.com/",
@@ -435,7 +436,6 @@ def login_menu():
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
     menu()
-    get_facebook_info(cookie)
     info_user()
     print(nel(f'\t\t         [bold blue]Menu Tools Crack', style=f"bold purple"))
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
