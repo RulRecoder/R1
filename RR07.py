@@ -383,15 +383,15 @@ def login_menu(sy2,sy3):
        clear()
        login_lagi334()
     try:
-		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
-		nama = info_datafb["name"]
-		id = info_datafb["id"]
-	except requests.exceptions.ConnectionError:
-		exit(f"\n{p}>>> Perbaiki Towermu Kawan")
-	except KeyError:
-		try:os.remove(".cok.txt");os.remove(".token.txt")
-		except:pass
-		clear();login()
+	info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+	nama = info_datafb["name"]
+	id = info_datafb["id"]
+    except requests.exceptions.ConnectionError:
+	exit(f"\n{p}>>> Perbaiki Towermu Kawan")
+    except KeyError:
+	try:os.remove(".cok.txt");os.remove(".token.txt")
+	except:pass
+	clear();login()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
