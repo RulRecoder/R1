@@ -205,7 +205,7 @@ def banner():
              """,width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
 #--------------------[ AUTHOR ]--------------#
 def author():
-     print(nel(f'\t\t   [bold blue]Info Author',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
+     print(nel(f'\t\t   [bold blue]Info Author', style=f"bold purple"))
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
@@ -214,10 +214,14 @@ import requests
 from datetime import datetime
 from rich import print as rprint  # Jika Anda menggunakan modul rich untuk formatting
 
-def info_user():
+def info_user(sy2, sy3):
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
+        
+		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+		nama = info_datafb["name"]
+		id = info_datafb["id"]
 
         alamat_ip = data.get('ip')
         region = data.get('region')
@@ -226,9 +230,9 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(nel(f'\t\t   [bold blue]Info User',width=90, padding=(0, 8), title=f"\r", style=f"bold purple"))
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{lk}")
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{ld}")
+        rprint(nel(f'\t\t   [bold blue]Info User', style=f"bold purple"))
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{nama}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{id}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
@@ -275,8 +279,8 @@ def pepek():
     loading()
     os.system("clear")
     banner()
-    print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
-    print(nel(f'\t\t           [bold blue]Login Licensi', title=f"\r", style=f"bold purple"))
+    print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
+    print(nel(f'\t\t           [bold blue]Login Licensi', style=f"bold purple"))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -643,7 +647,7 @@ def result():
 	loading()
 	clear()
 	banner()
-	print(nel(" "* spasi_awal + pesan_selamat))
+	print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
 	print(f'[01] [white]Hasil [green]OK [white]Anda ')
 	print(f'[02] [white]Hasil [yellow]CP [white]Anda ')
 	kz = input(f' {H}╰─▶{B} ✶{N} {H} Pilih : ')
@@ -824,7 +828,7 @@ def setting():
 	else:
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		login_menu()
-	prints(nel(f'                         [bold blue]login Method')) 
+	prints(nel(f'                         [bold blue]login Method', style=f"bold purple")) 
 	prints(f'{H2}╰─▶ {B2}01 [bold purple]Method free.facebook.com [green] Validate [white]\n')
 	prints(f'{H2}╰─▶ {B2}02 [bold purple]Method m.facebook.com [green] Async [white]\n')
 	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]')
@@ -837,7 +841,7 @@ def setting():
 		method.append('metod3')
 	else:
 		method.append('metod1')
-	prints(nel(f'                        [bold blue]Manual Password?')) 
+	prints(nel(f'                        [bold blue]Manual Password?', style=f"bold purple")) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
 		pwpluss.append('ya')
@@ -849,7 +853,7 @@ def setting():
 	else:
 		pwpluss.append('no')
 	print("")
-	prints(nel(f'                        [bold blue]Aplikasi Terkait?')) 
+	prints(nel(f'                        [bold blue]Aplikasi Terkait?', style=f"bold purple"))
 	_jembot_ = input('✶ ━━⫸ Tambahkan Aplikasi Terkait ( Y/t ) ')
 	if _jembot_ in ['']:
 		print(' [red]Pilih Yang Bener Kontol ')
@@ -859,7 +863,7 @@ def setting():
 	else:
 		taplikasi.append('no')
 	print("")
-	prints(nel(f'                        [bold blue]Pilih Prabowo?')) 
+	prints(nel(f'                        [bold blue]Pilih Prabowo?', style=f"bold purple"))
 	tai = input('✶ ━━⫸  Saya Janji Akan Pilih Prabowo ( Y/t ) ')
 	if tai in ['t','T']:
 		print(' [red]Harus Pilih prabowo Klo Ga Pilih Jangan Pke Scnya ')
@@ -875,8 +879,8 @@ def passwrd():
 	loading()
 	clear()
 	banner()
-	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !'))
-	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !')) 
+	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !', style=f"bold purple"))
+	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !', style=f"bold purple"))
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
@@ -1703,11 +1707,11 @@ def run():
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
             banner()
-            print(nel(" "* spasi_awal + pesan_selamat))
+            print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
             loading()
             clear()
             banner()
-            print(nel(" "* spasi_awal + pesan_selamat))
+            print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
             saved_license = file.read()
             expiration_date = get_expiration_date(saved_license)
             print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
@@ -1725,11 +1729,11 @@ def run():
 
        if check_license(license_key):
           banner()
-          print(nel(" "* spasi_awal + pesan_selamat))
+          print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
           loading()
           clear()
           banner()
-          print(nel(" "* spasi_awal + pesan_selamat))
+          print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
           print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
           print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
           time.sleep(3)
