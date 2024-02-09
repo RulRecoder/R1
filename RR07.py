@@ -437,7 +437,7 @@ def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
-    menu(sy2,sy3)
+    menu()
     get_facebook_info(cookie)
     info_user()
     print(nel(f'\t\t         [bold blue]Menu Tools Crack', style=f"bold purple"))
