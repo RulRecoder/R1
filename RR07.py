@@ -318,7 +318,7 @@ def login():
             response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), Kues={'Kue':cok})
             sy2 = json.loads(response.text)['name']
             sy3 = json.loads(response.text)['id']
-            login_menu(sy2, sy3)
+            login_menu(sy2,sy3)
         except KeyError:
             login_lagi334()
         except requests.exceptions.ConnectionError:
@@ -362,7 +362,7 @@ def login_lagi334():
         print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s' % (x, k, x, m, x))
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
-def login_menu():
+def login_menu(sy2,sy3):
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     try:
@@ -383,11 +383,15 @@ def login_menu():
        clear()
        login_lagi334()
     try:
-       info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
-       nama = info_datafb["name"]
-       id = info_datafb["id"]
-    except requests.exceptions.ConnectionError:
-       exit(f"\n{p}>>> Perbaiki Towermu Kawan")
+		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+		nama = info_datafb["name"]
+		id = info_datafb["id"]
+	except requests.exceptions.ConnectionError:
+		exit(f"\n{p}>>> Perbaiki Towermu Kawan")
+	except KeyError:
+		try:os.remove(".cok.txt");os.remove(".token.txt")
+		except:pass
+		clear();login()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
