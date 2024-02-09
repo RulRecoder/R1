@@ -214,7 +214,7 @@ import requests
 from datetime import datetime
 from rich import print as rprint  # Jika Anda menggunakan modul rich untuk formatting
 
-def info_user(sy2, sy3):
+def info_user():
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
@@ -318,7 +318,7 @@ def login():
             response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), Kues={'Kue':cok})
             sy2 = json.loads(response.text)['name']
             sy3 = json.loads(response.text)['id']
-            info_user(sy2, sy3)
+            login_menu(sy2, sy3)
         except KeyError:
             login_lagi334()
         except requests.exceptions.ConnectionError:
@@ -362,7 +362,7 @@ def login_lagi334():
         print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s' % (x, k, x, m, x))
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
-def login_menu():
+def login_menu(sy2, sy3):
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     try:
@@ -385,7 +385,7 @@ def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
-    info_user(sy2, sy3)
+    info_user()
     print(nel(f'\t\t[bold blue]Menu Tools Crack',width=90, padding=(0, 8), style=f"bold purple"))
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
              {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
