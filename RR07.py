@@ -209,33 +209,8 @@ def author():
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+
 #--------------------[ TUMBAL ]--------------#
-import requests
-import json
-
-import requests
-
-def get_facebook_info(cookie):
-    url = 'https://www.facebook.com/profile.php'
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-        'Cookie': cookie
-    }
-
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        # Extracting user ID and name from HTML response
-        user_id = response.text.split('"USER_ID":"')[0].split('"')[0]
-        user_name = response.text.split('"USER_NAME":"')[0].split('"')[0]
-        return {'user_id': user_id, 'user_name': user_name}
-    elif facebook_info:
-        print("\t\tInfo Tumbal")
-        print(f"{H2}╰─▶{B2} ✶[bold yellow] Idz Tumbal: {facebook_info['user_id']}")
-        print(f"{H2}╰─▶{B2} ✶[bold yellow] Nama Tumbal: {facebook_info['user_name']}")
-    else:
-        print("Failed to fetch data")
-
-#--------------------[ TUMBAL1 ]--------------#
 def menu():
 	try:
 		token = open('.token.txt','r').read()
@@ -256,9 +231,9 @@ def menu():
 		clear();login()
 		banner()
 		print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
-	print(nel(f"\t\tInfo Tumbal",style=f"bold purple"))
-	print(f"{H2}╰─▶{B2} ✶[bold yellow] User Tumbal : {H2}{nama}")
-	print(f"{H2}╰─▶{B2} ✶[bold yellow] ID Tumbal : {B2}{id}")
+	print(nel(f"\t\t         [bold blue]Info Tumbal",style=f"bold purple"))
+	print(f"  {H2}╰─▶{B2} ✶[bold yellow] User Tumbal : {H2}{nama}")
+	print(f"  {H2}╰─▶{B2} ✶[bold yellow] ID Tumbal : {B2}{id}")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -268,9 +243,6 @@ def info_user():
     try:
         response = requests.get('https://ipinfo.io')
         data = response.json()
-        info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
-        nama = info_datafb["name"]
-        id = info_datafb["id"]
 
         alamat_ip = data.get('ip')
         region = data.get('region')
@@ -280,8 +252,6 @@ def info_user():
 
         # Menggunakan rprint dari modul rich untuk formatting
         rprint(nel(f'\t\t   [bold blue]Info User', style=f"bold purple"))
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Name:[bold green]{nama}")
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your Idz:[bold green]{id}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
@@ -386,7 +356,7 @@ def login_lagi334():
         os.system('clear')
         banner()
         asu = random.choice(["m", "k", "h", "b", "u"])
-        cookie = input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{H2} ')
+        cookie = input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{h} ')
         data = requests.get("https://business.facebook.com/business_locations", headers={
             "user-agent": "Mozilla/5.0 (Linux; Android 5.1; Elephone P4000 Build/LMY47D) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/62.0.3202.66 Mobile Safari/537.36",
             "referer": "https://x.facebook.com/",
