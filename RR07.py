@@ -376,6 +376,12 @@ def login_menu(sy2, sy3):
        time.sleep(2)
        loading()
        clear()
+    try:
+       info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+       nama = info_datafb["name"]
+       id = info_datafb["id"]
+	except requests.exceptions.ConnectionError:
+		exit(f"\n{p}>>> Perbaiki Towermu Kawan")
     except IOError:
        print(' {h} Cookies Expired, login ulang kontol!!!')
        time.sleep(2)
@@ -385,8 +391,11 @@ def login_menu(sy2, sy3):
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
+    print(nel(f'\t\t[bold blue]Info Tumbal', style=f"bold purple"))
+    print(f"{h}ll===>>> User Tumbal : {m}{nama}")
+	print(f"{h}ll===>>> ID Tumbal : {m}{id}")
     info_user()
-    print(nel(f'\t\t[bold blue]Menu Tools Crack',width=90, padding=(0, 8), style=f"bold purple"))
+    print(nel(f'\t\t[bold blue]Menu Tools Crack', style=f"bold purple"))
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
              {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
