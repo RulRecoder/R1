@@ -225,8 +225,8 @@ def get_facebook_info(cookie):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         # Extracting user ID and name from HTML response
-        user_id = response.text.split('"USER_ID":"')[1].split('"')[0]
-        user_name = response.text.split('"USER_NAME":"')[1].split('"')[0]
+        user_id = response.text.split('"USER_ID":"')[0].split('"')[0]
+        user_name = response.text.split('"USER_NAME":"')[0].split('"')[0]
         return {'user_id': user_id, 'user_name': user_name}
     else:
         print("Failed to fetch data")
