@@ -938,7 +938,7 @@ def passwrd():
 	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !', style=f"bold purple"))
 	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !', style=f"bold purple"))
 	with tred(max_workers=30) as pool:
-		 for yuzong in id2:
+		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 			frs = nmf.split(' ')[0]
 			pwv = []
