@@ -234,7 +234,6 @@ def get_facebook_info(cookie):
 # Read the Facebook cookie from file
 cookie = open('.cok.txt', 'r').read()
 
-if __name__ == "__main__":
     facebook_info = get_facebook_info(cookie)
     if facebook_info:
         print("\t\tInfo Tumbal")
@@ -393,7 +392,7 @@ def login_lagi334():
         print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s' % (x, k, x, m, x))
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
-def login_menu(sy2,sy3):
+def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     try:
