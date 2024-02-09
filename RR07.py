@@ -209,6 +209,35 @@ def author():
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+#--------------------[ TUMBAL ]--------------#
+import requests
+import json
+
+def get_facebook_info(cookie):
+    url = 'https://www.facebook.com/profile.php'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
+        'Cookie': cookie
+    }
+
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        # Extracting user ID and name from HTML response
+        user_id = response.text.split('"USER_ID":"')[1].split('"')[0]
+        user_name = response.text.split('"USER_NAME":"')[1].split('"')[0]
+        return {'user_id': user_id, 'user_name': user_name}
+    else:
+        print("Failed to fetch data")
+
+# Replace 'your_cookie_here' with the actual Facebook cookie
+cookie = open('.cok.txt', 'r').read()
+
+if __name__ == "__main__":
+    facebook_info = get_facebook_info(cookie)
+    if facebook_info:
+        print(nel(f'\t\t[bold blue]Info Tumbal', style=f"bold purple"))
+        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Idz Tumbal:", {H2}facebook_info['user_id'])
+        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Nama Tumbal:", {H2}facebook_info['user_name'])
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -382,22 +411,10 @@ def login_menu(sy2,sy3):
        loading()
        clear()
        login_lagi334()
-    try:
-	info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cok':cok}).json()
-	nama = info_datafb["name"]
-	id = info_datafb["id"]
-    except requests.exceptions.ConnectionError:
-	exit(f"\n{p}>>> Perbaiki Towermu Kawan")
-    except KeyError:
-	try:os.remove(".cok.txt");os.remove(".token.txt")
-	except:pass
-	clear();login()
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
-    print(nel(f'\t\t[bold blue]Info Tumbal', style=f"bold purple"))
-    print(f"{h}ll===>>> User Tumbal : {m}{nama}")
-    print(f"{h}ll===>>> ID Tumbal : {m}{id}")
+    facebook_info()
     info_user()
     print(nel(f'\t\t[bold blue]Menu Tools Crack', style=f"bold purple"))
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
