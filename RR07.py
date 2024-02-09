@@ -276,7 +276,7 @@ def pepek():
     os.system("clear")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, title=f"\r", style=f"bold purple"))
-    print(nel(f'\t\t     [bold blue]Login Licensi', title=f"\r", style=f"bold purple"))
+    print(nel(f'\t\t           [bold blue]Login Licensi', title=f"\r", style=f"bold purple"))
     print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
     print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
     pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
