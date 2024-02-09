@@ -237,7 +237,30 @@ def get_facebook_info(cookie):
 
 # Read the Facebook cookie from file
 cookie = open('.cok.txt', 'r').read()
-
+#--------------------[ TUMBAL ]--------------#
+def menu(sy2,sy3):
+	clear();banner()
+	try:
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
+	except (IOError,KeyError,FileNotFoundError):
+		print(f'\nINVALID DANCOK.{P}')
+		time.sleep(2);os.system('clear')
+		login()
+	try:
+		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+		nama = info_datafb["name"]
+		id = info_datafb["id"]
+	except requests.exceptions.ConnectionError:
+		exit(f"\n{p}>>> Perbaiki Towermu Kawan")
+	except KeyError:
+		try:os.remove(".cok.txt");os.remove(".token.txt")
+		except:pass
+		clear();login()
+		banner()
+	print(f"{h}ll===>>> User Tumbal : {m}{nama}")
+	print(f"{h}ll===>>> ID Tumbal : {m}{id}")
+	print(f"{h}ll===>>> Status Script : {m}Private")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -347,7 +370,7 @@ def login():
             response = requests.get('https://graph.facebook.com/me?fields=name,id&access_token=%s' % (token), Kues={'Kue':cok})
             sy2 = json.loads(response.text)['name']
             sy3 = json.loads(response.text)['id']
-            login_menu(sy2,sy3)
+            menu(sy2,sy3)
         except KeyError:
             login_lagi334()
         except requests.exceptions.ConnectionError:
@@ -414,9 +437,10 @@ def login_menu():
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
+    menu(sy2,sy3)
     get_facebook_info(cookie)
     info_user()
-    print(nel(f'\t\t[bold blue]Menu Tools Crack', style=f"bold purple"))
+    print(nel(f'\t\t         [bold blue]Menu Tools Crack', style=f"bold purple"))
     prints(f"""             {H2}╰─▶ {B2}01 [bold purple]Crack Massal    {H2}╰─▶ {B2}04 [bold purple]Cek Ressult
              {H2}╰─▶ {B2}02 [bold purple]Crack Publik    {H2}╰─▶ {B2}05 [bold purple]Crack File
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
