@@ -228,16 +228,16 @@ def get_facebook_info(cookie):
         user_id = response.text.split('"USER_ID":"')[0].split('"')[0]
         user_name = response.text.split('"USER_NAME":"')[0].split('"')[0]
         return {'user_id': user_id, 'user_name': user_name}
+    elif facebook_info:
+        print("\t\tInfo Tumbal")
+        print(f"{H2}╰─▶{B2} ✶[bold yellow] Idz Tumbal: {facebook_info['user_id']}")
+        print(f"{H2}╰─▶{B2} ✶[bold yellow] Nama Tumbal: {facebook_info['user_name']}")
     else:
         print("Failed to fetch data")
 
 # Read the Facebook cookie from file
 cookie = open('.cok.txt', 'r').read()
 
-    if facebook_info:
-        print("\t\tInfo Tumbal", style=f"bold purple"))
-        print(f"{H2}╰─▶{B2} ✶[bold yellow] Idz Tumbal: {facebook_info['user_id']}")
-        print(f"{H2}╰─▶{B2} ✶[bold yellow] Nama Tumbal: {facebook_info['user_name']}")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
