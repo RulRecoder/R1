@@ -231,7 +231,7 @@ def menu():
 		clear();login()
 		banner()
 		print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
-	print(nel(f"\t\t         [bold blue]Info Tumbal",style=f"bold purple"))
+	print(nel(f"\t\t           [bold blue]Info Tumbal",style=f"bold purple"))
 	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] User Tumbal:{H2}{nama}")
 	print(f"  {H2}╰─▶{B2} ✶ [bold yellow] ID Tumbal:{B2}{id}")
 #--------------------[ USER ]--------------#
@@ -251,7 +251,7 @@ def info_user():
         zona_waktu = data.get('timezone')
 
         # Menggunakan rprint dari modul rich untuk formatting
-        rprint(nel(f'\t\t         [bold blue]Info User', style=f"bold purple"))
+        rprint(nel(f'\t\t           [bold blue]Info User', style=f"bold purple"))
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Your IP:{B2}{alamat_ip}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Region:[bold green]{region}")
         rprint(f"  {H2}╰─▶{B2} ✶ [bold yellow] Lokasi:{B2}{lokasi}")
@@ -1062,8 +1062,6 @@ def passwrd():
 				pool.submit(rr071,idf,pwv)
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
-	input(f'[{x}Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
-	pepek()
 
 #-------------------[ METODE-B-API ]-----------------#
 def rr071(idf,pwv):
