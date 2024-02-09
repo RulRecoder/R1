@@ -213,6 +213,8 @@ def author():
 import requests
 import json
 
+import requests
+
 def get_facebook_info(cookie):
     url = 'https://www.facebook.com/profile.php'
     headers = {
@@ -229,15 +231,15 @@ def get_facebook_info(cookie):
     else:
         print("Failed to fetch data")
 
-# Replace 'your_cookie_here' with the actual Facebook cookie
+# Read the Facebook cookie from file
 cookie = open('.cok.txt', 'r').read()
 
 if __name__ == "__main__":
     facebook_info = get_facebook_info(cookie)
     if facebook_info:
-        print(nel(f'\t\t[bold blue]Info Tumbal', style=f"bold purple"))
-        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Idz Tumbal:", facebook_info['user_id'])
-        print(f"{H2}╰─▶{B2} ✶ [bold yellow] Nama Tumbal:", facebook_info['user_name'])
+        print("\t\tInfo Tumbal")
+        print(f"{H2}╰─▶{B2} ✶[bold yellow] Idz Tumbal: {facebook_info['user_id']}")
+        print(f"{H2}╰─▶{B2} ✶[bold yellow] Nama Tumbal: {facebook_info['user_name']}")
 #--------------------[ USER ]--------------#
 import requests
 from datetime import datetime
