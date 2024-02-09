@@ -974,7 +974,7 @@ def setting():
 	elif hc in ['3','03']:
 		method.append('metod3')
 	elif hc in ['4','04']:
-	    method.append('metod4)
+	    method.append('metod4')
 	else:
 		method.append('metod1')
 	prints(nel(f'                        [bold blue]Manual Password?', style=f"bold purple")) 
