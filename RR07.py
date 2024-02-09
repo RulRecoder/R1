@@ -376,18 +376,18 @@ def login_menu(sy2, sy3):
        time.sleep(2)
        loading()
        clear()
-    try:
-       info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
-       nama = info_datafb["name"]
-       id = info_datafb["id"]
-	except requests.exceptions.ConnectionError:
-		exit(f"\n{p}>>> Perbaiki Towermu Kawan")
     except IOError:
        print(' {h} Cookies Expired, login ulang kontol!!!')
        time.sleep(2)
        loading()
        clear()
        login_lagi334()
+    try:
+       info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
+       nama = info_datafb["name"]
+       id = info_datafb["id"]
+	except requests.exceptions.ConnectionError:
+	   exit(f"\n{p}>>> Perbaiki Towermu Kawan")
     banner()
     print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
     author()
