@@ -237,15 +237,14 @@ def get_facebook_info(cookie):
 
 # Read the Facebook cookie from file
 cookie = open('.cok.txt', 'r').read()
-#--------------------[ TUMBAL ]--------------#
+#--------------------[ TUMBAL1 ]--------------#
 def menu():
-	clear();banner()
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
 	except (IOError,KeyError,FileNotFoundError):
 		print(f'\nINVALID DANCOK.{P}')
-		time.sleep(2);os.system('clear')
+		time.sleep(2)
 		login()
 	try:
 		info_datafb = ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={token}", cookies = {'cookies':cok}).json()
