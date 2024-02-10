@@ -931,7 +931,7 @@ def rr071(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]",end=' ')
+	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]"),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
