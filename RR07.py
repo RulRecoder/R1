@@ -392,14 +392,15 @@ def login_menu():
        banner()
        print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
        print(f'  [•][bold green] Sedang Mengecek Tumbal..... !!!! ')
+       time.sleep(0.03)
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       print(f'  [•][bold green] Cookies Aktif Login Berhasil !!!! ')
+       print(f'  [•][bold green] Cookies Aktif, Login Berhasil !!!! ')
        time.sleep(2)
        loading()
        clear()
     except IOError:
-       print(' [{h}•{x}]{U} Cookies Expired, login ulang kontol!!!')
+       print(' [{H2}•{x}]{M2} Cookies Expired, login ulang kontol !!!')
        time.sleep(2)
        loading()
        clear()
@@ -1387,6 +1388,7 @@ def run():
           banner()
           print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
           print(f'  [•][bold green] Sedang Mengecek Lisensi..... !!!! ')
+          time.sleep(0.03)
           saved_license = file.read()
           expiration_date = get_expiration_date(saved_license)
           print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
@@ -1409,7 +1411,6 @@ def run():
           time.sleep(0.03)
           run()
           
-
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
 	try:os.system('git pull')
