@@ -380,7 +380,7 @@ def login_lagi334():
     except Exception as e:
         os.system("rm -f .token.txt")
         os.system("rm -f .cok.txt")
-        print(f'  %s[%sx%s]%s Login Gagal..... Cek Tumbal Lu Bng !!%s' % (x, k, x, m, x))
+        print(f' [•]{H2} Login Gagal..... Cek Tumbal Lu Bng !!!!')
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
@@ -392,7 +392,7 @@ def login_menu():
        banner()
        print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
        print(f'  [•][bold green] Sedang Mengecek Tumbal..... !!!! ')
-       time.sleep(0.03)
+       time.sleep(1)
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
        print(f'  [•][bold green] Cookies Aktif, Login Berhasil !!!! ')
@@ -400,7 +400,9 @@ def login_menu():
        loading()
        clear()
     except IOError:
-       print(' [{H2}•{x}]{M2} Cookies Expired, login ulang kontol !!!')
+       print(f'  [•][bold green] Sedang Mengecek Tumbal..... !!!! ')
+       time.sleep(1)
+       print(' [•][bold red] Cookies Expired, login ulang kontol !!!')
        time.sleep(2)
        loading()
        clear()
@@ -416,7 +418,7 @@ def login_menu():
              {H2}╰─▶ {B2}03 [bold purple]Clone ID Email  {H2}╰─▶ {B2}00 [bold purple]Exit Program""")
     ___Sllowly_ID____ = input(f'✶ ━━⫸ {H} Input{N} : ')
     if ___Sllowly_ID____ in ['1']:
-        Dump_Massal()
+        massal()
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
         idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
@@ -1388,7 +1390,7 @@ def run():
           banner()
           print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
           print(f'  [•][bold green] Sedang Mengecek Lisensi..... !!!! ')
-          time.sleep(0.03)
+          time.sleep(1)
           saved_license = file.read()
           expiration_date = get_expiration_date(saved_license)
           print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
