@@ -355,6 +355,7 @@ def login_lagi334():
     try:
         os.system('clear')
         banner()
+        print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
         asu = random.choice(["m", "k", "h", "b", "u"])
         cookie = input(f'  [{h}•{x}]{U} Masukkan Cookies{x} :{h} ')
         data = requests.get("https://business.facebook.com/business_locations", headers={
@@ -371,7 +372,7 @@ def login_lagi334():
         find_token = re.search("(EAAG\w+)", data.text)
         ken = open(".token.txt", "w").write(find_token.group(1))
         cok = open(".cok.txt", "w").write(cookie)
-        print(f'  [•]{H2} LOGIN BERHASIL!!!! ')
+        print(f'  [•]{H2} Login Berhasil !!!! ')
         time.sleep(0.02)
         loading()
         clear()
@@ -379,7 +380,7 @@ def login_lagi334():
     except Exception as e:
         os.system("rm -f .token.txt")
         os.system("rm -f .cok.txt")
-        print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NJING !!%s' % (x, k, x, m, x))
+        print(f'  %s[%sx%s]%s Login Gagal..... Cek Tumbal Lu Bng !!%s' % (x, k, x, m, x))
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
@@ -390,14 +391,15 @@ def login_menu():
        clear()
        banner()
        print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
+       print(f'  [•][bold green] Sedang Mengecek Tumbal..... !!!! ')
        token = open('.token.txt','r').read()
        cok = open('.cok.txt','r').read()
-       print(f'  [•][bold green] LOGIN BERHASIL!!!! ')
+       print(f'  [•][bold green] Cookies Aktif Login Berhasil !!!! ')
        time.sleep(2)
        loading()
        clear()
     except IOError:
-       print(' {h} Cookies Expired, login ulang kontol!!!')
+       print(' [{h}•{x}]{U} Cookies Expired, login ulang kontol!!!')
        time.sleep(2)
        loading()
        clear()
@@ -1355,6 +1357,7 @@ def run():
             clear()
             banner()
             print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
+            print(f'  [•][bold green] Sedang Mengecek Lisensi..... !!!! ')
             saved_license = file.read()
             expiration_date = get_expiration_date(saved_license)
             print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
@@ -1383,6 +1386,7 @@ def run():
           clear()
           banner()
           print(nel(" "* spasi_awal + pesan_selamat, style=f"bold purple"))
+          print(f'  [•][bold green] Sedang Mengecek Lisensi..... !!!! ')
           saved_license = file.read()
           expiration_date = get_expiration_date(saved_license)
           print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
