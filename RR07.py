@@ -437,65 +437,6 @@ def error():
 	print(f'{k}>> {m}Maaf Fitur Ini Masih Di Perbaiki {x}')
 	time.sleep(4)
 	back()
-#-------------------[MASSAL]--------------------#    
-    def massalr():
-		try:cok = open('.cok.txt','r').read();tok = open('.token.txt','r').read()
-		except FileNotFoundError:self.login()
-		try:jml = int(input(f" {P}[{H}?{P}] {U2}masukan jumlah {H}id {P}yang anda inginkan :{H} "))
-		except ValueError:exit(f" {P}[{M}!{P}] masukan angka jangan huruf")
-		for jid in range(jml):
-			jid += 1
-			user = input(f" {P}[{H}+{P}] masukan id \x1b[1;90m({H}{str(jid)}\x1b[1;90m){P}:{H} ")
-			self.uid["userid"].append(user)
-		print (f"\n {P}[{H}+{P}] {P}Nama File Untuk Dump Id \x1b[1;90m({P}Contoh {H}/sdcard/dumpfb.txt\x1b[1;90m)")
-		files = input(f" {P}[{K}?{P}] Nama File:{H} ")
-		save = open(files,'w')
-		for userid in self.uid["userid"]:
-			try:
-				response = self.Xyz.get(f'https://graph.facebook.com/{userid}?fields=friends&access_token={tok}',cookies={'cookie': cok})
-				for teman in response.json()['friends']['data']:
-					try:
-						save.write(teman["id"]+'|'+teman["name"]+'\n')
-						self.uid["total"].append(teman["id"]+'|'+teman["name"])
-					except:continue
-					sys.stdout.write(f"\r\r {P}[{U}-{P}] Sedang mengumpulkan id {H}{len(self.uid['total'])}");sys.stdout.flush()
-			except requests.exceptions.ConnectionError:sleep(2);exit(f" {P}[{M}!{P}] silahkan check koneksi {H}internet {P}anda")
-			except (KeyError,IOError):pass
-		print ("\r")
-		print (f"\n {P}[{H}+{P}] Total id: {H}{len(self.uid['total'])} {P}id")
-		print (f" {P}[{H}✓{P}] File tersimpan di: {H}{files}")
-		input(f" {P}[{O}•{P}] klik enter untuk kembali ke {H}menu");sleep(2);self.Check()
-#-------------------[PUBLIK]--------------------#    
-	def publikr():
-		try:cok = open('.cok.txt','r').read();tok = open('.token.txt','r').read()
-		except FileNotFoundError:self.login()
-		user = input(f" {P}[{H}+{P}]{U} masukan id {P}:{H} ")
-		try:
-			response = self.Xyz.get(f'https://graph.facebook.com/{user}?fields=friends&access_token={tok}',cookies={'cookie': cok})
-			for teman in response.json()['friends']['data']:
-				try:
-					self.uid["userid"].append(teman["id"])
-				except:continue
-		except requests.exceptions.ConnectionError:sleep(2);exit(f" {P}[{M}!{P}] silahkan check koneksi {H}internet {P}anda")
-		except (KeyError,IOError):sleep(2);exit(f" {P}[{M}!{P}] id tidak publik")
-		print (f"\n {P}[{H}+{P}] {P}Nama File Untuk Dump Id \x1b[1;90m({P}Contoh {H}/sdcard/dumpfb.txt\x1b[1;90m)")
-		files = input(f" {P}[{K}?{P}] Nama File:{H} ")
-		save = open(files,'w')
-		for userid in self.uid["userid"]:
-			try:
-				response = self.Xyz.get(f'https://graph.facebook.com/{userid}?fields=friends&access_token={tok}',cookies={'cookie': cok})
-				for teman in response.json()['friends']['data']:
-					try:
-						save.write(teman["id"]+'|'+teman["name"]+'\n')
-						self.uid["total"].append(teman["id"]+'|'+teman["name"])
-					except:continue
-					sys.stdout.write(f"\r\r {P}[{U}-{P}] Sedang mengumpulkan id {H}{len(self.uid['total'])}");sys.stdout.flush()
-			except requests.exceptions.ConnectionError:sleep(2);exit(f" {P}[{M}!{P}] silahkan check koneksi {H}internet {P}anda")
-			except (KeyError,IOError):pass
-		print ("\r")
-		print (f"\n {P}[{H}+{P}] Total id: {H}{len(self.uid['total'])} {P}id")
-		print (f" {P}[{H}✓{P}] File tersimpan di: {H}{files}")
-		input(f" {P}[{O}•{P}] klik enter untuk kembali ke {H}menu");sleep(2);setting()
 #-------------------[PUBLIK]--------------------#    
 def dump(idt,fields,cookie,token):
 	try:
