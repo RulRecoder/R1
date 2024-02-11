@@ -136,9 +136,9 @@ class REQ:
                                  `` ``''')
    def Pepek(self):
        self.Logooo()
-       print(f'\t\t##           {B}Login Licensi')
-       print(' {h}╰─▶{b} 1{k} Login Ke Tools')
-       print(' {h}╰─▶{b} 2{k} Hubungi Admin')
+       print(f'\t\t##           {B}Login Licensi{x}')
+       print(' ╰─▶ 1 Login Ke Tools')
+       print(' ╰─▶ 2 Hubungi Admin')
        pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
        if pil in['2','02']:
            print("\n [•] {H2}You will be redirected to the Author Whatsapp...")
@@ -172,7 +172,7 @@ class REQ:
            self.Followers(Cooks) ; self.Followers2(Cooks)
            Console().print("[•]{U2} Login token EAAB berhasil{x} :")
            Console().print(f'{H2}{dashToken}') ; sleep(3.1)
-           Console().print(f"[•]{U2} Silahkan jalankan ulang scirptnya") ; sleep(3.1) ; sys.exit()
+           Console().print(f"[•]{U2} Silahkan jalankan ulang scirptnya") ; sleep(3.1) ; self.Menuuu()
        except requests.exceptions.ConnectionError as e:
            Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
        except Exception as e:
@@ -941,7 +941,8 @@ def run():
                 time.sleep(0.03)
                 print(f"{H}Lisensi valid. Selamat menggunakan program.")
                 time.sleep(2)
-                REQ().Pepek()
+                os.system("clear")
+                REQ().Menuuu()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
        licen=open(".saved_license.txt", "w").write(license_key)
@@ -957,7 +958,8 @@ def run():
               time.sleep(0.03)
               print(f"{H}Lisensi valid. Selamat menggunakan program.")
               time.sleep(2)
-              REQ().Pepek()
+              os.system("clear")
+              REQ().Menuuu()
        else:
           os.system("rm -f .saved_license.txt")
           print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.")
