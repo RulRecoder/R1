@@ -968,7 +968,7 @@ def run():
 if __name__=='__main__':
   try:
       os.system("git pull")
-      Pepek() 
+      self.Pepek() 
   except requests.exceptions.ConnectionError as e:
       os.system("clear") ; Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit() 
 
