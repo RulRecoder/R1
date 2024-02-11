@@ -122,7 +122,7 @@ class REQ:
        return App_get
               
    def Logooo(self):
-       Console().print(f"{asu}RR07X{x} | {asu}@Khoirulez{N}")
+       Console().print(f"{M2}RR07X | {B2}@Khoirulez")
        Console().print(f' {M2}● {K2}● {H2}●')
        Console().print(f'''    {H2}    ,*-~"`^"*u_                                _u*. "^`"~-*,
      p!^       /  jPw                            w9j \        ^!p
@@ -135,7 +135,7 @@ class REQ:
                      ^ ilmk ^c/ )    ( \c^      ^
                              'V')_)(_('V'
                                  `` ``''')
-   def pepek(self):
+   def Pepek(self):
        self.Logooo()
        print(f'\t\t           [bold blue]Login Licensi', style=f"bold purple")
        print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
@@ -146,7 +146,7 @@ class REQ:
            time.sleep(0.03)
            os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini')
            time.sleep(3)
-           pepek()
+           Pepek()
        elif pil in['1','01']:
            jalan(f"{H}Pastikan sudah memiliki licensinya")
            time.sleep(1)
@@ -162,7 +162,7 @@ class REQ:
 
    def REQ_Cookie(self):
        self.clearTerminal(platform) ; self.Logooo()
-       Cooks = Console().input(f'\n{M2}Masukan Cookie{N} : {H2}')
+       Cooks = Console().input(f'\n{M2}Masukan Cookie : {H2}')
        try:
            askTrue = self.ses.get('https://www.facebook.com/adsmanager/manage/campaigns',cookies = {'cookie':Cooks})
            search = re.search('act=(.*?)&nav_source',str(askTrue.content)).group(1)
@@ -200,8 +200,10 @@ class REQ:
        try:
            coks = open('DataLog/cookies.txt','r').read()
            toks = open('DataLog/tokenEaab.txt','r').read()
+           print(f'  [•][bold green] Cookies Aktif, Login Berhasil !!!! ')
        except FileNotFoundError as e:
-           Console().print(Markdown(f"[•]{U2} {str(e).title()}"),style='red') ; sleep(3.1) ; self.REQ_Cookie()
+           print(' [•][bold red] Cookies Expired, login ulang kontol !!!')
+           sleep(3.1) ; self.REQ_Cookie()
        try:
            url = self.ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={toks}", cookies = {"cookie": coks}).json()
            nama, id = url['name'], url['id']
@@ -965,9 +967,10 @@ def run():
  
 if __name__=='__main__':
   try:
-      os.system("git pull") ; REQ().Menuuu()
+      os.system("git pull")
+      Pepek() 
   except requests.exceptions.ConnectionError as e:
-      os.system("clear") ; Console().print(Markdown(f"[•]{U2} {str(e).title()}"),style='red') ; sleep(3.1) ; sys.exit() 
+      os.system("clear") ; Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit() 
 
 
 # FREE AND OPEN SOURCE       
