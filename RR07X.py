@@ -212,8 +212,8 @@ class REQ:
        except requests.exceptions.ConnectionError as e:
            Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
        self.clearTerminal(platform) ; self.Logooo()
-       Console().print(f"✶ ━━⫸[•]{U2}Your Tumbal Name {M2}{nama}\n ✶ ━━⫸[•]{U2}And Uid {B2}{id}")
-       Console().print(f'\n{H2}╰─▶ {H2}01{P2}. {U2}Crack publik\n{H2}╰─▶ {H2}02{P2}. {U2}Crack massal\n{H2}╰─▶ {H2}03{P2}. {U2}Crack email\n{H2}╰─▶ {H2}04{P2}. {U2}Crack file\n{H2}╰─▶ {H2}05{P2}. {U2}Result OK/CP\n{H2}╰─▶ {M2}00{P2}. {U2}Log-out{N} ( {M2}Cookie{N} )')
+       Console().print(f"✶ ━━⫸[•]{U2}Nama Tumbal {M2}{nama}{x}\n✶ ━━⫸[•]{U2}Id Tumbal {B2}{id}")
+       Console().print(f'\n{H2}╰─▶ {H2}01{P2}. {U2}Crack publik\n{H2}╰─▶ {H2}02{P2}. {U2}Crack massal\n{H2}╰─▶ {H2}03{P2}. {U2}Crack email\n{H2}╰─▶ {H2}04{P2}. {U2}Crack file\n{H2}╰─▶ {H2}05{P2}. {U2}Result OK/CP\n{H2}╰─▶ {M2}00{P2}. {U2}Log-out ( Cookie )')
        ykhh = Console().input(f'\n{M2}Input : ')
        
        if ykhh =='1' or ykhh =='01':
@@ -422,10 +422,10 @@ class Furthermore:
            self.Method.append('validatee22')
        else:
            self.Method.append('async')
-       self.Wordlist()
+       self.Generate_id()
    
    def Wordlist(self):
-        ask = Console().input(f'\n{H2}╰─▶ {M2}Ingin menambahkan sandi manual? (Y/t) ')
+        ask = Console().input(f'\n{H2}╰─▶ {U2}Ingin menambahkan sandi manual? (Y/t) ')
         if ask =='y' or ask =='Y' or ask =='Ya' or ask =='ya' or ask =='YA':
           self.Paslist.append('ya')
           pwdia = Console().input(f'\n✶ ━━⫸{M2}Buat Kata Sandi{N} : ')
@@ -433,7 +433,7 @@ class Furthermore:
           for x in asky:
               self.Passku.append(x)
         else:self.Paslist.append('no')
-        self.Generate_id()
+        self.Generate_List()
    
    def Generate_id(self):
        Console().print(f'\n{H2}╰─▶ {B2}01{P2}. Facebook Id {M2}old\n{H2}╰─▶ {B2}02{P2}. Facebook id {K2}new\n{H2}╰─▶ {B2}03{P2}. Facebook id {H2}random')
@@ -456,7 +456,7 @@ class Furthermore:
            for rand in dump:
                generateID_rand = random.randint(0,len(dump2))
                dump2.insert(generateID_rand, rand)
-       self.Generate_List()
+       self.Wordlist()
    
    def Generate_List(self):
         global prog,des
