@@ -1,7 +1,7 @@
 # FREE AND OPEN SOURCE       
 # FREE SCRIPTS CANNOT BE SOLD AND BUYED
-# https://github.com/khoirulez
-# WA : 6281283547452
+# https://github.com/AdityaTwinz
+# WA : 6283861183874
 
 try:
     import re, os, sys, bs4, time, json, base64, rich
@@ -124,13 +124,17 @@ class REQ:
    def Logooo(self):
        Console().print(Markdown(f"{asu}RR07X{x} | {M2}>_@Khoirulez_{x}"),style='bold yellow')
        Console().print(f' {M2}● {K2}● {H2}●')
-       Console().print(f''{M2}    
-           ██████╗  ██████╗ ██████╗.  ███████╗
-           ██╔══██╗██╔══██╗██╔═████ ╚════██║
-           ██████╔╝██████╔╝██║██╔██║     ██╔╝
-           ██╔══██╗██╔══██╗████╔╝██║   ██╔╝ 
-           ██║   ██║██║   ██║ ██████╔╝   ██║  
-           ╚═╝   ╚═╝╚═╝   ╚═╝ ╚═════╝    ╚═╝")
+       Console().print(f'''    {H2}    ,*-~"`^"*u_                                _u*. "^`"~-*,
+     p!^       /  jPw                            w9j \        ^!p
+   w^.._      /      "\_                      _/"     \        _.^w
+        *_   /          \_      _    _      _/         \     _* 
+          q /           / \q   ( `--` )   p/ \          \   p
+          jj5****._    /    ^\_) {M2}o  {M2}o{H2} (_/^    \    _.****6jj
+                   *_ /      "==) {P2};;{H2} (=="      \ _*
+                    `/.w***,   /(    )\   ,***w.\"
+                     ^ ilmk ^c/ )    ( \c^      ^
+                             'V')_)(_('V'
+                                 `` ``''')
    def pepek():
        self.Logooo()
        print(f'\t\t           [bold blue]Login Licensi', style=f"bold purple")
