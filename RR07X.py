@@ -56,7 +56,6 @@ x = '\33[m' # DEFAULT
 asu = random.choice([m,k,h,u,b])  
 
 dump, dump2, news = [], [], []
-sys.stdout.write('{H}RR07X |{M} @Khoirulez')
 
 class REQ:
    
@@ -122,7 +121,7 @@ class REQ:
        return App_get
               
    def Logooo(self):
-       Console().print(f"{M2}RR07X | {B2}@Khoirulez")
+       Console().print(f"[{M2}RR07X{x}] | [{B2}@Khoirulez{x}]")
        Console().print(f' {M2}● {K2}● {H2}●')
        Console().print(f'''    {H2}    ,*-~"`^"*u_                                _u*. "^`"~-*,
      p!^       /  jPw                            w9j \        ^!p
@@ -137,9 +136,9 @@ class REQ:
                                  `` ``''')
    def Pepek(self):
        self.Logooo()
-       print(f'\t\t           {B2}Login Licensi')
-       print(' {H2}╰─▶{B2} 1{K2} Login Ke Tools')
-       print(' {H2}╰─▶{B2} 2{K2} Hubungi Admin')
+       print(f'\t\t           {B}Login Licensi')
+       print(' {H}╰─▶{B} 1{K} Login Ke Tools')
+       print(' {H}╰─▶{B} 2{K} Hubungi Admin')
        pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
        if pil in['2','02']:
            print("\n [•] {H2}You will be redirected to the Author Whatsapp...")
@@ -148,7 +147,7 @@ class REQ:
            time.sleep(3)
            Pepek()
        elif pil in['1','01']:
-           print(f"{H}Pastikan sudah memiliki licensinya")
+           print(f"{H}Pastikan sudah memiliki licensinya{x}")
            time.sleep(1)
            run()
        else:
@@ -934,31 +933,33 @@ def get_expiration_date(license_info):
 def run():
     try:
         with open(LICENSE_FILE_PATH, 'r') as file:
-            print(f'  [•][bold green] Sedang Mengecek Lisensi..... !!!! ')
+            print(f'  [•]{H} Sedang Mengecek Lisensi..... !!!! ')
             saved_license = file.read()
             expiration_date = get_expiration_date(saved_license)
-            print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
+            print(f"{H}Lisensi kadaluwarsa pada tanggal: {B}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
             if saved_license and is_license_valid(saved_license):
                 time.sleep(0.03)
-                print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
-                time.sleep(3)
-                self.Menuuu()
+                print(f"{H}Lisensi valid. Selamat menggunakan program.")
+                time.sleep(2)
+                clear()
+                REQ().Pepek()
     except (IOError,FileNotFoundError):
        license_key = input(f"[{h}•{x}]{U}Masukkan lisensi{x}:{B} ")
        licen=open(".saved_license.txt", "w").write(license_key)
        time.sleep(0.03)
 
        if check_license(license_key):
-          print(f'  [•][bold green] Sedang Mengecek Lisensi..... !!!! ')
+          print(f'  [•]{H} Sedang Mengecek Lisensi..... !!!! ')
           time.sleep(1)
           saved_license = file.read()
           expiration_date = get_expiration_date(saved_license)
-          print(f"[bold green]Lisensi kadaluwarsa pada tanggal: {B2}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
+          print(f"{H}Lisensi kadaluwarsa pada tanggal: {B}{expiration_date.strftime('%Y-%m-%d %H:%M')}");time.sleep(2)
           if saved_license and is_license_valid(saved_license):
               time.sleep(0.03)
-              print(f"[bold green]Lisensi valid. Selamat menggunakan program.")
-              time.sleep(3)
-              self.Menuuu()
+              print(f"{H}Lisensi valid. Selamat menggunakan program.")
+              time.sleep(2)
+              clear()
+              REQ().Pepek()
        else:
           os.system("rm -f .saved_license.txt")
           print(f"{m}Lisensi tidak valid atau telah kadaluarsa. Tolong masukan lisensi dengan benar.")
