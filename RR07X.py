@@ -428,11 +428,11 @@ class Furthermore:
    
    def Wordlist(self):
         Console().print(Markdown(f"[•]{U2} Ingin menambahkan sandi manual? (Y/t)"),style='red')
-        ask = Console().input(f'\n{M2}>_@Khoirulez_{x} : ')
+        ask = Console().input(f'\n>_@Khoirulez_ : ')
         if ask =='y' or ask =='Y' or ask =='Ya' or ask =='ya' or ask =='YA':
           self.Paslist.append('ya')
           Console().print(Markdown(f"[•]{U2} Buat kata sandi anda, gunakan ',' (koma) sebagai pemisah"),style='yellow')
-          pwdia = Console().input(f'\n{M2}>_@Khoirulez_{x} : ')
+          pwdia = Console().input(f'\n>_@Khoirulez_ : ')
           asky = pwdia.split(',')
           for x in asky:
               self.Passku.append(x)
