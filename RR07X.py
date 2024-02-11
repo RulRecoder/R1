@@ -391,7 +391,7 @@ class Dump:
                     dump.append(data)
                 except Exception as e:
                     Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit() 
-                Console().print(f'[•{{M2}Total Dum{N} -: {H2}{len(dump)}{P2}',end='\r')
+                Console().print(f'[•]{M2}Total Dump{N} -: {H2}{len(dump)}{P2}',end='\r')
         except FileNotFoundError as e:
             Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
 
