@@ -121,7 +121,6 @@ class REQ:
        return App_get
               
    def Logooo(self):
-       Console().print(Markdown(f"{asu}RR07X{x} | {M}@Khoirulez{x}")
        Console().print(f' {M2}● {K2}● {H2}●')
        Console().print(f'''    {H2}    ,*-~"`^"*u_                                _u*. "^`"~-*,
      p!^       /  jPw                            w9j \        ^!p
