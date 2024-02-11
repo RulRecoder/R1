@@ -137,18 +137,18 @@ class REQ:
                                  `` ``''')
    def Pepek(self):
        self.Logooo()
-       print(f'\t\t           [bold blue]Login Licensi')
-       print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
-       print(' [bold green]╰─▶[bold blue] 2[bold yellow] Hubungi Admin')
+       print(f'\t\t           {B2}Login Licensi')
+       print(' {H2}╰─▶{B2} 1{K2} Login Ke Tools')
+       print(' {H2}╰─▶{B2} 2{K2} Hubungi Admin')
        pil = input(f'✶ ━━⫸ {H} Choice{N} : ')
        if pil in['2','02']:
-           jalan("\n [•] {H2}You will be redirected to the Author Whatsapp...")
+           print("\n [•] {H2}You will be redirected to the Author Whatsapp...")
            time.sleep(0.03)
            os.system('xdg-open https://wa.me/6281283547452?text=Hallo+min+minta+lisensi+trial+SC+ini')
            time.sleep(3)
            Pepek()
        elif pil in['1','01']:
-           jalan(f"{H}Pastikan sudah memiliki licensinya")
+           print(f"{H}Pastikan sudah memiliki licensinya")
            time.sleep(1)
            run()
        else:
@@ -967,7 +967,7 @@ def run():
  
 if __name__=='__main__':
   try:
-      os.system("git pull") ; REQ().Pepek()
+      os.system("git pull") ; os.system("clear") ; REQ().Pepek()
   except requests.exceptions.ConnectionError as e:
       os.system("clear") ; Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit() 
 
