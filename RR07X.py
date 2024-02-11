@@ -135,7 +135,7 @@ class REQ:
                      ^ ilmk ^c/ )    ( \c^      ^
                              'V')_)(_('V'
                                  `` ``''')
-   def pepek():
+   def pepek(self):
        self.Logooo()
        print(f'\t\t           [bold blue]Login Licensi', style=f"bold purple")
        print(' [bold green]╰─▶[bold blue] 1[bold yellow] Login Ke Tools')
@@ -972,12 +972,12 @@ def run():
  
 if __name__=='__main__':
   try:
-      os.system("git pull") ; REQ();pepek()
+      os.system("git pull") ; REQ();self.pepek()
   except requests.exceptions.ConnectionError as e:
       os.system("clear") ; Console().print(Markdown(f"[•]{U2} {str(e).title()}"),style='red') ; sleep(3.1) ; sys.exit() 
 
 
 # FREE AND OPEN SOURCE       
 # FREE SCRIPTS CANNOT BE SOLD AND BUYED
-# https://github.com/AdityaTwinz
-# WA : 6283861183874
+# https://github.com/khoirulez
+# WA : 6281283547452
