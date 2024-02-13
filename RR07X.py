@@ -542,7 +542,7 @@ class Furthermore:
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = random.choice(ugen)
+       ua = uaku2()
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -624,7 +624,7 @@ class Furthermore:
        prog.advance(des)  
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = random.choice(ugen)
+       ua = uaku2()
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -695,7 +695,7 @@ class Furthermore:
        prog.advance(des)  
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = random.choice(ugen)
+       ua = uaku2()
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -762,7 +762,7 @@ class Furthermore:
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = random.choice(ugen)
+       ua = uaku2()
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -844,7 +844,7 @@ class Furthermore:
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().UserAgent_APP()
-       ua = random.choice(ugen)
+       ua = uaku2()
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
