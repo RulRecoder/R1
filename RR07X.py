@@ -517,7 +517,7 @@ class Furthermore:
                             self.password.append(xc)
                     else:pass
                     if 'async' in self.Method:
-                        Itil.submit(self.rr078, user, self.password)
+                        Itil.submit(rr078, user, password)
                     elif 'validate' in self.Method:
                         Itil.submit(self.validateAPI, user, self.password)
                     elif 'regular' in self.Method:
@@ -831,7 +831,7 @@ class Furthermore:
                sleep(15)
        self.loop+=1
 #--------------------[ METODE-MOBILE ]-----------------#
-def rr078(self, user, password):
+def rr078(user, password):
 	global loop,ok,cp
 	bi = random.choice(['\33[m'])
 	pers = loop*100/len(id2)
