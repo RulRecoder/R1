@@ -528,11 +528,6 @@ class Furthermore:
                         Itil.submit(self.validateAPP, user, self.password)
                     else:
                         Itil.submit(self.asyncAPI, user, self.password)
-               
-        if self.live == 0 and self.check == 0:
-            Console().print(f"[•]{U2} Opshh anda tidak mendapatkan hasil sama sekali") ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
-        else:
-            Console().print(f'\n[•]{U2} Selamat, Anda Mendapatkan {U2}Hasil OK {H2} {len(self.live)} {U2}Dan Hasil CP {K2}: {len(self.check)}') ; os.system('rm -rf DataLog/socks5.txt') ; sleep(3) ; sys.exit()
    
    def asyncAPI(self, user, password):
        prog.update(des,description=f">RR07X | {self.loop}/{len(dump)} LIVE-:{H2}{len(self.live)} {P2}CHECK-:{K2}{len(self.check)}")
