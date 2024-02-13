@@ -86,8 +86,6 @@ for xd in range(10000):
 	aseph=f'Mozilla/5.0 (Windows NT 10.0; {crot} AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Safari/537.36 Edge/12.{t}'
 	hi=f'Mozilla/5.0 (Linux; Android 10; Infinix X682B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{z}.0.0.0 Mobile Safari/537.36{model}'
 	uaku2 = random.choice([zax1,zax2,zax3,zax4,zax5,aseph,hi])
-	ugen.append(uaku2)
-
 class REQ:
    
    def __init__(self):
